@@ -3,6 +3,24 @@ module Nanoid
     module Persistance
       extend MotionSupport::Concern
 
+      module ClassMethods
+        def create(*args)
+          new(*args).tap { |doc| doc.save }
+        end
+
+        def field(name, options={})
+          self.fields[name] = true
+
+          define_method(name) do |*args, &block|
+            self.attributes[name]
+          end
+
+          define_method("#{name}=".to_sym) do |*args, &block|
+            self.attributes[name] = args[0]
+          end
+        end
+      end
+
       included do
         attr_accessor :attributes
 
@@ -18,10 +36,15 @@ module Nanoid
         super
 
         @new_record = !options[:new]
+        assign_attributes(attrs, options)
         refresh_db_object
+
+        self
       end
 
       def assign_attributes(attrs, options={})
+        self.attributes ||= {}
+
         attrs.each { |k,v| __send__("#{k}=", v) }
       end
       alias_method :attributes=, :assign_attributes
@@ -39,9 +62,11 @@ module Nanoid
       end
 
       def save(options={})
-        error = Pointer.new(self)
+        refresh_db_object
 
-        self.store.addObject(@db_object, error: error)
+        error = Pointer.new(:id)
+
+        self.db.store.addObject(@db_object, error: error)
         raise Nanoid::Error::DB.new(error[0].description) if error[0]
 
         @new_record = false
@@ -51,34 +76,14 @@ module Nanoid
       private
 
       def refresh_db_object
-        @db_object = NSFNanoObject.new.nanoObjectWithDictionary(attributes.merge(:_type => _type),
+        @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type),
                                                                 key: self.id)
 
-        assign_attributes(attrs.reverse_merge(:id => @db_object.key), options)
+        assign_attributes(attributes.merge(:id => @db_object.key), {})
       end
 
       def _type
         self.class.to_s
-      end
-
-      module ClassMethods
-        def create(*args)
-          new(*args).tap { |doc| doc.save }
-        end
-
-        def field(name, options={})
-          self.fields[name] = true
-
-          define_method(name) do |*args, &block|
-            self.attributes[name]
-            refresh_db_object
-          end
-
-          define_method("#{name}=") do |*args, &block|
-            self.attributes[name] = args[0]
-            refresh_db_object
-          end
-        end
       end
     end
   end

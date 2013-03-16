@@ -3,15 +3,20 @@ module Nanoid
     module Selection
       extend MotionSupport::Concern
 
-      def find(id)
-        search = NSFNanoSearch.searchWithStore(self.store)
-        search.key = id
+      module ClassMethods
+        def find(id)
+          search = NSFNanoSearch.searchWithStore(self.db.store)
+          search.key = id
 
-        error_ptr = Pointer.new(:id)
-        result = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr).first
-        raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+          error_ptr = Pointer.new(:id)
+          result = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr).first
+          raise NanoStoreError, error_ptr[0].description if error_ptr[0]
 
-        result.last if result
+          if result = result.try(:last)
+            klass = Object.const_get(result.info.delete('_type'))
+            klass.new(result.info)
+          end
+        end
       end
     end
   end

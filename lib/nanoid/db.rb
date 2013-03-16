@@ -17,4 +17,9 @@ class Nanoid::DB
 
     raise Error::DB, error[0].description if error[0]
   end
+
+  def self.default_db
+    @@default_db ||= self.new(type: :memory)
+    @@default_db
+  end
 end
