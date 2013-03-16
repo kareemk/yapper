@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Nanoid::VERSION
 
-  gem.add_dependency "activemodel", "~> 3.2.9"
+  gem.add_dependency 'motion_support', '~> 0.0.6'
   gem.add_dependency 'motion-cocoapods', '>= 1.2.1'
   gem.add_development_dependency 'motion-redgreen'
 end

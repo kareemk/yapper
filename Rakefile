@@ -3,11 +3,13 @@ $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 require 'motion-cocoapods'
 require 'motion-redgreen'
+require "motion_support/all"
 
 Motion::Project::App.setup do |app|
   app.name = 'NanoidDemo'
   app.redgreen_style = :full
-  app.files += Dir.glob(File.join(app.project_dir, 'lib/nanoid/*.rb'))
+  app.files += Dir.glob(File.join(app.project_dir, 'lib/nanoid/**/*.rb'))
+  app.files = (app.files + Dir.glob('./app/**/*.rb')).uniq
   app.pods do
     pod 'NanoStore', '~> 2.6.0'
   end
