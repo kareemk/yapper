@@ -37,25 +37,26 @@ describe 'Nanoid persisting documents' do
   end
 
   describe 'updating documents' do
+    before do
+      @doc = Document.create(:field_1 => 'field1')
+    end
+
     describe "when updating fields and then #save" do
       it 'persists the fields' do
-        doc = Document.create(:field_1 => 'field1')
-        doc.field_1 = 'field1_updated'
-        doc.save
+        @doc.field_1 = 'field1_updated'
+        @doc.save
 
-        doc = Document.find(doc.id)
+        doc = Document.find(@doc.id)
         doc.field_1.should == 'field1_updated'
       end
     end
 
     describe "when using #update_attributes" do
       it 'persists the fields' do
-        doc = Document.create(:field_1 => 'field1',
-                              :field_2 => 'field2')
+        @doc.update_attributes(:field_1 => 'field1_updated')
 
-        doc = Document.find(doc.id)
-        doc.field_1.should == 'field1'
-        doc.field_2.should == 'field2'
+        doc = Document.find(@doc.id)
+        doc.field_1.should == 'field1_updated'
       end
     end
   end

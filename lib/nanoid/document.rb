@@ -3,6 +3,7 @@ module Nanoid::Document
 
   include Persistance
   include Selection
+  include Callbacks
 
   module ClassMethods
     def db
