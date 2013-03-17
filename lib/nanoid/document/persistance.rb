@@ -35,19 +35,19 @@ module Nanoid
       def initialize(attrs={}, options={})
         super
 
-        @new_record = !options[:new]
-        assign_attributes(attrs, options)
+        @new_record = options[:new].nil? ? true : options[:new]
+        update_attributes(attrs, options)
         refresh_db_object
 
         self
       end
 
-      def assign_attributes(attrs, options={})
+      def update_attributes(attrs, options={})
         self.attributes ||= {}
 
         attrs.each { |k,v| __send__("#{k}=", v) }
       end
-      alias_method :attributes=, :assign_attributes
+      alias_method :attributes=, :update_attributes
 
       def new_record?
         @new_record
@@ -79,7 +79,7 @@ module Nanoid
         @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type),
                                                                 key: self.id)
 
-        assign_attributes(attributes.merge(:id => @db_object.key), {})
+        update_attributes(attributes.merge(:id => @db_object.key), {})
       end
 
       def _type

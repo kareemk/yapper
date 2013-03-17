@@ -14,7 +14,7 @@ module Nanoid
 
           if result = result.try(:last)
             klass = Object.const_get(result.info.delete('_type'))
-            klass.new(result.info)
+            klass.new(result.info, :new => false)
           end
         end
       end
