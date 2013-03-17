@@ -9,13 +9,3 @@ Motion::Project::App.setup do |app|
     app.files.unshift(file)
   end
 end
-
-module Nanoid
-  class << self
-    attr_accessor :db
-
-    def configure(options)
-      self.db = DB.new(options)
-    end
-  end
-end

@@ -31,6 +31,7 @@ describe 'Nanoid callbacks' do
     end
   end
   after { Object.send(:remove_const, 'CallbackDocument') }
+  after { Nanoid::DB.purge }
 
   describe 'creating documents' do
     it 'before and after callbacks are fired' do

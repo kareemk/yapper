@@ -10,7 +10,7 @@ module Nanoid
 
           error_ptr = Pointer.new(:id)
           result = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr).first
-          raise NanoStoreError, error_ptr[0].description if error_ptr[0]
+          raise_if_error(error_ptr)
 
           if result = result.try(:last)
             klass = Object.const_get(result.info.delete('_type'))

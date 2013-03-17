@@ -76,9 +76,9 @@ module Nanoid
         run_callbacks 'save' do
           refresh_db_object
 
-          error = Pointer.new(:id)
-          self.db.store.addObject(@db_object, error: error)
-          raise Nanoid::Error::DB.new(error[0].description) if error[0]
+          error_ptr = Pointer.new(:id)
+          db.store.addObject(@db_object, error: error_ptr)
+          raise_if_error(error_ptr)
         end
 
         @new_record = false
@@ -92,10 +92,6 @@ module Nanoid
                                                                 key: self.id)
 
         assign_attributes(attributes.merge(:id => @db_object.key), {})
-      end
-
-      def _type
-        self.class.to_s
       end
     end
   end

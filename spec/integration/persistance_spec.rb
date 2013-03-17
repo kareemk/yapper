@@ -7,6 +7,7 @@ describe 'Nanoid persisting documents' do
       field :field_2
     end
   end
+  after { Nanoid::DB.purge }
 
   describe 'creating documents' do
     describe "when using #new then #save" do
