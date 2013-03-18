@@ -20,7 +20,6 @@ module Nanoid
           search.match = NSFEqualTo
           search.value = self._type
 
-          puts "Field #{field.to_s}"
           search.sort = [NSFNanoSortDescriptor.alloc.initWithAttribute(field.to_s, ascending:ascending)]
 
           error_ptr = Pointer.new(:id)
