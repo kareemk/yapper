@@ -1,5 +1,6 @@
 class Nanoid::DB
   include Nanoid::Error
+  extend  Nanoid::Error
 
   attr_accessor :store
 
@@ -27,5 +28,16 @@ class Nanoid::DB
 
   def self.purge
     default_db.store.removeAllObjectsFromStoreAndReturnError(nil)
+  end
+
+  def self.batch(every, &block)
+    default_db.store.setSaveInterval(every)
+
+    block.call
+
+    error_ptr = Pointer.new(:id)
+    default_db.store.saveStoreAndReturnError(error_ptr)
+    default_db.store.setSaveInterval(1)
+    raise_if_error(error_ptr)
   end
 end
