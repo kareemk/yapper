@@ -35,8 +35,9 @@ module Nanoid
 
           results.map do |result|
             result = result[1]
-            klass = Object.const_get(result.info.delete('_type'))
-            klass.new(result.info, :new => false)
+            info = result.info.dup
+            klass = Kernel.const_get(info.delete('_type'))
+            klass.new(info, :new => false)
           end
         end
       end
