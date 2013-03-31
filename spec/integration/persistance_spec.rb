@@ -10,6 +10,13 @@ describe 'Nanoid persisting documents' do
   after { Nanoid::DB.purge }
 
   describe 'creating documents' do
+    it 'does not support hashes' do
+      #NOTE: Due to a bug with sorting documents including hash fields
+      lambda {
+        Document.create(:field_1 => { :a => 'a' })
+      }.should.raise(ArgumentError)
+    end
+
     describe "when using #new then #save" do
       it 'persists the fields' do
         doc = Document.new

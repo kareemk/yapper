@@ -51,7 +51,10 @@ module Nanoid
         self.attributes ||= {}
         self.attributes = {} if options[:pristine]
 
-        attrs.each { |k,v| __send__("#{k}=", v) }
+        attrs.each do |k,v|
+          raise ArgumentError.new("Hashes not supported currently") if v.is_a?(Hash)
+          __send__("#{k}=", v)
+        end
       end
       alias_method :attributes=, :assign_attributes
 
