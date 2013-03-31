@@ -30,6 +30,17 @@ module Nanoid
             self.attributes[name] = args[0]
           end
         end
+
+        def batch(every, &block)
+          db.store.setSaveInterval(every)
+
+          block.call
+
+          error_ptr = Pointer.new(:id)
+          db.store.saveStoreAndReturnError(error_ptr)
+          db.store.setSaveInterval(1)
+          raise_if_error(error_ptr)
+        end
       end
 
       def initialize(attrs={}, options={})

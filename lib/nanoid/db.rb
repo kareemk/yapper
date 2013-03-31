@@ -3,6 +3,17 @@ class Nanoid::DB
   extend  Nanoid::Error
 
   attr_accessor :store
+  @@db = {}
+
+  def self.default_db(type)
+    type ||= :memory
+
+    @@db[type] ||= self.new(:type => type)
+  end
+
+  def self.purge
+    @@db.values.each { |db| db.store.removeAllObjectsFromStoreAndReturnError(nil) }
+  end
 
   def initialize(options)
     error_ptr = Pointer.new(:id)
@@ -13,31 +24,17 @@ class Nanoid::DB
     when :temp
       @store = NSFNanoStore.createAndOpenStoreWithType(NSFTemporaryStoreType, path:nil, error: error_ptr)
     when :file
-      @store = NSFNanoStore.createAndOpenStoreWithType(NSFPersistentStoreType, path:options[:path], error: error_ptr)
+      @store = NSFNanoStore.createAndOpenStoreWithType(NSFPersistentStoreType, path:document_path, error: error_ptr)
     else
-      raise Nanoid::Document::Error::DB.new("store type must be one of: :memory, :temp or :file")
+      raise Nanoid::Error::DB.new("store type must be one of: :memory, :temp or :file")
     end
 
     raise_if_error(error_ptr)
   end
 
-  def self.default_db
-    @@default_db ||= self.new(type: :memory)
-    @@default_db
-  end
+  private
 
-  def self.purge
-    default_db.store.removeAllObjectsFromStoreAndReturnError(nil)
-  end
-
-  def self.batch(every, &block)
-    default_db.store.setSaveInterval(every)
-
-    block.call
-
-    error_ptr = Pointer.new(:id)
-    default_db.store.saveStoreAndReturnError(error_ptr)
-    default_db.store.setSaveInterval(1)
-    raise_if_error(error_ptr)
+  def document_path
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] + '/default.db'
   end
 end

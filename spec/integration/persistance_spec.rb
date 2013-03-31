@@ -9,6 +9,15 @@ describe 'Nanoid persisting documents' do
   end
   after { Nanoid::DB.purge }
 
+  it 'can batch updates for better performance on CUD' do
+    Document.batch(10) do
+      3.times { Document.create(:field_1 => 'saved') }
+
+      Document.where(:field_1 => 'saved').count.should == 0
+    end
+    Document.where(:field_1 => 'saved').count.should == 3
+  end
+
   describe 'creating documents' do
     it 'does not support hashes' do
       #NOTE: Due to a bug with sorting documents including hash fields
