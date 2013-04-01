@@ -3,16 +3,20 @@ class Nanoid::DB
   extend  Nanoid::Error
 
   attr_accessor :store
-  @@db = {}
 
   def self.default_db(type)
     type ||= :memory
 
-    @@db[type] ||= self.new(:type => type)
+    Thread.current[:db] ||= {}
+    Thread.current[:db][type] ||= self.new(:type => type)
   end
 
   def self.purge
-    @@db.values.each { |db| db.store.removeAllObjectsFromStoreAndReturnError(nil) }
+    Thread.list.each do |thread|
+      if db = thread[:db]
+        db.values.each { |db| db.store.removeAllObjectsFromStoreAndReturnError(nil) }
+      end
+    end
   end
 
   def initialize(options)

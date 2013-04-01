@@ -1,3 +1,15 @@
+describe 'multi-threaded' do
+  it 'uses a different connection for each thread' do
+    conn1 = nil
+    conn2 = nil
+
+    Thread.new { conn1 = Nanoid::DB.default_db(:memory) }.join
+    Thread.new { conn2 = Nanoid::DB.default_db(:memory) }.join
+
+   conn1.should.not == conn2
+  end
+end
+
 describe 'persisting in memory' do
   before do
     class Document
