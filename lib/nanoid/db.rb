@@ -17,6 +17,7 @@ class Nanoid::DB
         db.values.each { |db| db.store.removeAllObjectsFromStoreAndReturnError(nil) }
       end
     end
+    true
   end
 
   def initialize(options)
