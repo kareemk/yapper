@@ -1,0 +1,8 @@
+* where(:key => value)
+* has_many/belongs_to relation (support embedded doc when initializing from hash)
+* Thread safety (don't share db instance across multiple threads)
+* HTTP sync
+  * Serial dispatch queue that processes and docs that need to be synchronized
+* Notification Center events
+* Destroy & Delete
+* Fix Hash field type support

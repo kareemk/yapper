@@ -36,4 +36,8 @@ module Nanoid::Document
   def db
     self.class.db
   end
+
+  def model_name
+    self.class.to_s.downcase
+  end
 end

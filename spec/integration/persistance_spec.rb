@@ -8,6 +8,7 @@ describe 'Nanoid persisting documents' do
     end
   end
   after { Nanoid::DB.purge }
+  after { Object.send(:remove_const, 'Document') }
 
   it 'can batch updates for better performance on CUD' do
     Document.batch(10) do
@@ -75,6 +76,18 @@ describe 'Nanoid persisting documents' do
         doc = Document.find(@doc.id)
         doc.field_1.should == 'field1_updated'
       end
+    end
+  end
+
+  describe 'destroying documents' do
+    before do
+      @doc = Document.create(:field_1 => 'field1')
+    end
+
+    it 'destroys the document' do
+      @doc.destroy
+
+      Document.find(@doc.id).should == nil
     end
   end
 end

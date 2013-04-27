@@ -30,7 +30,14 @@ describe 'Nanoid selecting documents' do
     end
 
     it 'returns nil when looking up a non-existant doc' do
-      SelectionDocument.where(:field1 => 'xxx').length.should == 0
+      SelectionDocument.where(:field1 => 'xxx').count.should == 0
+    end
+  end
+
+  describe 'with #all' do
+    it 'selects all documents' do
+      SelectionDocument.all.count.should == 3
+      SelectionDocument.all.first.class.should == SelectionDocument
     end
   end
 end

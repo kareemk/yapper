@@ -2,8 +2,10 @@ require "bundler/gem_tasks"
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 require 'motion-cocoapods'
+require 'motion-logger'
 require 'motion-redgreen'
-require "motion_support/all"
+require 'motion_support/all'
+require 'webstub'
 
 Motion::Project::App.setup do |app|
   app.name = 'NanoidDemo'
@@ -12,6 +14,8 @@ Motion::Project::App.setup do |app|
   app.files = (app.files + Dir.glob('./app/**/*.rb')).uniq
   app.pods do
     pod 'NanoStore', '~> 2.6.0'
+    pod 'AFNetworking'
+    pod 'CocoaLumberjack'
   end
 end
 

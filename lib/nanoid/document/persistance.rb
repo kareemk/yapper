@@ -20,14 +20,14 @@ module Nanoid
         end
 
         def field(name, options={})
-          self.fields[name] = true
+          self.fields[name] = options
 
           define_method(name) do |*args, &block|
             self.attributes[name]
           end
 
           define_method("#{name}=".to_sym) do |*args, &block|
-            self.attributes[name] = args[0]
+            self.set_attribute(name, args[0])
           end
         end
 
@@ -54,20 +54,29 @@ module Nanoid
       end
 
       def update_attributes(attrs, options={})
-        assign_attributes(attrs, options={})
-        save(options)
+        self.assign_attributes(attrs, options)
+        self.save(options)
       end
 
       def assign_attributes(attrs, options={})
         self.attributes ||= {}
         self.attributes = {} if options[:pristine]
 
+        self.skip_callbacks = options[:skip_callbacks] || self.skip_callbacks || false
+
         attrs.each do |k,v|
           raise ArgumentError.new("Hashes not supported currently") if v.is_a?(Hash)
-          __send__("#{k}=", v)
+          __send__("#{k}=", v) if respond_to?(k)
         end
       end
       alias_method :attributes=, :assign_attributes
+
+      def set_attribute(name, value)
+        if self.class.fields[name][:type] == Time
+          value = Time.parse(value) unless value.is_a?(Time)
+        end
+        self.attributes[name] = value
+      end
 
       def reload
         reloaded = self.class.find(self.id)
@@ -99,13 +108,20 @@ module Nanoid
         true
       end
 
+      def destroy(options={})
+        error_ptr = Pointer.new(:id)
+        db.store.removeObject(@db_object, error: error_ptr)
+        raise_if_error(error_ptr)
+        @destroyed = true
+      end
+
       private
 
       def refresh_db_object
         @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type),
                                                                 key: self.id)
 
-        assign_attributes(attributes.merge(:id => @db_object.key), {})
+        assign_attributes(attributes.merge(:id => @db_object.key))
       end
     end
   end

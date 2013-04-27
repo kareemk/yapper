@@ -8,8 +8,10 @@ module Nanoid
           attr_accessor :before_save_callbacks
           attr_accessor :after_save_callbacks
         end
+
         self.before_save_callbacks = []
-        self.after_save_callbacks = []
+        self.after_save_callbacks  = []
+        attr_accessor :skip_callbacks
       end
 
       module ClassMethods
@@ -23,14 +25,15 @@ module Nanoid
       end
 
       def run_callback(hook, operation)
+        return true if self.skip_callbacks
+
         self.class.send("#{hook}_#{operation}_callbacks").each do |method|
           self.send(method)
         end
       end
 
       def run_callbacks(operation, &block)
-        before_result = run_callback('before', operation)
-        if before_result
+        if run_callback('before', operation)
           block.call
         end
         run_callback('after', operation)

@@ -13,7 +13,7 @@ module Nanoid
           raise_if_error(error_ptr)
 
           if result = result.try(:last)
-            klass = Object.const_get(result.info.delete('_type'))
+            klass = Object.qualified_const_get(result.info.delete('_type'))
             klass.new(result.info, :new => false)
           end
         end
@@ -36,7 +36,25 @@ module Nanoid
           results.map do |result|
             result = result[1]
             info = result.info.dup
-            klass = Kernel.const_get(info.delete('_type'))
+            klass = Object.qualified_const_get(info.delete('_type'))
+            klass.new(info, :new => false)
+          end
+        end
+
+        def all
+          search = NSFNanoSearch.searchWithStore(db.store)
+          search.attribute = '_type'
+          search.match = NSFEqualTo
+          search.value = self._type
+
+          error_ptr = Pointer.new(:id)
+          results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+          raise_if_error(error_ptr)
+
+          results.map do |result|
+            result = result[1]
+            info = result.info.dup
+            klass = Object.qualified_const_get(info.delete('_type'))
             klass.new(info, :new => false)
           end
         end
