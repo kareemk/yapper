@@ -36,9 +36,9 @@ module Nanoid::Sync
 
           self.update_attributes(atts.merge(:_remote_id => remote_id), :skip_callbacks => true)
 
-          Log.info "[Nanoid::Sync][CREATED] #{atts}"
+          Log.info "[Nanoid::Sync][POST] #{atts}"
         when 'PUT'
-          Log.info "[Nanoid::Sync][UPDATED] #{self._remote_id}"
+          Log.info "[Nanoid::Sync][PUT] #{self._remote_id}"
         else
           raise "Unknown http method #{method}"
         end
@@ -72,7 +72,7 @@ module Nanoid::Sync
         atts.delete(:id)
         self.update_attributes(atts, :skip_callbacks => true)
 
-        Log.info "[Nanoid::Sync][CREATED] #{atts}"
+        Log.info "[Nanoid::Sync][GET] #{atts}"
         result = :success
       else
         Log.warn "[Nanoid::Sync][FAILURE] #{operation.error.localizedDescription}"
