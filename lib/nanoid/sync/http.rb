@@ -27,33 +27,31 @@ module Nanoid::Sync
       operation.start
       operation.waitUntilFinished
 
-      begin
-        if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
-          case method
-          when 'POST'
-            atts = operation.responseJSON.dup
-            remote_id = atts.delete(:id)
-            raise "POST must return :id in payload" unless remote_id
+      if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
+        case method
+        when 'POST'
+          atts = operation.responseJSON.dup
+          remote_id = atts.delete(:id)
+          raise "POST must return :id in payload" unless remote_id
 
-            self.update_attributes(atts.merge(:_remote_id => remote_id), :skip_callbacks => true)
+          self.update_attributes(atts.merge(:_remote_id => remote_id), :skip_callbacks => true)
 
-            Log.info "[Nanoid::Sync][CREATED] #{atts}"
-          when 'PUT'
-            Log.info "[Nanoid::Sync][UPDATED] #{self._remote_id}"
-          else
-            raise "Unknown http method #{method}"
-          end
-          result = :success
+          Log.info "[Nanoid::Sync][CREATED] #{atts}"
+        when 'PUT'
+          Log.info "[Nanoid::Sync][UPDATED] #{self._remote_id}"
         else
-          Log.warn "[Nanoid::Sync][FAILURE] #{operation.error.localizedDescription}"
-          result = :failure
+          raise "Unknown http method #{method}"
         end
-      rescue Exception => e
-        Log.error "[Nanoid::Sync][CRITICAL] #{e.message}: #{e.backtrace.join('::')}"
-        result = :critical #TODO: This should probably be critical to prevent retries
+        result = :success
+      else
+        Log.warn "[Nanoid::Sync][FAILURE] #{operation.error.localizedDescription}"
+        result = :failure
       end
 
       result
+    rescue Exception => e
+      Log.error "[Nanoid::Sync][CRITICAL] #{e.message}: #{e.backtrace.join('::')}"
+      :critical
     end
 
     def get
@@ -69,24 +67,22 @@ module Nanoid::Sync
       operation.start
       operation.waitUntilFinished
 
-      begin
-        if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
-          atts = operation.responseJSON.dup
-          atts.delete(:id)
-          self.update_attributes(atts, :skip_callbacks => true)
+      if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
+        atts = operation.responseJSON.dup
+        atts.delete(:id)
+        self.update_attributes(atts, :skip_callbacks => true)
 
-          Log.info "[Nanoid::Sync][CREATED] #{atts}"
-          result = :success
-        else
-          Log.warn "[Nanoid::Sync][FAILURE] #{operation.error.localizedDescription}"
-          result = :failure
-        end
-      rescue Exception => e
-        Log.error "[Nanoid::Sync][CRITICAL] #{e.message}: #{e.backtrace.join('::')}"
-        result = :critical #TODO: This should probably be critical to prevent retries
+        Log.info "[Nanoid::Sync][CREATED] #{atts}"
+        result = :success
+      else
+        Log.warn "[Nanoid::Sync][FAILURE] #{operation.error.localizedDescription}"
+        result = :failure
       end
 
       result
+    rescue Exception => e
+      Log.error "[Nanoid::Sync][CRITICAL] #{e.message}: #{e.backtrace.join('::')}"
+      :critical
     end
 
     def path(method)
