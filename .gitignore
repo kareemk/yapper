@@ -16,4 +16,3 @@ resources/*.storyboardc
 tags
 vendor/*/.build
 vendor/*/build-*
-vendor/Pods/Pods.xcodeproj/project.pbxproj
