@@ -5,6 +5,8 @@ module Nanoid
 
       module ClassMethods
         def find(id)
+          return nil if id.nil?
+
           search = NSFNanoSearch.searchWithStore(self.db.store)
           search.key = id
 

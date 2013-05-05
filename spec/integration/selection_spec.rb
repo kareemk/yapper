@@ -22,6 +22,10 @@ describe 'Nanoid selecting documents' do
     it 'returns nil when looking up a non-existant doc' do
       SelectionDocument.find('xxx').should == nil
     end
+
+    it 'returns nil when looking up nil' do
+      SelectionDocument.find(nil).should == nil
+    end
   end
 
   describe 'with #where' do
