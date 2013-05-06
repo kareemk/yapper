@@ -29,7 +29,7 @@ module Nanoid; module Sync; class Queue
   def self.notify
     self._include
 
-    @@queue ||= ::Dispatch::Queue.concurrent("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.sync")
+    @@queue ||= ::Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.sync")
     @@mutex ||= Mutex.new
     @@notify_count ||= 0
 
@@ -68,6 +68,7 @@ module Nanoid; module Sync; class Queue
         self.failure_count += 1
         self.save
       else
+        Log.error "[Nanoid::Queue][CRITICAL] Job #{self.sync_class}:#{self.sync_id} exceeded failure threshold and has been removed"
         self.destroy
       end
     when :critical

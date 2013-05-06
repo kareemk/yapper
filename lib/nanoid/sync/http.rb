@@ -31,12 +31,13 @@ module Nanoid::Sync
         case method
         when 'POST'
           atts = operation.responseJSON.dup
+          Log.info "[Nanoid::Sync][POST] #{atts}"
+
           remote_id = atts.delete(:id)
           raise "POST must return :id in payload" unless remote_id
 
           self.update_attributes(atts.merge(:_remote_id => remote_id), :skip_callbacks => true)
 
-          Log.info "[Nanoid::Sync][POST] #{atts}"
         when 'PUT'
           Log.info "[Nanoid::Sync][PUT] #{self._remote_id}"
         else
@@ -69,10 +70,11 @@ module Nanoid::Sync
 
       if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
         atts = operation.responseJSON.dup
+        Log.info "[Nanoid::Sync][GET] #{atts}"
+
         atts.delete(:id)
         self.update_attributes(atts, :skip_callbacks => true)
 
-        Log.info "[Nanoid::Sync][GET] #{atts}"
         result = :success
       else
         Log.warn "[Nanoid::Sync][FAILURE] #{operation.error.localizedDescription}"
