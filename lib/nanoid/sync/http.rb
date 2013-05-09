@@ -27,13 +27,14 @@ module Nanoid::Sync
       operation.start
       operation.waitUntilFinished
 
+      # TODO If response 4xx then return :critical as this must be due to a bug
       if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
         case method
         when 'POST'
           atts = operation.responseJSON.dup
           Log.info "[Nanoid::Sync][POST][#{self._type}] #{atts}"
 
-          remote_id = atts.delete(:id)
+          remote_id = atts.delete(:id) || atts.delete(:_id)
           raise "POST must return :id in payload" unless remote_id
 
           self.reload.update_attributes(atts.merge(:_remote_id => remote_id), :skip_callbacks => true)

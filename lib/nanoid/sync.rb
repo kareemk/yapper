@@ -35,7 +35,7 @@ module Nanoid::Sync
 
   def sync_as
     key = self.class.to_s.downcase.to_sym
-    { key => self.attributes.reject{ |k,v| k.to_s =~ /^_/ } }
+    { key => self.attributes.reject{ |k,v| k == :id || k.to_s =~ /^_/ } }
   end
 
   def sync_if_auto
