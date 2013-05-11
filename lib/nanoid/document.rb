@@ -14,6 +14,7 @@ module Nanoid::Document
   include Selection
   include Callbacks
   include Sort
+  include Relation
 
   module ClassMethods
     def store_in(type)

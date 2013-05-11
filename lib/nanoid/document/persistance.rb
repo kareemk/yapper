@@ -97,6 +97,9 @@ module Nanoid
       end
 
       def save(options={})
+        # TODO Wrap in a transaction
+        update_associations(:created)
+
         run_callbacks 'save' do
           refresh_db_object
 
@@ -110,6 +113,8 @@ module Nanoid
       end
 
       def destroy(options={})
+        update_associations(:destroyed)
+
         error_ptr = Pointer.new(:id)
         db.store.removeObject(@db_object, error: error_ptr)
         raise_if_error(error_ptr)
