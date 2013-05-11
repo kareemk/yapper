@@ -1,5 +1,5 @@
 PODS:
-  - AFNetworking (1.2.0)
+  - AFNetworking (1.2.1)
   - CocoaLumberjack (1.6.2)
   - NanoStore (2.6.4)
 
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - NanoStore (~> 2.6.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: 3cbae45f61a9f995cdbd56bd571223910d7f4e44
+  AFNetworking: 616da0028916ce296f5c3cef74e5552eb4e10e13
   CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
   NanoStore: 73d29e30e1e7f253f719c6ad1d60181ebcf1b5be
 
