@@ -107,6 +107,7 @@ module Nanoid::Sync
         client.setParameterEncoding(AFJSONParameterEncoding)
         client
       end
+      @http_client.setAuthorizationHeaderWithToken(Nanoid::Sync.access_token.call)
     end
   end
 end

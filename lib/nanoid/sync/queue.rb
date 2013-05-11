@@ -19,6 +19,8 @@ module Nanoid; module Sync; class Queue
   def self.<<(instance)
     self._include
 
+    instance.update_attributes({:_sync_in_progress => true}, :skip_callbacks => true)
+    self.notification(instance, 'start')
     self.create(:sync_class => instance.class.to_s,
                 :sync_id => instance.id,
                 :created_at => Time.now.utc,
@@ -61,18 +63,29 @@ module Nanoid; module Sync; class Queue
   def attempt(instance, method)
     case instance.send(method)
     when :success
-      instance.update_attributes(:_synced_at => Time.now, :skip_callbacks => true)
+      instance.update_attributes({:_synced_at => Time.now, :_sync_in_progress => false}, :skip_callbacks => true)
       self.destroy
+      self.class.notification(instance, 'success')
     when :failure
       if self.failure_count < Nanoid::Sync.max_failure_count
         self.failure_count += 1
         self.save
+        self.class.notification(instance, 'retry')
       else
         Log.error "[Nanoid::Queue][CRITICAL] Job #{self.sync_class}:#{self.sync_id} exceeded failure threshold and has been removed"
         self.destroy
+        self.class.notification(instance, 'failure')
       end
     when :critical
+      instance.update_attributes({:_sync_in_progress => false}, :skip_callbacks => true)
       self.destroy
+      self.class.notification(instance, 'failure')
     end
+  end
+
+  private
+
+  def self.notification(instance, type)
+      NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{instance._type.downcase}:sync:#{type}", object: instance.id , userInfo: nil)
   end
 end; end; end
