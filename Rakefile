@@ -4,7 +4,9 @@ require 'motion/project'
 require 'motion-cocoapods'
 require 'motion-logger'
 require 'motion-redgreen'
-require 'motion_support/all'
+require 'motion-support/concern'
+require 'motion-support/inflector'
+require 'motion-support/core_ext'
 require 'webstub'
 
 Motion::Project::App.setup do |app|
