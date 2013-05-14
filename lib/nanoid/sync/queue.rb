@@ -19,6 +19,7 @@ module Nanoid; module Sync; class Queue
   def self.<<(instance)
     self._include
 
+    instance.reload
     instance.update_attributes({:_sync_in_progress => true}, :skip_callbacks => true)
     self.notification(instance, 'start')
     self.create(:sync_class => instance.class.to_s,

@@ -8,13 +8,14 @@ module Nanoid::Sync
         method = 'PUT'
       end
 
+      Log.info "[#{Time.now}] Creating request"
       request = http_client.multipartFormRequestWithMethod(
         method,
         path: path(method),
         parameters: params,
         constructingBodyWithBlock: lambda { |form_data|
           data.each do |name, attachment|
-            form_data.appendPartWithFileData(UIImagePNGRepresentation(attachment.data),
+            form_data.appendPartWithFileData(UIImageJPEGRepresentation(attachment.data.call, 1.0),
                                              name: "#{self.model_name}[#{name}]",
                                              fileName: attachment.fileName,
                                              mimeType: attachment.mimeType)
