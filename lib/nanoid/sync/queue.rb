@@ -16,10 +16,10 @@ module Nanoid; module Sync; class Queue
     end
   end
 
-  def self.<<(instance)
+  def self.process(klass, id)
     self._include
 
-    instance.reload
+    instance = klass.send('find', id)
     instance.update_attributes({:_sync_in_progress => true}, :skip_callbacks => true)
     self.notification(instance, 'start')
     self.create(:sync_class => instance.class.to_s,

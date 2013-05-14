@@ -57,6 +57,6 @@ module Nanoid::Sync
   end
 
   def sync
-    Queue << self
+    Queue.process(self.class, self.id)
   end
 end
