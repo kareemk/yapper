@@ -2,13 +2,15 @@ class Nanoid::DB
   include Nanoid::Error
   extend  Nanoid::Error
 
+  @@db = nil
+
   def self.default_db(type)
     type ||= :memory
     @@db ||= self.new(:type => type)
   end
 
   def self.purge
-    @@db.purge
+    @@db.purge if @@db
     true
   end
 
@@ -26,14 +28,18 @@ class Nanoid::DB
       raise Nanoid::Error::DB.new("store type must be one of: :memory, :temp or :file")
     end
 
-    @queue = ::Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.main")
+    @queue = NSOperationQueue.alloc.init
+    @queue.name = "#{NSBundle.mainBundle.bundleIdentifier}.nanoid.main"
+    @queue.MaxConcurrentOperationCount = 1
 
     raise_if_error(error_ptr)
   end
 
   def execute(&block)
     result = []
-    @queue.sync { result << block.call(@store) }
+    operation = NSBlockOperation.blockOperationWithBlock lambda { result << block.call(@store) }
+    @queue.addOperation(operation)
+    operation.waitUntilFinished
     result.first
   end
 
