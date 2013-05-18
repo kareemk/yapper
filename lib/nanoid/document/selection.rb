@@ -7,12 +7,15 @@ module Nanoid
         def find(id)
           return nil if id.nil?
 
-          search = NSFNanoSearch.searchWithStore(self.db.store)
-          search.key = id
+          result = db.execute do |store|
+            search = NSFNanoSearch.searchWithStore(store)
+            search.key = id
 
-          error_ptr = Pointer.new(:id)
-          result = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr).first
-          raise_if_error(error_ptr)
+            error_ptr = Pointer.new(:id)
+            result = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr).first
+            raise_if_error(error_ptr)
+            result
+          end
 
           if result = result.try(:last)
             info = result.info.dup
@@ -27,14 +30,17 @@ module Nanoid
           end
           criteria = criteria.first
 
-          search = NSFNanoSearch.searchWithStore(self.db.store)
-          search.attribute = criteria[0]
-          search.match = NSFEqualTo
-          search.value = criteria[1]
+          results = self.db.execute do |store|
+            search = NSFNanoSearch.searchWithStore(store)
+            search.attribute = criteria[0]
+            search.match = NSFEqualTo
+            search.value = criteria[1]
 
-          error_ptr = Pointer.new(:id)
-          results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-          raise_if_error(error_ptr)
+            error_ptr = Pointer.new(:id)
+            results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+            raise_if_error(error_ptr)
+            results
+          end
 
           results.map do |result|
             result = result[1]
@@ -45,14 +51,17 @@ module Nanoid
         end
 
         def all
-          search = NSFNanoSearch.searchWithStore(db.store)
-          search.attribute = '_type'
-          search.match = NSFEqualTo
-          search.value = self._type
+          results = db.execute do |store|
+            search = NSFNanoSearch.searchWithStore(store)
+            search.attribute = '_type'
+            search.match = NSFEqualTo
+            search.value = self._type
 
-          error_ptr = Pointer.new(:id)
-          results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-          raise_if_error(error_ptr)
+            error_ptr = Pointer.new(:id)
+            results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+            raise_if_error(error_ptr)
+            results
+          end
 
           results.map do |result|
             result = result[1]

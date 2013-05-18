@@ -1,12 +1,22 @@
 describe 'multi-threaded' do
-  it 'uses a different connection for each thread' do
-    conn1 = nil
-    conn2 = nil
+  before do
+    class Document
+      include Nanoid::Document
 
-    Thread.new { conn1 = Nanoid::DB.default_db(:memory) }.join
-    Thread.new { conn2 = Nanoid::DB.default_db(:memory) }.join
+      field :field_1
+      field :field_2
+    end
+  end
+  after { Nanoid::DB.purge }
+  after { Object.send(:remove_const, 'Document') }
 
-   conn1.should.not == conn2
+  it 'behaves safely' do
+    t1 = Thread.new { 10.times { Document.create(:field_1 => 'field') } }
+    t2 = Thread.new { 10.times { Document.all.each { |d| d.update_attributes(:field_1 => 'bye') } } }
+
+    t1.join
+    t2.join
+    Document.all.count.should == 10
   end
 end
 

@@ -2,21 +2,13 @@ class Nanoid::DB
   include Nanoid::Error
   extend  Nanoid::Error
 
-  attr_accessor :store
-
   def self.default_db(type)
     type ||= :memory
-
-    Thread.current[:db] ||= {}
-    Thread.current[:db][type] ||= self.new(:type => type)
+    @@db ||= self.new(:type => type)
   end
 
   def self.purge
-    Thread.list.each do |thread|
-      if db = thread[:db]
-        db.values.each { |db| db.store.removeAllObjectsFromStoreAndReturnError(nil) }
-      end
-    end
+    @@db.purge
     true
   end
 
@@ -34,7 +26,19 @@ class Nanoid::DB
       raise Nanoid::Error::DB.new("store type must be one of: :memory, :temp or :file")
     end
 
+    @queue = ::Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.main")
+
     raise_if_error(error_ptr)
+  end
+
+  def execute(&block)
+    result = []
+    @queue.sync { result << block.call(@store) }
+    result.first
+  end
+
+  def purge
+    @store.removeAllObjectsFromStoreAndReturnError(nil)
   end
 
   private

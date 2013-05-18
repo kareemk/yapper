@@ -15,16 +15,19 @@ module Nanoid
         private
 
         def sort(field, ascending)
-          search = NSFNanoSearch.searchWithStore(db.store)
-          search.attribute = '_type'
-          search.match = NSFEqualTo
-          search.value = self._type
+          results = self.db.execute do |store|
+            search = NSFNanoSearch.searchWithStore(store)
+            search.attribute = '_type'
+            search.match = NSFEqualTo
+            search.value = self._type
 
-          search.sort = [NSFNanoSortDescriptor.alloc.initWithAttribute(field.to_s, ascending:ascending)]
+            search.sort = [NSFNanoSortDescriptor.alloc.initWithAttribute(field.to_s, ascending:ascending)]
 
-          error_ptr = Pointer.new(:id)
-          results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-          raise_if_error(error_ptr)
+            error_ptr = Pointer.new(:id)
+            results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
+            raise_if_error(error_ptr)
+            results
+          end
 
           results.map do |result|
             info = result.info.dup

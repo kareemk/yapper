@@ -1,5 +1,8 @@
 module Nanoid; module Sync; class Queue
   @@included = false
+  @@queue = ::Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.sync")
+  @@mutex = Mutex.new
+  @@notify_count = 0
 
   # XXX Hack to get around load order
   def self._include
@@ -32,9 +35,6 @@ module Nanoid; module Sync; class Queue
   def self.notify
     self._include
 
-    @@queue ||= ::Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.sync")
-    @@mutex ||= Mutex.new
-    @@notify_count ||= 0
 
     @@mutex.synchronize do
       @@notify_count += 1

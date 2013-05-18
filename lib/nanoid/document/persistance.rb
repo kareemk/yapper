@@ -32,14 +32,18 @@ module Nanoid
         end
 
         def batch(every, &block)
-          db.store.setSaveInterval(every)
+          db.execute do |store|
+            store.setSaveInterval(every)
+          end
 
           block.call
 
-          error_ptr = Pointer.new(:id)
-          db.store.saveStoreAndReturnError(error_ptr)
-          db.store.setSaveInterval(1)
-          raise_if_error(error_ptr)
+          db.execute do |store|
+            error_ptr = Pointer.new(:id)
+            store.saveStoreAndReturnError(error_ptr)
+            store.setSaveInterval(1)
+            raise_if_error(error_ptr)
+          end
         end
       end
 
@@ -104,7 +108,7 @@ module Nanoid
           refresh_db_object
 
           error_ptr = Pointer.new(:id)
-          db.store.addObject(@db_object, error: error_ptr)
+          db.execute { |store| store.addObject(@db_object, error: error_ptr) }
           raise_if_error(error_ptr)
         end
 
@@ -116,7 +120,7 @@ module Nanoid
         update_associations(:destroyed)
 
         error_ptr = Pointer.new(:id)
-        db.store.removeObject(@db_object, error: error_ptr)
+        db.execute { |store| store.removeObject(@db_object, error: error_ptr) }
         raise_if_error(error_ptr)
         @destroyed = true
       end
