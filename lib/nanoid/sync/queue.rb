@@ -8,7 +8,6 @@ module Nanoid; module Sync; class Queue
   def self._include
     unless @@included
       include Nanoid::Document
-      store_in :file
 
       field :sync_class
       field :sync_id
@@ -23,7 +22,6 @@ module Nanoid; module Sync; class Queue
     self._include
 
     instance = klass.send('find', id)
-    instance.update_attributes({:_sync_in_progress => true}, :skip_callbacks => true)
     self.notification(instance, 'start')
     self.create(:sync_class => instance.class.to_s,
                 :sync_id => instance.id,
@@ -35,36 +33,23 @@ module Nanoid; module Sync; class Queue
   def self.notify
     self._include
 
-
-    @@mutex.synchronize do
-      @@notify_count += 1
-    end
-
-    cb = proc do
-      while @@notify_count > 0
-        while job = asc(:created_at).first
-          instance = Object.qualified_const_get(job.sync_class).find(job.sync_id)
-          if instance.updated_at > (instance._synced_at || Time.at(0))
-            job.attempt(instance, :post_or_put)
-          else
-            job.attempt(instance, :get)
-          end
-        end
-
-        @@mutex.synchronize do
-          @@notify_count -= 1
+    @@queue.async do
+      while job = all.first
+        instance = Object.qualified_const_get(job.sync_class).find(job.sync_id)
+        if instance.updated_at > (instance._synced_at || Time.at(0))
+          job.attempt(instance, :post_or_put)
+        else
+          job.attempt(instance, :get)
         end
       end
     end
-
-    @@queue.async(&cb)
     nil
   end
 
   def attempt(instance, method)
     case instance.send(method)
     when :success
-      instance.update_attributes({:_synced_at => Time.now, :_sync_in_progress => false}, :skip_callbacks => true)
+      instance.update_attributes({:_synced_at => Time.now}, :skip_callbacks => true)
       self.destroy
       self.class.notification(instance, 'success')
     when :failure
@@ -78,7 +63,6 @@ module Nanoid; module Sync; class Queue
         self.class.notification(instance, 'failure')
       end
     when :critical
-      instance.update_attributes({:_sync_in_progress => false}, :skip_callbacks => true)
       self.destroy
       self.class.notification(instance, 'failure')
     end

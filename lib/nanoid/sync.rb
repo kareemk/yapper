@@ -10,7 +10,6 @@ module Nanoid::Sync
   included do
     field :_remote_id
     field :_synced_at
-    field :_sync_in_progress
     after_save :sync_if_auto
 
     unless self.ancestors.include?(Nanoid::Timestamps)
@@ -50,10 +49,6 @@ module Nanoid::Sync
 
   def synced?
     !self._remote_id.nil?
-  end
-
-  def sync_in_progress?
-    self._sync_in_progress
   end
 
   def sync

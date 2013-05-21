@@ -2,21 +2,29 @@ class Nanoid::DB
   include Nanoid::Error
   extend  Nanoid::Error
 
-  @@db = nil
+  @@dbs   = {}
+  @@queue = Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.#{@name}")
 
-  def self.default_db(type)
-    type ||= :memory
-    @@db ||= self.new(:type => type)
+  def self.get(name)
+    @@queue.sync do
+      @@dbs[name] ||= self.new(:name => name, :type => :file)
+    end
+    @@dbs[name]
   end
 
   def self.purge
-    @@db.purge if @@db
+    @@dbs.values.each(&:purge)
     true
   end
 
   def initialize(options)
-    error_ptr = Pointer.new(:id)
+    @name = options[:name]
 
+    @queue = NSOperationQueue.alloc.init
+    @queue.name = "#{NSBundle.mainBundle.bundleIdentifier}.nanoid.#{@name}"
+    @queue.MaxConcurrentOperationCount = 1
+
+    error_ptr = Pointer.new(:id)
     case options[:type]
     when :memory
       @store = NSFNanoStore.createAndOpenStoreWithType(NSFMemoryStoreType, path:nil, error: error_ptr)
@@ -28,9 +36,6 @@ class Nanoid::DB
       raise Nanoid::Error::DB.new("store type must be one of: :memory, :temp or :file")
     end
 
-    @queue = NSOperationQueue.alloc.init
-    @queue.name = "#{NSBundle.mainBundle.bundleIdentifier}.nanoid.main"
-    @queue.MaxConcurrentOperationCount = 1
 
     raise_if_error(error_ptr)
   end
@@ -38,18 +43,22 @@ class Nanoid::DB
   def execute(&block)
     result = []
     operation = NSBlockOperation.blockOperationWithBlock lambda { result << block.call(@store) }
+    priority =  NSThread.isMainThread ? NSOperationQueuePriorityHigh : NSOperationQueuePriorityLow
+    operation.setQueuePriority(priority)
     @queue.addOperation(operation)
     operation.waitUntilFinished
     result.first
   end
 
   def purge
-    @store.removeAllObjectsFromStoreAndReturnError(nil)
+    error_ptr = Pointer.new(:id)
+    @store.removeAllObjectsFromStoreAndReturnError(error_ptr)
+    raise_if_error(error_ptr)
   end
 
   private
 
   def document_path
-    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] + '/default.db'
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] + "/#{@name}.db"
   end
 end
