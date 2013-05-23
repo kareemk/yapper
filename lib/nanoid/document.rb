@@ -46,4 +46,14 @@ module Nanoid::Document
   def model_name
     self.class.model_name
   end
+
+  # TODO Add specs
+  def ==(other)
+    self.id == other.id
+  end
+  alias :eql? :==
+
+  def hash
+    self.id.hash
+  end
 end

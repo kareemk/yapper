@@ -71,6 +71,6 @@ module Nanoid; module Sync; class Queue
   private
 
   def self.notification(instance, type)
-      NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{instance._type.downcase}:sync:#{type}", object: instance.id , userInfo: nil)
+      NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{instance._type.downcase}:sync:#{type}", object: instance , userInfo: nil)
   end
 end; end; end
