@@ -8,7 +8,6 @@ module Nanoid::Sync
         method = 'PUT'
       end
 
-      Log.info "[#{Time.now}] Creating request"
       request = http_client.multipartFormRequestWithMethod(
         method,
         path: path(method),
