@@ -23,9 +23,10 @@ module Nanoid; module Sync; class Queue
   def self.start
     self._include
     @@reachability ||= begin
-      reachability = Reachability.reachabilityWithHostname(Nanoid::Sync.base_url)
+      reachability = Reachability.reachabilityForInternetConnection
       reachability.reachableBlock   = lambda { |reachable| self.toggle_queue }
       reachability.unreachableBlock = lambda { |reachable| self.toggle_queue }
+      reachability.reachableOnWWAN = true
       reachability.startNotifier
       reachability
     end
