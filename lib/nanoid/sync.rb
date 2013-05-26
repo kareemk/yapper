@@ -51,6 +51,10 @@ module Nanoid::Sync
     !self._remote_id.nil?
   end
 
+  def sync_paused?
+    Queue.paused?
+  end
+
   def sync
     Queue.process(self.class, self.id)
   end
