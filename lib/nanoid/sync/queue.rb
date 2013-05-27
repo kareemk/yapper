@@ -6,6 +6,11 @@ module Nanoid; module Sync; class Queue
   @@queue.name = "#{NSBundle.mainBundle.bundleIdentifier}.nanoid.sync"
   @@queue.MaxConcurrentOperationCount = 1
 
+  NSNotificationCenter.defaultCenter.addObserver(self,
+                                                 selector: 'background',
+                                                 name: UIApplicationDidEnterBackgroundNotification,
+                                                 object: nil)
+
   # XXX Hack to get around load order
   def self._include
     unless @@included
@@ -35,6 +40,15 @@ module Nanoid; module Sync; class Queue
       jobs = self.all
       Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
       jobs.each { |old_job| handle(old_job) }
+    }
+    @@queue.addOperation(operation)
+  end
+
+  def self.background
+    @@background_task = UIApplication.sharedApplication.beginBackgroundTaskWithExpirationHandler(nil)
+    operation = NSBlockOperation.blockOperationWithBlock lambda {
+      UIApplication.sharedApplication.endBackgroundTask(@@background_task) unless @@background_task == UIBackgroundTaskInvalid
+      @@background_task = UIBackgroundTaskInvalid
     }
     @@queue.addOperation(operation)
   end
