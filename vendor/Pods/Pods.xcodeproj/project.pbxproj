@@ -10,969 +10,7 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>01DDF022571D400EA81F62E9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BD4B5CEE39B4410A848C1A35</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>036EA66A664C436D94166055</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFNetworkActivityIndicatorManager.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0387D765E40C4E36ABA4889E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3EAACC81B6B64DE4B310DC59</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>03AD90399D17445CAA8362FF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSFNanoPredicate.m</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoPredicate.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>040BA9263EAF4C44903A2E87</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoPredicate_Private.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Private/NSFNanoPredicate_Private.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>058BBECDDD1D4BC2B82E8FE2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFXMLRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0950A1628B264FCBAFC72765</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8894E8FCD2684E4C8210E52C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>0B78091BB75A4ED4853E6D3C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F1620B5338554AEA88BF7D37</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>0D6970435D944C83B8B9BCEB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-acknowledgements.plist</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0DAE6C46ADAC4BB08F3ED35B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A2CFE4E903704AACA5C8B881</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>0ECC8E7D27324EDEB75315C8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>43B083835A83468794BAF78E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>133CEF9A63A94720A5CDB8A3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-resources.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>1559D79641894A99922B76DA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5DE5C5ED28CA436487DD9C21</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>18D8110AA2E946E895F1CB9B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoEngine_Private.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Private/NSFNanoEngine_Private.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>1B20124AA2FE4D2781B4DBA1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>53AB3D3659A740E6A4248D92</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>1D547A2143D4463A842D4BE0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5A5CDBD826D8411CB6A606CB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>1ED38A48254A4049B762C5C2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>48AF43EB69334E8A9EDBEC4B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>227766600E634EDBA8AC1724</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict/>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>24541D4B6A5649259EC0AAA7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>348B967C7C7A415DA85C068C</string>
-				<string>8765EDE111A84F96866E30A3</string>
-				<string>1B20124AA2FE4D2781B4DBA1</string>
-				<string>8C75481323D84ED5A918A596</string>
-				<string>01DDF022571D400EA81F62E9</string>
-				<string>0B78091BB75A4ED4853E6D3C</string>
-				<string>921F0C3CD7D94D64A8941BBC</string>
-				<string>9E9BE59CE4BE4E92A740E551</string>
-				<string>1559D79641894A99922B76DA</string>
-				<string>1D547A2143D4463A842D4BE0</string>
-				<string>986AD45D378848ECB641CA62</string>
-				<string>87466CB7817941D0AC21CB57</string>
-				<string>6A9E9323AB3E4B6683A9E5BF</string>
-				<string>3EB9FA8CBED54B8AAC68ADA7</string>
-				<string>ECE37516D43D4A04861A4D19</string>
-				<string>F6A3CC866F1940F5B930AA02</string>
-				<string>DE5760769AB34AB7AE37BB91</string>
-				<string>91136BAB81424CF4ADB0CB92</string>
-				<string>6D801C9A5C494CE0A7CC2F06</string>
-				<string>5023E247CA71463CA14856C0</string>
-				<string>EDB769ADF9794BE28F515542</string>
-				<string>60237EA9A7814D9784B78EA3</string>
-				<string>97E0DF1C4DDD44EFA3FF252E</string>
-				<string>498F45B24355468BA646054B</string>
-				<string>D6CA91184C534B9D85D4B1F2</string>
-				<string>68315685002E42668D366206</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2636FA69C9034571923BF83B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFHTTPClient.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPClient.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>264D6F4DB4F74885B3BA2271</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DDASLLogger.m</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDASLLogger.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>2AA6F150406E401F9B24F4BA</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict/>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>2CE08890FA134301BE7E3970</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AF5F5E3502B947D2B5548B84</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>2EC4DB3F734849FBAB8AF287</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F3397C6CC9734272B97ECCEF</string>
-				<string>DF747A60559749E88914ED64</string>
-				<string>FFE3090785A9488191309551</string>
-				<string>713210CEFCF8444999BE5CAA</string>
-				<string>B61AB129041C4BA5B4B7031C</string>
-				<string>3D871693C06A4D6D8F35B2BF</string>
-				<string>636FA024BE9046989EC38590</string>
-				<string>6BFDD48A43194B95B517440F</string>
-				<string>18D8110AA2E946E895F1CB9B</string>
-				<string>A2CFE4E903704AACA5C8B881</string>
-				<string>AF5F5E3502B947D2B5548B84</string>
-				<string>C7CD5FBBD8F448218DF9FB62</string>
-				<string>040BA9263EAF4C44903A2E87</string>
-				<string>F9719E27AFB5454084F10BAC</string>
-				<string>A67B79451E3F48C69F37F907</string>
-				<string>B0809622594643B88BBF1D41</string>
-				<string>56586F2C39264CE186BF44EA</string>
-				<string>711B013398464FF9BED33C5E</string>
-				<string>9F66046627AE49218C717E8C</string>
-				<string>DFD41BE8BB954DD4A8FAE301</string>
-				<string>E9B2F76137764050952E39C6</string>
-				<string>DDCD969C0C3946E9825CCFA3</string>
-				<string>C626CB833EA1499C83821F45</string>
-				<string>65271133D91B4E748DCC79D2</string>
-				<string>7D03C2940412464487D867D2</string>
-				<string>950F40DF4D864194B67191D2</string>
-				<string>8894E8FCD2684E4C8210E52C</string>
-				<string>03AD90399D17445CAA8362FF</string>
-				<string>54789B33170F40D4A9236EC1</string>
-				<string>92D5651A11AF40859A320643</string>
-				<string>5750B0862A4D43229FDC38D9</string>
-				<string>A08B204DB96344B58313058D</string>
-				<string>54616AC48C9B4C5EBCA86550</string>
-				<string>B80765547F344741A1D2B4BF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>NanoStore</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>332CF28E8C2E43E0B0AAE4DA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>Pods-dummy.m</string>
-			<key>path</key>
-			<string>Pods-dummy.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>348B967C7C7A415DA85C068C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2636FA69C9034571923BF83B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>35E771E4E2D84B429ED363B8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFHTTPRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>3D871693C06A4D6D8F35B2BF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSFOrderedDictionary.m</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Advanced/NSFOrderedDictionary.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>3DB8C4F4F35D4B35A23EAAEE</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>8697935D2FAC42EDAED0AC72</string>
-			<key>buildPhases</key>
-			<array>
-				<string>24541D4B6A5649259EC0AAA7</string>
-				<string>9919427CED1847B6B6569783</string>
-				<string>6A3DB1B990274B1BBE2AC316</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>97C3739C5AB2482EA2E4E3A0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>3EAACC81B6B64DE4B310DC59</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>3EB9FA8CBED54B8AAC68ADA7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EBDAC31ABEC74D7D9E5441E9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>43B083835A83468794BAF78E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DDASLLogger.h</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDASLLogger.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>44DF0F63C54B4F8F96F96C2A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FFE3090785A9488191309551</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>4892F8688B244FF79BC7339B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6FA2D9A6ECBD4C099E902F23</string>
-				<string>89021D7DD3A844928F1F1D32</string>
-				<string>2EC4DB3F734849FBAB8AF287</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>48AF43EB69334E8A9EDBEC4B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DDFileLogger.h</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDFileLogger.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>498F45B24355468BA646054B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A08B204DB96344B58313058D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>4B49E549B8074324A763A26E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>97C3739C5AB2482EA2E4E3A0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4C41362A44014A3BAD8E1A29</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DDFileLogger.m</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDFileLogger.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5023E247CA71463CA14856C0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C626CB833EA1499C83821F45</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>50BDC45080BA42A68D55258E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F9719E27AFB5454084F10BAC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>52DDA492E997423299A0CA27</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CAAE284B849F4F66905C2807</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>53AB3D3659A740E6A4248D92</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFImageRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFImageRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>53C4581892904696AB45F243</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D8ED63080D794D65AEBB6151</string>
-				<string>CFAEB051989E4424BF03EEEF</string>
-				<string>FA1E15A335CB499598507715</string>
-				<string>133CEF9A63A94720A5CDB8A3</string>
-				<string>0D6970435D944C83B8B9BCEB</string>
-				<string>9FC69FEEF04E4ABB99E19450</string>
-				<string>332CF28E8C2E43E0B0AAE4DA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>54616AC48C9B4C5EBCA86550</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoStore.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoStore.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>54789B33170F40D4A9236EC1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoSearch.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoSearch.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5552B54ED8464006A1B7E56C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F3397C6CC9734272B97ECCEF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>556708F8BDC345C8B676F2DF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5CB6D719D812408D9489685F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>56586F2C39264CE186BF44EA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NanoStore.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NanoStore.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5750B0862A4D43229FDC38D9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoSortDescriptor.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoSortDescriptor.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>599859323BE8491CA1494AF5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFJSONRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5A5CDBD826D8411CB6A606CB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DDAbstractDatabaseLogger.m</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDAbstractDatabaseLogger.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5BC050152DC542F8BD5992D8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFURLConnectionOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5CB6D719D812408D9489685F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DDLog.h</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDLog.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5DE5C5ED28CA436487DD9C21</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIImageView+AFNetworking.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/UIImageView+AFNetworking.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>60237EA9A7814D9784B78EA3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>03AD90399D17445CAA8362FF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>636FA024BE9046989EC38590</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NanoStore_Private.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Private/NanoStore_Private.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>65271133D91B4E748DCC79D2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoObject.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoObject.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>68315685002E42668D366206</key>
-		<dict>
-			<key>fileRef</key>
-			<string>332CF28E8C2E43E0B0AAE4DA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>6A3DB1B990274B1BBE2AC316</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>92CDA2ED4CC1473781ADD883</string>
-				<string>F2896E548EC54D11B567C431</string>
-				<string>AA8A1878703D4FE58D09E4A2</string>
-				<string>A8BCB41169E7432BB5485059</string>
-				<string>93785C726ECA47878A45A20D</string>
-				<string>9F77576046C344EDB003A6E0</string>
-				<string>7B991D0B189C4373AA2E1532</string>
-				<string>A800C9D847DA4BFD95F9C399</string>
-				<string>BB252ECBBB02497CBAE70C74</string>
-				<string>52DDA492E997423299A0CA27</string>
-				<string>A81AF37CEF7E486AA6CDF551</string>
-				<string>0ECC8E7D27324EDEB75315C8</string>
-				<string>1ED38A48254A4049B762C5C2</string>
-				<string>556708F8BDC345C8B676F2DF</string>
-				<string>D0292FD426C5446FBDCE6563</string>
-				<string>5552B54ED8464006A1B7E56C</string>
-				<string>44DF0F63C54B4F8F96F96C2A</string>
-				<string>AD95B0B488F248F4A7275414</string>
-				<string>B97E11D046DD4AC48B20B959</string>
-				<string>BF887EE3385341E58C8507DD</string>
-				<string>8E05B9A158464916947F0FB2</string>
-				<string>0DAE6C46ADAC4BB08F3ED35B</string>
-				<string>2CE08890FA134301BE7E3970</string>
-				<string>6E6B4029812D460C8F2222C2</string>
-				<string>A2A7C575FA244167B64D8F15</string>
-				<string>50BDC45080BA42A68D55258E</string>
-				<string>F0690DAF27FB4265B8E13DA6</string>
-				<string>C4B81AB6871140D0B43D082C</string>
-				<string>B5D78EC941A64967A29E2168</string>
-				<string>74515B986E3B4EFBA5086828</string>
-				<string>B933FE1677EB4EF8971E8D9D</string>
-				<string>8F8235F277C447DFA12327EC</string>
-				<string>9F6EFAFDB6CB47A293264A54</string>
-				<string>E25045AA5BB64747AAFC37A1</string>
-				<string>0950A1628B264FCBAFC72765</string>
-				<string>FE2CC21FB9054AB1AF080F4E</string>
-				<string>D0713E4522E34BC89FE01A51</string>
-				<string>D1A86D155AD4428794DC0DDE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>6A9E9323AB3E4B6683A9E5BF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8E836E41C6E94F2B8BFF4944</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>6BFDD48A43194B95B517440F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoBag_Private.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Private/NSFNanoBag_Private.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>6D801C9A5C494CE0A7CC2F06</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E9B2F76137764050952E39C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>6E6B4029812D460C8F2222C2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C7CD5FBBD8F448218DF9FB62</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>6FA2D9A6ECBD4C099E902F23</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>EF447671590D445085882DFA</string>
-				<string>2636FA69C9034571923BF83B</string>
-				<string>35E771E4E2D84B429ED363B8</string>
-				<string>F60DF140C85C48119A53DD4E</string>
-				<string>F2CE8996F1DC4ACFA970A012</string>
-				<string>53AB3D3659A740E6A4248D92</string>
-				<string>599859323BE8491CA1494AF5</string>
-				<string>FDA210D3F30B4220ADA43C1C</string>
-				<string>036EA66A664C436D94166055</string>
-				<string>BD4B5CEE39B4410A848C1A35</string>
-				<string>F56B4E3EC1894442B3F3851B</string>
-				<string>85117A334A634753BE743856</string>
-				<string>F1620B5338554AEA88BF7D37</string>
-				<string>5BC050152DC542F8BD5992D8</string>
-				<string>F09BD533BAD844479CD31054</string>
-				<string>B84CC488D8024362B41FCC96</string>
-				<string>058BBECDDD1D4BC2B82E8FE2</string>
-				<string>CAAE284B849F4F66905C2807</string>
-				<string>5DE5C5ED28CA436487DD9C21</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>AFNetworking</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>711B013398464FF9BED33C5E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoBag.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoBag.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>713210CEFCF8444999BE5CAA</key>
+		<key>0272EF44BA4D4D299A6141F7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -987,128 +25,37 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>7179EEBC389B44288408476B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>53C4581892904696AB45F243</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>73E549A4ADBA4B5C87C2B20C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>MobileCoreServices.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>74515B986E3B4EFBA5086828</key>
+		<key>02CF40362B4B4EEE8CC7AA9A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>711B013398464FF9BED33C5E</string>
+			<string>51A509CEECE14D3CB2F1F671</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>79E6229148E74F7CB915DCAC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9BE8C06AAB6649F9A80671A2</string>
-				<string>4892F8688B244FF79BC7339B</string>
-				<string>4B49E549B8074324A763A26E</string>
-				<string>7179EEBC389B44288408476B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7B991D0B189C4373AA2E1532</key>
+		<key>02F92AECF3744A6B8FC3EAEA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>85117A334A634753BE743856</string>
+			<string>B9EB110E00874ECAB14FC529</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>7D03C2940412464487D867D2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSFNanoObject.m</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoObject.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7E443852F2E9486B9DCAF2E1</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>227766600E634EDBA8AC1724</string>
-				<string>2AA6F150406E401F9B24F4BA</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>85117A334A634753BE743856</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFPropertyListRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>8697935D2FAC42EDAED0AC72</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>A5BDDE7184A9401FAC396A26</string>
-				<string>EEC8D5E34C9443B5AF71194F</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>87466CB7817941D0AC21CB57</key>
+		<key>05ECAC94CF204B8BB580C368</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4C41362A44014A3BAD8E1A29</string>
+			<string>9C3F21DF1BB24137A990F938</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>061E0B72567A4A04AEBC9785</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5331A61FB805431B8C4CC04D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1117,47 +64,20 @@
 				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>8765EDE111A84F96866E30A3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F60DF140C85C48119A53DD4E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>8894E8FCD2684E4C8210E52C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoPredicate.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoPredicate.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>89021D7DD3A844928F1F1D32</key>
+		<key>065FD45FD7134A959A88FD51</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>B4F73A3A38224D1AA7E3D1B9</string>
-				<string>5A5CDBD826D8411CB6A606CB</string>
-				<string>43B083835A83468794BAF78E</string>
-				<string>264D6F4DB4F74885B3BA2271</string>
-				<string>48AF43EB69334E8A9EDBEC4B</string>
-				<string>4C41362A44014A3BAD8E1A29</string>
-				<string>5CB6D719D812408D9489685F</string>
-				<string>8E836E41C6E94F2B8BFF4944</string>
-				<string>F49896D163EB48B99F9DEE24</string>
-				<string>EBDAC31ABEC74D7D9E5441E9</string>
+				<string>4163FBE1631D43578C80A282</string>
+				<string>25E1E1018CE24776ADFDD0B7</string>
+				<string>A3955E4EFE084B539721F2C5</string>
+				<string>48D1ED6731C042DCB173BE34</string>
+				<string>B03CE8DCF7BE4F40A6D56991</string>
+				<string>DD597BBF66734F75B1A16D1D</string>
+				<string>A85E06B83C564A9D99350B0D</string>
+				<string>2C18782D28B14639A7CD8E9E</string>
+				<string>F964F781ED5446CD9306DDC5</string>
+				<string>277E822C188B4265AA577649</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1166,124 +86,20 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8C75481323D84ED5A918A596</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FDA210D3F30B4220ADA43C1C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>8E05B9A158464916947F0FB2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>18D8110AA2E946E895F1CB9B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>8E836E41C6E94F2B8BFF4944</key>
+		<key>06FE6F64861449F7BA596B13</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>DDLog.m</string>
+			<string>Pods-acknowledgements.plist</string>
 			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDLog.m</string>
+			<string>Pods-acknowledgements.plist</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>8F8235F277C447DFA12327EC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DDCD969C0C3946E9825CCFA3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>91136BAB81424CF4ADB0CB92</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9F66046627AE49218C717E8C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>921F0C3CD7D94D64A8941BBC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F09BD533BAD844479CD31054</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>92CDA2ED4CC1473781ADD883</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EF447671590D445085882DFA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>92D5651A11AF40859A320643</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSFNanoSearch.m</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoSearch.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>93785C726ECA47878A45A20D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>036EA66A664C436D94166055</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>94C8E2B33E864A16BD68A4B1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SystemConfiguration.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>950F40DF4D864194B67191D2</key>
+		<key>0917BB6B2F944F2CB4B98DA4</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1298,77 +114,71 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>97C3739C5AB2482EA2E4E3A0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>97E0DF1C4DDD44EFA3FF252E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92D5651A11AF40859A320643</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>986AD45D378848ECB641CA62</key>
-		<dict>
-			<key>fileRef</key>
-			<string>264D6F4DB4F74885B3BA2271</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>9919427CED1847B6B6569783</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0387D765E40C4E36ABA4889E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>9BE8C06AAB6649F9A80671A2</key>
+		<key>0A6DFB542C6A4B61A579648D</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>3EAACC81B6B64DE4B310DC59</string>
-				<string>73E549A4ADBA4B5C87C2B20C</string>
-				<string>94C8E2B33E864A16BD68A4B1</string>
+				<string>E727E7678B1948FBBB026BEF</string>
+				<string>A97004AEC6CB448EA062994C</string>
+				<string>7AF02DE1280147B1BE043D19</string>
+				<string>BF5D2CADACCA472E82187C95</string>
+				<string>0E54D37998BA4B5F84EA292E</string>
+				<string>B4F8379B29A1476C83860061</string>
+				<string>C1D1947053B34C74BA4F58AC</string>
+				<string>F7EBC71C40E743E9AFB9E959</string>
+				<string>836EAE64843141DBB6F8DF5D</string>
+				<string>F3309CD324F84EAAB5C5F03C</string>
+				<string>E59CC90F0F9244A2901DF4C6</string>
+				<string>9C7461E1B68B40C8BF47A88C</string>
+				<string>AA24CF2E017F4FB7A6A034E8</string>
+				<string>D65BF73F7EDD4314B2FC00C8</string>
+				<string>EA023D1450824A41B94FE7D6</string>
+				<string>44B51F1599EF45339C2B521E</string>
+				<string>B35515AD42DD488DA073C54F</string>
+				<string>AF0D120AD88D4591AAFC3AB4</string>
+				<string>84A9F685D87741CC91601798</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Frameworks</string>
+			<string>AFNetworking</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9E9BE59CE4BE4E92A740E551</key>
+		<key>0E54D37998BA4B5F84EA292E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFImageRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFImageRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>102BA06873554647BBB0FEF1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SystemConfiguration.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>1592C8BDA4E94720B375E590</key>
 		<dict>
 			<key>fileRef</key>
-			<string>058BBECDDD1D4BC2B82E8FE2</string>
+			<string>425D2F3A36464459B1586D85</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1377,7 +187,79 @@
 				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>9F66046627AE49218C717E8C</key>
+		<key>17A56693D26147C1BBABDD24</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NanoStore.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NanoStore.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>18642FD21A764AE2A32B9A9D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoPredicate_Private.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Private/NSFNanoPredicate_Private.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1A9660816E784F18AB55713B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoBag.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoBag.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1B21ABEA07A04D7C8A67C4CE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoResult.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Advanced/NSFNanoResult.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1C13FEAD4806477DACE41865</key>
+		<dict>
+			<key>fileRef</key>
+			<string>84A9F685D87741CC91601798</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>1C3269C8434A471E8EACC7B2</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1386,44 +268,50 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>NSFNanoBag.m</string>
+			<string>Reachability.m</string>
 			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoBag.m</string>
+			<string>Reachability/Reachability.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>9F6EFAFDB6CB47A293264A54</key>
+		<key>1CE5382B1F454400B2950C09</key>
 		<dict>
 			<key>fileRef</key>
-			<string>65271133D91B4E748DCC79D2</string>
+			<string>B35515AD42DD488DA073C54F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
-			<dict/>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
 		</dict>
-		<key>9F77576046C344EDB003A6E0</key>
+		<key>1DA65958A6BE4C748F67F215</key>
 		<dict>
-			<key>fileRef</key>
-			<string>F56B4E3EC1894442B3F3851B</string>
+			<key>children</key>
+			<array>
+				<string>B4E5A837733F4F7B87A95C7E</string>
+				<string>8C35A20849264D34ABCF0A16</string>
+				<string>387748836A3944DAB648422D</string>
+				<string>102BA06873554647BBB0FEF1</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>9FC69FEEF04E4ABB99E19450</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Pods-acknowledgements.markdown</string>
-			<key>path</key>
-			<string>Pods-acknowledgements.markdown</string>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A08B204DB96344B58313058D</key>
+		<key>1EA858FD3AF546F78F79476F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F55C8F21282B449C8A0DEF49</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>20FB7CEDE51D4B4896D80170</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1438,16 +326,184 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>A2A7C575FA244167B64D8F15</key>
+		<key>2138749B0B294F3A995920B6</key>
 		<dict>
 			<key>fileRef</key>
-			<string>040BA9263EAF4C44903A2E87</string>
+			<string>C1D1947053B34C74BA4F58AC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>A2CFE4E903704AACA5C8B881</key>
+		<key>217FDA94A0664066BC531727</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFNanoSearch.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoSearch.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>24C54B55EF3747338D5D57C3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>48D1ED6731C042DCB173BE34</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>25CD50C4FC414E968839C4A7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D65BF73F7EDD4314B2FC00C8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>25E1E1018CE24776ADFDD0B7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DDAbstractDatabaseLogger.m</string>
+			<key>path</key>
+			<string>CocoaLumberjack/Lumberjack/DDAbstractDatabaseLogger.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>277E822C188B4265AA577649</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DDTTYLogger.m</string>
+			<key>path</key>
+			<string>CocoaLumberjack/Lumberjack/DDTTYLogger.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>27DB8AECAC4A4481AE18A1B2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>277E822C188B4265AA577649</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2BA06D0DC54D487F851F05F0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BF5D2CADACCA472E82187C95</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2C18782D28B14639A7CD8E9E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DDLog.m</string>
+			<key>path</key>
+			<string>CocoaLumberjack/Lumberjack/DDLog.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2C4FAAAC9A54456899FD27CA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DD597BBF66734F75B1A16D1D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>3333E11BBCE84214A221F71A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>25E1E1018CE24776ADFDD0B7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>33DDC587826343BFAA58AF54</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EA023D1450824A41B94FE7D6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>387748836A3944DAB648422D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Security.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Security.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>3953CE2C0E5441B982FA3FDC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B4F8379B29A1476C83860061</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>4163FBE1631D43578C80A282</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1456,48 +512,256 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSFNanoExpression_Private.h</string>
+			<string>DDAbstractDatabaseLogger.h</string>
 			<key>path</key>
-			<string>NanoStore/Classes/Private/NSFNanoExpression_Private.h</string>
+			<string>CocoaLumberjack/Lumberjack/DDAbstractDatabaseLogger.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>A37B2C327CE143848DDA8888</key>
+		<key>4172229F09EF4437A9E0D909</key>
 		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0450</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>7E443852F2E9486B9DCAF2E1</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
+			<key>fileRef</key>
+			<string>ED0C311FD61A470198C1FAED</string>
 			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>79E6229148E74F7CB915DCAC</string>
-			<key>productRefGroup</key>
-			<string>4B49E549B8074324A763A26E</string>
-			<key>projectReferences</key>
-			<array/>
-			<key>targets</key>
-			<array>
-				<string>3DB8C4F4F35D4B35A23EAAEE</string>
-			</array>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
 		</dict>
-		<key>A5BDDE7184A9401FAC396A26</key>
+		<key>4214EA765824487C85E756AF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFNanoEngine.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Advanced/NSFNanoEngine.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>425D2F3A36464459B1586D85</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFNanoObject.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoObject.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>44B51F1599EF45339C2B521E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFXMLRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>459638BC0EB94778B0B8A570</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9C7461E1B68B40C8BF47A88C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>45C0E817523448508ECFB6F5</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.1</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>478653A1E96646E798FBC801</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoBag_Private.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Private/NSFNanoBag_Private.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>48D1ED6731C042DCB173BE34</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DDASLLogger.m</string>
+			<key>path</key>
+			<string>CocoaLumberjack/Lumberjack/DDASLLogger.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4C244378871647F38E73812E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D528CADA6CB44169939AB5DB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4F1B57B49E964C2DA8938916</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AF0D120AD88D4591AAFC3AB4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>4F93810F34E843A9875EE77C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoExpression.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoExpression.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4F9F55C2AD2441DD91408486</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5030A90C94E648A9AE2CE495</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1DA65958A6BE4C748F67F215</string>
+				<string>E632A06CB11A4E39A5BA7DE3</string>
+				<string>EDCFDFDE2C554CF0A85BB7E9</string>
+				<string>A0C209422CB04017A56A03E2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>51A509CEECE14D3CB2F1F671</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoResult_Private.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Private/NSFNanoResult_Private.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>52095136E1B546B6B50647C8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0E54D37998BA4B5F84EA292E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>5232A6555C8A4ACFBCC183DF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>93B12238D30C4E1791FB400A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5331A61FB805431B8C4CC04D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFOrderedDictionary.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Advanced/NSFOrderedDictionary.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>548904C82F6D4423B7319A64</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFNanoGlobals.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoGlobals.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>54B693BD58794C43A976D44A</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>D8ED63080D794D65AEBB6151</string>
+			<string>4F9F55C2AD2441DD91408486</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -1552,82 +816,42 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>A67B79451E3F48C69F37F907</key>
+		<key>57CCEB3089394734994DF2AC</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildConfigurations</key>
+			<array>
+				<string>45C0E817523448508ECFB6F5</string>
+				<string>64CEA1973E364562B5D095A8</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoSearch_Private.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Private/NSFNanoSearch_Private.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
+			<string>XCConfigurationList</string>
 		</dict>
-		<key>A800C9D847DA4BFD95F9C399</key>
+		<key>587B91C663BE4C6986D72B74</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5BC050152DC542F8BD5992D8</string>
+			<string>6D5278884B644A638B7C5D72</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5CD1F92F19954063BB081578</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D97F2E4BC6BC4FA091623209</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>A81AF37CEF7E486AA6CDF551</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B4F73A3A38224D1AA7E3D1B9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>A8BCB41169E7432BB5485059</key>
-		<dict>
-			<key>fileRef</key>
-			<string>599859323BE8491CA1494AF5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>AA8A1878703D4FE58D09E4A2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F2CE8996F1DC4ACFA970A012</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>AD95B0B488F248F4A7275414</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B61AB129041C4BA5B4B7031C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>AF5F5E3502B947D2B5548B84</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoGlobals_Private.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Private/NSFNanoGlobals_Private.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B0809622594643B88BBF1D41</key>
+		<key>5CFDBC77215348E58BBA4937</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1642,7 +866,7 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>B4F73A3A38224D1AA7E3D1B9</key>
+		<key>5E1E77A76F8F44BAB7329A64</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1651,22 +875,124 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>DDAbstractDatabaseLogger.h</string>
+			<string>NSFNanoObject.h</string>
 			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDAbstractDatabaseLogger.h</string>
+			<string>NanoStore/Classes/Public/NSFNanoObject.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>B5D78EC941A64967A29E2168</key>
+		<key>5E4E25A7AC624F04B729DA93</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoSearch_Private.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Private/NSFNanoSearch_Private.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5EBB8FBBAE7544EDA82DE84B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>56586F2C39264CE186BF44EA</string>
+			<string>EDAA5C4F494B48708124BFD7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>B61AB129041C4BA5B4B7031C</key>
+		<key>60AD5E39342845F58FE4EAB0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>548904C82F6D4423B7319A64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>64CEA1973E364562B5D095A8</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.1</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>666E247D90A6447C89001D84</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>EE2CE3D2B72F47A786F373FE</string>
+				<string>BE478DF515C94ECC85143AD0</string>
+				<string>52095136E1B546B6B50647C8</string>
+				<string>2138749B0B294F3A995920B6</string>
+				<string>E8D57004579C4863BCAF7263</string>
+				<string>AE621CCB6DDC4699A9576FE2</string>
+				<string>459638BC0EB94778B0B8A570</string>
+				<string>25CD50C4FC414E968839C4A7</string>
+				<string>9C72B09BB8794F299A812B9C</string>
+				<string>4F1B57B49E964C2DA8938916</string>
+				<string>73EC1940E2F04EBAB79E821B</string>
+				<string>F48359A493D64422840EA1C4</string>
+				<string>FB11D98E2B6849A58071D806</string>
+				<string>E014D24FD3E0441BBD9F2CB9</string>
+				<string>BC95AA996E874C89B2835792</string>
+				<string>1EA858FD3AF546F78F79476F</string>
+				<string>7D2A10747C7D4D72BD78718F</string>
+				<string>EAED09B3B1524006855F43BD</string>
+				<string>79B51DFEB03A4CD2B467B4DB</string>
+				<string>E91B7066FFEA4896AC82EDBA</string>
+				<string>5CD1F92F19954063BB081578</string>
+				<string>DBC2AAC7630D46A3A352D875</string>
+				<string>DA2921ECADDB415783B7B044</string>
+				<string>05ECAC94CF204B8BB580C368</string>
+				<string>9633DC9DC7FD49AA8AD82316</string>
+				<string>02CF40362B4B4EEE8CC7AA9A</string>
+				<string>77A8E5EA620D403E825C2DAB</string>
+				<string>DC52A3F3B0C443889156BDF4</string>
+				<string>D56837F343B0466995733C5A</string>
+				<string>AE84FC1F818A4DD4B27E15FC</string>
+				<string>8A303EE1DDDB4700BC6311C8</string>
+				<string>BA1FB5AE896846369B0ACDB6</string>
+				<string>9ECBAFA14DFB42E39953AEA5</string>
+				<string>692790BF385946ACB8B3F994</string>
+				<string>97EDEB4BAA0542F0A365E621</string>
+				<string>86562F32508B46C69B5E74E6</string>
+				<string>02F92AECF3744A6B8FC3EAEA</string>
+				<string>5EBB8FBBAE7544EDA82DE84B</string>
+				<string>C08D3F92C98544C98D5E7100</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>669FB6D0B9A648A68AF457CD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>20FB7CEDE51D4B4896D80170</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>678ED9348A91470B83AA9BAA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1675,13 +1001,261 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSFOrderedDictionary.h</string>
+			<string>NanoStore_Private.h</string>
 			<key>path</key>
-			<string>NanoStore/Classes/Advanced/NSFOrderedDictionary.h</string>
+			<string>NanoStore/Classes/Private/NanoStore_Private.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>B80765547F344741A1D2B4BF</key>
+		<key>692790BF385946ACB8B3F994</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0917BB6B2F944F2CB4B98DA4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>6D5278884B644A638B7C5D72</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFNanoBag.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoBag.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>722CA2004AD545ADB8A8BCEA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Reachability.h</string>
+			<key>path</key>
+			<string>Reachability/Reachability.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>72C015F659974E8AA60D1E38</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-dummy.m</string>
+			<key>path</key>
+			<string>Pods-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>73EC1940E2F04EBAB79E821B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4163FBE1631D43578C80A282</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>745A9981DC8C4E949804F048</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoSearch.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoSearch.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>77A8E5EA620D403E825C2DAB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E4E25A7AC624F04B729DA93</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>78693B2303CE4ACF83545046</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoPredicate.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoPredicate.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>79B51DFEB03A4CD2B467B4DB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>678ED9348A91470B83AA9BAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>7AF02DE1280147B1BE043D19</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFHTTPRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>7D2A10747C7D4D72BD78718F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1B21ABEA07A04D7C8A67C4CE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>836EAE64843141DBB6F8DF5D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFNetworkActivityIndicatorManager.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>84A9F685D87741CC91601798</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIImageView+AFNetworking.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/UIImageView+AFNetworking.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>86562F32508B46C69B5E74E6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>745A9981DC8C4E949804F048</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>86B776A78B7C41098A82BB67</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4214EA765824487C85E756AF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>89B9FA48C0B5497EB2A3D051</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>54B693BD58794C43A976D44A</string>
+				<string>E074845CD6144C948E684A9A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>8A303EE1DDDB4700BC6311C8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4F93810F34E843A9875EE77C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>8AD996795BB74D0C8DD7913F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A97004AEC6CB448EA062994C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>8B79C25C1CB84028AD76AEA1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7EBC71C40E743E9AFB9E959</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>8C35A20849264D34ABCF0A16</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MobileCoreServices.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>93B12238D30C4E1791FB400A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1696,7 +1270,37 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>B84CC488D8024362B41FCC96</key>
+		<key>95CE60EF5658443B976B002A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>217FDA94A0664066BC531727</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>9633DC9DC7FD49AA8AD82316</key>
+		<dict>
+			<key>fileRef</key>
+			<string>18642FD21A764AE2A32B9A9D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>97EDEB4BAA0542F0A365E621</key>
+		<dict>
+			<key>fileRef</key>
+			<string>78693B2303CE4ACF83545046</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>98C45F52812F4E7198504B44</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1705,88 +1309,32 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>AFXMLRequestOperation.h</string>
+			<string>NSFNanoGlobals_Private.h</string>
 			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.h</string>
+			<string>NanoStore/Classes/Private/NSFNanoGlobals_Private.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>B933FE1677EB4EF8971E8D9D</key>
+		<key>9B83A60635DA4DEC94DC5A46</key>
 		<dict>
-			<key>fileRef</key>
-			<string>DFD41BE8BB954DD4A8FAE301</string>
+			<key>children</key>
+			<array>
+				<string>4F9F55C2AD2441DD91408486</string>
+				<string>D6C7F91575FC40CAA18D1CF5</string>
+				<string>FEF704B1CB874C94990EF4F3</string>
+				<string>EBF82EEA456F435BA49601BD</string>
+				<string>06FE6F64861449F7BA596B13</string>
+				<string>C8D46747789A48D7B55B1BB3</string>
+				<string>72C015F659974E8AA60D1E38</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>B97E11D046DD4AC48B20B959</key>
-		<dict>
-			<key>fileRef</key>
-			<string>636FA024BE9046989EC38590</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>BB252ECBBB02497CBAE70C74</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B84CC488D8024362B41FCC96</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>BD4B5CEE39B4410A848C1A35</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>AFNetworkActivityIndicatorManager.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m</string>
+			<string>Pods</string>
 			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>BF887EE3385341E58C8507DD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6BFDD48A43194B95B517440F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>C4B81AB6871140D0B43D082C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B0809622594643B88BBF1D41</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>C626CB833EA1499C83821F45</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSFNanoGlobals.m</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoGlobals.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>C7CD5FBBD8F448218DF9FB62</key>
+		<key>9C3F21DF1BB24137A990F938</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1801,7 +1349,186 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>CAAE284B849F4F66905C2807</key>
+		<key>9C72B09BB8794F299A812B9C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>44B51F1599EF45339C2B521E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>9C7461E1B68B40C8BF47A88C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFPropertyListRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9ECBAFA14DFB42E39953AEA5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E1E77A76F8F44BAB7329A64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>A0C209422CB04017A56A03E2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9B83A60635DA4DEC94DC5A46</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A339CF08E34C48E9AA2571AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F55C8F21282B449C8A0DEF49</string>
+				<string>4214EA765824487C85E756AF</string>
+				<string>1B21ABEA07A04D7C8A67C4CE</string>
+				<string>0272EF44BA4D4D299A6141F7</string>
+				<string>E7DBF83ACAEB4CE2B1D809FF</string>
+				<string>5331A61FB805431B8C4CC04D</string>
+				<string>678ED9348A91470B83AA9BAA</string>
+				<string>478653A1E96646E798FBC801</string>
+				<string>D97F2E4BC6BC4FA091623209</string>
+				<string>FD5CA970F8D04E0DB5C98AA6</string>
+				<string>98C45F52812F4E7198504B44</string>
+				<string>9C3F21DF1BB24137A990F938</string>
+				<string>18642FD21A764AE2A32B9A9D</string>
+				<string>51A509CEECE14D3CB2F1F671</string>
+				<string>5E4E25A7AC624F04B729DA93</string>
+				<string>5CFDBC77215348E58BBA4937</string>
+				<string>17A56693D26147C1BBABDD24</string>
+				<string>1A9660816E784F18AB55713B</string>
+				<string>6D5278884B644A638B7C5D72</string>
+				<string>4F93810F34E843A9875EE77C</string>
+				<string>ED0C311FD61A470198C1FAED</string>
+				<string>D8B3FDD6BFED432992A8DD23</string>
+				<string>548904C82F6D4423B7319A64</string>
+				<string>5E1E77A76F8F44BAB7329A64</string>
+				<string>425D2F3A36464459B1586D85</string>
+				<string>0917BB6B2F944F2CB4B98DA4</string>
+				<string>78693B2303CE4ACF83545046</string>
+				<string>DCC9634A941445F791DD699D</string>
+				<string>745A9981DC8C4E949804F048</string>
+				<string>217FDA94A0664066BC531727</string>
+				<string>B9EB110E00874ECAB14FC529</string>
+				<string>20FB7CEDE51D4B4896D80170</string>
+				<string>EDAA5C4F494B48708124BFD7</string>
+				<string>93B12238D30C4E1791FB400A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>NanoStore</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A3955E4EFE084B539721F2C5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>DDASLLogger.h</string>
+			<key>path</key>
+			<string>CocoaLumberjack/Lumberjack/DDASLLogger.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A85E06B83C564A9D99350B0D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>DDLog.h</string>
+			<key>path</key>
+			<string>CocoaLumberjack/Lumberjack/DDLog.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A97004AEC6CB448EA062994C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFHTTPClient.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPClient.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AA24CF2E017F4FB7A6A034E8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFPropertyListRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AB8AE185415E466F877ADE18</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1C3269C8434A471E8EACC7B2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>AE621CCB6DDC4699A9576FE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E59CC90F0F9244A2901DF4C6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>AE84FC1F818A4DD4B27E15FC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1A9660816E784F18AB55713B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>AF0D120AD88D4591AAFC3AB4</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1816,7 +1543,7 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>CFAEB051989E4424BF03EEEF</key>
+		<key>B03CE8DCF7BE4F40A6D56991</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1825,43 +1552,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Pods-header.h</string>
+			<string>DDFileLogger.h</string>
 			<key>path</key>
-			<string>Pods-header.h</string>
+			<string>CocoaLumberjack/Lumberjack/DDFileLogger.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>D0292FD426C5446FBDCE6563</key>
+		<key>B32A27058E0E4355986FA6C0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F49896D163EB48B99F9DEE24</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>D0713E4522E34BC89FE01A51</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5750B0862A4D43229FDC38D9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>D1A86D155AD4428794DC0DDE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>54616AC48C9B4C5EBCA86550</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>D6CA91184C534B9D85D4B1F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B80765547F344741A1D2B4BF</string>
+			<string>F3309CD324F84EAAB5C5F03C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1870,22 +1570,278 @@
 				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>D8ED63080D794D65AEBB6151</key>
+		<key>B34FEB0FCB9D49B8A2DA0FB0</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>B35515AD42DD488DA073C54F</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>Pods.xcconfig</string>
+			<string>AFXMLRequestOperation.m</string>
 			<key>path</key>
-			<string>Pods.xcconfig</string>
+			<string>AFNetworking/AFNetworking/AFXMLRequestOperation.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>DDCD969C0C3946E9825CCFA3</key>
+		<key>B4E5A837733F4F7B87A95C7E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>B4F8379B29A1476C83860061</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFImageRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFImageRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>B7CC84E3A7D54C989506B40C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C18782D28B14639A7CD8E9E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>B8AAC49E3B774CF68BE93A1D</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0450</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>57CCEB3089394734994DF2AC</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>5030A90C94E648A9AE2CE495</string>
+			<key>productRefGroup</key>
+			<string>EDCFDFDE2C554CF0A85BB7E9</string>
+			<key>projectReferences</key>
+			<array/>
+			<key>targets</key>
+			<array>
+				<string>C9A946E2EAC8486F9B5A159D</string>
+			</array>
+		</dict>
+		<key>B9EB110E00874ECAB14FC529</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoSortDescriptor.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoSortDescriptor.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>BA1FB5AE896846369B0ACDB6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D8B3FDD6BFED432992A8DD23</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>BC95AA996E874C89B2835792</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F964F781ED5446CD9306DDC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>BE478DF515C94ECC85143AD0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7AF02DE1280147B1BE043D19</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>BF5D2CADACCA472E82187C95</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFHTTPRequestOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C08D3F92C98544C98D5E7100</key>
+		<dict>
+			<key>fileRef</key>
+			<string>722CA2004AD545ADB8A8BCEA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>C1D1947053B34C74BA4F58AC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFJSONRequestOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFJSONRequestOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C8D46747789A48D7B55B1BB3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C9A946E2EAC8486F9B5A159D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>89B9FA48C0B5497EB2A3D051</string>
+			<key>buildPhases</key>
+			<array>
+				<string>E5A860CE55E04A58A3B6C2AF</string>
+				<string>4C244378871647F38E73812E</string>
+				<string>666E247D90A6447C89001D84</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>B34FEB0FCB9D49B8A2DA0FB0</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>D528CADA6CB44169939AB5DB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B4E5A837733F4F7B87A95C7E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>D56837F343B0466995733C5A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>17A56693D26147C1BBABDD24</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>D65BF73F7EDD4314B2FC00C8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>AFURLConnectionOperation.h</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D6C7F91575FC40CAA18D1CF5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-environment.h</string>
+			<key>path</key>
+			<string>Pods-environment.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D8B3FDD6BFED432992A8DD23</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1900,34 +1856,7 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>DE5760769AB34AB7AE37BB91</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3D871693C06A4D6D8F35B2BF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>DF747A60559749E88914ED64</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSFNanoEngine.m</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Advanced/NSFNanoEngine.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>DFD41BE8BB954DD4A8FAE301</key>
+		<key>D97F2E4BC6BC4FA091623209</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1936,55 +1865,25 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSFNanoExpression.h</string>
+			<string>NSFNanoEngine_Private.h</string>
 			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoExpression.h</string>
+			<string>NanoStore/Classes/Private/NSFNanoEngine_Private.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>E25045AA5BB64747AAFC37A1</key>
+		<key>DA2921ECADDB415783B7B044</key>
 		<dict>
 			<key>fileRef</key>
-			<string>950F40DF4D864194B67191D2</string>
+			<string>98C45F52812F4E7198504B44</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>E9B2F76137764050952E39C6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSFNanoExpression.m</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Public/NSFNanoExpression.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>EBDAC31ABEC74D7D9E5441E9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>DDTTYLogger.m</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDTTYLogger.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>ECE37516D43D4A04861A4D19</key>
+		<key>DA5572CC2F31498F92004061</key>
 		<dict>
 			<key>fileRef</key>
-			<string>DF747A60559749E88914ED64</string>
+			<string>0272EF44BA4D4D299A6141F7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1993,22 +1892,81 @@
 				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
 			</dict>
 		</dict>
-		<key>EDB769ADF9794BE28F515542</key>
+		<key>DBC2AAC7630D46A3A352D875</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7D03C2940412464487D867D2</string>
+			<string>FD5CA970F8D04E0DB5C98AA6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
+			<dict/>
 		</dict>
-		<key>EEC8D5E34C9443B5AF71194F</key>
+		<key>DC52A3F3B0C443889156BDF4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5CFDBC77215348E58BBA4937</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>DCC9634A941445F791DD699D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFNanoPredicate.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoPredicate.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DD4F9F4619354DDABDF6AB82</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>722CA2004AD545ADB8A8BCEA</string>
+				<string>1C3269C8434A471E8EACC7B2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Reachability</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DD597BBF66734F75B1A16D1D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DDFileLogger.m</string>
+			<key>path</key>
+			<string>CocoaLumberjack/Lumberjack/DDFileLogger.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E014D24FD3E0441BBD9F2CB9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A85E06B83C564A9D99350B0D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>E074845CD6144C948E684A9A</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>D8ED63080D794D65AEBB6151</string>
+			<string>4F9F55C2AD2441DD91408486</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ALWAYS_SEARCH_USER_PATHS</key>
@@ -2062,115 +2020,7 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>EF447671590D445085882DFA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFHTTPClient.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPClient.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F0690DAF27FB4265B8E13DA6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A67B79451E3F48C69F37F907</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>F09BD533BAD844479CD31054</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFURLConnectionOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F1620B5338554AEA88BF7D37</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>AFPropertyListRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFPropertyListRequestOperation.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F2896E548EC54D11B567C431</key>
-		<dict>
-			<key>fileRef</key>
-			<string>35E771E4E2D84B429ED363B8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict/>
-		</dict>
-		<key>F2CE8996F1DC4ACFA970A012</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AFImageRequestOperation.h</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFImageRequestOperation.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F3397C6CC9734272B97ECCEF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSFNanoEngine.h</string>
-			<key>path</key>
-			<string>NanoStore/Classes/Advanced/NSFNanoEngine.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F49896D163EB48B99F9DEE24</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>DDTTYLogger.h</string>
-			<key>path</key>
-			<string>CocoaLumberjack/Lumberjack/DDTTYLogger.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>F56B4E3EC1894442B3F3851B</key>
+		<key>E59CC90F0F9244A2901DF4C6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2185,34 +2035,62 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>F60DF140C85C48119A53DD4E</key>
+		<key>E5A860CE55E04A58A3B6C2AF</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8AD996795BB74D0C8DD7913F</string>
+				<string>2BA06D0DC54D487F851F05F0</string>
+				<string>3953CE2C0E5441B982FA3FDC</string>
+				<string>8B79C25C1CB84028AD76AEA1</string>
+				<string>B32A27058E0E4355986FA6C0</string>
+				<string>F7C84BFC8937490290E0C197</string>
+				<string>33DDC587826343BFAA58AF54</string>
+				<string>1CE5382B1F454400B2950C09</string>
+				<string>1C13FEAD4806477DACE41865</string>
+				<string>3333E11BBCE84214A221F71A</string>
+				<string>24C54B55EF3747338D5D57C3</string>
+				<string>2C4FAAAC9A54456899FD27CA</string>
+				<string>B7CC84E3A7D54C989506B40C</string>
+				<string>27DB8AECAC4A4481AE18A1B2</string>
+				<string>86B776A78B7C41098A82BB67</string>
+				<string>DA5572CC2F31498F92004061</string>
+				<string>061E0B72567A4A04AEBC9785</string>
+				<string>587B91C663BE4C6986D72B74</string>
+				<string>4172229F09EF4437A9E0D909</string>
+				<string>60AD5E39342845F58FE4EAB0</string>
+				<string>1592C8BDA4E94720B375E590</string>
+				<string>FDA7C6008F2243738C4C47BB</string>
+				<string>95CE60EF5658443B976B002A</string>
+				<string>669FB6D0B9A648A68AF457CD</string>
+				<string>5232A6555C8A4ACFBCC183DF</string>
+				<string>AB8AE185415E466F877ADE18</string>
+				<string>F958E4C58F394D1BA0122176</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>E632A06CB11A4E39A5BA7DE3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0A6DFB542C6A4B61A579648D</string>
+				<string>065FD45FD7134A959A88FD51</string>
+				<string>A339CF08E34C48E9AA2571AB</string>
+				<string>DD4F9F4619354DDABDF6AB82</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>AFHTTPRequestOperation.m</string>
-			<key>path</key>
-			<string>AFNetworking/AFNetworking/AFHTTPRequestOperation.m</string>
+			<string>Pods</string>
 			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
+			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F6A3CC866F1940F5B930AA02</key>
-		<dict>
-			<key>fileRef</key>
-			<string>713210CEFCF8444999BE5CAA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
-			</dict>
-		</dict>
-		<key>F9719E27AFB5454084F10BAC</key>
+		<key>E727E7678B1948FBBB026BEF</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2221,26 +2099,186 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSFNanoResult_Private.h</string>
+			<string>AFHTTPClient.h</string>
 			<key>path</key>
-			<string>NanoStore/Classes/Private/NSFNanoResult_Private.h</string>
+			<string>AFNetworking/AFNetworking/AFHTTPClient.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>FA1E15A335CB499598507715</key>
+		<key>E7DBF83ACAEB4CE2B1D809FF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFOrderedDictionary.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Advanced/NSFOrderedDictionary.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E8D57004579C4863BCAF7263</key>
+		<dict>
+			<key>fileRef</key>
+			<string>836EAE64843141DBB6F8DF5D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>E91B7066FFEA4896AC82EDBA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>478653A1E96646E798FBC801</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>EA023D1450824A41B94FE7D6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFURLConnectionOperation.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFURLConnectionOperation.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EAED09B3B1524006855F43BD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E7DBF83ACAEB4CE2B1D809FF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>EBF82EEA456F435BA49601BD</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Pods-prefix.pch</string>
+			<string>Pods-resources.sh</string>
 			<key>path</key>
-			<string>Pods-prefix.pch</string>
+			<string>Pods-resources.sh</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>FDA210D3F30B4220ADA43C1C</key>
+		<key>ED0C311FD61A470198C1FAED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSFNanoExpression.m</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoExpression.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EDAA5C4F494B48708124BFD7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoStore.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Public/NSFNanoStore.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EDCFDFDE2C554CF0A85BB7E9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B34FEB0FCB9D49B8A2DA0FB0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EE2CE3D2B72F47A786F373FE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E727E7678B1948FBBB026BEF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>F3309CD324F84EAAB5C5F03C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>AFNetworkActivityIndicatorManager.m</string>
+			<key>path</key>
+			<string>AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F48359A493D64422840EA1C4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A3955E4EFE084B539721F2C5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>F55C8F21282B449C8A0DEF49</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoEngine.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Advanced/NSFNanoEngine.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F7C84BFC8937490290E0C197</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA24CF2E017F4FB7A6A034E8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>F7EBC71C40E743E9AFB9E959</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2255,16 +2293,16 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>FE2CC21FB9054AB1AF080F4E</key>
+		<key>F958E4C58F394D1BA0122176</key>
 		<dict>
 			<key>fileRef</key>
-			<string>54789B33170F40D4A9236EC1</string>
+			<string>72C015F659974E8AA60D1E38</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
 			<dict/>
 		</dict>
-		<key>FFE3090785A9488191309551</key>
+		<key>F964F781ED5446CD9306DDC5</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2273,14 +2311,63 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>NSFNanoResult.h</string>
+			<string>DDTTYLogger.h</string>
 			<key>path</key>
-			<string>NanoStore/Classes/Advanced/NSFNanoResult.h</string>
+			<string>CocoaLumberjack/Lumberjack/DDTTYLogger.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>FB11D98E2B6849A58071D806</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B03CE8DCF7BE4F40A6D56991</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>FD5CA970F8D04E0DB5C98AA6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSFNanoExpression_Private.h</string>
+			<key>path</key>
+			<string>NanoStore/Classes/Private/NSFNanoExpression_Private.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>FDA7C6008F2243738C4C47BB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DCC9634A941445F791DD699D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>FEF704B1CB874C94990EF4F3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-prefix.pch</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
-	<string>A37B2C327CE143848DDA8888</string>
+	<string>B8AAC49E3B774CF68BE93A1D</string>
 </dict>
 </plist>

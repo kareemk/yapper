@@ -1,47 +1,48 @@
 <?xml version='1.0'?>
 <signatures version='1.0'>
-<constant const='true' declared_type='NSString*' type='@' name='AFNetworkingErrorDomain'/>
-<constant const='true' declared_type='NSString*' type='@' name='AFNetworkingOperationDidFinishNotification'/>
-<constant const='true' declared_type='NSString*' type='@' name='AFNetworkingOperationDidStartNotification'/>
-<constant const='true' declared_type='NSString*' type='@' name='AFNetworkingOperationFailingURLRequestErrorKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='AFNetworkingOperationFailingURLResponseErrorKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFAttribute'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFCalendarDate'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFDatatype'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFDomainKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFKeyedArchive'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFKeys'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFMemoryDatabase'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFNanoObjectBehaviorException'/>
-<constant const='true' declared_type='NSInteger' type='i' name='NSFNanoStoreErrorKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFNanoStoreUnableToManipulateStoreException'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFNonConformingNanoObjectProtocolException'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFObjectClass'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFP_ColumnIdentifier'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFP_DatatypeIdentifier'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFP_FullDatatypeIdentifier'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFP_SchemaTable'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFP_TableIdentifier'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFRowIDColumnName'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFTemporaryDatabase'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFUnexpectedParameterException'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFValue'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFValues'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSFVersionKey'/>
-<constant const='true' declared_type='NSInteger' type='i' name='NSF_Private_InvalidParameterDataCodeKey'/>
-<constant const='true' declared_type='NSInteger' type='i' name='NSF_Private_MacOSXErrorCodeKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFKeys_NSFKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFKeys_NSFKeyedArchive'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFNanoBag_NSFKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFNanoBag_NSFObjectKeys'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFNanoBag_Name'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFValues_NSFAttribute'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFValues_NSFKey'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_NSFValues_NSFValue'/>
-<constant const='true' declared_type='NSString*' type='@' name='NSF_Private_ToDeleteTableKey'/>
-<constant const='true' declared_type='NSTimeInterval' type='d' name='kAFUploadStream3GSuggestedDelay'/>
-<constant const='true' declared_type='NSUInteger' type='I' name='kAFUploadStream3GSuggestedPacketSize'/>
+<constant type='@' declared_type='NSString*' name='AFNetworkingErrorDomain' const='true'/>
+<constant type='@' declared_type='NSString*' name='AFNetworkingOperationDidFinishNotification' const='true'/>
+<constant type='@' declared_type='NSString*' name='AFNetworkingOperationDidStartNotification' const='true'/>
+<constant type='@' declared_type='NSString*' name='AFNetworkingOperationFailingURLRequestErrorKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='AFNetworkingOperationFailingURLResponseErrorKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFAttribute' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFCalendarDate' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFDatatype' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFDomainKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFKeyedArchive' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFKeys' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFMemoryDatabase' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFNanoObjectBehaviorException' const='true'/>
+<constant type='i' declared_type='NSInteger' name='NSFNanoStoreErrorKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFNanoStoreUnableToManipulateStoreException' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFNonConformingNanoObjectProtocolException' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFObjectClass' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFP_ColumnIdentifier' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFP_DatatypeIdentifier' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFP_FullDatatypeIdentifier' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFP_SchemaTable' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFP_TableIdentifier' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFRowIDColumnName' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFTemporaryDatabase' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFUnexpectedParameterException' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFValue' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFValues' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSFVersionKey' const='true'/>
+<constant type='i' declared_type='NSInteger' name='NSF_Private_InvalidParameterDataCodeKey' const='true'/>
+<constant type='i' declared_type='NSInteger' name='NSF_Private_MacOSXErrorCodeKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFKeys_NSFKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFKeys_NSFKeyedArchive' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFNanoBag_NSFKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFNanoBag_NSFObjectKeys' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFNanoBag_Name' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFValues_NSFAttribute' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFValues_NSFKey' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_NSFValues_NSFValue' const='true'/>
+<constant type='@' declared_type='NSString*' name='NSF_Private_ToDeleteTableKey' const='true'/>
+<constant type='d' declared_type='NSTimeInterval' name='kAFUploadStream3GSuggestedDelay' const='true'/>
+<constant type='I' declared_type='NSUInteger' name='kAFUploadStream3GSuggestedPacketSize' const='true'/>
+<constant type='@' declared_type='NSString*' name='kReachabilityChangedNotification' const='true'/>
 <enum value='0' name='AFFormURLParameterEncoding'/>
 <enum value='1' name='AFJSONParameterEncoding'/>
 <enum value='2' name='AFPropertyListParameterEncoding'/>
@@ -73,6 +74,7 @@
 <enum value='0' name='LOG_LEVEL_OFF'/>
 <enum value='15' name='LOG_LEVEL_VERBOSE'/>
 <enum value='3' name='LOG_LEVEL_WARN'/>
+<enum value='0' name='NEEDS_DISPATCH_RETAIN_RELEASE'/>
 <enum value='3' name='NSFAfterDate'/>
 <enum value='1' name='NSFAnd'/>
 <enum value='2' name='NSFAttributeColumn'/>
@@ -115,6 +117,9 @@
 <enum value='2' name='NSFTemporaryStoreType'/>
 <enum value='5' name='NSFTotal'/>
 <enum value='3' name='NSFValueColumn'/>
+<enum value='0' name='NotReachable'/>
+<enum value='1' name='ReachableViaWWAN'/>
+<enum value='2' name='ReachableViaWiFi'/>
 <enum value='2' name='SynchronousModeFull'/>
 <enum value='1' name='SynchronousModeNormal'/>
 <enum value='0' name='SynchronousModeOff'/>
@@ -122,2465 +127,2557 @@
 <enum value='1' name='TempStoreModeFile'/>
 <enum value='2' name='TempStoreModeMemory'/>
 <function name='AFContentTypesFromHTTPHeader'>
-<arg declared_type='NSString*' type='@' name='string'/>
-<retval declared_type='NSSet*' type='@'/>
+<arg type='@' declared_type='NSString*' name='string'/>
+<retval type='@' declared_type='NSSet*'/>
 </function>
 <function name='AFQueryStringFromParametersWithEncoding'>
-<arg declared_type='NSDictionary*' type='@' name='parameters'/>
-<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters'/>
+<arg type='I' declared_type='NSStringEncoding' name='encoding'/>
+<retval type='@' declared_type='NSString*'/>
 </function>
 <function name='DDExtractFileNameWithoutExtension'>
-<arg const='true' declared_type='char*' type='*' name='filePath'/>
-<arg declared_type='BOOL' type='B' name='copy'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='*' declared_type='char*' name='filePath' const='true'/>
+<arg type='B' declared_type='BOOL' name='copy'/>
+<retval type='@' declared_type='NSString*'/>
 </function>
 <function name='NSFIsDebugOn'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </function>
 <function name='NSFNanoDatatypeFromString'>
-<arg declared_type='NSString*' type='@' name='aNanoDatatype'/>
-<retval declared_type='NSFNanoDatatype' type='i'/>
+<arg type='@' declared_type='NSString*' name='aNanoDatatype'/>
+<retval type='i' declared_type='NSFNanoDatatype'/>
 </function>
 <function name='NSFSetIsDebugOn'>
-<arg declared_type='BOOL' type='B' name='flag'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='flag'/>
+<retval type='v' declared_type='void'/>
 </function>
 <function name='NSFStringFromMatchType'>
-<arg declared_type='NSFMatchType' type='i' name='aMatchType'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='i' declared_type='NSFMatchType' name='aMatchType'/>
+<retval type='@' declared_type='NSString*'/>
 </function>
 <function name='NSFStringFromNanoDataType'>
-<arg declared_type='NSFNanoDatatype' type='i' name='aNanoDatatype'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='i' declared_type='NSFNanoDatatype' name='aNanoDatatype'/>
+<retval type='@' declared_type='NSString*'/>
 </function>
 <function name='safeJSONArrayFromArray'>
-<arg declared_type='NSArray*' type='@' name='array'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='array'/>
+<retval type='@' declared_type='NSArray*'/>
 </function>
 <function name='safeJSONDictionaryFromDictionary'>
-<arg declared_type='NSDictionary*' type='@' name='dictionary'/>
-<retval declared_type='NSDictionary*' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='dictionary'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </function>
 <function name='safeJSONObjectFromObject'>
-<arg declared_type='id' type='@' name='object'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='id' name='object'/>
+<retval type='@' declared_type='id'/>
 </function>
 <class name='AFHTTPClient'>
 <method selector='HTTPRequestOperationWithRequest:success:failure:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success' index='1'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' name='success' index='1'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure' index='2'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' name='failure' index='2'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+<retval type='@' declared_type='AFHTTPRequestOperation*'/>
 </method>
 <method selector='allowsInvalidSSLCertificate'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='baseURL'>
-<retval declared_type='NSURL*' type='@'/>
+<retval type='@' declared_type='NSURL*'/>
 </method>
 <method selector='cancelAllHTTPOperationsWithMethod:path:'>
-<arg declared_type='NSString*' type='@' name='method' index='0'/>
-<arg declared_type='NSString*' type='@' name='path' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='method' index='0'/>
+<arg type='@' declared_type='NSString*' name='path' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='clearAuthorizationHeader'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='clientWithBaseURL:'>
-<arg declared_type='NSURL*' type='@' name='url' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSURL*' name='url' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='defaultValueForHeader:'>
-<arg declared_type='NSString*' type='@' name='header' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSString*' name='header' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='deletePath:parameters:success:failure:'>
-<arg declared_type='NSString*' type='@' name='path' index='0'/>
-<arg declared_type='NSDictionary*' type='@' name='parameters' index='1'/>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success' index='2'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='path' index='0'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters' index='1'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' name='success' index='2'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure' index='3'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' name='failure' index='3'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='enqueueBatchOfHTTPRequestOperations:progressBlock:completionBlock:'>
-<arg declared_type='NSArray*' type='@' name='operations' index='0'/>
-<arg function_pointer='true' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' name='progressBlock' index='1'>
-<arg declared_type='NSUInteger' type='I'/>
-<arg declared_type='NSUInteger' type='I'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='operations' index='0'/>
+<arg type='@?' declared_type='void (^)(NSUInteger, NSUInteger)' function_pointer='true' name='progressBlock' index='1'>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='I' declared_type='NSUInteger'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSArray *)' type='@?' name='completionBlock' index='2'>
-<arg declared_type='NSArray*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSArray *)' function_pointer='true' name='completionBlock' index='2'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='enqueueBatchOfHTTPRequestOperationsWithRequests:progressBlock:completionBlock:'>
-<arg declared_type='NSArray*' type='@' name='urlRequests' index='0'/>
-<arg function_pointer='true' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' name='progressBlock' index='1'>
-<arg declared_type='NSUInteger' type='I'/>
-<arg declared_type='NSUInteger' type='I'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='urlRequests' index='0'/>
+<arg type='@?' declared_type='void (^)(NSUInteger, NSUInteger)' function_pointer='true' name='progressBlock' index='1'>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='I' declared_type='NSUInteger'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSArray *)' type='@?' name='completionBlock' index='2'>
-<arg declared_type='NSArray*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSArray *)' function_pointer='true' name='completionBlock' index='2'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='enqueueHTTPRequestOperation:'>
-<arg declared_type='AFHTTPRequestOperation*' type='@' name='operation' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='AFHTTPRequestOperation*' name='operation' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='getPath:parameters:success:failure:'>
-<arg declared_type='NSString*' type='@' name='path' index='0'/>
-<arg declared_type='NSDictionary*' type='@' name='parameters' index='1'/>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success' index='2'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='path' index='0'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters' index='1'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' name='success' index='2'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure' index='3'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' name='failure' index='3'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='initWithBaseURL:'>
-<arg declared_type='NSURL*' type='@' name='url' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSURL*' name='url' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='multipartFormRequestWithMethod:path:parameters:constructingBodyWithBlock:'>
-<arg declared_type='NSString*' type='@' name='method' index='0'/>
-<arg declared_type='NSString*' type='@' name='path' index='1'/>
-<arg declared_type='NSDictionary*' type='@' name='parameters' index='2'/>
-<arg function_pointer='true' declared_type='void (^)(id)' type='@?' name='block' index='3'>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='method' index='0'/>
+<arg type='@' declared_type='NSString*' name='path' index='1'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters' index='2'/>
+<arg type='@?' declared_type='void (^)(id)' function_pointer='true' name='block' index='3'>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='NSMutableURLRequest*' type='@'/>
+<retval type='@' declared_type='NSMutableURLRequest*'/>
 </method>
 <method selector='operationQueue'>
-<retval declared_type='NSOperationQueue*' type='@'/>
+<retval type='@' declared_type='NSOperationQueue*'/>
 </method>
 <method selector='parameterEncoding'>
-<retval declared_type='AFHTTPClientParameterEncoding' type='i'/>
+<retval type='i' declared_type='AFHTTPClientParameterEncoding'/>
 </method>
 <method selector='patchPath:parameters:success:failure:'>
-<arg declared_type='NSString*' type='@' name='path' index='0'/>
-<arg declared_type='NSDictionary*' type='@' name='parameters' index='1'/>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success' index='2'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='path' index='0'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters' index='1'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' name='success' index='2'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure' index='3'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' name='failure' index='3'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='postPath:parameters:success:failure:'>
-<arg declared_type='NSString*' type='@' name='path' index='0'/>
-<arg declared_type='NSDictionary*' type='@' name='parameters' index='1'/>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success' index='2'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='path' index='0'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters' index='1'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' name='success' index='2'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure' index='3'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' name='failure' index='3'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='putPath:parameters:success:failure:'>
-<arg declared_type='NSString*' type='@' name='path' index='0'/>
-<arg declared_type='NSDictionary*' type='@' name='parameters' index='1'/>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success' index='2'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='path' index='0'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters' index='1'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' name='success' index='2'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure' index='3'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' name='failure' index='3'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='registerHTTPOperationClass:'>
-<arg declared_type='Class' type='#' name='operationClass' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='#' declared_type='Class' name='operationClass' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='requestWithMethod:path:parameters:'>
-<arg declared_type='NSString*' type='@' name='method' index='0'/>
-<arg declared_type='NSString*' type='@' name='path' index='1'/>
-<arg declared_type='NSDictionary*' type='@' name='parameters' index='2'/>
-<retval declared_type='NSMutableURLRequest*' type='@'/>
+<arg type='@' declared_type='NSString*' name='method' index='0'/>
+<arg type='@' declared_type='NSString*' name='path' index='1'/>
+<arg type='@' declared_type='NSDictionary*' name='parameters' index='2'/>
+<retval type='@' declared_type='NSMutableURLRequest*'/>
 </method>
 <method selector='setAllowsInvalidSSLCertificate:'>
-<arg declared_type='BOOL' type='B' name='allowsInvalidSSLCertificate' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='allowsInvalidSSLCertificate' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setAuthorizationHeaderWithToken:'>
-<arg declared_type='NSString*' type='@' name='token' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='token' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setAuthorizationHeaderWithUsername:password:'>
-<arg declared_type='NSString*' type='@' name='username' index='0'/>
-<arg declared_type='NSString*' type='@' name='password' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='username' index='0'/>
+<arg type='@' declared_type='NSString*' name='password' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDefaultCredential:'>
-<arg declared_type='NSURLCredential*' type='@' name='credential' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLCredential*' name='credential' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDefaultHeader:value:'>
-<arg declared_type='NSString*' type='@' name='header' index='0'/>
-<arg declared_type='NSString*' type='@' name='value' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='header' index='0'/>
+<arg type='@' declared_type='NSString*' name='value' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setParameterEncoding:'>
-<arg declared_type='AFHTTPClientParameterEncoding' type='i' name='parameterEncoding' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='AFHTTPClientParameterEncoding' name='parameterEncoding' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setStringEncoding:'>
-<arg declared_type='NSStringEncoding' type='I' name='stringEncoding' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSStringEncoding' name='stringEncoding' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='stringEncoding'>
-<retval declared_type='NSStringEncoding' type='I'/>
+<retval type='I' declared_type='NSStringEncoding'/>
 </method>
 <method selector='unregisterHTTPOperationClass:'>
-<arg declared_type='Class' type='#' name='operationClass' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='#' declared_type='Class' name='operationClass' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='AFHTTPRequestOperation'>
 <method class_method='true' selector='acceptableContentTypes'>
-<retval declared_type='NSSet*' type='@'/>
+<retval type='@' declared_type='NSSet*'/>
 </method>
 <method class_method='true' selector='acceptableStatusCodes'>
-<retval declared_type='NSIndexSet*' type='@'/>
+<retval type='@' declared_type='NSIndexSet*'/>
 </method>
 <method class_method='true' selector='addAcceptableContentTypes:'>
-<arg declared_type='NSSet*' type='@' name='contentTypes' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSSet*' name='contentTypes' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='addAcceptableStatusCodes:'>
-<arg declared_type='NSIndexSet*' type='@' name='statusCodes' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSIndexSet*' name='statusCodes' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='canProcessRequest:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='failureCallbackQueue'>
-<retval declared_type='dispatch_queue_t' type='@'/>
+<retval type='@' declared_type='dispatch_queue_t'/>
 </method>
 <method selector='hasAcceptableContentType'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='hasAcceptableStatusCode'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='response'>
-<retval declared_type='NSHTTPURLResponse*' type='@'/>
+<retval type='@' declared_type='NSHTTPURLResponse*'/>
 </method>
 <method selector='setCompletionBlockWithSuccess:failure:'>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' name='success' index='0'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' name='success' index='0'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' name='failure' index='1'>
-<arg declared_type='AFHTTPRequestOperation*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' name='failure' index='1'>
+<arg type='@' declared_type='AFHTTPRequestOperation*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setFailureCallbackQueue:'>
-<arg declared_type='dispatch_queue_t' type='@' name='failureCallbackQueue' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='dispatch_queue_t' name='failureCallbackQueue' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSuccessCallbackQueue:'>
-<arg declared_type='dispatch_queue_t' type='@' name='successCallbackQueue' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='dispatch_queue_t' name='successCallbackQueue' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='successCallbackQueue'>
-<retval declared_type='dispatch_queue_t' type='@'/>
+<retval type='@' declared_type='dispatch_queue_t'/>
 </method>
 </class>
 <class name='AFImageRequestOperation'>
 <method class_method='true' selector='imageRequestOperationWithRequest:imageProcessingBlock:success:failure:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<arg function_pointer='true' declared_type='UIImage *(^)(UIImage *)' type='@?' name='imageProcessingBlock' index='1'>
-<arg declared_type='UIImage*' type='@'/>
-<retval declared_type='UIImage*' type='@'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<arg type='@?' declared_type='UIImage *(^)(UIImage *)' function_pointer='true' name='imageProcessingBlock' index='1'>
+<arg type='@' declared_type='UIImage*'/>
+<retval type='@' declared_type='UIImage*'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' type='@?' name='success' index='2'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='UIImage*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' function_pointer='true' name='success' index='2'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' type='@?' name='failure' index='3'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' function_pointer='true' name='failure' index='3'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method class_method='true' selector='imageRequestOperationWithRequest:success:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<arg function_pointer='true' declared_type='void (^)(UIImage *)' type='@?' name='success' index='1'>
-<arg declared_type='UIImage*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<arg type='@?' declared_type='void (^)(UIImage *)' function_pointer='true' name='success' index='1'>
+<arg type='@' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='imageScale'>
-<retval declared_type='CGFloat' type='f'/>
+<retval type='f' declared_type='CGFloat'/>
 </method>
 <method selector='responseImage'>
-<retval declared_type='UIImage*' type='@'/>
+<retval type='@' declared_type='UIImage*'/>
 </method>
 <method selector='setImageScale:'>
-<arg declared_type='CGFloat' type='f' name='imageScale' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='f' declared_type='CGFloat' name='imageScale' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='AFJSONRequestOperation'>
 <method selector='JSONReadingOptions'>
-<retval declared_type='NSJSONReadingOptions' type='I'/>
+<retval type='I' declared_type='NSJSONReadingOptions'/>
 </method>
 <method class_method='true' selector='JSONRequestOperationWithRequest:success:failure:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' type='@?' name='success' index='1'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' function_pointer='true' name='success' index='1'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' type='@?' name='failure' index='2'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' function_pointer='true' name='failure' index='2'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='NSError*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='responseJSON'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='setJSONReadingOptions:'>
-<arg declared_type='NSJSONReadingOptions' type='I' name='JSONReadingOptions' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSJSONReadingOptions' name='JSONReadingOptions' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='AFNetworkActivityIndicatorManager'>
 <method selector='decrementActivityCount'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='incrementActivityCount'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='isEnabled'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='isNetworkActivityIndicatorVisible'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setEnabled:'>
-<arg declared_type='BOOL' type='B' name='enabled' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='enabled' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='sharedManager'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 </class>
 <class name='AFPropertyListRequestOperation'>
 <method selector='propertyListReadOptions'>
-<retval declared_type='NSPropertyListReadOptions' type='I'/>
+<retval type='I' declared_type='NSPropertyListReadOptions'/>
 </method>
 <method class_method='true' selector='propertyListRequestOperationWithRequest:success:failure:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' type='@?' name='success' index='1'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' function_pointer='true' name='success' index='1'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' type='@?' name='failure' index='2'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<arg declared_type='id' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' function_pointer='true' name='failure' index='2'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='NSError*'/>
+<arg type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='responsePropertyList'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='setPropertyListReadOptions:'>
-<arg declared_type='NSPropertyListReadOptions' type='I' name='propertyListReadOptions' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSPropertyListReadOptions' name='propertyListReadOptions' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='AFURLConnectionOperation'>
 <method selector='allowsInvalidSSLCertificate'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='credential'>
-<retval declared_type='NSURLCredential*' type='@'/>
+<retval type='@' declared_type='NSURLCredential*'/>
 </method>
 <method selector='error'>
-<retval declared_type='NSError*' type='@'/>
+<retval type='@' declared_type='NSError*'/>
 </method>
 <method selector='initWithRequest:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='inputStream'>
-<retval declared_type='NSInputStream*' type='@'/>
+<retval type='@' declared_type='NSInputStream*'/>
 </method>
 <method selector='isPaused'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='outputStream'>
-<retval declared_type='NSOutputStream*' type='@'/>
+<retval type='@' declared_type='NSOutputStream*'/>
 </method>
 <method selector='pause'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='request'>
-<retval declared_type='NSURLRequest*' type='@'/>
+<retval type='@' declared_type='NSURLRequest*'/>
 </method>
 <method selector='response'>
-<retval declared_type='NSURLResponse*' type='@'/>
+<retval type='@' declared_type='NSURLResponse*'/>
 </method>
 <method selector='responseData'>
-<retval declared_type='NSData*' type='@'/>
+<retval type='@' declared_type='NSData*'/>
 </method>
 <method selector='responseString'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='responseStringEncoding'>
-<retval declared_type='NSStringEncoding' type='I'/>
+<retval type='I' declared_type='NSStringEncoding'/>
 </method>
 <method selector='resume'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='runLoopModes'>
-<retval declared_type='NSSet*' type='@'/>
+<retval type='@' declared_type='NSSet*'/>
 </method>
 <method selector='setAllowsInvalidSSLCertificate:'>
-<arg declared_type='BOOL' type='B' name='allowsInvalidSSLCertificate' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='allowsInvalidSSLCertificate' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setAuthenticationAgainstProtectionSpaceBlock:'>
-<arg function_pointer='true' declared_type='BOOL (^)(NSURLConnection *, NSURLProtectionSpace *)' type='@?' name='block' index='0'>
-<arg declared_type='NSURLConnection*' type='@'/>
-<arg declared_type='NSURLProtectionSpace*' type='@'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@?' declared_type='BOOL (^)(NSURLConnection *, NSURLProtectionSpace *)' function_pointer='true' name='block' index='0'>
+<arg type='@' declared_type='NSURLConnection*'/>
+<arg type='@' declared_type='NSURLProtectionSpace*'/>
+<retval type='B' declared_type='BOOL'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setAuthenticationChallengeBlock:'>
-<arg function_pointer='true' declared_type='void (^)(NSURLConnection *, NSURLAuthenticationChallenge *)' type='@?' name='block' index='0'>
-<arg declared_type='NSURLConnection*' type='@'/>
-<arg declared_type='NSURLAuthenticationChallenge*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSURLConnection *, NSURLAuthenticationChallenge *)' function_pointer='true' name='block' index='0'>
+<arg type='@' declared_type='NSURLConnection*'/>
+<arg type='@' declared_type='NSURLAuthenticationChallenge*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setCacheResponseBlock:'>
-<arg function_pointer='true' declared_type='NSCachedURLResponse *(^)(NSURLConnection *, NSCachedURLResponse *)' type='@?' name='block' index='0'>
-<arg declared_type='NSURLConnection*' type='@'/>
-<arg declared_type='NSCachedURLResponse*' type='@'/>
-<retval declared_type='NSCachedURLResponse*' type='@'/>
+<arg type='@?' declared_type='NSCachedURLResponse *(^)(NSURLConnection *, NSCachedURLResponse *)' function_pointer='true' name='block' index='0'>
+<arg type='@' declared_type='NSURLConnection*'/>
+<arg type='@' declared_type='NSCachedURLResponse*'/>
+<retval type='@' declared_type='NSCachedURLResponse*'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setCredential:'>
-<arg declared_type='NSURLCredential*' type='@' name='credential' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLCredential*' name='credential' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDownloadProgressBlock:'>
-<arg function_pointer='true' declared_type='void (^)(NSUInteger, long long, long long)' type='@?' name='block' index='0'>
-<arg declared_type='NSUInteger' type='I'/>
-<arg declared_type='long long' type='q'/>
-<arg declared_type='long long' type='q'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSUInteger, long long, long long)' function_pointer='true' name='block' index='0'>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='q' declared_type='long long'/>
+<arg type='q' declared_type='long long'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setInputStream:'>
-<arg declared_type='NSInputStream*' type='@' name='inputStream' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSInputStream*' name='inputStream' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setOutputStream:'>
-<arg declared_type='NSOutputStream*' type='@' name='outputStream' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSOutputStream*' name='outputStream' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setRedirectResponseBlock:'>
-<arg function_pointer='true' declared_type='NSURLRequest *(^)(NSURLConnection *, NSURLRequest *, NSURLResponse *)' type='@?' name='block' index='0'>
-<arg declared_type='NSURLConnection*' type='@'/>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSURLResponse*' type='@'/>
-<retval declared_type='NSURLRequest*' type='@'/>
+<arg type='@?' declared_type='NSURLRequest *(^)(NSURLConnection *, NSURLRequest *, NSURLResponse *)' function_pointer='true' name='block' index='0'>
+<arg type='@' declared_type='NSURLConnection*'/>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSURLResponse*'/>
+<retval type='@' declared_type='NSURLRequest*'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setRunLoopModes:'>
-<arg declared_type='NSSet*' type='@' name='runLoopModes' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSSet*' name='runLoopModes' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setShouldExecuteAsBackgroundTaskWithExpirationHandler:'>
-<arg function_pointer='true' declared_type='void (^)(void)' type='@?' name='handler' index='0'>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(void)' function_pointer='true' name='handler' index='0'>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setShouldUseCredentialStorage:'>
-<arg declared_type='BOOL' type='B' name='shouldUseCredentialStorage' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='shouldUseCredentialStorage' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setUploadProgressBlock:'>
-<arg function_pointer='true' declared_type='void (^)(NSUInteger, long long, long long)' type='@?' name='block' index='0'>
-<arg declared_type='NSUInteger' type='I'/>
-<arg declared_type='long long' type='q'/>
-<arg declared_type='long long' type='q'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSUInteger, long long, long long)' function_pointer='true' name='block' index='0'>
+<arg type='I' declared_type='NSUInteger'/>
+<arg type='q' declared_type='long long'/>
+<arg type='q' declared_type='long long'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setUserInfo:'>
-<arg declared_type='NSDictionary*' type='@' name='userInfo' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDictionary*' name='userInfo' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='shouldUseCredentialStorage'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='userInfo'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 </class>
 <class name='AFXMLRequestOperation'>
 <method class_method='true' selector='XMLParserRequestOperationWithRequest:success:failure:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSXMLParser *)' type='@?' name='success' index='1'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='NSXMLParser*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSXMLParser *)' function_pointer='true' name='success' index='1'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='NSXMLParser*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, NSXMLParser *)' type='@?' name='failure' index='2'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<arg declared_type='NSXMLParser*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, NSXMLParser *)' function_pointer='true' name='failure' index='2'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='NSError*'/>
+<arg type='@' declared_type='NSXMLParser*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='responseXMLParser'>
-<retval declared_type='NSXMLParser*' type='@'/>
+<retval type='@' declared_type='NSXMLParser*'/>
 </method>
 </class>
 <class name='DDASLLogger'>
 <method class_method='true' selector='sharedInstance'>
-<retval declared_type='DDASLLogger*' type='@'/>
+<retval type='@' declared_type='DDASLLogger*'/>
 </method>
 </class>
 <class name='DDAbstractDatabaseLogger'>
 <method selector='deleteInterval'>
-<retval declared_type='NSTimeInterval' type='d'/>
+<retval type='d' declared_type='NSTimeInterval'/>
 </method>
 <method selector='deleteOldLogEntries'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='deleteOnEverySave'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='maxAge'>
-<retval declared_type='NSTimeInterval' type='d'/>
+<retval type='d' declared_type='NSTimeInterval'/>
 </method>
 <method selector='saveInterval'>
-<retval declared_type='NSTimeInterval' type='d'/>
+<retval type='d' declared_type='NSTimeInterval'/>
 </method>
 <method selector='savePendingLogEntries'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='saveThreshold'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='setDeleteInterval:'>
-<arg declared_type='NSTimeInterval' type='d' name='deleteInterval' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='d' declared_type='NSTimeInterval' name='deleteInterval' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setDeleteOnEverySave:'>
-<arg declared_type='BOOL' type='B' name='deleteOnEverySave' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='deleteOnEverySave' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setMaxAge:'>
-<arg declared_type='NSTimeInterval' type='d' name='maxAge' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='d' declared_type='NSTimeInterval' name='maxAge' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSaveInterval:'>
-<arg declared_type='NSTimeInterval' type='d' name='saveInterval' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='d' declared_type='NSTimeInterval' name='saveInterval' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSaveThreshold:'>
-<arg declared_type='NSUInteger' type='I' name='saveThreshold' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='saveThreshold' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='DDAbstractLogger'>
 <method selector='isOnGlobalLoggingQueue'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='isOnInternalLoggerQueue'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='logFormatter'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='setLogFormatter:'>
-<arg declared_type='id' type='@' name='formatter' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='formatter' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='DDFileLogger'>
 <method selector='init'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='initWithLogFileManager:'>
-<arg declared_type='id' type='@' name='logFileManager' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='id' name='logFileManager' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='logFileManager'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='maximumFileSize'>
-<retval declared_type='unsigned long long' type='Q'/>
+<retval type='Q' declared_type='unsigned long long'/>
 </method>
 <method selector='rollLogFile'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='rollingFrequency'>
-<retval declared_type='NSTimeInterval' type='d'/>
+<retval type='d' declared_type='NSTimeInterval'/>
 </method>
 <method selector='setLogFileManager:'>
-<arg declared_type='id' type='@' name='logFileManager' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='logFileManager' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setMaximumFileSize:'>
-<arg declared_type='unsigned long long' type='Q' name='maximumFileSize' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='Q' declared_type='unsigned long long' name='maximumFileSize' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setRollingFrequency:'>
-<arg declared_type='NSTimeInterval' type='d' name='rollingFrequency' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='d' declared_type='NSTimeInterval' name='rollingFrequency' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='DDLog'>
 <method class_method='true' selector='addLogger:'>
-<arg declared_type='id' type='@' name='logger' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='logger' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='flushLog'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
-<method variadic='true' class_method='true' selector='log:level:flag:context:file:function:line:tag:format:'>
-<arg declared_type='BOOL' type='B' name='synchronous' index='0'/>
-<arg declared_type='int' type='i' name='level' index='1'/>
-<arg declared_type='int' type='i' name='flag' index='2'/>
-<arg declared_type='int' type='i' name='context' index='3'/>
-<arg const='true' declared_type='char*' type='*' name='file' index='4'/>
-<arg const='true' declared_type='char*' type='*' name='function' index='5'/>
-<arg declared_type='int' type='i' name='line' index='6'/>
-<arg declared_type='id' type='@' name='tag' index='7'/>
-<arg declared_type='NSString*' type='@' name='format' index='8' printf_format='true'/>
-<retval declared_type='void' type='v'/>
+<method class_method='true' selector='log:level:flag:context:file:function:line:tag:format:' variadic='true'>
+<arg type='B' declared_type='BOOL' name='synchronous' index='0'/>
+<arg type='i' declared_type='int' name='level' index='1'/>
+<arg type='i' declared_type='int' name='flag' index='2'/>
+<arg type='i' declared_type='int' name='context' index='3'/>
+<arg type='*' declared_type='char*' name='file' index='4' const='true'/>
+<arg type='*' declared_type='char*' name='function' index='5' const='true'/>
+<arg type='i' declared_type='int' name='line' index='6'/>
+<arg type='@' declared_type='id' name='tag' index='7'/>
+<arg type='@' declared_type='NSString*' name='format' index='8' printf_format='true'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='log:level:flag:context:file:function:line:tag:format:args:'>
-<arg declared_type='BOOL' type='B' name='asynchronous' index='0'/>
-<arg declared_type='int' type='i' name='level' index='1'/>
-<arg declared_type='int' type='i' name='flag' index='2'/>
-<arg declared_type='int' type='i' name='context' index='3'/>
-<arg const='true' declared_type='char*' type='*' name='file' index='4'/>
-<arg const='true' declared_type='char*' type='*' name='function' index='5'/>
-<arg declared_type='int' type='i' name='line' index='6'/>
-<arg declared_type='id' type='@' name='tag' index='7'/>
-<arg declared_type='NSString*' type='@' name='format' index='8'/>
-<arg declared_type='va_list' type='*' name='argList' index='9'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='asynchronous' index='0'/>
+<arg type='i' declared_type='int' name='level' index='1'/>
+<arg type='i' declared_type='int' name='flag' index='2'/>
+<arg type='i' declared_type='int' name='context' index='3'/>
+<arg type='*' declared_type='char*' name='file' index='4' const='true'/>
+<arg type='*' declared_type='char*' name='function' index='5' const='true'/>
+<arg type='i' declared_type='int' name='line' index='6'/>
+<arg type='@' declared_type='id' name='tag' index='7'/>
+<arg type='@' declared_type='NSString*' name='format' index='8'/>
+<arg type='*' declared_type='va_list' name='argList' index='9'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='logLevelForClass:'>
-<arg declared_type='Class' type='#' name='aClass' index='0'/>
-<retval declared_type='int' type='i'/>
+<arg type='#' declared_type='Class' name='aClass' index='0'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method class_method='true' selector='logLevelForClassWithName:'>
-<arg declared_type='NSString*' type='@' name='aClassName' index='0'/>
-<retval declared_type='int' type='i'/>
+<arg type='@' declared_type='NSString*' name='aClassName' index='0'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method class_method='true' selector='loggingQueue'>
-<retval declared_type='dispatch_queue_t' type='@'/>
+<retval type='@' declared_type='dispatch_queue_t'/>
 </method>
 <method class_method='true' selector='registeredClassNames'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method class_method='true' selector='registeredClasses'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method class_method='true' selector='removeAllLoggers'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='removeLogger:'>
-<arg declared_type='id' type='@' name='logger' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='logger' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='setLogLevel:forClass:'>
-<arg declared_type='int' type='i' name='logLevel' index='0'/>
-<arg declared_type='Class' type='#' name='aClass' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='int' name='logLevel' index='0'/>
+<arg type='#' declared_type='Class' name='aClass' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='setLogLevel:forClassWithName:'>
-<arg declared_type='int' type='i' name='logLevel' index='0'/>
-<arg declared_type='NSString*' type='@' name='aClassName' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='int' name='logLevel' index='0'/>
+<arg type='@' declared_type='NSString*' name='aClassName' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='DDLogFileFormatterDefault'>
 <method selector='init'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='initWithDateFormatter:'>
-<arg declared_type='NSDateFormatter*' type='@' name='dateFormatter' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSDateFormatter*' name='dateFormatter' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 </class>
 <class name='DDLogFileInfo'>
 <method selector='addExtensionAttributeWithName:'>
-<arg declared_type='NSString*' type='@' name='attrName' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='attrName' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='age'>
-<retval declared_type='NSTimeInterval' type='d'/>
+<retval type='d' declared_type='NSTimeInterval'/>
 </method>
 <method selector='creationDate'>
-<retval declared_type='NSDate*' type='@'/>
+<retval type='@' declared_type='NSDate*'/>
 </method>
 <method selector='fileAttributes'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='fileName'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='filePath'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='fileSize'>
-<retval declared_type='unsigned long long' type='Q'/>
+<retval type='Q' declared_type='unsigned long long'/>
 </method>
 <method selector='hasExtensionAttributeWithName:'>
-<arg declared_type='NSString*' type='@' name='attrName' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='attrName' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='initWithFilePath:'>
-<arg declared_type='NSString*' type='@' name='filePath' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='filePath' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='isArchived'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='logFileWithPath:'>
-<arg declared_type='NSString*' type='@' name='filePath' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='filePath' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='modificationDate'>
-<retval declared_type='NSDate*' type='@'/>
+<retval type='@' declared_type='NSDate*'/>
 </method>
 <method selector='removeExtensionAttributeWithName:'>
-<arg declared_type='NSString*' type='@' name='attrName' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='attrName' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='renameFile:'>
-<arg declared_type='NSString*' type='@' name='newFileName' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='newFileName' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='reset'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='reverseCompareByCreationDate:'>
-<arg declared_type='DDLogFileInfo*' type='@' name='another' index='0'/>
-<retval declared_type='NSComparisonResult' type='i'/>
+<arg type='@' declared_type='DDLogFileInfo*' name='another' index='0'/>
+<retval type='i' declared_type='NSComparisonResult'/>
 </method>
 <method selector='reverseCompareByModificationDate:'>
-<arg declared_type='DDLogFileInfo*' type='@' name='another' index='0'/>
-<retval declared_type='NSComparisonResult' type='i'/>
+<arg type='@' declared_type='DDLogFileInfo*' name='another' index='0'/>
+<retval type='i' declared_type='NSComparisonResult'/>
 </method>
 <method selector='setCreationDate:'>
-<arg declared_type='NSDate*' type='@' name='creationDate' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDate*' name='creationDate' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setFileAttributes:'>
-<arg declared_type='NSDictionary*' type='@' name='fileAttributes' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDictionary*' name='fileAttributes' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setFileName:'>
-<arg declared_type='NSString*' type='@' name='fileName' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='fileName' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setFilePath:'>
-<arg declared_type='NSString*' type='@' name='filePath' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='filePath' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setIsArchived:'>
-<arg declared_type='BOOL' type='B' name='isArchived' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='isArchived' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setModificationDate:'>
-<arg declared_type='NSDate*' type='@' name='modificationDate' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDate*' name='modificationDate' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='DDLogFileManagerDefault'>
 <method selector='init'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='initWithLogsDirectory:'>
-<arg declared_type='NSString*' type='@' name='logsDirectory' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='logsDirectory' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 </class>
 <class name='DDLogMessage'>
 <method selector='fileName'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='initWithLogMsg:level:flag:context:file:function:line:tag:options:'>
-<arg declared_type='NSString*' type='@' name='logMsg' index='0'/>
-<arg declared_type='int' type='i' name='logLevel' index='1'/>
-<arg declared_type='int' type='i' name='logFlag' index='2'/>
-<arg declared_type='int' type='i' name='logContext' index='3'/>
-<arg const='true' declared_type='char*' type='*' name='file' index='4'/>
-<arg const='true' declared_type='char*' type='*' name='function' index='5'/>
-<arg declared_type='int' type='i' name='line' index='6'/>
-<arg declared_type='id' type='@' name='tag' index='7'/>
-<arg declared_type='DDLogMessageOptions' type='i' name='optionsMask' index='8'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='logMsg' index='0'/>
+<arg type='i' declared_type='int' name='logLevel' index='1'/>
+<arg type='i' declared_type='int' name='logFlag' index='2'/>
+<arg type='i' declared_type='int' name='logContext' index='3'/>
+<arg type='*' declared_type='char*' name='file' index='4' const='true'/>
+<arg type='*' declared_type='char*' name='function' index='5' const='true'/>
+<arg type='i' declared_type='int' name='line' index='6'/>
+<arg type='@' declared_type='id' name='tag' index='7'/>
+<arg type='i' declared_type='DDLogMessageOptions' name='optionsMask' index='8'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='methodName'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='threadID'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 </class>
 <class name='DDTTYLogger'>
 <method selector='clearAllColors'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='clearColorsForAllFlags'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='clearColorsForAllTags'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='clearColorsForFlag:'>
-<arg declared_type='int' type='i' name='mask' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='int' name='mask' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='clearColorsForFlag:context:'>
-<arg declared_type='int' type='i' name='mask' index='0'/>
-<arg declared_type='int' type='i' name='context' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='int' name='mask' index='0'/>
+<arg type='i' declared_type='int' name='context' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='clearColorsForTag:'>
-<arg declared_type='id' type='@' name='tag' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='tag' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='colorsEnabled'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setColorsEnabled:'>
-<arg declared_type='BOOL' type='B' name='colorsEnabled' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='colorsEnabled' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setForegroundColor:backgroundColor:forFlag:'>
-<arg declared_type='UIColor*' type='@' name='txtColor' index='0'/>
-<arg declared_type='UIColor*' type='@' name='bgColor' index='1'/>
-<arg declared_type='int' type='i' name='mask' index='2'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='UIColor*' name='txtColor' index='0'/>
+<arg type='@' declared_type='UIColor*' name='bgColor' index='1'/>
+<arg type='i' declared_type='int' name='mask' index='2'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setForegroundColor:backgroundColor:forFlag:context:'>
-<arg declared_type='UIColor*' type='@' name='txtColor' index='0'/>
-<arg declared_type='UIColor*' type='@' name='bgColor' index='1'/>
-<arg declared_type='int' type='i' name='mask' index='2'/>
-<arg declared_type='int' type='i' name='ctxt' index='3'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='UIColor*' name='txtColor' index='0'/>
+<arg type='@' declared_type='UIColor*' name='bgColor' index='1'/>
+<arg type='i' declared_type='int' name='mask' index='2'/>
+<arg type='i' declared_type='int' name='ctxt' index='3'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setForegroundColor:backgroundColor:forTag:'>
-<arg declared_type='UIColor*' type='@' name='txtColor' index='0'/>
-<arg declared_type='UIColor*' type='@' name='bgColor' index='1'/>
-<arg declared_type='id' type='@' name='tag' index='2'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='UIColor*' name='txtColor' index='0'/>
+<arg type='@' declared_type='UIColor*' name='bgColor' index='1'/>
+<arg type='@' declared_type='id' name='tag' index='2'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='sharedInstance'>
-<retval declared_type='DDTTYLogger*' type='@'/>
+<retval type='@' declared_type='DDTTYLogger*'/>
 </method>
 </class>
 <class name='NSFNanoBag'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_inflateObjectsWithKeys:'>
-<arg declared_type='NSArray*' type='@' name='someKeys' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='someKeys' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='_saveInStore:error:'>
-<arg declared_type='NSFNanoStore*' type='@' name='someStore' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSFNanoStore*' name='someStore' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_setStore:'>
-<arg declared_type='NSFNanoStore*' type='@' name='aStore' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSFNanoStore*' name='aStore' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='addObject:error:'>
-<arg declared_type='id' type='@' name='theObject' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='id' name='theObject' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='addObjectsFromArray:error:'>
-<arg declared_type='NSArray*' type='@' name='theObjects' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSArray*' name='theObjects' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='bag'>
-<retval declared_type='NSFNanoBag*' type='@'/>
+<retval type='@' declared_type='NSFNanoBag*'/>
 </method>
 <method class_method='true' selector='bagWithName:'>
-<arg declared_type='NSString*' type='@' name='theName' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='theName' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method class_method='true' selector='bagWithName:andObjects:'>
-<arg declared_type='NSString*' type='@' name='theName' index='0'/>
-<arg declared_type='NSArray*' type='@' name='theObjects' index='1'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='theName' index='0'/>
+<arg type='@' declared_type='NSArray*' name='theObjects' index='1'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method class_method='true' selector='bagWithObjects:'>
-<arg declared_type='NSArray*' type='@' name='theObjects' index='0'/>
-<retval declared_type='NSFNanoBag*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='theObjects' index='0'/>
+<retval type='@' declared_type='NSFNanoBag*'/>
 </method>
 <method selector='count'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='deflateBag'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='dictionaryRepresentation'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='hasUnsavedChanges'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='inflateBag'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='initBagWithName:andObjects:'>
-<arg declared_type='NSString*' type='@' name='theName' index='0'/>
-<arg declared_type='NSArray*' type='@' name='someObjects' index='1'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='theName' index='0'/>
+<arg type='@' declared_type='NSArray*' name='someObjects' index='1'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='isEqualToNanoBag:'>
-<arg declared_type='NSFNanoBag*' type='@' name='otherNanoBag' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSFNanoBag*' name='otherNanoBag' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='key'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='name'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='reloadBagWithError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeAllObjects'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='removeObject:'>
-<arg declared_type='id' type='@' name='theObject' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='theObject' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='removeObjectWithKey:'>
-<arg declared_type='NSString*' type='@' name='theObjectKey' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='theObjectKey' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='removeObjectsInArray:'>
-<arg declared_type='NSArray*' type='@' name='theObjects' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='theObjects' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='removeObjectsWithKeysInArray:'>
-<arg declared_type='NSArray*' type='@' name='theKeys' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='theKeys' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='removedObjects'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='saveAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='savedObjects'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='setName:'>
-<arg declared_type='NSString*' type='@' name='name' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='name' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setStore:'>
-<arg declared_type='NSFNanoStore*' type='@' name='store' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSFNanoStore*' name='store' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='store'>
-<retval declared_type='NSFNanoStore*' type='@'/>
+<retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 <method selector='undoChangesWithError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='unsavedObjects'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 </class>
 <class name='NSFNanoEngine'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='NSFEncodingTypeToNSString:'>
-<arg declared_type='NSFEncodingType' type='i' name='value' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='i' declared_type='NSFEncodingType' name='value' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='NSFP_ROWIDPresenceLocation:datatypes:'>
-<arg declared_type='NSArray*' type='@' name='tableColumns' index='0'/>
-<arg declared_type='NSArray*' type='@' name='datatypes' index='1'/>
-<retval declared_type='NSInteger' type='i'/>
+<arg type='@' declared_type='NSArray*' name='tableColumns' index='0'/>
+<arg type='@' declared_type='NSArray*' name='datatypes' index='1'/>
+<retval type='i' declared_type='NSInteger'/>
 </method>
 <method selector='NSFP_beginTransactionMode:'>
-<arg declared_type='NSString*' type='@' name='theSQLStatement' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='theSQLStatement' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='NSFP_cacheMethodToString'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='NSFP_createTable:withColumns:datatypes:isTemporary:'>
-<arg declared_type='NSString*' type='@' name='table' index='0'/>
-<arg declared_type='NSArray*' type='@' name='tableColumns' index='1'/>
-<arg declared_type='NSArray*' type='@' name='tableDatatypes' index='2'/>
-<arg declared_type='BOOL' type='B' name='isTemporaryFlag' index='3'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='table' index='0'/>
+<arg type='@' declared_type='NSArray*' name='tableColumns' index='1'/>
+<arg type='@' declared_type='NSArray*' name='tableDatatypes' index='2'/>
+<arg type='B' declared_type='BOOL' name='isTemporaryFlag' index='3'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='NSFP_datatypeForColumn:'>
-<arg declared_type='NSString*' type='@' name='tableAndColumn' index='0'/>
-<retval declared_type='NSFNanoDatatype' type='i'/>
+<arg type='@' declared_type='NSString*' name='tableAndColumn' index='0'/>
+<retval type='i' declared_type='NSFNanoDatatype'/>
 </method>
 <method selector='NSFP_datatypeForTable:column:'>
-<arg declared_type='NSString*' type='@' name='table' index='0'/>
-<arg declared_type='NSString*' type='@' name='column' index='1'/>
-<retval declared_type='NSFNanoDatatype' type='i'/>
+<arg type='@' declared_type='NSString*' name='table' index='0'/>
+<arg type='@' declared_type='NSString*' name='column' index='1'/>
+<retval type='i' declared_type='NSFNanoDatatype'/>
 </method>
 <method class_method='true' selector='NSFP_decodeQuantum:andSource:'>
-<arg declared_type='unsigned char*' type='*' name='dest' index='0'/>
-<arg const='true' declared_type='char*' type='*' name='src' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='*' declared_type='unsigned char*' name='dest' index='0'/>
+<arg type='*' declared_type='char*' name='src' index='1' const='true'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='NSFP_flattenAllTables'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='NSFP_insertStringValues:forColumns:table:'>
-<arg declared_type='NSArray*' type='@' name='values' index='0'/>
-<arg declared_type='NSArray*' type='@' name='columns' index='1'/>
-<arg declared_type='NSString*' type='@' name='table' index='2'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSArray*' name='values' index='0'/>
+<arg type='@' declared_type='NSArray*' name='columns' index='1'/>
+<arg type='@' declared_type='NSString*' name='table' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='NSFP_installCommitCallback'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='NSFP_isColumnROWIDAlias:forTable:'>
-<arg declared_type='NSString*' type='@' name='column' index='0'/>
-<arg declared_type='NSString*' type='@' name='table' index='1'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='column' index='0'/>
+<arg type='@' declared_type='NSString*' name='table' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='NSFP_nestedDescriptionWithPrefixedSpace:'>
-<arg declared_type='NSString*' type='@' name='prefixedSpace' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSString*' name='prefixedSpace' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='NSFP_prefixWithDotDelimiter:'>
-<arg declared_type='NSString*' type='@' name='tableAndColumn' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSString*' name='tableAndColumn' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='NSFP_prepareSQLite3Statement:theSQLStatement:'>
-<arg declared_type='sqlite3_stmt**' type='^^{sqlite3_stmt}' name='aStatement' index='0'/>
-<arg declared_type='NSString*' type='@' name='aSQLQuery' index='1'/>
-<retval declared_type='NSInteger' type='i'/>
+<arg type='^^{sqlite3_stmt}' declared_type='sqlite3_stmt**' name='aStatement' index='0'/>
+<arg type='@' declared_type='NSString*' name='aSQLQuery' index='1'/>
+<retval type='i' declared_type='NSInteger'/>
 </method>
 <method selector='NSFP_rebuildDatatypeCache'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='NSFP_removeColumn:fromTable:'>
-<arg declared_type='NSString*' type='@' name='column' index='0'/>
-<arg declared_type='NSString*' type='@' name='table' index='1'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='column' index='0'/>
+<arg type='@' declared_type='NSString*' name='table' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='NSFP_setFullColumnNamesEnabled'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='NSFP_sharedROWIDKeywords'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='NSFP_sqlString:appendingTags:'>
-<arg declared_type='NSMutableString*' type='@' name='theSQLStatement' index='0'/>
-<arg declared_type='NSArray*' type='@' name='columns' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSMutableString*' name='theSQLStatement' index='0'/>
+<arg type='@' declared_type='NSArray*' name='columns' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='NSFP_sqlString:appendingTags:quoteTags:'>
-<arg declared_type='NSMutableString*' type='@' name='theSQLStatement' index='0'/>
-<arg declared_type='NSArray*' type='@' name='tags' index='1'/>
-<arg declared_type='BOOL' type='B' name='flag' index='2'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSMutableString*' name='theSQLStatement' index='0'/>
+<arg type='@' declared_type='NSArray*' name='tags' index='1'/>
+<arg type='B' declared_type='BOOL' name='flag' index='2'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='NSFP_sqlString:forTable:withColumns:datatypes:'>
-<arg declared_type='NSMutableString*' type='@' name='theSQLStatement' index='0'/>
-<arg declared_type='NSString*' type='@' name='table' index='1'/>
-<arg declared_type='NSArray*' type='@' name='columns' index='2'/>
-<arg declared_type='NSArray*' type='@' name='datatypes' index='3'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSMutableString*' name='theSQLStatement' index='0'/>
+<arg type='@' declared_type='NSString*' name='table' index='1'/>
+<arg type='@' declared_type='NSArray*' name='columns' index='2'/>
+<arg type='@' declared_type='NSArray*' name='datatypes' index='3'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='NSFP_stripBitsFromExtendedResultCode:'>
-<arg declared_type='int' type='i' name='extendedResult' index='0'/>
-<retval declared_type='int' type='i'/>
+<arg type='i' declared_type='int' name='extendedResult' index='0'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method selector='NSFP_suffixWithDotDelimiter:'>
-<arg declared_type='NSString*' type='@' name='tableAndColumn' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSString*' name='tableAndColumn' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='NSFP_uninstallCommitCallback'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='NSStringToNSFEncodingType:'>
-<arg declared_type='NSString*' type='@' name='value' index='0'/>
-<retval declared_type='NSFEncodingType' type='i'/>
+<arg type='@' declared_type='NSString*' name='value' index='0'/>
+<retval type='i' declared_type='NSFEncodingType'/>
 </method>
 <method class_method='true' selector='_plistToDictionary:'>
-<arg declared_type='NSString*' type='@' name='aPlist' index='0'/>
-<retval declared_type='NSDictionary*' type='@'/>
+<arg type='@' declared_type='NSString*' name='aPlist' index='0'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='allTables'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='beginDeferredTransaction'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='beginTransaction'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='busyTimeout'>
-<retval declared_type='unsigned int' type='I'/>
+<retval type='I' declared_type='unsigned int'/>
 </method>
 <method selector='cacheMethod'>
-<retval declared_type='NSFCacheMethod' type='i'/>
+<retval type='i' declared_type='NSFCacheMethod'/>
 </method>
 <method selector='cacheSize'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='close'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='columnsForTable:'>
-<arg declared_type='NSString*' type='@' name='theTable' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theTable' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='commitTransaction'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='compact'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='createIndexForColumn:table:isUnique:'>
-<arg declared_type='NSString*' type='@' name='theColumn' index='0'/>
-<arg declared_type='NSString*' type='@' name='theTable' index='1'/>
-<arg declared_type='BOOL' type='B' name='isUnique' index='2'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='theColumn' index='0'/>
+<arg type='@' declared_type='NSString*' name='theTable' index='1'/>
+<arg type='B' declared_type='BOOL' name='isUnique' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='createTable:withColumns:datatypes:'>
-<arg declared_type='NSString*' type='@' name='theTable' index='0'/>
-<arg declared_type='NSArray*' type='@' name='theColumns' index='1'/>
-<arg declared_type='NSArray*' type='@' name='theDatatypes' index='2'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='theTable' index='0'/>
+<arg type='@' declared_type='NSArray*' name='theColumns' index='1'/>
+<arg type='@' declared_type='NSArray*' name='theDatatypes' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='databaseWithPath:'>
-<arg declared_type='NSString*' type='@' name='thePath' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='thePath' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='datatypesForTable:'>
-<arg declared_type='NSString*' type='@' name='theTable' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theTable' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method class_method='true' selector='decodeDataFromBase64:'>
-<arg declared_type='NSString*' type='@' name='theEncodedData' index='0'/>
-<retval declared_type='NSData*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theEncodedData' index='0'/>
+<retval type='@' declared_type='NSData*'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='dictionaryDescription'>
-<retval declared_type='NSFOrderedDictionary*' type='@'/>
+<retval type='@' declared_type='NSFOrderedDictionary*'/>
 </method>
 <method selector='dropIndex:'>
-<arg declared_type='NSString*' type='@' name='theIndex' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='theIndex' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='dropTable:'>
-<arg declared_type='NSString*' type='@' name='theTable' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='theTable' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='encodeDataToBase64:'>
-<arg declared_type='NSData*' type='@' name='theData' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSData*' name='theData' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='encoding'>
-<retval declared_type='NSFEncodingType' type='i'/>
+<retval type='i' declared_type='NSFEncodingType'/>
 </method>
 <method selector='executeSQL:'>
-<arg declared_type='NSString*' type='@' name='theSQLStatement' index='0'/>
-<retval declared_type='NSFNanoResult*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theSQLStatement' index='0'/>
+<retval type='@' declared_type='NSFNanoResult*'/>
 </method>
 <method selector='indexedColumnsForTable:'>
-<arg declared_type='NSString*' type='@' name='theTable' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theTable' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='indexes'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='initWithPath:'>
-<arg declared_type='NSString*' type='@' name='thePath' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='thePath' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='integrityCheck'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='isDatabaseOpen'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='isTransactionActive'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='journalModeAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='NSFJournalModeMode' type='i'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='i' declared_type='NSFJournalModeMode'/>
 </method>
 <method selector='maxRowUIDForTable:'>
-<arg declared_type='NSString*' type='@' name='theTable' index='0'/>
-<retval declared_type='long long' type='q'/>
+<arg type='@' declared_type='NSString*' name='theTable' index='0'/>
+<retval type='q' declared_type='long long'/>
 </method>
 <method class_method='true' selector='nanoStoreEngineVersion'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='openWithCacheMethod:useFastMode:'>
-<arg declared_type='NSFCacheMethod' type='i' name='theCacheMethod' index='0'/>
-<arg declared_type='BOOL' type='B' name='useFastMode' index='1'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='i' declared_type='NSFCacheMethod' name='theCacheMethod' index='0'/>
+<arg type='B' declared_type='BOOL' name='useFastMode' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='pageSize'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='path'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='recommendedCacheSize'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='rollbackTransaction'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setBusyTimeout:'>
-<arg declared_type='unsigned int' type='I' name='theTimeout' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='unsigned int' name='theTimeout' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setCacheMethod:'>
-<arg declared_type='NSFCacheMethod' type='i' name='cacheMethod' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='NSFCacheMethod' name='cacheMethod' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setCacheSize:'>
-<arg declared_type='NSUInteger' type='I' name='numberOfPages' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='I' declared_type='NSUInteger' name='numberOfPages' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setEncodingType:'>
-<arg declared_type='NSFEncodingType' type='i' name='theEncodingType' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='i' declared_type='NSFEncodingType' name='theEncodingType' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setJournalMode:'>
-<arg declared_type='NSFJournalModeMode' type='i' name='theMode' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='i' declared_type='NSFJournalModeMode' name='theMode' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setPageSize:'>
-<arg declared_type='NSUInteger' type='I' name='numberOfBytes' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='I' declared_type='NSUInteger' name='numberOfBytes' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setSynchronousMode:'>
-<arg declared_type='NSFSynchronousMode' type='i' name='theSynchronousMode' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='NSFSynchronousMode' name='theSynchronousMode' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setTempStoreMode:'>
-<arg declared_type='NSFTempStoreMode' type='i' name='theTempStoreMode' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='NSFTempStoreMode' name='theTempStoreMode' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='sharedNanoStoreEngineDatatypes'>
-<retval declared_type='NSSet*' type='@'/>
+<retval type='@' declared_type='NSSet*'/>
 </method>
 <method selector='sqlite'>
-<retval declared_type='sqlite3*' type='^{sqlite3=}'/>
+<retval type='^{sqlite3=}' declared_type='sqlite3*'/>
 </method>
 <method class_method='true' selector='sqliteVersion'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='stringWithUUID'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='synchronousMode'>
-<retval declared_type='NSFSynchronousMode' type='i'/>
+<retval type='i' declared_type='NSFSynchronousMode'/>
 </method>
 <method class_method='true' selector='systemPageSize'>
-<retval declared_type='NSInteger' type='i'/>
+<retval type='i' declared_type='NSInteger'/>
 </method>
 <method selector='tables'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='tempStoreMode'>
-<retval declared_type='NSFTempStoreMode' type='i'/>
+<retval type='i' declared_type='NSFTempStoreMode'/>
 </method>
 <method selector='temporaryTables'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 </class>
 <class name='NSFNanoExpression'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='addPredicate:withOperator:'>
-<arg declared_type='NSFNanoPredicate*' type='@' name='thePredicate' index='0'/>
-<arg declared_type='NSFOperator' type='i' name='theOperator' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSFNanoPredicate*' name='thePredicate' index='0'/>
+<arg type='i' declared_type='NSFOperator' name='theOperator' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='arrayDescription'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='expressionWithPredicate:'>
-<arg declared_type='NSFNanoPredicate*' type='@' name='thePredicate' index='0'/>
-<retval declared_type='NSFNanoExpression*' type='@'/>
+<arg type='@' declared_type='NSFNanoPredicate*' name='thePredicate' index='0'/>
+<retval type='@' declared_type='NSFNanoExpression*'/>
 </method>
 <method selector='initWithPredicate:'>
-<arg declared_type='NSFNanoPredicate*' type='@' name='thePredicate' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSFNanoPredicate*' name='thePredicate' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='operators'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='predicates'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 </class>
 <class name='NSFNanoObject'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='_NSObjectToJSONString:error:'>
-<arg declared_type='id' type='@' name='object' index='0'/>
-<arg declared_type='NSError**' type='^@' name='error' index='1'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='id' name='object' index='0'/>
+<arg type='^@' declared_type='NSError**' name='error' index='1'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='_safeArrayFromArray:'>
-<arg declared_type='NSArray*' type='@' name='array' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='array' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method class_method='true' selector='_safeDictionaryFromDictionary:'>
-<arg declared_type='NSDictionary*' type='@' name='dictionary' index='0'/>
-<retval declared_type='NSDictionary*' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='dictionary' index='0'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method class_method='true' selector='_safeObjectFromObject:'>
-<arg declared_type='id' type='@' name='object' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='id' name='object' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='_setOriginalClassString:'>
-<arg declared_type='NSString*' type='@' name='theClassString' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='theClassString' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='addEntriesFromDictionary:'>
-<arg declared_type='NSDictionary*' type='@' name='otherDictionary' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDictionary*' name='otherDictionary' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='dictionaryRepresentation'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='info'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='initFromDictionaryRepresentation:'>
-<arg declared_type='NSDictionary*' type='@' name='theDictionary' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='theDictionary' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='initFromDictionaryRepresentation:key:'>
-<arg declared_type='NSDictionary*' type='@' name='theDictionary' index='0'/>
-<arg declared_type='NSString*' type='@' name='theKey' index='1'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='theDictionary' index='0'/>
+<arg type='@' declared_type='NSString*' name='theKey' index='1'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='isEqualToNanoObject:'>
-<arg declared_type='NSFNanoObject*' type='@' name='otherNanoObject' index='0'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSFNanoObject*' name='otherNanoObject' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='key'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='nanoObject'>
-<retval declared_type='NSFNanoObject*' type='@'/>
+<retval type='@' declared_type='NSFNanoObject*'/>
 </method>
 <method class_method='true' selector='nanoObjectWithDictionary:'>
-<arg declared_type='NSDictionary*' type='@' name='theDictionary' index='0'/>
-<retval declared_type='NSFNanoObject*' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='theDictionary' index='0'/>
+<retval type='@' declared_type='NSFNanoObject*'/>
 </method>
 <method class_method='true' selector='nanoObjectWithDictionary:key:'>
-<arg declared_type='NSDictionary*' type='@' name='theDictionary' index='0'/>
-<arg declared_type='NSString*' type='@' name='theKey' index='1'/>
-<retval declared_type='NSFNanoObject*' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='theDictionary' index='0'/>
+<arg type='@' declared_type='NSString*' name='theKey' index='1'/>
+<retval type='@' declared_type='NSFNanoObject*'/>
 </method>
 <method selector='objectForKey:'>
-<arg declared_type='NSString*' type='@' name='aKey' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='originalClassString'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='removeAllObjects'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='removeObjectForKey:'>
-<arg declared_type='NSString*' type='@' name='aKey' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='removeObjectsForKeys:'>
-<arg declared_type='NSArray*' type='@' name='keyArray' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='keyArray' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='saveStoreAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setObject:forKey:'>
-<arg declared_type='id' type='@' name='anObject' index='0'/>
-<arg declared_type='NSString*' type='@' name='aKey' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='anObject' index='0'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setStore:'>
-<arg declared_type='NSFNanoStore*' type='@' name='store' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSFNanoStore*' name='store' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='store'>
-<retval declared_type='NSFNanoStore*' type='@'/>
+<retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 </class>
 <class name='NSFNanoPredicate'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='column'>
-<retval declared_type='NSFTableColumnType' type='i'/>
+<retval type='i' declared_type='NSFTableColumnType'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='initWithColumn:matching:value:'>
-<arg declared_type='NSFTableColumnType' type='i' name='theType' index='0'/>
-<arg declared_type='NSFMatchType' type='i' name='theMatch' index='1'/>
-<arg declared_type='id' type='@' name='theValue' index='2'/>
-<retval declared_type='id' type='@'/>
+<arg type='i' declared_type='NSFTableColumnType' name='theType' index='0'/>
+<arg type='i' declared_type='NSFMatchType' name='theMatch' index='1'/>
+<arg type='@' declared_type='id' name='theValue' index='2'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='match'>
-<retval declared_type='NSFMatchType' type='i'/>
+<retval type='i' declared_type='NSFMatchType'/>
 </method>
 <method class_method='true' selector='predicateWithColumn:matching:value:'>
-<arg declared_type='NSFTableColumnType' type='i' name='theType' index='0'/>
-<arg declared_type='NSFMatchType' type='i' name='theMatch' index='1'/>
-<arg declared_type='id' type='@' name='theValue' index='2'/>
-<retval declared_type='NSFNanoPredicate*' type='@'/>
+<arg type='i' declared_type='NSFTableColumnType' name='theType' index='0'/>
+<arg type='i' declared_type='NSFMatchType' name='theMatch' index='1'/>
+<arg type='@' declared_type='id' name='theValue' index='2'/>
+<retval type='@' declared_type='NSFNanoPredicate*'/>
 </method>
 <method selector='value'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 </class>
 <class name='NSFNanoResult'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_calculateNumberOfRows'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='_initWithDictionary:'>
-<arg declared_type='NSDictionary*' type='@' name='results' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='results' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='_initWithError:'>
-<arg declared_type='NSError*' type='@' name='error' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSError*' name='error' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='_reset'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method class_method='true' selector='_resultWithDictionary:'>
-<arg declared_type='NSDictionary*' type='@' name='results' index='0'/>
-<retval declared_type='NSFNanoResult*' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='results' index='0'/>
+<retval type='@' declared_type='NSFNanoResult*'/>
 </method>
 <method class_method='true' selector='_resultWithError:'>
-<arg declared_type='NSError*' type='@' name='error' index='0'/>
-<retval declared_type='NSFNanoResult*' type='@'/>
+<arg type='@' declared_type='NSError*' name='error' index='0'/>
+<retval type='@' declared_type='NSFNanoResult*'/>
 </method>
 <method selector='_setError:'>
-<arg declared_type='NSError*' type='@' name='error' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSError*' name='error' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='columns'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='error'>
-<retval declared_type='NSError*' type='@'/>
+<retval type='@' declared_type='NSError*'/>
 </method>
 <method selector='firstValue'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='numberOfRows'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='setError:'>
-<arg declared_type='NSError*' type='@' name='error' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSError*' name='error' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='valueAtIndex:forColumn:'>
-<arg declared_type='NSUInteger' type='I' name='theIndex' index='0'/>
-<arg declared_type='NSString*' type='@' name='theColumn' index='1'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='I' declared_type='NSUInteger' name='theIndex' index='0'/>
+<arg type='@' declared_type='NSString*' name='theColumn' index='1'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='valuesForColumn:'>
-<arg declared_type='NSString*' type='@' name='theColumn' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theColumn' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='writeToFile:'>
-<arg declared_type='NSString*' type='@' name='thePath' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='thePath' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='NSFNanoSearch'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_dataWithKey:attribute:value:matching:'>
-<arg declared_type='NSString*' type='@' name='aKey' index='0'/>
-<arg declared_type='NSString*' type='@' name='anAttribute' index='1'/>
-<arg declared_type='NSString*' type='@' name='aValue' index='2'/>
-<arg declared_type='NSFMatchType' type='i' name='match' index='3'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='0'/>
+<arg type='@' declared_type='NSString*' name='anAttribute' index='1'/>
+<arg type='@' declared_type='NSString*' name='aValue' index='2'/>
+<arg type='i' declared_type='NSFMatchType' name='match' index='3'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='_dataWithKey:attribute:value:matching:returning:'>
-<arg declared_type='NSString*' type='@' name='aKey' index='0'/>
-<arg declared_type='NSString*' type='@' name='anAttribute' index='1'/>
-<arg declared_type='NSString*' type='@' name='aValue' index='2'/>
-<arg declared_type='NSFMatchType' type='i' name='match' index='3'/>
-<arg declared_type='NSFReturnType' type='i' name='returnedObjectType' index='4'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='0'/>
+<arg type='@' declared_type='NSString*' name='anAttribute' index='1'/>
+<arg type='@' declared_type='NSString*' name='aValue' index='2'/>
+<arg type='i' declared_type='NSFMatchType' name='match' index='3'/>
+<arg type='i' declared_type='NSFReturnType' name='returnedObjectType' index='4'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='_dictionaryForKeyPath:value:'>
-<arg declared_type='NSString*' type='@' name='keyPath' index='0'/>
-<arg declared_type='id' type='@' name='value' index='1'/>
-<retval declared_type='NSDictionary*' type='@'/>
+<arg type='@' declared_type='NSString*' name='keyPath' index='0'/>
+<arg type='@' declared_type='id' name='value' index='1'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='_prepareSQLQueryStringWithExpressions:'>
-<arg declared_type='NSArray*' type='@' name='someExpressions' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='someExpressions' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_prepareSQLQueryStringWithKey:attribute:value:matching:'>
-<arg declared_type='NSString*' type='@' name='aKey' index='0'/>
-<arg declared_type='NSString*' type='@' name='anAttribute' index='1'/>
-<arg declared_type='id' type='@' name='aValue' index='2'/>
-<arg declared_type='NSFMatchType' type='i' name='match' index='3'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='0'/>
+<arg type='@' declared_type='NSString*' name='anAttribute' index='1'/>
+<arg type='@' declared_type='id' name='aValue' index='2'/>
+<arg type='i' declared_type='NSFMatchType' name='match' index='3'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='_prepareSQLQueryStringWithKeys:'>
-<arg declared_type='NSArray*' type='@' name='someKeys' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='someKeys' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_preparedSQL'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='_querySegmentForAttributeColumnWithValue:matching:valueColumnWithValue:'>
-<arg declared_type='id' type='@' name='anAttributeValue' index='0'/>
-<arg declared_type='NSFMatchType' type='i' name='match' index='1'/>
-<arg declared_type='id' type='@' name='aValue' index='2'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='id' name='anAttributeValue' index='0'/>
+<arg type='i' declared_type='NSFMatchType' name='match' index='1'/>
+<arg type='@' declared_type='id' name='aValue' index='2'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='_querySegmentForColumn:value:matching:'>
-<arg declared_type='NSString*' type='@' name='aColumn' index='0'/>
-<arg declared_type='id' type='@' name='aValue' index='1'/>
-<arg declared_type='NSFMatchType' type='i' name='match' index='2'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSString*' name='aColumn' index='0'/>
+<arg type='@' declared_type='id' name='aValue' index='1'/>
+<arg type='i' declared_type='NSFMatchType' name='match' index='2'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='_quoteStrings:joiningWithDelimiter:'>
-<arg declared_type='NSArray*' type='@' name='strings' index='0'/>
-<arg declared_type='NSString*' type='@' name='delimiter' index='1'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='strings' index='0'/>
+<arg type='@' declared_type='NSString*' name='delimiter' index='1'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_resultsFromSQLQuery:'>
-<arg declared_type='NSString*' type='@' name='theSQLStatement' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theSQLStatement' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='_retrieveDataAdded:calendarDate:error:'>
-<arg declared_type='NSFDateMatchType' type='i' name='aDateMatch' index='0'/>
-<arg declared_type='NSDate*' type='@' name='aDate' index='1'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='2' type_modifier='o'/>
-<retval declared_type='NSDictionary*' type='@'/>
+<arg type='i' declared_type='NSFDateMatchType' name='aDateMatch' index='0'/>
+<arg type='@' declared_type='NSDate*' name='aDate' index='1'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='2'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='_retrieveDataWithError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='NSDictionary*' type='@'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='_sortResultsIfApplicable:returnType:'>
-<arg declared_type='NSDictionary*' type='@' name='results' index='0'/>
-<arg declared_type='NSFReturnType' type='i' name='theReturnType' index='1'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='results' index='0'/>
+<arg type='i' declared_type='NSFReturnType' name='theReturnType' index='1'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='aggregateOperation:onAttribute:'>
-<arg declared_type='NSFAggregateFunctionType' type='i' name='theFunctionType' index='0'/>
-<arg declared_type='NSString*' type='@' name='theAttribute' index='1'/>
-<retval declared_type='NSNumber*' type='@'/>
+<arg type='i' declared_type='NSFAggregateFunctionType' name='theFunctionType' index='0'/>
+<arg type='@' declared_type='NSString*' name='theAttribute' index='1'/>
+<retval type='@' declared_type='NSNumber*'/>
 </method>
 <method selector='attribute'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='attributesToBeReturned'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='bag'>
-<retval declared_type='NSFNanoBag*' type='@'/>
+<retval type='@' declared_type='NSFNanoBag*'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='executeSQL:'>
-<arg declared_type='NSString*' type='@' name='theSQLStatement' index='0'/>
-<retval declared_type='NSFNanoResult*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theSQLStatement' index='0'/>
+<retval type='@' declared_type='NSFNanoResult*'/>
 </method>
 <method selector='executeSQL:returnType:error:'>
-<arg declared_type='NSString*' type='@' name='theSQLStatement' index='0'/>
-<arg declared_type='NSFReturnType' type='i' name='theReturnType' index='1'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='2' type_modifier='o'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='theSQLStatement' index='0'/>
+<arg type='i' declared_type='NSFReturnType' name='theReturnType' index='1'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='2'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='explainSQL:'>
-<arg declared_type='NSString*' type='@' name='theSQLStatement' index='0'/>
-<retval declared_type='NSFNanoResult*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theSQLStatement' index='0'/>
+<retval type='@' declared_type='NSFNanoResult*'/>
 </method>
 <method selector='expressions'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='filterClass'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='groupValues'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='initWithStore:'>
-<arg declared_type='NSFNanoStore*' type='@' name='theNanoStore' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSFNanoStore*' name='theNanoStore' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='key'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='limit'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='match'>
-<retval declared_type='NSFMatchType' type='i'/>
+<retval type='i' declared_type='NSFMatchType'/>
 </method>
 <method selector='nanoStore'>
-<retval declared_type='NSFNanoStore*' type='@'/>
+<retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 <method selector='offset'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='reset'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='searchObjectsAdded:date:returnType:error:'>
-<arg declared_type='NSFDateMatchType' type='i' name='theDateMatch' index='0'/>
-<arg declared_type='NSDate*' type='@' name='theDate' index='1'/>
-<arg declared_type='NSFReturnType' type='i' name='theReturnType' index='2'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='3' type_modifier='o'/>
-<retval declared_type='id' type='@'/>
+<arg type='i' declared_type='NSFDateMatchType' name='theDateMatch' index='0'/>
+<arg type='@' declared_type='NSDate*' name='theDate' index='1'/>
+<arg type='i' declared_type='NSFReturnType' name='theReturnType' index='2'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='3'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='searchObjectsWithReturnType:error:'>
-<arg declared_type='NSFReturnType' type='i' name='theReturnType' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='id' type='@'/>
+<arg type='i' declared_type='NSFReturnType' name='theReturnType' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method class_method='true' selector='searchWithStore:'>
-<arg declared_type='NSFNanoStore*' type='@' name='theNanoStore' index='0'/>
-<retval declared_type='NSFNanoSearch*' type='@'/>
+<arg type='@' declared_type='NSFNanoStore*' name='theNanoStore' index='0'/>
+<retval type='@' declared_type='NSFNanoSearch*'/>
 </method>
 <method selector='setAttribute:'>
-<arg declared_type='NSString*' type='@' name='attribute' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='attribute' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setAttributesToBeReturned:'>
-<arg declared_type='NSArray*' type='@' name='attributesToBeReturned' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='attributesToBeReturned' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setBag:'>
-<arg declared_type='NSFNanoBag*' type='@' name='bag' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSFNanoBag*' name='bag' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setExpressions:'>
-<arg declared_type='NSArray*' type='@' name='expressions' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='expressions' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setFilterClass:'>
-<arg declared_type='NSString*' type='@' name='filterClass' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='filterClass' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setGroupValues:'>
-<arg declared_type='BOOL' type='B' name='groupValues' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='groupValues' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setKey:'>
-<arg declared_type='NSString*' type='@' name='key' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='key' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setLimit:'>
-<arg declared_type='NSUInteger' type='I' name='limit' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='limit' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setMatch:'>
-<arg declared_type='NSFMatchType' type='i' name='match' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='NSFMatchType' name='match' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setNanoStore:'>
-<arg declared_type='NSFNanoStore*' type='@' name='nanoStore' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSFNanoStore*' name='nanoStore' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setOffset:'>
-<arg declared_type='NSUInteger' type='I' name='offset' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='offset' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSort:'>
-<arg declared_type='NSArray*' type='@' name='sort' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSArray*' name='sort' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setValue:'>
-<arg declared_type='id' type='@' name='value' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='value' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='sort'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='sql'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='value'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 </class>
 <class name='NSFNanoSortDescriptor'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='attribute'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='initWithAttribute:ascending:'>
-<arg declared_type='NSString*' type='@' name='theAttribute' index='0'/>
-<arg declared_type='BOOL' type='B' name='ascending' index='1'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSString*' name='theAttribute' index='0'/>
+<arg type='B' declared_type='BOOL' name='ascending' index='1'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='isAscending'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='sortDescriptorWithAttribute:ascending:'>
-<arg declared_type='NSString*' type='@' name='theAttribute' index='0'/>
-<arg declared_type='BOOL' type='B' name='ascending' index='1'/>
-<retval declared_type='NSFNanoSortDescriptor*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theAttribute' index='0'/>
+<arg type='B' declared_type='BOOL' name='ascending' index='1'/>
+<retval type='@' declared_type='NSFNanoSortDescriptor*'/>
 </method>
 </class>
 <class name='NSFNanoStore'>
 <method selector='JSONDescription'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_NSFDatatypeOfObject:'>
-<arg declared_type='id' type='@' name='value' index='0'/>
-<retval declared_type='NSFNanoDatatype' type='i'/>
+<arg type='@' declared_type='id' name='value' index='0'/>
+<retval type='i' declared_type='NSFNanoDatatype'/>
 </method>
 <method selector='__storeDictionaries:forKeys:error:'>
-<arg declared_type='NSArray*' type='@' name='someObjects' index='0'/>
-<arg declared_type='NSArray*' type='@' name='someKeys' index='1'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='2' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSArray*' name='someObjects' index='0'/>
+<arg type='@' declared_type='NSArray*' name='someKeys' index='1'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_addObjectsFromArray:forceSave:error:'>
-<arg declared_type='NSArray*' type='@' name='someObjects' index='0'/>
-<arg declared_type='BOOL' type='B' name='forceSave' index='1'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='2' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSArray*' name='someObjects' index='0'/>
+<arg type='B' declared_type='BOOL' name='forceSave' index='1'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_backupFileStoreToDirectoryAtPath:extension:compact:error:'>
-<arg declared_type='NSString*' type='@' name='aPath' index='0'/>
-<arg declared_type='NSString*' type='@' name='anExtension' index='1'/>
-<arg declared_type='BOOL' type='B' name='flag' index='2'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='3' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='aPath' index='0'/>
+<arg type='@' declared_type='NSString*' name='anExtension' index='1'/>
+<arg type='B' declared_type='BOOL' name='flag' index='2'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='3'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_backupMemoryStoreToDirectoryAtPath:extension:compact:error:'>
-<arg declared_type='NSString*' type='@' name='aPath' index='0'/>
-<arg declared_type='NSString*' type='@' name='anExtension' index='1'/>
-<arg declared_type='BOOL' type='B' name='flag' index='2'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='3' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='aPath' index='0'/>
+<arg type='@' declared_type='NSString*' name='anExtension' index='1'/>
+<arg type='B' declared_type='BOOL' name='flag' index='2'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='3'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_bindValue:forAttribute:parameterNumber:usingSQLite3Statement:'>
-<arg declared_type='id' type='@' name='aValue' index='0'/>
-<arg declared_type='NSString*' type='@' name='anAttribute' index='1'/>
-<arg declared_type='NSInteger' type='i' name='aParamNumber' index='2'/>
-<arg declared_type='sqlite3_stmt*' type='^{sqlite3_stmt=}' name='aStatement' index='3'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='id' name='aValue' index='0'/>
+<arg type='@' declared_type='NSString*' name='anAttribute' index='1'/>
+<arg type='i' declared_type='NSInteger' name='aParamNumber' index='2'/>
+<arg type='^{sqlite3_stmt=}' declared_type='sqlite3_stmt*' name='aStatement' index='3'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='_calendarDateToString:'>
-<arg declared_type='NSDate*' type='@' name='aDate' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSDate*' name='aDate' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_checkNanoStoreIsReadyAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method class_method='true' selector='_createAndOpenDebugDatabase'>
-<retval declared_type='NSFNanoStore*' type='@'/>
+<retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 <method class_method='true' selector='_defaultTestData'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='_executeSQL:'>
-<arg declared_type='NSString*' type='@' name='theSQLStatement' index='0'/>
-<retval declared_type='NSFNanoResult*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theSQLStatement' index='0'/>
+<retval type='@' declared_type='NSFNanoResult*'/>
 </method>
 <method selector='_executeSQLite3StepUsingSQLite3Statement:'>
-<arg declared_type='sqlite3_stmt*' type='^{sqlite3_stmt=}' name='aStatement' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='^{sqlite3_stmt=}' declared_type='sqlite3_stmt*' name='aStatement' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='_flattenCollection:keyPath:keys:values:'>
-<arg declared_type='id' type='@' name='someObject' index='0'/>
-<arg declared_type='NSMutableArray**' type='^@' name='aKeyPath' index='1'/>
-<arg declared_type='NSMutableArray**' type='^@' name='someKeys' index='2'/>
-<arg declared_type='NSMutableArray**' type='^@' name='someValues' index='3'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='someObject' index='0'/>
+<arg type='^@' declared_type='NSMutableArray**' name='aKeyPath' index='1'/>
+<arg type='^@' declared_type='NSMutableArray**' name='someKeys' index='2'/>
+<arg type='^@' declared_type='NSMutableArray**' name='someValues' index='3'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='_flattenCollection:keys:values:'>
-<arg declared_type='NSDictionary*' type='@' name='info' index='0'/>
-<arg declared_type='NSMutableArray**' type='^@' name='flattenedKeys' index='1'/>
-<arg declared_type='NSMutableArray**' type='^@' name='flattenedValues' index='2'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDictionary*' name='info' index='0'/>
+<arg type='^@' declared_type='NSMutableArray**' name='flattenedKeys' index='1'/>
+<arg type='^@' declared_type='NSMutableArray**' name='flattenedValues' index='2'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='_initializePreparedStatementsWithError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_isOurTransaction'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_nestedDescriptionWithPrefixedSpace:'>
-<arg declared_type='NSString*' type='@' name='prefixedSpace' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='NSString*' name='prefixedSpace' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='_prepareSQLite3Statement:theSQLStatement:'>
-<arg declared_type='sqlite3_stmt**' type='^^{sqlite3_stmt}' name='aStatement' index='0'/>
-<arg declared_type='NSString*' type='@' name='aSQLQuery' index='1'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='^^{sqlite3_stmt}' declared_type='sqlite3_stmt**' name='aStatement' index='0'/>
+<arg type='@' declared_type='NSString*' name='aSQLQuery' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_releasePreparedStatements'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='_setIsOurTransaction:'>
-<arg declared_type='BOOL' type='B' name='value' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='B' declared_type='BOOL' name='value' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='_setupCachingSchema'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_storeDictionary:forKey:forClassNamed:error:'>
-<arg declared_type='NSDictionary*' type='@' name='someInfo' index='0'/>
-<arg declared_type='NSString*' type='@' name='aKey' index='1'/>
-<arg declared_type='NSString*' type='@' name='classType' index='2'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='3' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSDictionary*' name='someInfo' index='0'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='1'/>
+<arg type='@' declared_type='NSString*' name='classType' index='2'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='3'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='_stringFromValue:'>
-<arg declared_type='id' type='@' name='aValue' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='id' name='aValue' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='addObject:error:'>
-<arg declared_type='id' type='@' name='theObject' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='id' name='theObject' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='addObjectsFromArray:error:'>
-<arg declared_type='NSArray*' type='@' name='theObjects' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSArray*' name='theObjects' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='allObjectClasses'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='bagWithName:'>
-<arg declared_type='NSString*' type='@' name='theName' index='0'/>
-<retval declared_type='NSFNanoBag*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theName' index='0'/>
+<retval type='@' declared_type='NSFNanoBag*'/>
 </method>
 <method selector='bags'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='bagsContainingObjectWithKey:'>
-<arg declared_type='NSString*' type='@' name='theKey' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theKey' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='bagsWithKeysInArray:'>
-<arg declared_type='NSArray*' type='@' name='theKeys' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='theKeys' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='bagsWithName:'>
-<arg declared_type='NSString*' type='@' name='theName' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theName' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='beginTransactionAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='clearIndexesAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='closeWithError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='commitTransactionAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='compactStoreAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='countOfObjectsOfClassNamed:'>
-<arg declared_type='NSString*' type='@' name='theClassName' index='0'/>
-<retval declared_type='long long' type='q'/>
+<arg type='@' declared_type='NSString*' name='theClassName' index='0'/>
+<retval type='q' declared_type='long long'/>
 </method>
 <method class_method='true' selector='createAndOpenStoreWithType:path:error:'>
-<arg declared_type='NSFNanoStoreType' type='i' name='theType' index='0'/>
-<arg declared_type='NSString*' type='@' name='thePath' index='1'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='2' type_modifier='o'/>
-<retval declared_type='NSFNanoStore*' type='@'/>
+<arg type='i' declared_type='NSFNanoStoreType' name='theType' index='0'/>
+<arg type='@' declared_type='NSString*' name='thePath' index='1'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='2'/>
+<retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 <method class_method='true' selector='createStoreWithType:path:'>
-<arg declared_type='NSFNanoStoreType' type='i' name='theType' index='0'/>
-<arg declared_type='NSString*' type='@' name='thePath' index='1'/>
-<retval declared_type='NSFNanoStore*' type='@'/>
+<arg type='i' declared_type='NSFNanoStoreType' name='theType' index='0'/>
+<arg type='@' declared_type='NSString*' name='thePath' index='1'/>
+<retval type='@' declared_type='NSFNanoStore*'/>
 </method>
 <method selector='description'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='dictionaryDescription'>
-<retval declared_type='NSFOrderedDictionary*' type='@'/>
+<retval type='@' declared_type='NSFOrderedDictionary*'/>
 </method>
 <method selector='discardUnsavedChanges'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='filePath'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='hasUnsavedChanges'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='initStoreWithType:path:'>
-<arg declared_type='NSFNanoStoreType' type='i' name='theType' index='0'/>
-<arg declared_type='NSString*' type='@' name='thePath' index='1'/>
-<retval declared_type='id' type='@'/>
+<arg type='i' declared_type='NSFNanoStoreType' name='theType' index='0'/>
+<arg type='@' declared_type='NSString*' name='thePath' index='1'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='isClosed'>
-<retval declared_type='BOOL' type='B'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='nanoEngineProcessingMode'>
-<retval declared_type='NSFEngineProcessingMode' type='i'/>
+<retval type='i' declared_type='NSFEngineProcessingMode'/>
 </method>
 <method selector='nanoStoreEngine'>
-<retval declared_type='NSFNanoEngine*' type='@'/>
+<retval type='@' declared_type='NSFNanoEngine*'/>
 </method>
 <method selector='objectsOfClassNamed:'>
-<arg declared_type='NSString*' type='@' name='theClassName' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theClassName' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='objectsOfClassNamed:usingSortDescriptors:'>
-<arg declared_type='NSString*' type='@' name='theClassName' index='0'/>
-<arg declared_type='NSArray*' type='@' name='theSortDescriptors' index='1'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSString*' name='theClassName' index='0'/>
+<arg type='@' declared_type='NSArray*' name='theSortDescriptors' index='1'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='objectsWithKeysInArray:'>
-<arg declared_type='NSArray*' type='@' name='theKeys' index='0'/>
-<retval declared_type='NSArray*' type='@'/>
+<arg type='@' declared_type='NSArray*' name='theKeys' index='0'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='openWithError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='rebuildIndexesAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeAllObjectsFromStoreAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeObject:error:'>
-<arg declared_type='id' type='@' name='theObject' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='id' name='theObject' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeObjectsInArray:error:'>
-<arg declared_type='NSArray*' type='@' name='theObjects' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSArray*' name='theObjects' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='removeObjectsWithKeysInArray:error:'>
-<arg declared_type='NSArray*' type='@' name='theKeys' index='0'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='1' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSArray*' name='theKeys' index='0'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='1'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='rollbackTransactionAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='saveInterval'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='saveStoreAndReturnError:'>
-<arg declared_type='NSError**' type='^@' name='outError' index='0' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='0'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='saveStoreToDirectoryAtPath:compactDatabase:error:'>
-<arg declared_type='NSString*' type='@' name='thePath' index='0'/>
-<arg declared_type='BOOL' type='B' name='shouldCompact' index='1'/>
-<arg declared_type='NSError**' type='^@' name='outError' index='2' type_modifier='o'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSString*' name='thePath' index='0'/>
+<arg type='B' declared_type='BOOL' name='shouldCompact' index='1'/>
+<arg type_modifier='o' type='^@' declared_type='NSError**' name='outError' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='setNanoEngineProcessingMode:'>
-<arg declared_type='NSFEngineProcessingMode' type='i' name='nanoEngineProcessingMode' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='NSFEngineProcessingMode' name='nanoEngineProcessingMode' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setNanoStoreEngine:'>
-<arg declared_type='NSFNanoEngine*' type='@' name='nanoStoreEngine' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSFNanoEngine*' name='nanoStoreEngine' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setSaveInterval:'>
-<arg declared_type='NSUInteger' type='I' name='saveInterval' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='saveInterval' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <class name='NSFOrderedDictionary'>
 <method selector='insertObject:forKey:atIndex:'>
-<arg declared_type='id' type='@' name='anObject' index='0'/>
-<arg declared_type='id' type='@' name='aKey' index='1'/>
-<arg declared_type='NSUInteger' type='I' name='anIndex' index='2'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='anObject' index='0'/>
+<arg type='@' declared_type='id' name='aKey' index='1'/>
+<arg type='I' declared_type='NSUInteger' name='anIndex' index='2'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='keyAtIndex:'>
-<arg declared_type='NSUInteger' type='I' name='anIndex' index='0'/>
-<retval declared_type='id' type='@'/>
+<arg type='I' declared_type='NSUInteger' name='anIndex' index='0'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='reverseKeyEnumerator'>
-<retval declared_type='NSEnumerator*' type='@'/>
+<retval type='@' declared_type='NSEnumerator*'/>
 </method>
 </class>
 <class name='NSObject'>
 <method selector='appendPartWithFileData:name:fileName:mimeType:'>
-<arg declared_type='NSData*' type='@' name='data' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSString*' type='@' name='fileName' index='2'/>
-<arg declared_type='NSString*' type='@' name='mimeType' index='3'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSData*' name='data' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='@' declared_type='NSString*' name='fileName' index='2'/>
+<arg type='@' declared_type='NSString*' name='mimeType' index='3'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='appendPartWithFileURL:name:error:'>
-<arg declared_type='NSURL*' type='@' name='fileURL' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSError**' type='^@' name='error' index='2'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSURL*' name='fileURL' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='^@' declared_type='NSError**' name='error' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='appendPartWithFileURL:name:fileName:mimeType:error:'>
-<arg declared_type='NSURL*' type='@' name='fileURL' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSString*' type='@' name='fileName' index='2'/>
-<arg declared_type='NSString*' type='@' name='mimeType' index='3'/>
-<arg declared_type='NSError**' type='^@' name='error' index='4'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSURL*' name='fileURL' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='@' declared_type='NSString*' name='fileName' index='2'/>
+<arg type='@' declared_type='NSString*' name='mimeType' index='3'/>
+<arg type='^@' declared_type='NSError**' name='error' index='4'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method selector='appendPartWithFormData:name:'>
-<arg declared_type='NSData*' type='@' name='data' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSData*' name='data' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='appendPartWithHeaders:body:'>
-<arg declared_type='NSDictionary*' type='@' name='headers' index='0'/>
-<arg declared_type='NSData*' type='@' name='body' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDictionary*' name='headers' index='0'/>
+<arg type='@' declared_type='NSData*' name='body' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='appendPartWithInputStream:name:fileName:length:mimeType:'>
-<arg declared_type='NSInputStream*' type='@' name='inputStream' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSString*' type='@' name='fileName' index='2'/>
-<arg declared_type='unsigned long long' type='Q' name='length' index='3'/>
-<arg declared_type='NSString*' type='@' name='mimeType' index='4'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSInputStream*' name='inputStream' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='@' declared_type='NSString*' name='fileName' index='2'/>
+<arg type='Q' declared_type='unsigned long long' name='length' index='3'/>
+<arg type='@' declared_type='NSString*' name='mimeType' index='4'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='createNewLogFile'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method class_method='true' selector='ddLogLevel'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method class_method='true' selector='ddSetLogLevel:'>
-<arg declared_type='int' type='i' name='logLevel' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='int' name='logLevel' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='didAddLogger'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='didAddToLogger:'>
-<arg declared_type='id' type='@' name='logger' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='logger' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='didArchiveLogFile:'>
-<arg declared_type='NSString*' type='@' name='logFilePath' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='logFilePath' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='didRollAndArchiveLogFile:'>
-<arg declared_type='NSString*' type='@' name='logFilePath' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='logFilePath' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='flush'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='formatLogMessage:'>
-<arg declared_type='DDLogMessage*' type='@' name='logMessage' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='DDLogMessage*' name='logMessage' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='initNanoObjectFromDictionaryRepresentation:forKey:store:'>
-<arg declared_type='NSDictionary*' type='@' name='theDictionary' index='0'/>
-<arg declared_type='NSString*' type='@' name='aKey' index='1'/>
-<arg declared_type='NSFNanoStore*' type='@' name='theStore' index='2'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='theDictionary' index='0'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='1'/>
+<arg type='@' declared_type='NSFNanoStore*' name='theStore' index='2'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='logFormatter'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='logMessage:'>
-<arg declared_type='DDLogMessage*' type='@' name='logMessage' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='DDLogMessage*' name='logMessage' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='loggerName'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='loggerQueue'>
-<retval declared_type='dispatch_queue_t' type='@'/>
+<retval type='@' declared_type='dispatch_queue_t'/>
 </method>
 <method selector='logsDirectory'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='maximumNumberOfLogFiles'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method selector='nanoObjectDictionaryRepresentation'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method selector='nanoObjectKey'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method selector='rootObject'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method selector='setLogFormatter:'>
-<arg declared_type='id' type='@' name='formatter' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='formatter' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setMaximumNumberOfLogFiles:'>
-<arg declared_type='NSUInteger' type='I' name='maximumNumberOfLogFiles' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='maximumNumberOfLogFiles' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='sortedLogFileInfos'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='sortedLogFileNames'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='sortedLogFilePaths'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='throttleBandwidthWithPacketSize:delay:'>
-<arg declared_type='NSUInteger' type='I' name='numberOfBytes' index='0'/>
-<arg declared_type='NSTimeInterval' type='d' name='delay' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='numberOfBytes' index='0'/>
+<arg type='d' declared_type='NSTimeInterval' name='delay' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='unsortedLogFileInfos'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='unsortedLogFileNames'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='unsortedLogFilePaths'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method selector='willRemoveFromLogger:'>
-<arg declared_type='id' type='@' name='logger' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='logger' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='willRemoveLogger'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='Reachability'>
+<method selector='connectionRequired'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='currentReachabilityFlags'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='currentReachabilityStatus'>
+<retval type='i' declared_type='NetworkStatus'/>
+</method>
+<method selector='currentReachabilityString'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='initWithReachabilityRef:'>
+<arg type='^{__SCNetworkReachability=}' declared_type='SCNetworkReachabilityRef' name='ref' index='0'/>
+<retval type='@' declared_type='Reachability*'/>
+</method>
+<method selector='isConnectionOnDemand'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='isConnectionRequired'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='isInterventionRequired'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='isReachable'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='isReachableViaWWAN'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='isReachableViaWiFi'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='reachabilityFlags'>
+<retval type='I' declared_type='SCNetworkReachabilityFlags'/>
+</method>
+<method class_method='true' selector='reachabilityForInternetConnection'>
+<retval type='@' declared_type='Reachability*'/>
+</method>
+<method class_method='true' selector='reachabilityForLocalWiFi'>
+<retval type='@' declared_type='Reachability*'/>
+</method>
+<method class_method='true' selector='reachabilityWithAddress:'>
+<arg type='^{sockaddr_in=CCS{in_addr=I}[8c]}' declared_type='struct sockaddr_in*' name='hostAddress' index='0' const='true'/>
+<retval type='@' declared_type='Reachability*'/>
+</method>
+<method class_method='true' selector='reachabilityWithHostname:'>
+<arg type='@' declared_type='NSString*' name='hostname' index='0'/>
+<retval type='@' declared_type='Reachability*'/>
+</method>
+<method selector='reachableBlock'>
+<retval type='@?' declared_type='NetworkReachable' function_pointer='true'>
+<arg type='@' declared_type='Reachability*'/>
+<retval type='v' declared_type='void'/>
+</retval>
+</method>
+<method selector='reachableOnWWAN'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setReachableBlock:'>
+<arg type='@?' declared_type='NetworkReachable' function_pointer='true' name='reachableBlock' index='0'>
+<arg type='@' declared_type='Reachability*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setReachableOnWWAN:'>
+<arg type='B' declared_type='BOOL' name='reachableOnWWAN' index='0'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUnreachableBlock:'>
+<arg type='@?' declared_type='NetworkUnreachable' function_pointer='true' name='unreachableBlock' index='0'>
+<arg type='@' declared_type='Reachability*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='startNotifier'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='stopNotifier'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='unreachableBlock'>
+<retval type='@?' declared_type='NetworkUnreachable' function_pointer='true'>
+<arg type='@' declared_type='Reachability*'/>
+<retval type='v' declared_type='void'/>
+</retval>
 </method>
 </class>
 <class name='UIImageView'>
 <method selector='cancelImageRequestOperation'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setImageWithURL:'>
-<arg declared_type='NSURL*' type='@' name='url' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURL*' name='url' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setImageWithURL:placeholderImage:'>
-<arg declared_type='NSURL*' type='@' name='url' index='0'/>
-<arg declared_type='UIImage*' type='@' name='placeholderImage' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURL*' name='url' index='0'/>
+<arg type='@' declared_type='UIImage*' name='placeholderImage' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method selector='setImageWithURLRequest:placeholderImage:success:failure:'>
-<arg declared_type='NSURLRequest*' type='@' name='urlRequest' index='0'/>
-<arg declared_type='UIImage*' type='@' name='placeholderImage' index='1'/>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' type='@?' name='success' index='2'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='UIImage*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSURLRequest*' name='urlRequest' index='0'/>
+<arg type='@' declared_type='UIImage*' name='placeholderImage' index='1'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' function_pointer='true' name='success' index='2'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='UIImage*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<arg function_pointer='true' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' type='@?' name='failure' index='3'>
-<arg declared_type='NSURLRequest*' type='@'/>
-<arg declared_type='NSHTTPURLResponse*' type='@'/>
-<arg declared_type='NSError*' type='@'/>
-<retval declared_type='void' type='v'/>
+<arg type='@?' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' function_pointer='true' name='failure' index='3'>
+<arg type='@' declared_type='NSURLRequest*'/>
+<arg type='@' declared_type='NSHTTPURLResponse*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
 </arg>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 </class>
 <informal_protocol name='AFMultipartFormData'>
 <method type='v24@0:4@8@12@16@20' selector='appendPartWithFileData:name:fileName:mimeType:'>
-<arg declared_type='NSData*' type='@' name='data' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSString*' type='@' name='fileName' index='2'/>
-<arg declared_type='NSString*' type='@' name='mimeType' index='3'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSData*' name='data' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='@' declared_type='NSString*' name='fileName' index='2'/>
+<arg type='@' declared_type='NSString*' name='mimeType' index='3'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='B20@0:4@8@12^@16' selector='appendPartWithFileURL:name:error:'>
-<arg declared_type='NSURL*' type='@' name='fileURL' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSError**' type='^@' name='error' index='2'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSURL*' name='fileURL' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='^@' declared_type='NSError**' name='error' index='2'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method type='B28@0:4@8@12@16@20^@24' selector='appendPartWithFileURL:name:fileName:mimeType:error:'>
-<arg declared_type='NSURL*' type='@' name='fileURL' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSString*' type='@' name='fileName' index='2'/>
-<arg declared_type='NSString*' type='@' name='mimeType' index='3'/>
-<arg declared_type='NSError**' type='^@' name='error' index='4'/>
-<retval declared_type='BOOL' type='B'/>
+<arg type='@' declared_type='NSURL*' name='fileURL' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='@' declared_type='NSString*' name='fileName' index='2'/>
+<arg type='@' declared_type='NSString*' name='mimeType' index='3'/>
+<arg type='^@' declared_type='NSError**' name='error' index='4'/>
+<retval type='B' declared_type='BOOL'/>
 </method>
 <method type='v16@0:4@8@12' selector='appendPartWithFormData:name:'>
-<arg declared_type='NSData*' type='@' name='data' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSData*' name='data' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='v16@0:4@8@12' selector='appendPartWithHeaders:body:'>
-<arg declared_type='NSDictionary*' type='@' name='headers' index='0'/>
-<arg declared_type='NSData*' type='@' name='body' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSDictionary*' name='headers' index='0'/>
+<arg type='@' declared_type='NSData*' name='body' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='v32@0:4@8@12@16Q20@28' selector='appendPartWithInputStream:name:fileName:length:mimeType:'>
-<arg declared_type='NSInputStream*' type='@' name='inputStream' index='0'/>
-<arg declared_type='NSString*' type='@' name='name' index='1'/>
-<arg declared_type='NSString*' type='@' name='fileName' index='2'/>
-<arg declared_type='unsigned long long' type='Q' name='length' index='3'/>
-<arg declared_type='NSString*' type='@' name='mimeType' index='4'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSInputStream*' name='inputStream' index='0'/>
+<arg type='@' declared_type='NSString*' name='name' index='1'/>
+<arg type='@' declared_type='NSString*' name='fileName' index='2'/>
+<arg type='Q' declared_type='unsigned long long' name='length' index='3'/>
+<arg type='@' declared_type='NSString*' name='mimeType' index='4'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='v20@0:4I8d12' selector='throttleBandwidthWithPacketSize:delay:'>
-<arg declared_type='NSUInteger' type='I' name='numberOfBytes' index='0'/>
-<arg declared_type='NSTimeInterval' type='d' name='delay' index='1'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='numberOfBytes' index='0'/>
+<arg type='d' declared_type='NSTimeInterval' name='delay' index='1'/>
+<retval type='v' declared_type='void'/>
 </method>
 </informal_protocol>
 <informal_protocol name='DDLogFileManager'>
 <method type='@8@0:4' selector='createNewLogFile'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method type='v12@0:4@8' selector='didArchiveLogFile:'>
-<arg declared_type='NSString*' type='@' name='logFilePath' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='logFilePath' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='v12@0:4@8' selector='didRollAndArchiveLogFile:'>
-<arg declared_type='NSString*' type='@' name='logFilePath' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='NSString*' name='logFilePath' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='@8@0:4' selector='logsDirectory'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method type='I8@0:4' selector='maximumNumberOfLogFiles'>
-<retval declared_type='NSUInteger' type='I'/>
+<retval type='I' declared_type='NSUInteger'/>
 </method>
 <method type='v12@0:4I8' selector='setMaximumNumberOfLogFiles:'>
-<arg declared_type='NSUInteger' type='I' name='maximumNumberOfLogFiles' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='I' declared_type='NSUInteger' name='maximumNumberOfLogFiles' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='@8@0:4' selector='sortedLogFileInfos'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method type='@8@0:4' selector='sortedLogFileNames'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method type='@8@0:4' selector='sortedLogFilePaths'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method type='@8@0:4' selector='unsortedLogFileInfos'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method type='@8@0:4' selector='unsortedLogFileNames'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 <method type='@8@0:4' selector='unsortedLogFilePaths'>
-<retval declared_type='NSArray*' type='@'/>
+<retval type='@' declared_type='NSArray*'/>
 </method>
 </informal_protocol>
 <informal_protocol name='DDLogFormatter'>
 <method type='v12@0:4@8' selector='didAddToLogger:'>
-<arg declared_type='id' type='@' name='logger' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='logger' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='@12@0:4@8' selector='formatLogMessage:'>
-<arg declared_type='DDLogMessage*' type='@' name='logMessage' index='0'/>
-<retval declared_type='NSString*' type='@'/>
+<arg type='@' declared_type='DDLogMessage*' name='logMessage' index='0'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method type='v12@0:4@8' selector='willRemoveFromLogger:'>
-<arg declared_type='id' type='@' name='logger' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='logger' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </informal_protocol>
 <informal_protocol name='DDLogger'>
 <method type='v8@0:4' selector='didAddLogger'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='v8@0:4' selector='flush'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='@8@0:4' selector='logFormatter'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method type='v12@0:4@8' selector='logMessage:'>
-<arg declared_type='DDLogMessage*' type='@' name='logMessage' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='DDLogMessage*' name='logMessage' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='@8@0:4' selector='loggerName'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method type='@8@0:4' selector='loggerQueue'>
-<retval declared_type='dispatch_queue_t' type='@'/>
+<retval type='@' declared_type='dispatch_queue_t'/>
 </method>
 <method type='v12@0:4@8' selector='setLogFormatter:'>
-<arg declared_type='id' type='@' name='formatter' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='@' declared_type='id' name='formatter' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 <method type='v8@0:4' selector='willRemoveLogger'>
-<retval declared_type='void' type='v'/>
+<retval type='v' declared_type='void'/>
 </method>
 </informal_protocol>
 <informal_protocol name='DDRegisteredDynamicLogging'>
 <method type='i8@0:4' class_method='true' selector='ddLogLevel'>
-<retval declared_type='int' type='i'/>
+<retval type='i' declared_type='int'/>
 </method>
 <method type='v12@0:4i8' class_method='true' selector='ddSetLogLevel:'>
-<arg declared_type='int' type='i' name='logLevel' index='0'/>
-<retval declared_type='void' type='v'/>
+<arg type='i' declared_type='int' name='logLevel' index='0'/>
+<retval type='v' declared_type='void'/>
 </method>
 </informal_protocol>
 <informal_protocol name='NSFNanoObjectProtocol'>
 <method type='@20@0:4@8@12@16' selector='initNanoObjectFromDictionaryRepresentation:forKey:store:'>
-<arg declared_type='NSDictionary*' type='@' name='theDictionary' index='0'/>
-<arg declared_type='NSString*' type='@' name='aKey' index='1'/>
-<arg declared_type='NSFNanoStore*' type='@' name='theStore' index='2'/>
-<retval declared_type='id' type='@'/>
+<arg type='@' declared_type='NSDictionary*' name='theDictionary' index='0'/>
+<arg type='@' declared_type='NSString*' name='aKey' index='1'/>
+<arg type='@' declared_type='NSFNanoStore*' name='theStore' index='2'/>
+<retval type='@' declared_type='id'/>
 </method>
 <method type='@8@0:4' selector='nanoObjectDictionaryRepresentation'>
-<retval declared_type='NSDictionary*' type='@'/>
+<retval type='@' declared_type='NSDictionary*'/>
 </method>
 <method type='@8@0:4' selector='nanoObjectKey'>
-<retval declared_type='NSString*' type='@'/>
+<retval type='@' declared_type='NSString*'/>
 </method>
 <method type='@8@0:4' selector='rootObject'>
-<retval declared_type='id' type='@'/>
+<retval type='@' declared_type='id'/>
 </method>
 </informal_protocol>
 </signatures>
