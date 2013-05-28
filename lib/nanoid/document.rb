@@ -7,7 +7,7 @@ module Nanoid::Document
     class << self
       attr_accessor :db_name
     end
-    self.db_name = self.model_name
+    self.db_name = :default
   end
 
   include Nanoid::Error
