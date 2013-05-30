@@ -62,6 +62,8 @@ module Nanoid; module Sync; class Queue
 
     instance = klass.find(id)
     self.notification(instance, 'start')
+
+    # TODO Only create job if a job for same instance doesn't exist in the queue
     job = self.new(:sync_class => instance.class.to_s,
                    :sync_id => instance.id,
                    :created_at => Time.now.utc,
