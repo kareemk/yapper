@@ -7,21 +7,13 @@ module Nanoid
         def find(id)
           return nil if id.nil?
 
-          result = db.execute do |store|
-            search = NSFNanoSearch.searchWithStore(store)
+          search do |search|
             search.key = id
+          end.first
+        end
 
-            error_ptr = Pointer.new(:id)
-            result = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr).first
-            raise_if_error(error_ptr)
-            result
-          end
-
-          if result = result.try(:last)
-            info = result.info.dup
-            klass = Object.qualified_const_get(info.delete('_type'))
-            klass.new(info, :new => false)
-          end
+        def all
+          where(:_type => self._type)
         end
 
         def where(criteria)
@@ -33,30 +25,18 @@ module Nanoid
             expressions << expression
           end
 
-          results = self.db.execute do |store|
-            search = NSFNanoSearch.searchWithStore(store)
+          search do |search|
             search.expressions = expressions
-
-            error_ptr = Pointer.new(:id)
-            results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
-            raise_if_error(error_ptr)
-            results
-          end
-
-          results.map do |result|
-            result = result[1]
-            info = result.info.dup
-            klass = Object.qualified_const_get(info.delete('_type'))
-            klass.new(info, :new => false)
           end
         end
 
-        def all
+        private
+
+        def search(&block)
           results = db.execute do |store|
             search = NSFNanoSearch.searchWithStore(store)
-            search.attribute = '_type'
-            search.match = NSFEqualTo
-            search.value = self._type
+
+            block.call(search)
 
             error_ptr = Pointer.new(:id)
             results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
@@ -65,7 +45,7 @@ module Nanoid
           end
 
           results.map do |result|
-            result = result[1]
+            result = result[1] if result.is_a?(Array)
             info = result.info.dup
             klass = Object.qualified_const_get(info.delete('_type'))
             klass.new(info, :new => false)
