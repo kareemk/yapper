@@ -38,7 +38,6 @@ module Nanoid::Sync
           raise "POST must return :id in payload" unless remote_id
 
           self.reload.update_attributes(atts.merge(:_remote_id => remote_id), :skip_callbacks => true)
-
         when 'PUT'
           Log.info "[Nanoid::Sync][PUT][#{self._type}] #{self._remote_id}"
         else

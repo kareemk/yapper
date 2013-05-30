@@ -17,16 +17,17 @@ describe 'Nanoid selecting documents' do
     end
   end
 
-  describe 'with a few documents created' do
+  describe 'with a few documents created with string fields' do
     before do
-      @doc = SelectionDocument.create(:field1 => 'field1')
-      SelectionDocument.create(:field1 => 'field1')
-      SelectionDocument.create(:field1 => 'field2')
+      @doc = SelectionDocument.create(:field1 => 'field1_value', :field2 => 'field2_value')
+      SelectionDocument.create(:field1 => 'field1_value', :field2 => 'field2_value')
+      SelectionDocument.create(:field1 => 'field1_value', :field2 => 'field2_other_value')
+      SelectionDocument.create(:field1 => 'field1_other_value', :field2 => 'field2_other_value')
     end
 
     describe 'with #find' do
       it 'can select document' do
-        SelectionDocument.find(@doc.id).field1.should == 'field1'
+        SelectionDocument.find(@doc.id).field1.should == 'field1_value'
       end
 
       it 'returns nil when looking up a non-existant doc' do
@@ -40,17 +41,24 @@ describe 'Nanoid selecting documents' do
 
     describe 'with #where' do
       it 'can select document by matching on a field' do
-        SelectionDocument.where(:field1 => 'field1').each {|d| d.field1.should == 'field1'}
+        SelectionDocument.where(:field1 => 'field1_value').each {|d| d.field1.should == 'field1_value'}
       end
 
       it 'returns nil when looking up a non-existant doc' do
         SelectionDocument.where(:field1 => 'xxx').count.should == 0
       end
+
+      it 'can select docments matching on multiple fields' do
+        SelectionDocument.where(:field1 => 'field1_value', :field2 => 'field2_value').each do |doc|
+          doc.field1.should == 'field1_value'
+          doc.field2.should == 'field2_value'
+        end
+      end
     end
 
     describe 'with #all' do
       it 'selects all documents' do
-        SelectionDocument.all.count.should == 3
+        SelectionDocument.all.count.should == 4
         SelectionDocument.all.first.class.should == SelectionDocument
       end
     end

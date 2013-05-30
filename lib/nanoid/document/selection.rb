@@ -25,16 +25,17 @@ module Nanoid
         end
 
         def where(criteria)
-          unless criteria.keys.length == 1
-            raise Nanoid::Error::DB.new('where only supports single criteria at the moment')
+          expressions = []
+
+          criteria.each do |key, value|
+            expression = NSFNanoExpression.expressionWithPredicate(NSFNanoPredicate.predicateWithColumn(NSFAttributeColumn, matching:NSFEqualTo, value:key.to_s))
+            expression.addPredicate(NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:value.to_s), withOperator:NSFAnd)
+            expressions << expression
           end
-          criteria = criteria.first
 
           results = self.db.execute do |store|
             search = NSFNanoSearch.searchWithStore(store)
-            search.attribute = criteria[0]
-            search.match = NSFEqualTo
-            search.value = criteria[1]
+            search.expressions = expressions
 
             error_ptr = Pointer.new(:id)
             results = search.searchObjectsWithReturnType(NSFReturnObjects, error:error_ptr)
