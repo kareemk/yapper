@@ -19,6 +19,8 @@ module Nanoid
         def where(criteria)
           expressions = []
 
+          criteria.merge!(:_type => self._type)
+
           criteria.each do |key, value|
             expression = NSFNanoExpression.expressionWithPredicate(NSFNanoPredicate.predicateWithColumn(NSFAttributeColumn, matching:NSFEqualTo, value:key.to_s))
             expression.addPredicate(NSFNanoPredicate.predicateWithColumn(NSFValueColumn, matching:NSFEqualTo, value:value.to_s), withOperator:NSFAnd)
