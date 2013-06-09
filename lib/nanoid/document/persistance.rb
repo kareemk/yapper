@@ -5,6 +5,7 @@ module Nanoid
 
       included do
         attr_accessor :attributes
+        attr_reader   :changes
 
         class << self
           attr_accessor :fields
@@ -51,6 +52,7 @@ module Nanoid
         super
 
         @new_record = options[:new].nil? ? true : options[:new]
+        @changes = {}
         assign_attributes(attrs, options)
         refresh_db_object
 
@@ -79,6 +81,7 @@ module Nanoid
         if self.class.fields[name][:type] == Time
           value = Time.parse(value) unless value.is_a?(Time)
         end
+        @changes[name.to_s] = value
         self.attributes[name] = value
       end
 
@@ -110,9 +113,11 @@ module Nanoid
           error_ptr = Pointer.new(:id)
           db.execute { |store| store.addObject(@db_object, error: error_ptr) }
           raise_if_error(error_ptr)
+
+          @changes = {}
+          @new_record = false
         end
 
-        @new_record = false
         true
       end
 
@@ -128,8 +133,7 @@ module Nanoid
       private
 
       def refresh_db_object
-        @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type),
-                                                                key: self.id)
+        @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type), key: self.id)
 
         assign_attributes(attributes.merge(:id => @db_object.key))
       end

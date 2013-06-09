@@ -7,7 +7,7 @@ module Nanoid; module Sync; class Queue
   @@queue.MaxConcurrentOperationCount = 1
 
   NSNotificationCenter.defaultCenter.addObserver(self,
-                                                 selector: 'background',
+                                                 selector: 'onBackground',
                                                  name: UIApplicationDidEnterBackgroundNotification,
                                                  object: nil)
 
@@ -44,7 +44,7 @@ module Nanoid; module Sync; class Queue
     @@queue.addOperation(operation)
   end
 
-  def self.background
+  def self.onBackground
     @@background_task = UIApplication.sharedApplication.beginBackgroundTaskWithExpirationHandler(nil)
     operation = NSBlockOperation.blockOperationWithBlock lambda {
       UIApplication.sharedApplication.endBackgroundTask(@@background_task) unless @@background_task == UIBackgroundTaskInvalid

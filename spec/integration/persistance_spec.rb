@@ -27,6 +27,16 @@ describe 'Nanoid persisting documents' do
       }.should.raise(ArgumentError)
     end
 
+    it 'tracks changes' do
+      doc = Document.new
+      doc.field_1 = 'field1'
+      doc.field_2 = 'field2'
+
+      doc.changes.should == { 'id' => doc.id,
+                              'field_1' => 'field1',
+                              'field_2'  => 'field2' }
+    end
+
     describe "when using #new then #save" do
       it 'persists the fields' do
         doc = Document.new
@@ -57,6 +67,12 @@ describe 'Nanoid persisting documents' do
   describe 'updating documents' do
     before do
       @doc = Document.create(:field_1 => 'field1')
+    end
+
+    it 'tracks changes' do
+      @doc.field_1 = 'field1_changed'
+
+      @doc.changes.should == { 'field_1' => 'field1_changed' }
     end
 
     describe "when updating fields and then #save" do
