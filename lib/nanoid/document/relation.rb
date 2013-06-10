@@ -41,7 +41,7 @@ module Nanoid
       end
 
       def update_associations(operation)
-        if self.class.relations[:belongs_to] 
+        if self.class.relations[:belongs_to]
           inverse = self.send(self.class.relations[:belongs_to])
           inverse_ids_field = "#{self._type.underscore.pluralize}_ids".to_sym
           inverse_ids = inverse.send(inverse_ids_field)

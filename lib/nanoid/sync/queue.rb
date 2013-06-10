@@ -57,6 +57,17 @@ module Nanoid; module Sync; class Queue
     @@queue.isSuspended
   end
 
+  def self.sync
+    return false if self.paused?
+
+    operation = NSBlockOperation.blockOperationWithBlock lambda {
+      Event.get { |instance, status| self.notification(instance, 'success') }
+    }
+    @@queue.addOperation(operation)
+
+    true
+  end
+
   def self.process(klass, id)
     self._include
 
@@ -68,7 +79,6 @@ module Nanoid; module Sync; class Queue
                    :sync_id => instance.id,
                    :created_at => Time.now.utc,
                    :failure_count => 0)
-    job.save if sync_up?(instance) # Only persist update/delete/create
     handle(job)
   end
 
@@ -77,25 +87,17 @@ module Nanoid; module Sync; class Queue
 
     operation = NSBlockOperation.blockOperationWithBlock lambda {
       instance = Object.qualified_const_get(job.sync_class).find(job.sync_id)
-      if self.sync_up?(instance)
-        job.attempt(instance, :post_or_put)
-      else
-        job.attempt(instance, :get)
-      end
+      job.attempt(instance)
     }
     self.toggle_queue
     @@queue.addOperation(operation)
     nil
   end
 
-  def self.sync_up?(instance)
-    instance.updated_at > (instance._synced_at || Time.at(0))
-  end
-
-  def attempt(instance, method)
-    case instance.send(method)
+  def attempt(instance)
+    case Event.create(instance)
     when :success
-      instance.update_attributes({:_synced_at => Time.now}, :skip_callbacks => true)
+      instance.update_attributes({:_synced_at => Time.now, :_needs_sync => false}, :skip_callbacks => true)
       self.destroy if self.persisted?
       self.class.notification(instance, 'success')
     when :failure
@@ -103,7 +105,7 @@ module Nanoid; module Sync; class Queue
         sleep self.failure_count * 0.2
         self.failure_count += 1
         self.save if self.persisted?
-        attempt(instance, method)
+        attempt(instance)
         self.class.notification(instance, 'retry')
       else
         Log.error "[Nanoid::Queue][CRITICAL] Job #{self.sync_class}:#{self.sync_id} exceeded failure threshold and has been removed"
@@ -127,6 +129,6 @@ module Nanoid; module Sync; class Queue
   end
 
   def self.notification(instance, type)
-    NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{instance._type.downcase}:sync:#{type}", object: instance , userInfo: nil)
+    NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{instance.model_name}:sync:#{type}", object: instance , userInfo: nil)
   end
 end; end; end

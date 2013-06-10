@@ -3,14 +3,18 @@ module Nanoid::Sync
 
   class << self
     attr_accessor :base_url
+    attr_accessor :sync_path
     attr_accessor :access_token
     attr_accessor :max_failure_count
   end
+  self.sync_path = '/api/data'
 
   included do
     field :_remote_id
     field :_synced_at
-    after_save :sync_if_auto
+    field :_needs_sync
+    before_save :set_needs_sync
+    after_save  :sync_if_auto
 
     unless self.ancestors.include?(Nanoid::Timestamps)
       include Nanoid::Timestamps
@@ -27,24 +31,32 @@ module Nanoid::Sync
     self.max_failure_count = options[:max_failure_count] || 5
   end
 
-  include HTTP
+  def self.sync
+    Queue.sync
+  end
 
   module ClassMethods
     def sync(options)
       self.sync_to = options[:to]
       self.sync_auto = options[:auto]
     end
+
+    def find(id)
+      result = super(id)
+      unless result
+        result = where(:_remote_id => id).first
+      end
+      result
+    end
   end
 
   def sync_as
-    key = self.class.to_s.downcase.to_sym
-    { key => self.attributes.reject{ |k,v| k == :id || k.to_s =~ /^_/ } }
-  end
-
-  def sync_if_auto
-    if self.class.sync_auto
-      sync
+    attrs = self.attributes.dup
+    attrs.reject!{ |k,v| k == :id || k.to_s =~ /^_/ }
+    if relation = self.class.relations[:belongs_to]
+      attrs["#{relation}_id".to_sym] = self.send(relation)._remote_id
     end
+    attrs
   end
 
   def synced?
@@ -56,6 +68,18 @@ module Nanoid::Sync
   end
 
   def sync
-    Queue.process(self.class, self.id)
+    Queue.process(self.class, self.id) if self._needs_sync
+  end
+
+  private
+
+  def sync_if_auto
+    if self.class.sync_auto
+      sync
+    end
+  end
+
+  def set_needs_sync
+    self._needs_sync = true
   end
 end
