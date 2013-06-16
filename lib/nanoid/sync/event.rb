@@ -35,7 +35,7 @@ module Nanoid::Sync
 
       if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
         attrs = operation.responseJSON.dup
-        Log.info "[Nanoid::Sync::Event][POST][#{instance.model_name}] #{attrs}"
+        Nanoid::Log.info "[Nanoid::Sync::Event][POST][#{instance.model_name}] #{attrs}"
 
         remote_id = attrs.delete(:id) || attrs.delete(:_id)
         raise "POST must return :id in payload" unless remote_id
@@ -48,13 +48,13 @@ module Nanoid::Sync
         instance.reload.update_attributes(attrs.merge(:_remote_id => remote_id), :skip_callbacks => true)
         result = :success
       else
-        Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.localizedDescription}"
+        Nanoid::Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.localizedDescription}"
         result = :failure
       end
 
       result
     rescue Exception => e
-      Log.error "[Nanoid::Sync][CRITICAL][#{instance.model_name}]  #{e.message}: #{e.backtrace.join('::')}"
+      Nanoid::Log.error "[Nanoid::Sync][CRITICAL][#{instance.model_name}]  #{e.message}: #{e.backtrace.join('::')}"
       :critical
     end
 
@@ -73,7 +73,7 @@ module Nanoid::Sync
       if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
         events = operation.responseJSON
         events.each do |event|
-          Log.info "[Nanoid::Sync::Event][#{event['type']}][#{event['model']}] #{event}"
+          Nanoid::Log.info "[Nanoid::Sync::Event][#{event['type']}][#{event['model']}] #{event}"
 
           model = Object.qualified_const_get(event['model'])
           instance = nil
@@ -98,10 +98,10 @@ module Nanoid::Sync
           Nanoid::Sync::Event.last_event_id = event['id'] || event['_id']
         end
       else
-        Log.error "[Nanoid::Sync::Event] #{operation.error.localizedDescription}"
+        Nanoid::Log.error "[Nanoid::Sync::Event] #{operation.error.localizedDescription}"
       end
     rescue Exception => e
-      Log.error "[Nanoid::Sync::Event] #{e.message}: #{e.backtrace.join('::')}"
+      Nanoid::Log.error "[Nanoid::Sync::Event] #{e.message}: #{e.backtrace.join('::')}"
     end
 
     def last_event_id

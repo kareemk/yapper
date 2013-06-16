@@ -1,5 +1,5 @@
-if defined?(Motion::Log) and !defined?(Log) 
-  Log = Motion::Log
-  Log.addLogger DDTTYLogger.sharedInstance
-  Log.addLogger DDASLLogger.sharedInstance
+if defined?(Motion::Nanoid::Log)
+  Nanoid::Nanoid::Log = Motion::Nanoid::Log
+  Nanoid::Log.addNanoid::Logger DDTTYNanoid::Logger.sharedInstance
+  Nanoid::Log.addNanoid::Logger DDASLNanoid::Logger.sharedInstance
 end

@@ -38,7 +38,7 @@ module Nanoid; module Sync; class Queue
 
     operation = NSBlockOperation.blockOperationWithBlock lambda {
       jobs = self.all
-      Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
+      Nanoid::Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
       jobs.each { |old_job| handle(old_job) }
     }
     @@queue.addOperation(operation)
@@ -108,7 +108,7 @@ module Nanoid; module Sync; class Queue
         attempt(instance)
         self.class.notification(instance, 'retry')
       else
-        Log.error "[Nanoid::Queue][CRITICAL] Job #{self.sync_class}:#{self.sync_id} exceeded failure threshold and has been removed"
+        Nanoid::Log.error "[Nanoid::Queue][CRITICAL] Job #{self.sync_class}:#{self.sync_id} exceeded failure threshold and has been removed"
         self.destroy if self.persisted?
         self.class.notification(instance, 'failure')
       end
