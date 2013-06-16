@@ -18,6 +18,7 @@ module Nanoid; module Sync; class Queue
 
       field :sync_class
       field :sync_id
+      field :changes
       field :created_at
       field :failure_count
 
@@ -68,15 +69,15 @@ module Nanoid; module Sync; class Queue
     true
   end
 
-  def self.process(klass, id)
+  def self.process(klass, id, changes)
     self._include
 
     instance = klass.find(id)
     self.notification(instance, 'start')
 
-    # TODO Only create job if a job for same instance doesn't exist in the queue
     job = self.new(:sync_class => instance.class.to_s,
                    :sync_id => instance.id,
+                   :changes => changes,
                    :created_at => Time.now.utc,
                    :failure_count => 0)
     handle(job)
@@ -87,6 +88,7 @@ module Nanoid; module Sync; class Queue
 
     operation = NSBlockOperation.blockOperationWithBlock lambda {
       instance = Object.qualified_const_get(job.sync_class).find(job.sync_id)
+      instance.changes = job.changes
       job.attempt(instance)
     }
     self.toggle_queue
@@ -97,7 +99,7 @@ module Nanoid; module Sync; class Queue
   def attempt(instance)
     case Event.create(instance)
     when :success
-      instance.update_attributes({:_synced_at => Time.now, :_needs_sync => false}, :skip_callbacks => true)
+      instance.update_attributes({:_synced_at => Time.now}, :skip_callbacks => true)
       self.destroy if self.persisted?
       self.class.notification(instance, 'success')
     when :failure

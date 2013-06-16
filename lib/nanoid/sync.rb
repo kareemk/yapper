@@ -12,9 +12,9 @@ module Nanoid::Sync
   included do
     field :_remote_id
     field :_synced_at
-    field :_needs_sync
-    before_save :set_needs_sync
-    after_save  :sync_if_auto
+    field :_syncing
+    before_save :track_changes
+    after_save  :sync_if_syncing
 
     unless self.ancestors.include?(Nanoid::Timestamps)
       include Nanoid::Timestamps
@@ -50,11 +50,18 @@ module Nanoid::Sync
     end
   end
 
+  def initialize(*args)
+    super(*args)
+    self._syncing = self.class.sync_auto if @new_record
+    self
+  end
+
   def sync_as
-    attrs = self.attributes.dup
+    attrs = self.changes.dup
     attrs.reject!{ |k,v| k == :id || k.to_s =~ /^_/ }
     if relation = self.class.relations[:belongs_to]
-      attrs["#{relation}_id".to_sym] = self.send(relation)._remote_id
+      relation_attr = "#{relation}_id"
+      attrs[relation_attr] = self.send(relation)._remote_id if attrs[relation_attr.to_s]
     end
     attrs
   end
@@ -68,18 +75,27 @@ module Nanoid::Sync
   end
 
   def sync
-    Queue.process(self.class, self.id) if self._needs_sync
+    return false if self._syncing
+
+    perform_sync(self.attributes)
+    self.update_attributes({:_syncing => true}, :skip_callbacks => true)
+
+    true
   end
 
   private
 
-  def sync_if_auto
-    if self.class.sync_auto
-      sync
+  def perform_sync(changes)
+    Queue.process(self.class, self.id, changes)
+  end
+
+  def sync_if_syncing
+    if self._syncing
+      perform_sync(@sync_changes)
     end
   end
 
-  def set_needs_sync
-    self._needs_sync = true
+  def track_changes
+    @sync_changes = self.changes
   end
 end

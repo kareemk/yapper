@@ -20,11 +20,10 @@ describe 'Nanoid persisting documents' do
   end
 
   describe 'creating documents' do
-    it 'does not support hashes' do
-      #NOTE: Due to a bug with sorting documents including hash fields
-      lambda {
-        Document.create(:field_1 => { :a => 'a' })
-      }.should.raise(ArgumentError)
+    it 'supports hashes' do
+      Document.create(:field_1 => { :a => 'a' })
+
+      Document.all.first.field_1.should == { 'a' => 'a' }
     end
 
     it 'tracks changes' do

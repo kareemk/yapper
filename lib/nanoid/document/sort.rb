@@ -32,7 +32,7 @@ module Nanoid
           results.map do |result|
             info = result.info.dup
             klass = Kernel.qualified_const_get(info.delete('_type'))
-            klass.new(info, :new => false)
+            klass.new(info, :new => false, :pristine => true)
           end
         end
       end

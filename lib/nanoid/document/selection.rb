@@ -50,7 +50,7 @@ module Nanoid
             result = result[1] if result.is_a?(Array)
             info = result.info.dup
             klass = Object.qualified_const_get(info.delete('_type'))
-            klass.new(info, :new => false)
+            klass.new(info, :new => false, :pristine => true)
           end
         end
       end

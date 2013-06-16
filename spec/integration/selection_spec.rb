@@ -37,6 +37,10 @@ describe 'Nanoid selecting documents' do
         SelectionDocument.find(@doc.id).field1.should == 'field1_value'
       end
 
+      it 'has no changes when selecting a document' do
+        SelectionDocument.find(@doc.id).changes.should == {}
+      end
+
       it 'returns nil when looking up a non-existant doc' do
         SelectionDocument.find('xxx').should == nil
       end

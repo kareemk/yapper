@@ -5,7 +5,7 @@ module Nanoid
 
       included do
         attr_accessor :attributes
-        attr_reader   :changes
+        attr_accessor :changes
 
         class << self
           attr_accessor :fields
@@ -66,13 +66,19 @@ module Nanoid
 
       def assign_attributes(attrs, options={})
         self.attributes ||= {}
-        self.attributes = {} if options[:pristine]
+
+        if options[:pristine]
+          self.attributes = {}
+        end
 
         self.skip_callbacks = options[:skip_callbacks] || self.skip_callbacks || false
 
         attrs.each do |k,v|
-          raise ArgumentError.new("Hashes not supported currently") if v.is_a?(Hash)
           __send__("#{k}=", v) if respond_to?(k)
+        end
+
+        if options[:pristine]
+          self.changes = {}
         end
       end
       alias_method :attributes=, :assign_attributes
@@ -89,7 +95,7 @@ module Nanoid
 
       def reload
         reloaded = self.class.find(self.id)
-        self.assign_attributes(reloaded.attributes, :prestine => true)
+        self.assign_attributes(reloaded.attributes, :pristine => true)
         self
       end
 
@@ -116,9 +122,9 @@ module Nanoid
           db.execute { |store| store.addObject(@db_object, error: error_ptr) }
           raise_if_error(error_ptr)
 
-          @changes = {}
           @new_record = false
         end
+        @changes = {}
 
         true
       end
@@ -137,7 +143,7 @@ module Nanoid
       def refresh_db_object
         @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type), key: self.id)
 
-        assign_attributes(attributes.merge(:id => @db_object.key))
+        assign_attributes(:id => @db_object.key)  if self.id.nil?
       end
     end
   end
