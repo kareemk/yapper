@@ -8,9 +8,10 @@ module Nanoid::Sync
 
       params = {
         :event => {
-          :model   => instance.model_name.capitalize,
-          :type    => instance.synced? ? :update : :create,
-          :delta   =>  delta
+          :model    => instance.model_name.capitalize,
+          :model_id => instance._remote_id,
+          :type     => instance.synced? ? :update : :create,
+          :delta    =>  delta
         }
       }
 
