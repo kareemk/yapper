@@ -21,7 +21,7 @@ module Nanoid::Sync
         parameters: params,
         constructingBodyWithBlock: lambda { |form_data|
           data.each do |name, attachment|
-            form_data.appendPartWithFileData(UIImageJPEGRepresentation(attachment.data.call, 1.0),
+            form_data.appendPartWithFileData(UIImageJPEGRepresentation(attachment.data.call, 0.8),
                                              name: "event[delta][#{name}]",
                                              fileName: attachment.fileName,
                                              mimeType: attachment.mimeType)
