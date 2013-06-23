@@ -37,6 +37,13 @@ module Nanoid
           block.call
         end
         run_callback('after', operation)
+        notify_callback(operation)
+      end
+
+      private
+
+      def notify_callback(operation)
+        NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{self.model_name}:#{operation}", object: self , userInfo: nil)
       end
     end
   end
