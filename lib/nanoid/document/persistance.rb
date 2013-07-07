@@ -125,6 +125,7 @@ module Nanoid
           @new_record = false
         end
         @changes = {}
+        self.skip_callbacks = false
 
         true
       end

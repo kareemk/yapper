@@ -77,7 +77,7 @@ module Nanoid::Sync
   def sync
     return false if self._syncing
 
-    perform_sync(self.attributes)
+    perform_sync(self.attributes.stringify_keys)
     self.update_attributes({:_syncing => true}, :skip_callbacks => true)
 
     true

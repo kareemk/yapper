@@ -43,7 +43,7 @@ module Nanoid
       private
 
       def notify_callback(operation)
-        NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{self.model_name}:#{operation}", object: self , userInfo: nil)
+        NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{self.model_name}:#{operation}", object: self , userInfo: nil) unless self.skip_callbacks
       end
     end
   end
