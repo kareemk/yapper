@@ -18,6 +18,20 @@ describe 'Nanoid document 1:N relationship' do
   after { Nanoid::DB.purge }
   after { ['ParentDocument', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
 
+  it 'can accept nested attributes' do
+    @parent = ParentDocument.create(:field_1 => 'parent',
+                                    :child_documents => [
+                                      { :field_1 => 'child1' },
+                                      { :field_1 => 'child2' }
+                                    ])
+
+    @parent.field_1.should == 'parent'
+    @parent.child_documents.collect(&:field_1).tap do |fields|
+      fields.include?('child1').should == true
+      fields.include?('child2').should == true
+    end
+  end
+
   describe 'with a parent with many children' do
     before do
       @parent = ParentDocument.create(:field_1 => 'parent')

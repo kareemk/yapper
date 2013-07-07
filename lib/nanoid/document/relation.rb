@@ -17,10 +17,18 @@ module Nanoid
         def has_many(*relations)
           relations.each do |relation|
             self.relations[:has_many] << relation unless self.relations.include?(relation)
-            self.field("#{relation}_ids")
 
             define_method(relation) do
-              self.send("#{relation}_ids").map { |id| Object.qualified_const_get(relation.to_s.singularize.camelize).find(id) } if self.send("#{relation}_ids")
+              Object.qualified_const_get(relation.to_s.singularize.camelize).where("#{self._type.underscore}_id".to_sym => self.id)
+            end
+
+            define_method("#{relation}=") do |attrs|
+              raise "You must pass an array of values" unless attrs.is_a?(Array)
+
+              attrs.each do |attr|
+                attr.merge!("#{self._type.underscore}" => self)
+                Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
+              end
             end
           end
         end
@@ -37,25 +45,6 @@ module Nanoid
           define_method("#{relation}=") do |parent|
             self.send("#{relation}_id=", parent.id)
           end
-        end
-      end
-
-      def update_associations(operation)
-        if self.class.relations[:belongs_to]
-          inverse = self.send(self.class.relations[:belongs_to])
-          inverse_ids_field = "#{self._type.underscore.pluralize}_ids".to_sym
-          inverse_ids = inverse.send(inverse_ids_field)
-          inverse_ids ||= []
-          case operation
-          when :created
-            inverse_ids << self.id unless inverse_ids.include?(self.id)
-          when :destroyed
-            inverse_ids.delete(self.id)
-          end
-
-          attrs = {}
-          attrs[inverse_ids_field] = inverse_ids
-          inverse.update_attributes(attrs, :skip_callbacks => true)
         end
       end
     end

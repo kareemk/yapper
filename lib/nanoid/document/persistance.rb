@@ -53,6 +53,9 @@ module Nanoid
 
         @new_record = options[:new].nil? ? true : options[:new]
         @changes = {}
+
+        assign_attributes({:id => generate_id}, options) if @new_record
+
         assign_attributes(attrs, options)
         refresh_db_object
 
@@ -113,8 +116,6 @@ module Nanoid
 
       def save(options={})
         # TODO Wrap in a transaction
-        update_associations(:created)
-
         run_callbacks 'save' do
           refresh_db_object
 
@@ -131,8 +132,6 @@ module Nanoid
       end
 
       def destroy(options={})
-        update_associations(:destroyed)
-
         error_ptr = Pointer.new(:id)
         db.execute { |store| store.removeObject(@db_object, error: error_ptr) }
         raise_if_error(error_ptr)
@@ -141,10 +140,12 @@ module Nanoid
 
       private
 
+      def generate_id
+        NSFNanoEngine.stringWithUUID
+      end
+
       def refresh_db_object
         @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type), key: self.id)
-
-        assign_attributes(:id => @db_object.key)  if self.id.nil?
       end
     end
   end
