@@ -2,18 +2,21 @@ PODS:
   - AFNetworking (1.2.1)
   - CocoaLumberjack (1.6.2)
   - NanoStore (2.6.4)
+  - NSData+MD5Digest (1.0.0)
   - Reachability (3.1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
   - NanoStore (~> 2.6.0)
+  - NSData+MD5Digest
   - Reachability
 
 SPEC CHECKSUMS:
   AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
   CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
   NanoStore: 73d29e30e1e7f253f719c6ad1d60181ebcf1b5be
+  NSData+MD5Digest: 8275479b2a935e6caa8a92a9a814fb5abecba367
   Reachability: ba94ecd4eaa037be3d0588b38956672588530c5b
 
 COCOAPODS: 0.19.1

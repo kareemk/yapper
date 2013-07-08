@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_CocoaLumberjack 6
 #define COCOAPODS_VERSION_PATCH_CocoaLumberjack 2
 
+// NSData+MD5Digest
+#define COCOAPODS_POD_AVAILABLE_NSData_MD5Digest
+#define COCOAPODS_VERSION_MAJOR_NSData_MD5Digest 1
+#define COCOAPODS_VERSION_MINOR_NSData_MD5Digest 0
+#define COCOAPODS_VERSION_PATCH_NSData_MD5Digest 0
+
 // NanoStore
 #define COCOAPODS_POD_AVAILABLE_NanoStore
 #define COCOAPODS_VERSION_MAJOR_NanoStore 2

@@ -19,6 +19,7 @@ Motion::Project::App.setup do |app|
     pod 'AFNetworking'
     pod 'Reachability'
     pod 'CocoaLumberjack'
+    pod 'NSData+MD5Digest'
   end
 end
 

@@ -2,7 +2,7 @@ ALWAYS_SEARCH_USER_PATHS = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
 OTHER_LDFLAGS = -ObjC -lsqlite3 -framework MobileCoreServices -framework Security -framework SystemConfiguration
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/CocoaLumberjack" "${PODS_ROOT}/BuildHeaders/NanoStore" "${PODS_ROOT}/BuildHeaders/Reachability"
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/CocoaLumberjack" "${PODS_ROOT}/BuildHeaders/NSData+MD5Digest" "${PODS_ROOT}/BuildHeaders/NanoStore" "${PODS_ROOT}/BuildHeaders/Reachability"
 PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/NanoStore" "${PODS_ROOT}/Headers/Reachability"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/NSData+MD5Digest" "${PODS_ROOT}/Headers/NanoStore" "${PODS_ROOT}/Headers/Reachability"
 PODS_ROOT = ${SRCROOT}/Pods
