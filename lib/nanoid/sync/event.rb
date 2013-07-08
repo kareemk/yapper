@@ -6,11 +6,13 @@ module Nanoid::Sync
       data  = instance.sync_as.select { |k,v| v.class == Nanoid::Sync::Attachment }
       delta = instance.sync_as.reject { |k,v| v.class == Nanoid::Sync::Attachment }
 
+      type = instance.synced? ? :update : :create
+
       params = {
         :event => {
           :model    => instance.model_name.capitalize,
-          :model_id => instance._remote_id,
-          :type     => instance.synced? ? :update : :create,
+          :model_id => instance.id,
+          :type     => type,
           :delta    =>  delta
         }
       }
@@ -38,15 +40,14 @@ module Nanoid::Sync
         attrs = operation.responseJSON.dup
         Nanoid::Log.info "[Nanoid::Sync::Event][POST][#{instance.model_name}] #{attrs}"
 
-        remote_id = attrs.delete(:id) || attrs.delete(:_id)
-        raise "POST must return :id in payload" unless remote_id
-
-        if relation = instance.class.relations[:belongs_to]
-          relation_id = "#{relation}_id".to_sym
-          attrs[relation_id] = Object.qualified_const_get(relation.capitalize).find(attrs[relation_id]).id if attrs[relation_id]
+        # XXX There must be a better way. Possibly calling Nanoid::Sync.sync
+        # after every operation (i like this)
+        new_attrs = {}
+        attrs.each do |k, v|
+          new_attrs[k] = v if instance.respond_to?(k) && instance.send(k).nil?
         end
+        instance.reload.update_attributes(new_attrs, :skip_callbacks => true)
 
-        instance.reload.update_attributes(attrs.merge(:_remote_id => remote_id), :skip_callbacks => true)
         result = :success
       else
         Nanoid::Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.localizedDescription}"
@@ -85,18 +86,11 @@ module Nanoid::Sync
           end
 
           attrs = event['delta'].dup
-          remote_id = attrs.delete(:id) || attrs.delete(:_id)
-          attrs[:_remote_id] = remote_id if remote_id
-
-          if relation = instance.class.relations[:belongs_to]
-            relation_id = "#{relation}_id".to_sym
-            attrs[relation_id] = Object.qualified_const_get(relation.capitalize).find(attrs[relation_id]).id if attrs[relation_id]
-          end
 
           instance.update_attributes(attrs, :skip_callbacks => true)
 
           block.call(instance)
-          Nanoid::Sync::Event.last_event_id = event['id'] || event['_id']
+          Nanoid::Sync::Event.last_event_id = event['id']
         end
       else
         Nanoid::Log.error "[Nanoid::Sync::Event] #{operation.error.localizedDescription}"

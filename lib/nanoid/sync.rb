@@ -9,23 +9,6 @@ module Nanoid::Sync
   end
   self.sync_path = '/api/data'
 
-  included do
-    field :_remote_id
-    field :_synced_at
-    field :_syncing
-    before_save :track_changes
-    after_save  :sync_if_syncing
-
-    unless self.ancestors.include?(Nanoid::Timestamps)
-      include Nanoid::Timestamps
-    end
-
-    class << self
-      attr_accessor :sync_to
-      attr_accessor :sync_auto
-    end
-  end
-
   def self.configure(options)
     self.access_token      = options[:access_token]
     self.max_failure_count = options[:max_failure_count] || 5
@@ -37,37 +20,42 @@ module Nanoid::Sync
 
   module ClassMethods
     def sync(options)
+      field :_synced_at
+      field :_syncing
+      before_save :track_changes
+      after_save  :sync_if_syncing
+
+      unless self.ancestors.include?(Nanoid::Timestamps)
+        include Nanoid::Timestamps
+      end
+
+      class << self
+        attr_accessor :sync_to
+        attr_accessor :sync_auto
+      end
       self.sync_to = options[:to]
       self.sync_auto = options[:auto]
-    end
-
-    def find(id)
-      result = super(id)
-      unless result
-        result = where(:_remote_id => id).first
-      end
-      result
     end
   end
 
   def initialize(*args)
     super(*args)
-    self._syncing = self.class.sync_auto if @new_record
+    self._syncing = self.class.sync_auto if self.sync_configured? && @new_record
     self
   end
 
-  def sync_as
-    attrs = self.changes.dup
-    attrs.reject!{ |k,v| k == :id || k.to_s =~ /^_/ }
-    if relation = self.class.relations[:belongs_to]
-      relation_attr = "#{relation}_id"
-      attrs[relation_attr] = self.send(relation)._remote_id if attrs[relation_attr.to_s]
-    end
+  def sync_configured?
+    self.respond_to?(:_synced_at)
+  end
+
+  def sync_as(attrs=nil)
+    attrs = attrs || self.changes.dup
+    attrs.reject!{ |k,v| k.to_s =~ /^_/ }
     attrs
   end
 
   def synced?
-    !self._remote_id.nil?
+    !self._synced_at.nil?
   end
 
   def sync_paused?

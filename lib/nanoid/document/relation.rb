@@ -25,10 +25,13 @@ module Nanoid
             define_method("#{relation}=") do |attrs|
               raise "You must pass an array of values" unless attrs.is_a?(Array)
 
+              instances = []
               attrs.each do |attr|
-                attr.merge!("#{self._type.underscore}" => self)
-                Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
+                attr = attr.merge("#{self._type.underscore}" => self)
+                instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
+                instances << instance.sync_as(instance.attributes)
               end
+              @changes.merge!(relation => instances)
             end
           end
         end

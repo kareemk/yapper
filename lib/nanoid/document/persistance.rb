@@ -141,7 +141,7 @@ module Nanoid
       private
 
       def generate_id
-        NSFNanoEngine.stringWithUUID
+        BSON::ObjectId.generate
       end
 
       def refresh_db_object
