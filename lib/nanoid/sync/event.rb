@@ -93,10 +93,10 @@ module Nanoid::Sync
           Nanoid::Sync::Event.last_event_id = event['id']
         end
       else
-        Nanoid::Log.error "[Nanoid::Sync::Event] #{operation.error.localizedDescription}"
+        Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{operation.error.localizedDescription}"
       end
     rescue Exception => e
-      Nanoid::Log.error "[Nanoid::Sync::Event] #{e.message}: #{e.backtrace.join('::')}"
+      Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{e.message}: #{e.backtrace.join('::')}"
     end
 
     def last_event_id
