@@ -90,7 +90,7 @@ module Nanoid::Sync
           instance.update_attributes(attrs, :skip_callbacks => true)
 
           block.call(instance)
-          Nanoid::Sync::Event.last_event_id = event['id']
+          Nanoid::Sync::Event.last_event_id = event['id'] || event['_id']
         end
       else
         Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{operation.error.localizedDescription}"
