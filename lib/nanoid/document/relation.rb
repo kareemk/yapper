@@ -29,7 +29,7 @@ module Nanoid
               attrs.each do |attr|
                 attr = attr.merge("#{self._type.underscore}" => self)
                 instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
-                instances << instance.sync_as(instance.attributes)
+                instances << instance.attributes
               end
               @changes.merge!(relation => instances)
             end

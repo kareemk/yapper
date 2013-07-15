@@ -48,8 +48,8 @@ module Nanoid::Sync
     self.respond_to?(:_synced_at)
   end
 
-  def sync_as(attrs=nil)
-    attrs = attrs || self.changes.dup
+  def sync_as
+    attrs = self.changes.dup
     attrs.reject!{ |k,v| k.to_s =~ /^_/ }
     attrs
   end
