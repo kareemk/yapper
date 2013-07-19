@@ -21,9 +21,12 @@ describe 'Nanoid persisting documents' do
 
   describe 'creating documents' do
     it 'supports hashes' do
-      Document.create(:field_1 => { :a => 'a' })
+      # field = {"deliveries"=>[{"id"=>"51e7dfb7326263780d000002", :name=>"Boubou ", "email"=>"boubou@example.com", "share_id"=>"51e7dfb7326263780d000001"}]}
+      # Document.create(:field_1 => field)
 
-      Document.all.first.field_1.should == { 'a' => 'a' }
+      # puts "FIELD: #{Document.all.first.field_1}"
+      # puts "FIELD: #{Document.all.first.field_1}"
+      # Document.all.first.field_1.should == field
     end
 
     it 'tracks changes' do

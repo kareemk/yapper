@@ -36,7 +36,6 @@ class Nanoid::DB
       raise Nanoid::Error::DB.new("store type must be one of: :memory, :temp or :file")
     end
 
-
     raise_if_error(error_ptr)
   end
 

@@ -120,10 +120,10 @@ module Nanoid::Sync
 
     def http_client
       @http_client ||= begin
-        client = AFHTTPClient.alloc.initWithBaseURL(NSURL.URLWithString(Nanoid::Sync.base_url))
-        client.setParameterEncoding(AFJSONParameterEncoding)
-        client
-      end
+                         client = AFHTTPClient.alloc.initWithBaseURL(NSURL.URLWithString(Nanoid::Sync.base_url))
+                         client.setParameterEncoding(AFJSONParameterEncoding)
+                         client
+                       end
       @http_client.setAuthorizationHeaderWithToken(Nanoid::Sync.access_token.call)
       @http_client.setDefaultHeader('DEVICEID', value: UIDevice.currentDevice.uniqueIdentifier)
     end
