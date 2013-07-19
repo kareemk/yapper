@@ -49,6 +49,23 @@ class Nanoid::DB
     result.first
   end
 
+  def transaction(&block)
+    error_ptr = Pointer.new(:id)
+    execute { |store| store.beginTransactionAndReturnError(error_ptr) }
+    raise_if_error(error_ptr)
+
+    begin
+      block.call
+    rescue StandardError => e
+      execute { |store| store.rollbackTransactionAndReturnError(error_ptr) }
+      raise e
+    end
+    success = execute { |store| store.commitTransactionAndReturnError(error_ptr) }
+    raise_if_error(error_ptr)
+
+    success
+  end
+
   def purge
     error_ptr = Pointer.new(:id)
     @store.removeAllObjectsFromStoreAndReturnError(error_ptr)

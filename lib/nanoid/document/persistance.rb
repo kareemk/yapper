@@ -112,19 +112,21 @@ module Nanoid::Document
     end
 
     def save(options={})
-      run_callbacks 'save' do
-        refresh_db_object
+      db.transaction do
+        run_callbacks 'save' do
+          refresh_db_object
 
-        error_ptr = Pointer.new(:id)
-        db.execute { |store| store.addObject(@db_object, error: error_ptr) }
-        raise_if_error(error_ptr)
+          error_ptr = Pointer.new(:id)
+          db.execute { |store| store.addObject(@db_object, error: error_ptr) }
+          raise_if_error(error_ptr)
 
-        @new_record = false
+          @new_record = false
+        end
+        @changes = {}
+        self.skip_callbacks = false
+
+        true
       end
-      @changes = {}
-      self.skip_callbacks = false
-
-      true
     end
 
     def destroy(options={})

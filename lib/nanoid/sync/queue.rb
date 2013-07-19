@@ -95,7 +95,7 @@ module Nanoid::Sync
         self.class.notification(instance, 'success')
       when :failure
         if self.failure_count < Nanoid::Sync.max_failure_count
-          sleep 2 ** (self.failure_count + 10)
+          sleep 2 ** (self.failure_count)
           self.failure_count += 1
           self.save
           attempt(instance)

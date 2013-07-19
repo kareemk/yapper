@@ -9,6 +9,3 @@ require 'motion-support/core_ext'
 require 'motion-require'
 
 Motion::Require.all(Dir.glob(File.expand_path('../nanoid/**/*.rb', __FILE__)))
-
-module Nanoid
-end

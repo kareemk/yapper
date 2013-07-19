@@ -64,6 +64,26 @@ describe 'Nanoid callbacks' do
     end
   end
 
+  describe 'on failure' do
+    before do
+      class CallbackDocument
+        after_save  :fail
+
+        def fail
+          raise "fail"
+        end
+      end
+    end
+
+    it 'rollsback the entire update' do
+      lambda {
+        CallbackDocument.create(:field_1 => 'field1')
+      }.should.raise
+
+      CallbackDocument.all.count.should == 0
+    end
+  end
+
   it 'can skip callbacks' do
     doc = CallbackDocument.create({ :field_1 => 'field1',
                                     :field_2 => 'field2' }, :skip_callbacks => true)
