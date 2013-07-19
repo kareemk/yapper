@@ -6,15 +6,26 @@ module Nanoid::Sync
 
     field :sync_class
     field :sync_id
-    field :changes
+    field :sync_changes
     field :created_at
     field :failure_count
 
     @@mutex = Mutex.new
     @@notify_count = 0
+
     @@queue = NSOperationQueue.alloc.init
     @@queue.name = "#{NSBundle.mainBundle.bundleIdentifier}.nanoid.sync"
     @@queue.MaxConcurrentOperationCount = 1
+    @@queue.setSuspended(true)
+
+    @@reachability ||= begin
+                         reachability = Reachability.reachabilityForInternetConnection
+                         reachability.reachableBlock   = lambda { |reachable| self.toggle_queue }
+                         reachability.unreachableBlock = lambda { |reachable| self.toggle_queue }
+                         reachability.reachableOnWWAN = true
+                         reachability.startNotifier
+                         reachability
+                       end
 
     NSNotificationCenter.defaultCenter.addObserver(self,
                                                    selector: 'onBackground',
@@ -23,17 +34,9 @@ module Nanoid::Sync
 
 
     def self.start
-      @@reachability ||= begin
-                           reachability = Reachability.reachabilityForInternetConnection
-                           reachability.reachableBlock   = lambda { |reachable| self.toggle_queue }
-                           reachability.unreachableBlock = lambda { |reachable| self.toggle_queue }
-                           reachability.reachableOnWWAN = true
-                           reachability.startNotifier
-                           reachability
-                         end
-
+      self.toggle_queue
       operation = NSBlockOperation.blockOperationWithBlock lambda {
-        jobs = self.all
+        jobs = self.asc(:created_at)
         Nanoid::Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
         jobs.each { |old_job| handle(old_job) }
       }
@@ -68,10 +71,10 @@ module Nanoid::Sync
       instance = klass.find(id)
       self.notification(instance, 'start')
 
-      job = self.create(:sync_class => instance.class.to_s,
-                        :sync_id => instance.id,
-                        :changes => changes,
-                        :created_at => Time.now.utc,
+      job = self.create(:sync_class    => instance.class.to_s,
+                        :sync_id       => instance.id,
+                        :sync_changes  => changes,
+                        :created_at    => Time.now.utc,
                         :failure_count => 0)
       handle(job)
     end
@@ -79,7 +82,7 @@ module Nanoid::Sync
     def self.handle(job)
       operation = NSBlockOperation.blockOperationWithBlock lambda {
         instance = Object.qualified_const_get(job.sync_class).find(job.sync_id)
-        instance.changes = job.changes
+        instance.changes = job.sync_changes
         job.attempt(instance)
       }
       self.toggle_queue

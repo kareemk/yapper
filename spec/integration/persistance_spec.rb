@@ -20,13 +20,11 @@ describe 'Nanoid persisting documents' do
   end
 
   describe 'creating documents' do
-    it 'supports hashes' do
-      # field = {"deliveries"=>[{"id"=>"51e7dfb7326263780d000002", :name=>"Boubou ", "email"=>"boubou@example.com", "share_id"=>"51e7dfb7326263780d000001"}]}
-      # Document.create(:field_1 => field)
+    it 'supports hashes but keys are stringified' do
+      field = { "a" => [ { "a" => Time.now } ] }
+      Document.create(:field_1 => field)
 
-      # puts "FIELD: #{Document.all.first.field_1}"
-      # puts "FIELD: #{Document.all.first.field_1}"
-      # Document.all.first.field_1.should == field
+      Document.all.first.field_1.should == field.stringify_keys
     end
 
     it 'tracks changes' do

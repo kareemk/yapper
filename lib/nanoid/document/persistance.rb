@@ -89,6 +89,8 @@ module Nanoid::Document
       if self.class.fields[name][:type] == Time
         value = Time.parse(value) unless value.is_a?(Time)
       end
+      # XXX This should not be set if the object was created from a
+      # selection
       @changes[name.to_s] = value
       self.attributes[name] = value
     end
