@@ -34,13 +34,12 @@ module Nanoid::Sync
 
 
     def self.start
-      self.toggle_queue
-      operation = NSBlockOperation.blockOperationWithBlock lambda {
+      Dispatch.once do
+        self.toggle_queue
         jobs = self.asc(:created_at)
         Nanoid::Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
-        jobs.each { |old_job| handle(old_job) }
-      }
-      @@queue.addOperation(operation)
+        jobs.each { |job| handle(job) }
+      end
     end
 
     def self.onBackground

@@ -85,12 +85,17 @@ module Nanoid::Sync
             instance = model.find(event['model_id'])
           end
 
+          if instance.nil?
+            update_last_event_id(event)
+            raise "Model instance not found!. This is not good!"
+          end
+
           attrs = event['delta'].dup
 
           instance.update_attributes(attrs, :skip_callbacks => true)
 
           block.call(instance)
-          Nanoid::Sync::Event.last_event_id = event['id'] || event['_id']
+          update_last_event_id(event)
         end
       else
         Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{operation.error.localizedDescription}"
@@ -101,6 +106,10 @@ module Nanoid::Sync
 
     def last_event_id
       user_defaults.objectForKey(last_event_id_key)
+    end
+
+    def update_last_event_id(event)
+      Nanoid::Sync::Event.last_event_id = event['id'] || event['_id']
     end
 
     def last_event_id=(value)
