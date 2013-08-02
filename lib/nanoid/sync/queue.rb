@@ -35,10 +35,10 @@ module Nanoid::Sync
 
     def self.start
       Dispatch.once do
-        self.toggle_queue
         jobs = self.asc(:created_at)
         Nanoid::Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
         jobs.each { |job| handle(job) }
+        @@queue.setSuspended(!@@reachability.isReachable)
       end
     end
 
