@@ -134,7 +134,9 @@ module Nanoid::Sync
                          client
                        end
       @http_client.setAuthorizationHeaderWithToken(Nanoid::Sync.access_token.call)
-      @http_client.setDefaultHeader('DEVICEID', value: UIDevice.currentDevice.identifierForVendor.UUIDString)
+      # XXX Need to use UIDevice.currentDevice.identifierForVendor.UUIDString to
+      # support iOS7 but this requires users to reinstall app
+      @http_client.setDefaultHeader('DEVICEID', value: UIDevice.currentDevice.uniqueIdentifier)
     end
   end
 end
