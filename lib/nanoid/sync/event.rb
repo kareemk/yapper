@@ -134,7 +134,7 @@ module Nanoid::Sync
                          client
                        end
       @http_client.setAuthorizationHeaderWithToken(Nanoid::Sync.access_token.call)
-      @http_client.setDefaultHeader('DEVICEID', value: UIDevice.currentDevice.uniqueIdentifier)
+      @http_client.setDefaultHeader('DEVICEID', value: UIDevice.currentDevice.identifierForVendor.UUIDString)
     end
   end
 end
