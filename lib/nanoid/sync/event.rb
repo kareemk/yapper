@@ -3,10 +3,8 @@ module Nanoid::Sync
     extend self
 
     def create(instance)
-      data  = instance.sync_as.select { |k,v| v.class == Nanoid::Sync::Attachment }
-      delta = instance.sync_as.reject { |k,v| v.class == Nanoid::Sync::Attachment }
-
-      type = instance.synced? ? :update : :create
+      delta = instance.sync_as
+      type  = instance.synced? ? :update : :create
 
       params = {
         :event => {
@@ -22,11 +20,12 @@ module Nanoid::Sync
         path: Nanoid::Sync.sync_path,
         parameters: params,
         constructingBodyWithBlock: lambda { |form_data|
-          data.each do |name, attachment|
-            form_data.appendPartWithFileData(attachment.data.call,
+          instance.class.attachments.each do |name, block|
+            attachment = instance.instance_eval(&block)
+            form_data.appendPartWithFileData(attachment[:data],
                                              name: "event[delta][#{name}]",
-                                             fileName: attachment.fileName,
-                                             mimeType: attachment.mimeType)
+                                             fileName: attachment[:file_name],
+                                             mimeType: attachment[:mime_type])
           end
         })
 
@@ -50,6 +49,7 @@ module Nanoid::Sync
 
         result = :success
       else
+        $operation = operation
         Nanoid::Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.localizedDescription}"
         result = :failure
       end

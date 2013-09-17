@@ -106,6 +106,7 @@ module Nanoid::Sync
           Nanoid::Log.error "[Nanoid::Queue][CRITICAL] Job #{self.sync_class}:#{self.sync_id} exceeded failure threshold and has been removed"
           self.destroy
           self.class.notification(instance, 'failure')
+          # TODO Set _syncing to false
         end
       when :critical
         self.destroy

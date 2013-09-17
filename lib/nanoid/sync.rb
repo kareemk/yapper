@@ -1,6 +1,13 @@
 module Nanoid::Sync
   extend MotionSupport::Concern
 
+  included do
+    class << self
+      attr_accessor :attachments
+    end
+    self.attachments = {}
+  end
+
   class << self
     attr_accessor :base_url
     attr_accessor :sync_path
@@ -35,6 +42,13 @@ module Nanoid::Sync
       end
       self.sync_to = options[:to]
       self.sync_auto = options[:auto]
+    end
+
+    def attachment(name, options, &block)
+      raise ArgumentError unless options[:on] # XXX Use a consistent approach to checking hash params
+
+      self.attachments[name] = block
+      field(options[:on])
     end
   end
 
