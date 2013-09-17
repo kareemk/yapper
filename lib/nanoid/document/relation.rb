@@ -9,13 +9,13 @@ module Nanoid::Document
 
       self.relations = {}
       self.relations[:has_many] = []
-      self.relations[:belongs_to] = nil
+      self.relations[:belongs_to] = []
     end
 
     module ClassMethods
       def has_many(*relations)
         relations.each do |relation|
-          self.relations[:has_many] << relation unless self.relations.include?(relation)
+          self.relations[:has_many] << relation unless self.relations[:has_many].include?(relation)
 
           define_method(relation) do
             Object.qualified_const_get(relation.to_s.singularize.camelize).where("#{self._type.underscore}_id".to_sym => self.id)
@@ -36,8 +36,7 @@ module Nanoid::Document
       end
 
       def belongs_to(relation)
-        raise "Can only belong_to one parent" if self.relations[:belongs_to]
-        self.relations[:belongs_to] = relation
+        self.relations[:has_many] << relation unless self.relations[:has_many].include?(relation)
         self.field("#{relation}_id")
 
         define_method(relation) do

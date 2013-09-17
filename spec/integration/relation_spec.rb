@@ -63,5 +63,43 @@ describe 'Nanoid document 1:N relationship' do
       end
     end
   end
+end
 
+describe 'Nanoid document 1:N:1 relationship' do
+  before do
+    class Parent1
+      include Nanoid::Document
+
+      field :field_1
+
+      has_many :child_documents
+    end
+    class Parent2
+      include Nanoid::Document
+
+      field :field_1
+
+      has_many :child_documents
+    end
+    class ChildDocument
+      include Nanoid::Document
+
+      field :field_1
+
+      belongs_to :parent1
+      belongs_to :parent2
+    end
+  end
+  after { Nanoid::DB.purge }
+  after { ['Parent1', 'Parent2', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
+
+  it 'can create child with many parents' do
+    parent1 = Parent1.create(:field_1 => 'parent1')
+    parent2 = Parent2.create(:field_1 => 'parent2')
+
+    child = ChildDocument.create(:parent1 => parent1, :parent2 => parent2)
+
+    child.parent1.field_1.should == 'parent1'
+    child.parent2.field_1.should == 'parent2'
+  end
 end
