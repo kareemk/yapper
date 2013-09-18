@@ -50,7 +50,7 @@ module Nanoid::Sync
         result = :success
       else
         $operation = operation
-        Nanoid::Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.localizedDescription}"
+        Nanoid::Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.userInfo}"
         result = :failure
       end
 
