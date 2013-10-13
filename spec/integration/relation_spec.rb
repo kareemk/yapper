@@ -32,6 +32,20 @@ describe 'Nanoid document 1:N relationship' do
     end
   end
 
+  it 'can accept array of child_ids' do
+    2.times { |i| ChildDocument.create(:field_1 => "child#{i}") }
+    parent = ParentDocument.create(:field_1 => 'parent',
+                                   :child_document_ids => ChildDocument.all.collect(&:id))
+
+
+    parent.field_1.should == 'parent'
+    parent.child_documents.collect(&:field_1).tap do |fields|
+      fields.include?('child0').should == true
+      fields.include?('child1').should == true
+    end
+  end
+
+
   it 'can set a parent to nil' do
     child = ChildDocument.create(:field_1 => 'child_field',
                                  :parent_document => nil)

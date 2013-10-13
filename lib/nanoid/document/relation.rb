@@ -22,7 +22,7 @@ module Nanoid::Document
           end
 
           define_method("#{relation}=") do |attrs|
-            raise "You must pass an array of values" unless attrs.is_a?(Array)
+            raise "You must pass an array of attributes" unless attrs.is_a?(Array)
 
             instances = []
             attrs.each do |attr|
@@ -31,6 +31,17 @@ module Nanoid::Document
               instances << instance.attributes
             end
             @changes.merge!(relation => instances)
+          end
+
+          define_method("#{relation.singularize}_ids=") do |ids|
+            raise "You must pass an array of ids" unless ids.is_a?(Array)
+
+            ids.each do |id|
+              Object.qualified_const_get(relation.to_s.singularize.camelize).
+                find(id).
+                update_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
+            end
+            @changes.merge!("#{relation}_ids" => ids)
           end
         end
       end
