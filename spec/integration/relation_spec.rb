@@ -32,6 +32,13 @@ describe 'Nanoid document 1:N relationship' do
     end
   end
 
+  it 'can set a parent to nil' do
+    child = ChildDocument.create(:field_1 => 'child_field',
+                                 :parent_document => nil)
+
+    child.field_1.should == 'child_field'
+  end
+
   describe 'with a parent with many children' do
     before do
       @parent = ParentDocument.create(:field_1 => 'parent')
