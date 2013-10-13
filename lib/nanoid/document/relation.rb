@@ -41,7 +41,7 @@ module Nanoid::Document
                 find(id).
                 update_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
             end
-            @changes.merge!("#{relation}_ids" => ids)
+            @changes.merge!("#{relation.singularize}_ids" => ids)
           end
         end
       end

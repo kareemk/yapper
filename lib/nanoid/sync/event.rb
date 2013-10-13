@@ -11,7 +11,7 @@ module Nanoid::Sync
           :model    => instance.model_name.capitalize,
           :model_id => instance.id,
           :type     => type,
-          :delta    =>  delta
+          :delta    => delta
         }
       }
 

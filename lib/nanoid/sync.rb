@@ -27,6 +27,8 @@ module Nanoid::Sync
 
   module ClassMethods
     def sync(options)
+      raise "#{self}: sync can only be defined once" if self.respond_to?(:sync_to)
+
       field :_synced_at
       field :_syncing
       before_save :track_changes
