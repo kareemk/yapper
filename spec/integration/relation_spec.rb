@@ -21,28 +21,41 @@ describe 'Nanoid document 1:N relationship' do
   it 'can accept nested attributes' do
     @parent = ParentDocument.create(:field_1 => 'parent',
                                     :child_documents => [
-                                      { :field_1 => 'child1' },
-                                      { :field_1 => 'child2' }
+                                      { :field_1 => 'child0' },
+                                      { :field_1 => 'child1' }
                                     ])
 
     @parent.field_1.should == 'parent'
-    @parent.child_documents.collect(&:field_1).tap do |fields|
-      fields.include?('child1').should == true
-      fields.include?('child2').should == true
+    @parent.child_documents.collect(&:field_1).tap do |field_1|
+      field_1.include?('child0').should == true
+      field_1.include?('child1').should == true
     end
   end
 
-  it 'can accept array of child_ids' do
-    2.times { |i| ChildDocument.create(:field_1 => "child#{i}") }
-    parent = ParentDocument.create(:field_1 => 'parent',
-                                   :child_document_ids => ChildDocument.all.collect(&:id))
+  it 'can accept array of initialized children' do
+    children = []
+    2.times { |i| children << ChildDocument.new(:field_1 => "child#{i}") }
+    @parent = ParentDocument.create(:field_1 => 'parent',
+                                    :child_documents => children)
 
-
-    parent.field_1.should == 'parent'
-    parent.child_documents.collect(&:field_1).tap do |fields|
-      fields.include?('child0').should == true
-      fields.include?('child1').should == true
+    @parent.field_1.should == 'parent'
+    @parent.child_documents.collect(&:field_1).tap do |field_1|
+      field_1.include?('child0').should == true
+      field_1.include?('child1').should == true
     end
+  end
+
+  it 'can accept array of created children' do
+    children = []
+    2.times { |i| children << ChildDocument.create(:field_1 => "child#{i}") }
+    @parent = ParentDocument.create(:field_1 => 'parent',
+                                    :child_documents => children)
+
+    @parent.field_1.should == 'parent'
+    @parent.child_documents.collect(&:field_1).tap do |field_1|
+      field_1.include?('child0').should == true
+      field_1.include?('child1').should == true
+   end
   end
 
 

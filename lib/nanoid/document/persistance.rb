@@ -76,9 +76,11 @@ module Nanoid::Document
       self.skip_callbacks = options[:skip_callbacks] || self.skip_callbacks || false
 
       attrs.each do |k,v|
-        raise "#{k} not defined on #{self.class}" unless respond_to?("#{k}=")
-
-        __send__("#{k}=", v) if v
+        if respond_to?("#{k}=")
+          __send__("#{k}=", v) if v
+        else
+          Log.warn "#{k} not defined on #{self.class}"
+        end
       end
 
       if options[:pristine]

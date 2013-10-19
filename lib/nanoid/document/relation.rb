@@ -21,27 +21,33 @@ module Nanoid::Document
             Object.qualified_const_get(relation.to_s.singularize.camelize).where("#{self._type.underscore}_id".to_sym => self.id)
           end
 
-          define_method("#{relation}=") do |attrs|
-            raise "You must pass an array of attributes" unless attrs.is_a?(Array)
+          define_method("#{relation}=") do |docs|
+            raise "You must pass an array of objects or attributes" unless docs.is_a?(Array)
+            raise "All elements in the array must be of the same type" unless docs.all? { |doc| doc.is_a?(docs.first.class) }
 
-            instances = []
-            attrs.each do |attr|
-              attr = attr.merge("#{self._type.underscore}" => self)
-              instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
-              instances << instance.attributes
+            changes = {}
+            docs.each do |doc|
+              if doc.is_a?(Nanoid::Document)
+                if doc.persisted?
+                  doc.update_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
+                  changes["#{relation.singularize}_ids"] ||= []
+                  changes["#{relation.singularize}_ids"] << doc.id
+                else
+                  doc.assign_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
+                  doc.save
+                  changes[relation] ||= []
+                  changes[relation] << doc.attributes
+                end
+              elsif doc.is_a?(Hash)
+                attr = doc.merge("#{self._type.underscore}" => self)
+                instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
+                changes[relation] ||= []
+                changes[relation] << instance.attributes
+              else
+                raise "Must pass either attributes or an object"
+              end
             end
-            @changes.merge!(relation => instances)
-          end
-
-          define_method("#{relation.singularize}_ids=") do |ids|
-            raise "You must pass an array of ids" unless ids.is_a?(Array)
-
-            ids.each do |id|
-              Object.qualified_const_get(relation.to_s.singularize.camelize).
-                find(id).
-                update_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
-            end
-            @changes.merge!("#{relation.singularize}_ids" => ids)
+            @changes.merge!(changes)
           end
         end
       end
