@@ -127,6 +127,18 @@ module Nanoid::Sync
       'nanoid:sync:last_event_id'
     end
 
+    def uuid
+      user_defaults.objectForKey(uuid_key) || begin
+        uuid = UIDevice.currentDevice.identifierForVendor.UUIDString
+        user_defaults.setObject(uuid, forKey: uuid_key)
+        uuid
+      end
+    end
+
+    def uuid_key
+      'nanoid:sync:uuid'
+    end
+
     def http_client
       @http_client ||= begin
                          client = AFHTTPClient.alloc.initWithBaseURL(NSURL.URLWithString(Nanoid::Sync.base_url))
@@ -134,9 +146,7 @@ module Nanoid::Sync
                          client
                        end
       @http_client.setAuthorizationHeaderWithToken(Nanoid::Sync.access_token.call)
-      # XXX Need to use UIDevice.currentDevice.identifierForVendor.UUIDString to
-      # support iOS7 but this requires users to reinstall app
-      @http_client.setDefaultHeader('DEVICEID', value: UIDevice.currentDevice.uniqueIdentifier)
+      @http_client.setDefaultHeader('DEVICEID', value: uuid)
     end
   end
 end
