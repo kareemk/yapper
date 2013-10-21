@@ -109,7 +109,7 @@ module Nanoid::Sync
     end
 
     def update_last_event_id(event)
-      Nanoid::Sync::Event.last_event_id = event['id'] || event['_id']
+      Nanoid::Sync::Event.last_event_id = event['created_at']
     end
 
     def last_event_id=(value)
