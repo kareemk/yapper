@@ -27,6 +27,8 @@ module Nanoid::Document
 
             changes = {}
             docs.each do |doc|
+              # XXX Add skip_sync vs. skip_callbacks option as callbacks
+              # probably still should be fired in most circumstances
               if doc.is_a?(Nanoid::Document)
                 if doc.persisted?
                   doc.update_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
@@ -40,7 +42,7 @@ module Nanoid::Document
                 end
               elsif doc.is_a?(Hash)
                 attr = doc.merge("#{self._type.underscore}" => self)
-                instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
+                instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr, :skip_callbacks => true)
                 changes[relation] ||= []
                 changes[relation] << instance.attributes
               else
