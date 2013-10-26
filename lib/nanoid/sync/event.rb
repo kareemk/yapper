@@ -2,9 +2,8 @@ module Nanoid::Sync
   module Event
     extend self
 
-    def create(instance)
+    def create(instance, type)
       delta = instance.sync_as
-      type  = instance.synced? ? :update : :create
 
       params = {
         :event => {
@@ -49,7 +48,6 @@ module Nanoid::Sync
 
         result = :success
       else
-        $operation = operation
         Nanoid::Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.userInfo}"
         result = :failure
       end

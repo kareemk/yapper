@@ -7,6 +7,7 @@ module Nanoid::Sync
     field :sync_class
     field :sync_id
     field :sync_changes
+    field :sync_type
     field :created_at
     field :failure_count
 
@@ -66,13 +67,14 @@ module Nanoid::Sync
       true
     end
 
-    def self.process(klass, id, changes)
+    def self.process(klass, id, type, changes)
       instance = klass.find(id)
       self.notification(instance, 'start')
 
       job = self.create(:sync_class    => instance.class.to_s,
                         :sync_id       => instance.id,
                         :sync_changes  => changes,
+                        :sync_type     => type,
                         :created_at    => Time.now.utc,
                         :failure_count => 0)
       handle(job)
@@ -82,15 +84,15 @@ module Nanoid::Sync
       operation = NSBlockOperation.blockOperationWithBlock lambda {
         instance = Object.qualified_const_get(job.sync_class).find(job.sync_id)
         instance.changes = job.sync_changes
-        job.attempt(instance)
+        job.attempt(instance, job.sync_type)
       }
       self.toggle_queue
       @@queue.addOperation(operation)
       nil
     end
 
-    def attempt(instance)
-      case Nanoid::Sync::Event.create(instance)
+    def attempt(instance, type)
+      case Nanoid::Sync::Event.create(instance, type)
       when :success
         instance.update_attributes({:_synced_at => Time.now}, :skip_callbacks => true)
         self.destroy
@@ -100,13 +102,12 @@ module Nanoid::Sync
           sleep 2 ** (self.failure_count)
           self.failure_count += 1
           self.save
-          attempt(instance)
+          attempt(instance, type)
           self.class.notification(instance, 'retry')
         else
           Nanoid::Log.error "[Nanoid::Queue][CRITICAL] Job #{self.sync_class}:#{self.sync_id} exceeded failure threshold and has been removed"
           self.destroy
           self.class.notification(instance, 'failure')
-          # TODO Set _syncing to false
         end
       when :critical
         self.destroy

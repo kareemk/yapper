@@ -5,6 +5,7 @@ module Nanoid::Document
     included do
       attr_accessor :attributes
       attr_accessor :changes
+      attr_accessor :previous_changes
 
       class << self
         attr_accessor :fields
@@ -109,6 +110,10 @@ module Nanoid::Document
       @new_record
     end
 
+    def was_new?
+      @was_new
+    end
+
     def destroyed?
       !!@destroyed
     end
@@ -126,9 +131,12 @@ module Nanoid::Document
           db.execute { |store| store.addObject(@db_object, error: error_ptr) }
           raise_if_error(error_ptr)
 
+          @was_new = @new_record
           @new_record = false
+
+          self.previous_changes = self.changes
+          self.changes = {}
         end
-        @changes = {}
         self.skip_callbacks = false
 
         true

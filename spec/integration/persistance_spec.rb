@@ -73,6 +73,11 @@ describe 'Nanoid persisting documents' do
       @doc.field_1 = 'field1_changed'
 
       @doc.changes.should == { 'field_1' => 'field1_changed' }
+
+      @doc.save
+
+      @doc.changes.should == {}
+      @doc.previous_changes.should == { 'field_1' => 'field1_changed' }
     end
 
     describe "when updating fields and then #save" do

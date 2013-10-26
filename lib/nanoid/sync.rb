@@ -2,6 +2,15 @@ module Nanoid::Sync
   extend MotionSupport::Concern
 
   included do
+    field       :_synced_at
+    after_save  :sync_changes
+
+    unless self.ancestors.include?(Nanoid::Timestamps)
+      include Nanoid::Timestamps
+    end
+
+    cattr_accessor :always
+
     class << self
       attr_accessor :attachments
     end
@@ -27,23 +36,7 @@ module Nanoid::Sync
 
   module ClassMethods
     def sync(options)
-      raise "#{self}: sync can only be defined once" if self.respond_to?(:sync_to)
-
-      field :_synced_at
-      field :_syncing
-      before_save :track_changes
-      after_save  :sync_if_syncing
-
-      unless self.ancestors.include?(Nanoid::Timestamps)
-        include Nanoid::Timestamps
-      end
-
-      class << self
-        attr_accessor :sync_to
-        attr_accessor :sync_auto
-      end
-      self.sync_to = options[:to]
-      self.sync_auto = options[:auto]
+      self.always    = options[:always] || []
     end
 
     def attachment(name, options, &block)
@@ -52,16 +45,6 @@ module Nanoid::Sync
       self.attachments[name] = block
       field(options[:on])
     end
-  end
-
-  def initialize(*args)
-    super(*args)
-    self._syncing = self.class.sync_auto if self.sync_configured? && @new_record
-    self
-  end
-
-  def sync_configured?
-    self.respond_to?(:_synced_at)
   end
 
   def sync_as
@@ -79,27 +62,28 @@ module Nanoid::Sync
   end
 
   def sync
-    return false if self._syncing
-
     perform_sync(self.attributes.stringify_keys)
-    self.update_attributes({:_syncing => true}, :skip_callbacks => true)
 
     true
+  end
+
+  def sync_op
+    self.was_new? ? :create : :update
   end
 
   private
 
   def perform_sync(changes)
-    Queue.process(self.class, self.id, changes)
+    Queue.process(self.class, self.id, self.sync_op, changes)
   end
 
-  def sync_if_syncing
-    if self._syncing
-      perform_sync(@sync_changes)
+  def sync_changes
+    perform_sync(self.previous_changes.merge(always_attributes))
+  end
+
+  def always_attributes
+    {}.tap do |attrs|
+      self.always.each { |field| attrs[field] = self.send(field) }
     end
-  end
-
-  def track_changes
-    @sync_changes = self.changes
   end
 end
