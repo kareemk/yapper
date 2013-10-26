@@ -73,7 +73,7 @@ module Nanoid::Sync
       if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
         events = operation.responseJSON
         events.each do |event|
-          Nanoid::Log.info "[Nanoid::Sync::Event][#{event['type']}][#{event['model']}] #{event}"
+          Nanoid::Log.info "[Nanoid::Sync::Event][GET][#{event['type']}][#{event['model']}] #{event}"
 
           model = Object.qualified_const_get(event['model'])
           instance = nil
