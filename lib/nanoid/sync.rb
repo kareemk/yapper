@@ -27,7 +27,7 @@ module Nanoid::Sync
 
   def self.configure(options)
     self.access_token      = options[:access_token]
-    self.max_failure_count = options[:max_failure_count] || 5
+    self.max_failure_count = options[:max_failure_count] || 100
   end
 
   def self.sync
