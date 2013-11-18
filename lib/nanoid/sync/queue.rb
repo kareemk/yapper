@@ -94,7 +94,7 @@ module Nanoid::Sync
     def attempt(instance, type)
       case Nanoid::Sync::Event.create(instance, type)
       when :success
-        instance.update_attributes({:_synced_at => Time.now}, :skip_callbacks => true)
+        Nanoid::Sync.disabled { instance.update_attributes(:_synced_at => Time.now) }
         self.destroy
         self.class.notification(instance, 'success')
       when :failure

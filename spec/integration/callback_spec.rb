@@ -83,13 +83,4 @@ describe 'Nanoid callbacks' do
       CallbackDocument.all.count.should == 0
     end
   end
-
-  it 'can skip callbacks' do
-    doc = CallbackDocument.create({ :field_1 => 'field1',
-                                    :field_2 => 'field2' }, :skip_callbacks => true)
-
-    doc.field_1.should == 'field1'
-    doc.field_2.should == 'field2'
-    # TODO Ensure that notifications are not posted
-  end
 end

@@ -74,8 +74,6 @@ module Nanoid::Document
         self.attributes = {}
       end
 
-      self.skip_callbacks = options[:skip_callbacks] || self.skip_callbacks || false
-
       attrs.each do |k,v|
         if respond_to?("#{k}=")
           __send__("#{k}=", v) if v
@@ -137,8 +135,8 @@ module Nanoid::Document
           self.previous_changes = self.changes
           self.changes = {}
         end
-        self.skip_callbacks = false
 
+        sync_changes if defined? sync_changes # XXX Use middleware pattern instead of this ugliness
         true
       end
     end

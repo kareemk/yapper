@@ -26,30 +26,30 @@ module Nanoid::Document
             raise "All elements in the array must be of the same type" unless docs.all? { |doc| doc.is_a?(docs.first.class) }
 
             changes = {}
-            docs.each do |doc|
-              # XXX Add skip_sync vs. skip_callbacks option as callbacks
-              # probably still should be fired in most circumstances
-              if doc.is_a?(Nanoid::Document)
-                if doc.persisted?
-                  doc.update_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
-                  changes["#{relation.singularize}_ids"] ||= []
-                  changes["#{relation.singularize}_ids"] << doc.id
-                else
-                  doc.assign_attributes({"#{self._type.underscore}" => self}, :skip_callbacks => true)
-                  doc.save
+            Nanoid::Sync.disabled do
+              docs.each do |doc|
+                if doc.is_a?(Nanoid::Document)
+                  if doc.persisted?
+                    doc.update_attributes("#{self._type.underscore}" => self)
+                    changes["#{relation.singularize}_ids"] ||= []
+                    changes["#{relation.singularize}_ids"] << doc.id
+                  else
+                    doc.assign_attributes("#{self._type.underscore}" => self)
+                    doc.save
+                    changes[relation] ||= []
+                    changes[relation] << doc.attributes
+                  end
+                elsif doc.is_a?(Hash)
+                  attr = doc.merge("#{self._type.underscore}" => self)
+                  instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
                   changes[relation] ||= []
-                  changes[relation] << doc.attributes
+                  changes[relation] << instance.attributes
+                else
+                  raise "Must pass either attributes or an object"
                 end
-              elsif doc.is_a?(Hash)
-                attr = doc.merge("#{self._type.underscore}" => self)
-                instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr, :skip_callbacks => true)
-                changes[relation] ||= []
-                changes[relation] << instance.attributes
-              else
-                raise "Must pass either attributes or an object"
               end
+              @changes.merge!(changes)
             end
-            @changes.merge!(changes)
           end
         end
       end

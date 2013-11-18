@@ -10,7 +10,6 @@ module Nanoid::Document
 
       self.before_save_callbacks = []
       self.after_save_callbacks  = []
-      attr_accessor :skip_callbacks
     end
 
     module ClassMethods
@@ -24,8 +23,6 @@ module Nanoid::Document
     end
 
     def run_callback(hook, operation)
-      return true if self.skip_callbacks
-
       self.class.send("#{hook}_#{operation}_callbacks").each do |method|
         self.send(method)
       end
@@ -42,7 +39,7 @@ module Nanoid::Document
     private
 
     def notify_callback(operation)
-      NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{self.model_name}:#{operation}", object: self , userInfo: nil) unless self.skip_callbacks
+      NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{self.model_name}:#{operation}", object: self , userInfo: nil)
     end
   end
 end

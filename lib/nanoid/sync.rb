@@ -34,6 +34,13 @@ module Nanoid::Sync
     Queue.sync
   end
 
+  def self.disabled(&block)
+    previous_value = Thread.current[:sync_disabled]
+    Thread.current[:sync_disabled] = true
+    yield
+    Thread.current[:sync_disabled] = previous_value
+  end
+
   module ClassMethods
     def sync(options)
       self.always    = options[:always] || []
@@ -78,7 +85,7 @@ module Nanoid::Sync
   end
 
   def sync_changes
-    perform_sync(self.previous_changes.merge(always_attributes))
+    perform_sync(self.previous_changes.merge(always_attributes)) unless Thread.current[:sync_disabled]
   end
 
   def always_attributes

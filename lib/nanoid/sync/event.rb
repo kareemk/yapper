@@ -44,7 +44,9 @@ module Nanoid::Sync
         attrs.each do |k, v|
           new_attrs[k] = v if instance.respond_to?(k) && instance.send(k).nil?
         end
-        instance.reload.update_attributes(new_attrs, :skip_callbacks => true)
+        Nanoid::Sync.disabled do
+          instance.reload.update_attributes(new_attrs)
+        end
 
         result = :success
       else
@@ -85,12 +87,12 @@ module Nanoid::Sync
 
           if instance.nil?
             update_last_event_id(event)
-            raise "Model instance not found!. This is not good!"
+            Nanoid::Log.error  "Model instance not found!. This is not good!"
           end
 
           attrs = event['delta'].dup
 
-          instance.update_attributes(attrs, :skip_callbacks => true)
+          Nanoid::Sync.disabled { instance.update_attributes(attrs) }
 
           block.call(instance)
           update_last_event_id(event)
