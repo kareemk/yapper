@@ -21,6 +21,7 @@ module Nanoid::Document
       end
 
       def field(name, options={})
+        name = name.to_sym
         self.fields[name] = options
 
         define_method(name) do |*args, &block|
@@ -29,21 +30,6 @@ module Nanoid::Document
 
         define_method("#{name}=".to_sym) do |*args, &block|
           self.set_attribute(name, args[0])
-        end
-      end
-
-      def batch(every, &block)
-        db.execute do |store|
-          store.setSaveInterval(every)
-        end
-
-        block.call
-
-        db.execute do |store|
-          error_ptr = Pointer.new(:id)
-          store.saveStoreAndReturnError(error_ptr)
-          store.setSaveInterval(1)
-          raise_if_error(error_ptr)
         end
       end
     end

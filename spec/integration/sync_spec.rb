@@ -5,7 +5,6 @@ describe 'Nanoid syncing documents' do
     class Document
       include Nanoid::Document
       include Nanoid::Sync
-      store_in :file
 
       field :field_1
       sync :to => '/api/documents', :auto => [:get, :save]

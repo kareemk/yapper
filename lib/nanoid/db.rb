@@ -17,6 +17,10 @@ class Nanoid::DB
     true
   end
 
+  def self.default
+    get(:default)
+  end
+
   def initialize(options)
     @name = options[:name]
 
@@ -64,6 +68,21 @@ class Nanoid::DB
     raise_if_error(error_ptr)
 
     success
+  end
+
+  def batch(every, &block)
+    execute do |store|
+      store.setSaveInterval(every)
+    end
+
+    block.call
+
+    execute do |store|
+      error_ptr = Pointer.new(:id)
+      store.saveStoreAndReturnError(error_ptr)
+      store.setSaveInterval(1)
+      raise_if_error(error_ptr)
+    end
   end
 
   def purge

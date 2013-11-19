@@ -17,6 +17,15 @@ describe 'multi-threaded' do
   after { Object.send(:remove_const, 'Document') }
   after { Object.send(:remove_const, 'AnotherDocument') }
 
+  it 'can batch updates for better performance on CUD' do
+    Nanoid::DB.default.batch(10) do
+      3.times { Document.create(:field_1 => 'saved') }
+
+      Document.where(:field_1 => 'saved').count.should == 0
+    end
+    Document.where(:field_1 => 'saved').count.should == 3
+  end
+
   it 'behaves safely' do
     threads = []
     threads << Thread.new { 10.times { Document.create(:field_1 => 'field') } }
@@ -25,7 +34,7 @@ describe 'multi-threaded' do
     threads << Thread.new { 10.times { AnotherDocument.all.each { |d| d.update_attributes(:field_1 => 'bye') } } }
     threads.each(&:join)
 
-    # AnotherDocument.all.count.should == 10
+    AnotherDocument.all.count.should == 10
     Document.all.count.should == 10
   end
 end

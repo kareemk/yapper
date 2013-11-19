@@ -10,15 +10,6 @@ describe 'Nanoid persisting documents' do
   after { Nanoid::DB.purge }
   after { Object.send(:remove_const, 'Document') }
 
-  it 'can batch updates for better performance on CUD' do
-    Document.batch(10) do
-      3.times { Document.create(:field_1 => 'saved') }
-
-      Document.where(:field_1 => 'saved').count.should == 0
-    end
-    Document.where(:field_1 => 'saved').count.should == 3
-  end
-
   describe 'creating documents' do
     it 'supports hashes but keys are stringified' do
       field = { "a" => [ { "a" => Time.now } ] }

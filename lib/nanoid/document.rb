@@ -3,11 +3,6 @@ module Nanoid::Document
 
   included do
     extend  Nanoid::Error
-
-    class << self
-      attr_accessor :db_name
-    end
-    self.db_name = :default
   end
 
   include Nanoid::Error
@@ -18,12 +13,8 @@ module Nanoid::Document
   include Relation
 
   module ClassMethods
-    def store_in(name)
-      self.db_name = name
-    end
-
     def db
-      Nanoid::DB.get(self.db_name)
+      Nanoid::DB.default
     end
 
     def _type
