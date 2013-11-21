@@ -60,7 +60,9 @@ module Nanoid::Sync
       return false if self.paused?
 
       operation = NSBlockOperation.blockOperationWithBlock lambda {
-        Nanoid::Sync::Event.get { |instance, status| self.notification(instance, 'success') }
+        Nanoid::Sync::Event.get do |instances|
+          instances.each { |instance| self.notification(instance, 'success') }
+        end
       }
       @@queue.addOperation(operation)
 

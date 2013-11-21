@@ -12,6 +12,36 @@ module Nanoid::Document
       self.after_save_callbacks  = []
     end
 
+    def self.postpone_callbacks(&block)
+      Thread.current[:postponed_callbacks] = []
+
+      block.call
+
+      Thread.current[:postponed_callbacks].each(&:call)
+      Thread.current[:postponed_callbacks] = nil
+    end
+
+    def self.disabled(&block)
+      previous_value = Thread.current[:disabled_callbacks]
+      Thread.current[:disabled_callbacks] = true
+
+      block.call
+
+      Thread.current[:disabled_callbacks] = previous_value
+    end
+
+    def self.disabled?
+      !!Thread.current[:disabled_callbacks]
+    end
+
+    def self.postpone_callback(&block)
+      Thread.current[:postponed_callbacks] << Proc.new(block)
+    end
+
+    def self.postponed_callbacks
+      Thread.current[:postponed_callbacks]
+    end
+
     module ClassMethods
       def before_save(method)
         self.before_save_callbacks << method
@@ -29,11 +59,22 @@ module Nanoid::Document
     end
 
     def run_callbacks(operation, &block)
+      return yield if Nanoid::Document::Callbacks.disabled?
+
       if run_callback('before', operation)
         block.call
       end
-      run_callback('after', operation)
-      notify_callback(operation)
+
+      callback_proc = Proc.new do
+        run_callback('after', operation)
+        notify_callback(operation)
+      end
+
+      if Nanoid::Document::Callbacks.postponed_callbacks
+        Nanoid::Document::Callbacks.postpone_callback(&callback_proc)
+      else
+        callback_proc.call
+      end
     end
 
     private

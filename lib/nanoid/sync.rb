@@ -2,8 +2,7 @@ module Nanoid::Sync
   extend MotionSupport::Concern
 
   included do
-    field       :_synced_at
-    after_save  :sync_changes
+    field :_synced_at
 
     unless self.ancestors.include?(Nanoid::Timestamps)
       include Nanoid::Timestamps
@@ -81,7 +80,7 @@ module Nanoid::Sync
   private
 
   def perform_sync(changes)
-    Queue.process(self.class, self.id, self.sync_op, changes)
+    Queue.process(self.class, self.id, self.sync_op, changes) unless changes.empty?
   end
 
   def sync_changes
