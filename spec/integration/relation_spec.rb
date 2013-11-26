@@ -11,6 +11,7 @@ describe 'Nanoid document 1:N relationship' do
       include Nanoid::Document
 
       field :field_1
+      field :field_2
 
       belongs_to :parent_document
     end
@@ -58,6 +59,46 @@ describe 'Nanoid document 1:N relationship' do
    end
   end
 
+  it 'can accept an array of hashes' do
+    children = []
+    2.times { |i| children << { :field_1 => "child#{i}" } }
+    @parent = ParentDocument.create(:field_1 => 'parent',
+                                    :child_documents => children)
+
+    @parent.child_documents.collect(&:field_1).tap do |field_1|
+      field_1.include?('child0').should == true
+      field_1.include?('child1').should == true
+   end
+  end
+
+  it 'can accept an array of hashes with ids' do
+    children = []
+    2.times { |i| children << { :id => BSON::ObjectId.generate, :field_1 => "child#{i}" } }
+    @parent = ParentDocument.create(:field_1 => 'parent',
+                                    :child_documents => children)
+
+    children.each do |child|
+      ChildDocument.find(child[:id]).should.not == nil
+    end
+  end
+
+  it 'can update a child document via an array of hashes' do
+    children = []
+    2.times { |i| children << { :id => BSON::ObjectId.generate,
+                                :field_1 => "child#{i}",
+                                :field_2 => 'value' } }
+    @parent = ParentDocument.create(:field_1 => 'parent',
+                                    :child_documents => children)
+    @parent.update_attributes(:child_documents => [{ :id      => children[0][:id],
+                                                     :field_1 => 'updated0' },
+                                                   { :id      => children[1][:id],
+                                                     :field_1 => 'updated1' }])
+
+    children.each_with_index do |child, i|
+      ChildDocument.find(child[:id]).field_1.should == "updated#{i}"
+      ChildDocument.find(child[:id]).field_2.should == "value"
+    end
+  end
 
   it 'can set a parent to nil' do
     child = ChildDocument.create(:field_1 => 'child_field',

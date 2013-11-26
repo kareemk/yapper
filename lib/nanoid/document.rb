@@ -40,7 +40,7 @@ module Nanoid::Document
 
   # TODO Add specs
   def ==(other)
-    self.id == other.id
+    self.id == other.try(:id)
   end
   alias :eql? :==
 

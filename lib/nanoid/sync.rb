@@ -41,8 +41,8 @@ module Nanoid::Sync
   end
 
   module ClassMethods
-    def sync(options)
-      self.always    = options[:always] || []
+    def sync(options={})
+      self.always = options[:always] || []
     end
 
     def attachment(name, options, &block)
@@ -68,9 +68,7 @@ module Nanoid::Sync
   end
 
   def sync
-    perform_sync(self.attributes.stringify_keys)
-
-    true
+    @config ||= Config.new(self)
   end
 
   def sync_op
@@ -90,6 +88,39 @@ module Nanoid::Sync
   def always_attributes
     {}.tap do |attrs|
       self.always.each { |field| attrs[field] = self.send(field) }
+    end
+  end
+
+  class Config
+    def initialize(instance)
+      @instance = instance
+      @root = if parent
+                instance.send(parent)
+              else
+                instance
+              end
+    end
+
+    def id
+      @root.id
+    end
+
+    def model
+      @root.model_name.capitalize
+    end
+
+    def delta
+      delta = @root.sync_as
+      unless @root == @instance
+        delta.merge!(@instance.model_name.pluralize => [@instance.sync_as.merge(:id => @instance.id)])
+      end
+      delta
+    end
+
+    private
+
+    def parent
+      @instance.class.relations[:belongs_to].find { |r| r.find { |k,v| v[:embedded] } }.try(:keys).try(:first)
     end
   end
 end

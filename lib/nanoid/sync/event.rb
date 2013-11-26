@@ -3,14 +3,12 @@ module Nanoid::Sync
     extend self
 
     def create(instance, type)
-      delta = instance.sync_as
-
       params = {
         :event => {
-          :model    => instance.model_name.capitalize,
-          :model_id => instance.id,
+          :model    => instance.sync.model,
+          :model_id => instance.sync.id,
           :type     => type,
-          :delta    => delta
+          :delta    => instance.sync.delta
         }
       }
 
@@ -132,6 +130,8 @@ module Nanoid::Sync
             create_event = compact_events[index].dup
             create_event['delta'] = create_event['delta'].merge(event['delta'])
             compact_events[index] = create_event
+          else
+            compact_events << event
           end
         else
           raise "Only 'update' AND 'create' supported"

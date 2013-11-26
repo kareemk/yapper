@@ -13,20 +13,20 @@ module Nanoid::Document
     end
 
     module ClassMethods
-      def has_many(*relations)
-        relations.each do |relation|
-          self.relations[:has_many] << relation unless self.relations[:has_many].include?(relation)
+      def has_many(relation, options={})
+        self.relations[:has_many] << { relation => options } unless self.relations[:has_many].find { |r,o| r == relation }
 
-          define_method(relation) do
-            Object.qualified_const_get(relation.to_s.singularize.camelize).where("#{self._type.underscore}_id".to_sym => self.id)
-          end
+        define_method(relation) do
+          Object.qualified_const_get(relation.to_s.singularize.camelize).where("#{self._type.underscore}_id".to_sym => self.id)
+        end
 
-          define_method("#{relation}=") do |docs|
-            raise "You must pass an array of objects or attributes" unless docs.is_a?(Array)
-            raise "All elements in the array must be of the same type" unless docs.all? { |doc| doc.is_a?(docs.first.class) }
+        define_method("#{relation}=") do |docs|
+          raise "You must pass an array of objects or attributes" unless docs.is_a?(Array)
+          raise "All elements in the array must be of the same type" unless docs.all? { |doc| doc.is_a?(docs.first.class) }
 
-            changes = {}
-            Nanoid::Sync.disabled do
+          changes = {}
+          Nanoid::Sync.disabled do
+            db.transaction do
               docs.each do |doc|
                 if doc.is_a?(Nanoid::Document)
                   if doc.persisted?
@@ -40,22 +40,29 @@ module Nanoid::Document
                     changes[relation] << doc.attributes
                   end
                 elsif doc.is_a?(Hash)
+                  doc = doc.with_indifferent_access
                   attr = doc.merge("#{self._type.underscore}" => self)
-                  instance = Object.qualified_const_get(relation.singularize.to_s.camelize).create(attr)
+
+                  klass = Object.qualified_const_get(relation.singularize.to_s.camelize)
+                  instance = klass.find(doc[:id]) if attr[:id]
+                  instance ||= klass.new
+                  instance.assign_attributes(attr)
+                  instance.save
+
                   changes[relation] ||= []
-                  changes[relation] << instance.attributes
+                  changes[relation] << attr
                 else
                   raise "Must pass either attributes or an object"
                 end
               end
-              @changes.merge!(changes)
             end
+            @changes.merge!(changes)
           end
         end
       end
 
-      def belongs_to(relation)
-        self.relations[:has_many] << relation unless self.relations[:has_many].include?(relation)
+      def belongs_to(relation, options={})
+        self.relations[:belongs_to] << { relation => options } unless self.relations[:belongs_to].find { |r,o| r == relation }
         self.field("#{relation}_id")
 
         define_method(relation) do
