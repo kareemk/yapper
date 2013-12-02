@@ -2,8 +2,33 @@ module Nanoid::Sync
   module Event
     extend self
 
-    def create(instance, type)
+    def attach(attachment)
       params = {
+        :attachment => attachment.additional_fields.merge(:id => attachment.id,
+                                                          :name => attachment.name)
+      }
+      request = http_client.multipartFormRequestWithMethod(
+        'POST',
+        path: Nanoid::Sync.attachment_path,
+        parameters: params.as_json,
+        constructingBodyWithBlock: lambda { |form_data|
+            attachment_data = attachment.data
+            form_data.appendPartWithFileData(attachment_data[:data],
+                                             name: "attachment[data]",
+                                             fileName: attachment_data[:file_name],
+                                             mimeType: attachment_data[:mime_type])
+        })
+
+      if process(request)
+        Nanoid::Log.info "[Nanoid::Sync::Event][ATTACHMENT][#{attachment.id}]"
+        :success
+      else
+        :failure
+      end
+    end
+
+    def create(instance, type)
+      params =  {
         :event => {
           :model    => instance.sync.model,
           :model_id => instance.sync.id,
@@ -11,64 +36,45 @@ module Nanoid::Sync
           :delta    => instance.sync.delta
         }
       }
+      if instance._attachments
+        params.merge!(:attachments => instance._attachments)
+      end
 
-      request = http_client.multipartFormRequestWithMethod(
+      request = http_client.requestWithMethod(
         'POST',
-        path: Nanoid::Sync.sync_path,
-        parameters: params,
-        constructingBodyWithBlock: lambda { |form_data|
-          instance.class.attachments.each do |name, block|
-            attachment = instance.instance_eval(&block)
-            form_data.appendPartWithFileData(attachment[:data],
-                                             name: "event[delta][#{name}]",
-                                             fileName: attachment[:file_name],
-                                             mimeType: attachment[:mime_type])
-          end
-        })
+        :path => Nanoid::Sync.data_path,
+        :parameters => params.as_json)
 
-      result = nil
-      operation = AFJSONRequestOperation.alloc.initWithRequest(request)
-
-      operation.start
-      operation.waitUntilFinished
-
-      if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
-        attrs = operation.responseJSON.dup
+      if operation = process(request)
+        attrs = operation.responseJSON.deep_dup
         Nanoid::Log.info "[Nanoid::Sync::Event][POST][#{instance.model_name}] #{attrs}"
 
-        # XXX There must be a better way. Possibly calling Nanoid::Sync.sync
-        # after every operation (i like this)
         new_attrs = {}
         attrs.each do |k, v|
           new_attrs[k] = v if instance.respond_to?(k) && instance.send(k).nil?
         end
         Nanoid::Sync.disabled { instance.reload.update_attributes(new_attrs) }
-
-        result = :success
+        :success
       else
-        Nanoid::Log.warn "[Nanoid::Sync::Event][FAILURE][#{instance.model_name}] #{operation.error.userInfo}"
-        result = :failure
+        :failure
       end
-
-      result
     rescue Exception => e
-      Nanoid::Log.error "[Nanoid::Sync][CRITICAL][#{instance.model_name}]  #{e.message}: #{e.backtrace.join('::')}"
+      if e.is_a?(NSException)
+        Nanoid::Log.error "[Nanoid::Sync][CRITICAL][#{instance.model_name}] #{e.reason}: #{e.callStackSymbols}"
+      else
+        Nanoid::Log.error "[Nanoid::Sync][CRITICAL][#{instance.model_name}] #{e.message}: #{e.backtrace.join('::')}"
+      end
       :critical
     end
 
     def get(&block)
       request = http_client.requestWithMethod(
         'GET',
-        path: Nanoid::Sync.sync_path,
+        path: Nanoid::Sync.data_path,
         parameters: { :since => last_event_id }
       )
 
-      operation = AFJSONRequestOperation.alloc.initWithRequest(request)
-
-      operation.start
-      operation.waitUntilFinished
-
-      if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
+      if operation = process(request)
         events = compact(operation.responseJSON)
         instances = []
 
@@ -96,8 +102,6 @@ module Nanoid::Sync
         end
         update_last_event_id(events)
         block.call(instances)
-      else
-        Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{operation.error.localizedDescription}"
       end
     rescue Exception => e
       Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{e.message}: #{e.backtrace.join('::')}"
@@ -168,6 +172,20 @@ module Nanoid::Sync
                        end
       @http_client.setAuthorizationHeaderWithToken(Nanoid::Sync.access_token.call)
       @http_client.setDefaultHeader('DEVICEID', value: uuid)
+    end
+
+    def process(request)
+      operation = AFJSONRequestOperation.alloc.initWithRequest(request)
+
+      operation.start
+      operation.waitUntilFinished
+
+      if operation.response && operation.response.statusCode >= 200 && operation.response.statusCode < 300
+        operation
+      else
+        Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{operation.error.localizedDescription}"
+        false
+      end
     end
   end
 end

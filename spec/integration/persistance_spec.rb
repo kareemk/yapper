@@ -11,11 +11,18 @@ describe 'Nanoid persisting documents' do
   after { Object.send(:remove_const, 'Document') }
 
   describe 'creating documents' do
-    it 'supports hashes but keys are stringified' do
-      field = { "a" => [ { "a" => Time.now } ] }
-      Document.create(:field_1 => field)
+    it 'supports storing hashes by stringifying keys (to avoid NanoStore bug)' do
+      10.times { Document.create.tap { |doc| doc.update_attributes(:field_1 => { :a => [ { :a => 10 } ] }) } }
+      Document.all.each { |doc| doc.field_1[:b] = 'b'; doc.save }
 
-      Document.all.first.field_1.should == field.stringify_keys
+      Document.all.each { |doc| doc.field_1.should == { 'a' => [ { 'a' => 10 } ], 'b' => 'b' } }
+    end
+
+    it 'supports storing Time' do
+      time = Time.now
+      Document.create(:field_1 => time)
+
+      Document.all.first.field_1.should == time
     end
 
     it 'tracks changes' do

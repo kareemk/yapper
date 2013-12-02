@@ -1,4 +1,13 @@
+motion_require 'extensions'
+
 module Nanoid::Document
+  motion_require 'document/attachment'
+  motion_require 'document/callbacks'
+  motion_require 'document/persistance'
+  motion_require 'document/relation'
+  motion_require 'document/selection'
+  motion_require 'document/sort'
+
   extend MotionSupport::Concern
 
   included do
@@ -11,6 +20,7 @@ module Nanoid::Document
   include Callbacks
   include Sort
   include Relation
+  include Attachment
 
   module ClassMethods
     def db

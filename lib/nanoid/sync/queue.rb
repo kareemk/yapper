@@ -94,7 +94,7 @@ module Nanoid::Sync
     end
 
     def attempt(instance, type)
-      case Nanoid::Sync::Event.create(instance, type)
+      case event(instance, type)
       when :success
         Nanoid::Sync.disabled { instance.update_attributes(:_synced_at => Time.now) }
         self.destroy
@@ -118,6 +118,14 @@ module Nanoid::Sync
     end
 
     private
+
+    def event(instance, type)
+      if instance.is_a?(Nanoid::Attachment)
+        Nanoid::Sync::Event.attach(instance)
+      else
+        Nanoid::Sync::Event.create(instance, type)
+      end
+    end
 
     def self.toggle_queue
       was_paused = self.paused?

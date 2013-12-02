@@ -141,7 +141,24 @@ module Nanoid::Document
     end
 
     def refresh_db_object
-      @db_object = NSFNanoObject.nanoObjectWithDictionary(attributes.merge(:_type => _type), key: self.id)
+      @db_object = NSFNanoObject.nanoObjectWithDictionary(stringify_keys(attributes.merge(:_type => _type)), key: self.id)
     end
+  end
+
+  private
+
+  # TODO Use deep_stringify_keys once https://github.com/kareemk/motion-support is merged upstream
+  def stringify_keys(hash)
+    result = {}
+    hash.each do |key, value|
+      result[key.to_s] = if value.is_a?(Hash)
+        stringify_keys(value)
+      elsif value.is_a?(Array)
+        value.map { |v| v.is_a?(Hash) ? stringify_keys(v) : v }
+      else
+       value
+      end
+    end
+    result
   end
 end

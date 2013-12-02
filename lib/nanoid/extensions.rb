@@ -30,4 +30,39 @@ class Time
     end
     time
   end
+
+  def to_iso8601
+    dateFormatter = NSDateFormatter.alloc.init
+    locale = NSLocale.alloc.initWithLocaleIdentifier("en_US_POSIX")
+    dateFormatter.setLocale(locale)
+    dateFormatter.setDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ")
+
+    dateFormatter.stringFromDate(self)
+  end
+end
+
+class Object
+  def as_json
+    self
+  end
+end
+
+class Hash
+  def as_json
+    hash = self.class.new
+    self.each { |k,v| hash[k] = v.as_json }
+    hash
+  end
+end
+
+class Array
+  def as_json
+    self.map { |v| v.as_json }
+  end
+end
+
+class Time
+  def as_json
+    self.to_iso8601
+  end
 end

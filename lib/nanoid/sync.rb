@@ -1,4 +1,8 @@
 module Nanoid::Sync
+  motion_require 'sync/data'
+  motion_require 'sync/event'
+  motion_require 'sync/queue'
+
   extend MotionSupport::Concern
 
   included do
@@ -18,11 +22,13 @@ module Nanoid::Sync
 
   class << self
     attr_accessor :base_url
-    attr_accessor :sync_path
+    attr_accessor :data_path
+    attr_accessor :attachment_path
     attr_accessor :access_token
     attr_accessor :max_failure_count
   end
-  self.sync_path = '/api/data'
+  self.data_path = '/api/data'
+  self.attachment_path = '/api/attachment'
 
   def self.configure(options)
     self.access_token      = options[:access_token]
