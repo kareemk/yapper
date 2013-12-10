@@ -3,13 +3,15 @@ class Nanoid::DB
   extend  Nanoid::Error
 
   @@dbs   = {}
-  @@queue = Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.#{@name}")
+  @@queue = Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.db#{@name}")
 
   def self.get(name)
-    @@queue.sync do
-      @@dbs[name] ||= self.new(:name => name, :type => :file)
-    end
-    @@dbs[name]
+    @@dbs[name] || begin
+                     @@queue.sync do
+                       @@dbs[name] ||= self.new(:name => name, :type => :file)
+                     end
+                     @@dbs[name]
+                   end
   end
 
   def self.purge
@@ -24,39 +26,43 @@ class Nanoid::DB
   def initialize(options)
     @options = options
     @name = options[:name]
+    _queue; _store
+
     self
   end
 
   def execute(&block)
-    block.call(_store)
+    if running?
+      block.call(_store)
+    else
+      _run { |store| block.call(store) }
+    end
   end
 
   def transaction(&block)
-    error_ptr = Pointer.new(:id)
-    execute { |store| store.beginTransactionAndReturnError(error_ptr) }
-    raise_if_error(error_ptr)
+    execute do |store|
+      error_ptr = Pointer.new(:id)
+      store.beginTransactionAndReturnError(error_ptr)
+      raise_if_error(error_ptr)
 
-    begin
-      block.call
-    rescue StandardError => e
-      execute { |store| store.rollbackTransactionAndReturnError(error_ptr) }
-      raise e
+      begin
+        block.call
+      rescue NSException => e
+        store.rollbackTransactionAndReturnError(error_ptr)
+        raise e
+      end
+      success = store.commitTransactionAndReturnError(error_ptr)
+      raise_if_error(error_ptr)
+
+      success
     end
-    success = execute { |store| store.commitTransactionAndReturnError(error_ptr) }
-    raise_if_error(error_ptr)
-
-    success
   end
 
   def batch(&block)
-    # XXX THIS NEEDS TO BE THREAD SAFE. NEED A SEPERATE CONNECTION PER THREAD
     execute do |store|
       store.setSaveInterval(10000000)
-    end
-
-    Nanoid::Document::Callbacks.postpone_callbacks do
-      block.call
-      execute do |store|
+      Nanoid::Document::Callbacks.postpone_callbacks do
+        block.call
         error_ptr = Pointer.new(:id)
         store.saveStoreAndReturnError(error_ptr)
         store.setSaveInterval(1)
@@ -73,8 +79,33 @@ class Nanoid::DB
 
   private
 
+  def running=(value)
+    Thread.current[:nanoid_running] = value
+  end
+
+  def running?
+    Thread.current[:nanoid_running]
+  end
+
+  def _run(&block)
+    result = nil
+    _queue.sync do
+      self.running = true
+      begin
+        result = block.call(_store)
+      rescue NSException => e
+        result = e
+      ensure
+        self.running = false
+      end
+    end
+
+    raise result if result.is_a?(NSException)
+    result
+  end
+
   def _store
-    Thread.current[:store] ||= begin
+    @store ||= begin
       error_ptr = Pointer.new(:id)
       store = nil
       case @options[:type]
@@ -93,14 +124,8 @@ class Nanoid::DB
     end
   end
 
-
   def _queue
-    Thread.current[:queue] ||= begin
-      queue = NSOperationQueue.alloc.init
-      queue.name = "#{NSBundle.mainBundle.bundleIdentifier}.nanoid.#{@name}"
-      queue.MaxConcurrentOperationCount = 1
-      queue
-    end
+    @queue ||= Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.nanoid.#{@name}")
   end
 
   def document_path

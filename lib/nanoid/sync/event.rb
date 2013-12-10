@@ -132,7 +132,7 @@ module Nanoid::Sync
         when 'update'
           if index = event_lookup[event['model_id']]
             create_event = compact_events[index].dup
-            create_event['delta'] = create_event['delta'].merge(event['delta'])
+            create_event['delta'] = recursive_merge(create_event['delta'], event['delta'])
             compact_events[index] = create_event
           else
             compact_events << event
@@ -186,6 +186,32 @@ module Nanoid::Sync
         Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{operation.error.localizedDescription}"
         false
       end
+    end
+
+    def recursive_merge(h1, h2)
+      return h1 unless h1.is_a?(Array) || h1.is_a?(Hash)
+
+      result = h1.dup; h2 = h2.dup
+      h2.each_pair do |k,v|
+        tv = h1[k]
+        if tv.is_a?(Hash) && v.is_a?(Hash)
+          result[k] = recursive_merge(tv, v)
+        elsif tv.is_a?(Array) && v.is_a?(Array)
+          v = v.dup
+          result[k] = tv.map do |_tv|
+            if match = v.find { |_v| _tv.is_a?(Hash) && _v.is_a?(Hash) && _tv['id'] == _v['id'] }
+              v.delete(match)
+              recursive_merge(_tv, match)
+            else
+              _tv
+            end
+          end
+          result[k] += v
+        else
+          result[k] = v
+        end
+      end
+      result
     end
   end
 end

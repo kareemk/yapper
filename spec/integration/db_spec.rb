@@ -14,11 +14,9 @@ describe 'multi-threaded' do
       field :field_2
     end
   end
-  before { $before_callback_counter = 0 }
-  before { $after_callback_counter = 0 }
-  after  { Nanoid::DB.purge }
-  after  { Object.send(:remove_const, 'Document') }
-  after  { Object.send(:remove_const, 'AnotherDocument') }
+  after { Object.send(:remove_const, 'Document') }
+  after { Object.send(:remove_const, 'AnotherDocument') }
+  after { Nanoid::DB.purge }
 
   describe 'batching updates' do
     before do
@@ -35,6 +33,8 @@ describe 'multi-threaded' do
         end
       end
     end
+    before { $before_callback_counter = 0 }
+    before { $after_callback_counter = 0 }
 
     it 'postpones saves until completion of the block' do
       Nanoid::DB.default.batch do
@@ -66,7 +66,7 @@ describe 'multi-threaded' do
     threads << Thread.new { 10.times { AnotherDocument.all.each { |d| d.update_attributes(:field_1 => 'bye') } } }
     threads.each(&:join)
 
-    AnotherDocument.all.count.should == 10
     Document.all.count.should == 10
+    AnotherDocument.all.count.should == 10
   end
 end
