@@ -69,12 +69,26 @@ describe 'Nanoid selecting documents' do
           doc.field2.should == 'field2_value'
         end
       end
+
+      it 'can use offset & limit' do
+        docs = SelectionDocument.where({ :field1 => 'field1_value' }, :limit => 1, :offset => 2)
+
+        docs.length.should == 1
+        docs.first.field2.should == 'field2_other_value'
+      end
     end
 
     describe 'with #all' do
       it 'selects all documents' do
         SelectionDocument.all.count.should == 4
         SelectionDocument.all.first.class.should == SelectionDocument
+      end
+
+      it 'can use offset & limit' do
+        docs = SelectionDocument.all(:limit => 1, :offset => 2)
+
+        docs.length.should == 1
+        docs.first.field2.should == 'field2_other_value'
       end
     end
   end

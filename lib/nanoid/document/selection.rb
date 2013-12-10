@@ -11,11 +11,11 @@ module Nanoid::Document
         end.first
       end
 
-      def all
-        where(:_type => self._type)
+      def all(options={})
+        where({ :_type => self._type }, options)
       end
 
-      def where(criteria)
+      def where(criteria, options={})
         expressions = []
 
         criteria.merge!(:_type => self._type)
@@ -26,16 +26,18 @@ module Nanoid::Document
           expressions << expression
         end
 
-        search do |search|
+        search(options) do |search|
           search.expressions = expressions
         end
       end
 
       private
 
-      def search(&block)
+      def search(options={}, &block)
         results = db.execute do |store|
           search = NSFNanoSearch.searchWithStore(store)
+          search.limit  = options[:limit] if options[:limit]
+          search.offset = options[:offset] if options[:offset]
 
           block.call(search)
 
