@@ -30,6 +30,6 @@ class Nanoid::Attachment
   end
 
   def data
-    attachments[name][:data].call(self.additional_fields.with_indifferent_access)
+    attachments[name][:class].attachment(self.additional_fields.with_indifferent_access)
   end
 end

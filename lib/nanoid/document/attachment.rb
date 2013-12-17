@@ -17,7 +17,6 @@ module Nanoid::Document
       def attach(name, options={}, &block)
 
         options[:class] = self
-        options[:data]  = block
 
         field(name)
         Nanoid::Attachment.attachments[name] = options
