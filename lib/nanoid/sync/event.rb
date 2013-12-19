@@ -7,16 +7,21 @@ module Nanoid::Sync
         :attachment => attachment.additional_fields.merge(:id => attachment.id,
                                                           :name => attachment.name)
       }
+      # XXX This is terrible. But a needed workaround for the iPhone 4.
+      # Obviously temporary as this only works for ALAsset attachments
+      asset = attachment.data
+      image = UIImage.imageWithCGImage(asset.defaultRepresentation.fullResolutionImage,
+                                       scale: 1.0,
+                                       orientation: asset.defaultRepresentation.orientation)
       request = http_client.multipartFormRequestWithMethod(
         'POST',
         path: Nanoid::Sync.attachment_path,
         parameters: params.as_json,
         constructingBodyWithBlock: lambda { |form_data|
-            attachment_data = attachment.data
-            form_data.appendPartWithFileData(attachment_data[:data],
+            form_data.appendPartWithFileData(UIImageJPEGRepresentation(image, 0.8),
                                              name: "attachment[data]",
-                                             fileName: attachment_data[:file_name],
-                                             mimeType: attachment_data[:mime_type])
+                                             fileName: asset.defaultRepresentation.filename,
+                                             mimeType: 'image/jpg')
         })
 
       if process(request)
