@@ -11,7 +11,7 @@ class Nanoid::Attachment
   self.attachments = {}.with_indifferent_access
 
   field :name
-  field :url
+  field :uid
   field :additional_fields
 
   def self.create(name, fields={})
@@ -27,6 +27,15 @@ class Nanoid::Attachment
     attachment.save
 
     attachment
+  end
+
+  def self.url(uid, size=nil)
+    options = "[[\"f\",\"#{uid}\"]"
+    options << ",[\"p\",\"thumb\", \"#{size}\"]" if size
+    options << "]"
+    path = [options].pack("m").tr("\n=",'')
+
+    NSURL.URLWithString("#{Nanoid::Sync.base_url}/#{path}.jpg")
   end
 
   def data
