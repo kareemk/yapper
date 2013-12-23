@@ -78,6 +78,12 @@ describe 'Nanoid persisting documents' do
       @doc.previous_changes.should == { 'field_1' => 'field1_changed' }
     end
 
+    it 'saves a false value' do
+      @doc.update_attributes(:field_1 => false)
+
+      @doc.reload.field_1.should == false
+    end
+
     describe "when updating fields and then #save" do
       it 'persists the fields' do
         @doc.field_1 = 'field1_updated'

@@ -96,9 +96,9 @@ module Nanoid::Sync
             end
 
             if instance
-              Nanoid::Document::Callbacks.disabled {
-                Nanoid::Sync.disabled {instance.update_attributes(event['delta']) }
-              }
+              Nanoid::Document::Callbacks.disabled do
+                Nanoid::Sync.disabled { instance.update_attributes(event['delta']) }
+              end
               instances << instance
             else
               Nanoid::Log.error  "Model instance not found!. This is not good!"

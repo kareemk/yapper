@@ -62,7 +62,7 @@ module Nanoid::Document
 
       attrs.each do |k,v|
         if respond_to?("#{k}=")
-          __send__("#{k}=", v) if v
+          __send__("#{k}=", v) unless v.nil?
         else
           Log.warn "#{k} not defined on #{self.class}"
         end
