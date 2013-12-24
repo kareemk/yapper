@@ -14,19 +14,19 @@ describe 'Nanoid callbacks' do
       private
 
       def do_before_save
-        self.field_1 = 'before_save'
+        $before_save_1 = true
       end
 
       def do_another_before_save
-        self.field_2 = 'before_save'
+        $before_save_2 = true
       end
 
       def do_after_save
-        self.field_1 = 'after_save'
+        $after_save_1 = true
       end
 
       def do_another_after_save
-        self.field_2 = 'after_save'
+        $after_save_2 = true
       end
     end
   end
@@ -35,32 +35,33 @@ describe 'Nanoid callbacks' do
 
   describe 'creating documents' do
     it 'before and after callbacks are fired' do
-      doc = CallbackDocument.create(:field_1 => 'field1',
-                                    :field_2 => 'field2')
+      CallbackDocument.create(:field_1 => 'field1',
+                              :field_2 => 'field2')
 
-      doc.field_1.should == 'after_save'
-      doc.field_2.should == 'after_save'
-      doc.reload
-      doc.field_1.should == 'before_save'
-      doc.field_2.should == 'before_save'
+      $before_save_1.should == true
+      $before_save_2.should == true
+      $after_save_1.should == true
+      $after_save_2.should == true
     end
   end
 
   describe 'updating documents' do
     before do
       @doc = CallbackDocument.create(:field_1 => 'field1')
-      @doc.reload
+      $before_save_1 = false
+      $before_save_2 = false
+      $after_save_1 = false
+      $after_save_2 = false
     end
 
     it 'before and after callbacks are fired' do
       @doc.field_1 = 'field1_updated'
       @doc.save
 
-      @doc.field_1.should == 'after_save'
-      @doc.field_2.should == 'after_save'
-      @doc.reload
-      @doc.field_1.should == 'before_save'
-      @doc.field_2.should == 'before_save'
+      $before_save_1.should == true
+      $before_save_2.should == true
+      $after_save_1.should == true
+      $after_save_2.should == true
     end
   end
 

@@ -3,7 +3,6 @@ motion_require 'extensions'
 module Nanoid::Sync
   motion_require 'sync/data'
   motion_require 'sync/event'
-  motion_require 'sync/queue'
 
   extend MotionSupport::Concern
 

@@ -72,7 +72,7 @@ module Nanoid::Sync
       :critical
     end
 
-    def get(&block)
+    def get
       request = http_client.requestWithMethod(
         'GET',
         path: Nanoid::Sync.data_path,
@@ -81,35 +81,25 @@ module Nanoid::Sync
 
       if operation = process(request)
         events = compact(operation.responseJSON)
+        return events if events.empty?
+
         instances = []
+        if events.first['model'] == 'User'
+          instances << handle(events.shift)
+        end
 
         Nanoid::DB.default.batch do
           events.each do |event|
-            Nanoid::Log.info "[Nanoid::Sync::Event][GET][#{event['type']}][#{event['model']}] #{event['delta']}"
-
-            model = Object.qualified_const_get(event['model'])
-            instance = nil
-            if event['type'] == 'create'
-              instance = model.new(event['delta'])
-            else
-              instance = model.find(event['model_id'])
-            end
-
-            if instance
-              Nanoid::Document::Callbacks.disabled do
-                Nanoid::Sync.disabled { instance.update_attributes(event['delta']) }
-              end
-              instances << instance
-            else
-              Nanoid::Log.error  "Model instance not found!. This is not good!"
-            end
+            instances << handle(event)
           end
         end
         update_last_event_id(events)
-        block.call(instances)
+
+        instances.compact
       end
     rescue Exception => e
       Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{e.message}: #{e.backtrace.join('::')}"
+      []
     end
 
     def last_event_id
@@ -126,6 +116,26 @@ module Nanoid::Sync
     end
 
     private
+
+    def handle(event)
+      Nanoid::Log.info "[Nanoid::Sync::Event][GET][#{event['type']}][#{event['model']}] #{event['delta']}"
+
+      model = Object.qualified_const_get(event['model'])
+      instance = nil
+      if event['type'] == 'create'
+        instance = model.new(event['delta']) # XXX shouldn't need to pass in delta
+      else
+        instance = model.find(event['model_id'])
+      end
+
+      if instance
+        Nanoid::Sync.disabled { instance.update_attributes(event['delta']) }
+      else
+        Nanoid::Log.error  "Model instance not found!. This is not good!"
+      end
+
+      instance
+    end
 
     def compact(events)
       event_lookup = {}; compact_events = []

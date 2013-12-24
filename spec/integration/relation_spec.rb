@@ -33,6 +33,17 @@ describe 'Nanoid document 1:N relationship' do
     end
   end
 
+  it 'can accept an nested attributes with ids' do
+    children = []
+    2.times { |i| children << { :id => BSON::ObjectId.generate, :field_1 => "child#{i}" } }
+    @parent = ParentDocument.create(:field_1 => 'parent',
+                                    :child_documents => children)
+
+    children.each do |child|
+      ChildDocument.find(child[:id]).should.not == nil
+    end
+  end
+
   it 'can accept array of initialized children' do
     children = []
     2.times { |i| children << ChildDocument.new(:field_1 => "child#{i}") }
@@ -59,30 +70,7 @@ describe 'Nanoid document 1:N relationship' do
    end
   end
 
-  it 'can accept an array of hashes' do
-    children = []
-    2.times { |i| children << { :field_1 => "child#{i}" } }
-    @parent = ParentDocument.create(:field_1 => 'parent',
-                                    :child_documents => children)
-
-    @parent.child_documents.collect(&:field_1).tap do |field_1|
-      field_1.include?('child0').should == true
-      field_1.include?('child1').should == true
-   end
-  end
-
-  it 'can accept an array of hashes with ids' do
-    children = []
-    2.times { |i| children << { :id => BSON::ObjectId.generate, :field_1 => "child#{i}" } }
-    @parent = ParentDocument.create(:field_1 => 'parent',
-                                    :child_documents => children)
-
-    children.each do |child|
-      ChildDocument.find(child[:id]).should.not == nil
-    end
-  end
-
-  it 'can update a child document via an array of hashes' do
+  it 'can update a child document via nested attributes' do
     children = []
     2.times { |i| children << { :id => BSON::ObjectId.generate,
                                 :field_1 => "child#{i}",
@@ -135,6 +123,37 @@ describe 'Nanoid document 1:N relationship' do
 
         @parent.child_documents.count.should == 2
         @parent.child_documents.collect(&:id).each { |id| id.should.not == @last_id }
+      end
+    end
+  end
+
+  describe 'with a before_save callback on the child that references the parent document' do
+    before do
+      ChildDocument.class_eval do
+        before_save :set_field_2
+
+        def set_field_2
+          self.field_2 = self.parent_document.id
+        end
+      end
+    end
+
+    it 'includes parent relation in the callback' do
+      @parent = ParentDocument.create(:field_1 => 'parent',
+                                      :child_documents => [{ :field_1 => "value" }])
+
+      @parent.child_documents.first.field_2.should == @parent.id
+    end
+
+    describe 'when batching updates' do
+      it 'includes parent relation in the callback' do
+        Nanoid::DB.default.batch do
+          @parent = ParentDocument.create(:field_1 => 'parent',
+                                          :child_documents => [{ :field_1 => "value" }])
+
+        end
+        @parent.child_documents.first.field_2.should == @parent.id
+        @parent.child_documents.first.field_2.should == @parent.id
       end
     end
   end

@@ -85,9 +85,7 @@ module Nanoid::Document
     end
 
     def reload
-      reloaded = self.class.find(self.id)
-      self.assign_attributes(reloaded.attributes, :pristine => true)
-      self
+      self.class.find(self.id)
     end
 
     def new_record?

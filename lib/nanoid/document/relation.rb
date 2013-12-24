@@ -41,16 +41,16 @@ module Nanoid::Document
                   end
                 elsif doc.is_a?(Hash)
                   doc = doc.with_indifferent_access
-                  attr = doc.merge("#{self._type.underscore}" => self)
 
                   klass = Object.qualified_const_get(relation.singularize.to_s.camelize)
-                  instance = klass.find(doc[:id]) if attr[:id]
+                  instance = klass.find(doc[:id]) if doc[:id]
                   instance ||= klass.new
-                  instance.assign_attributes(attr)
+                  instance.assign_attributes("#{self._type.underscore}" => self)
+                  instance.assign_attributes(doc)
                   instance.save
 
                   changes[relation] ||= []
-                  changes[relation] << attr
+                  changes[relation] << doc.merge("#{self._type.underscore}" => self)
                 else
                   raise "Must pass either attributes or an object"
                 end
@@ -66,10 +66,11 @@ module Nanoid::Document
         self.field("#{relation}_id")
 
         define_method(relation) do
-          Object.qualified_const_get(relation.to_s.camelize).find(self.send("#{relation}_id"))
+          instance_variable_get("@#{relation}") || Object.qualified_const_get(relation.to_s.camelize).find(self.send("#{relation}_id"))
         end
 
         define_method("#{relation}=") do |parent|
+          self.instance_variable_set("@#{relation}", parent)
           self.send("#{relation}_id=", parent.id)
         end
       end
