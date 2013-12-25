@@ -79,27 +79,28 @@ module Nanoid::Sync
         parameters: { :since => last_event_id }
       )
 
-      if operation = process(request)
-        events = compact(operation.responseJSON)
-        return events if events.empty?
+      instances = []
+      begin
+        if operation = process(request)
+          events = compact(operation.responseJSON)
+          return events if events.empty?
 
-        instances = []
-        if events.first['model'] == 'User'
-          instances << handle(events.shift)
-        end
-
-        Nanoid::DB.default.batch do
-          events.each do |event|
-            instances << handle(event)
+          if events.first['model'] == 'User'
+            instances << handle(events.shift)
           end
-        end
-        update_last_event_id(events)
 
-        instances.compact
+          Nanoid::DB.default.batch do
+            events.each do |event|
+              instances << handle(event)
+            end
+          end
+          update_last_event_id(events)
+        end
+      rescue Exception => e
+        Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{e.message}: #{e.backtrace.join('::')}"
       end
-    rescue Exception => e
-      Nanoid::Log.error "[Nanoid::Sync::Event][FAILURE] #{e.message}: #{e.backtrace.join('::')}"
-      []
+
+      instances.compact
     end
 
     def last_event_id
