@@ -62,7 +62,7 @@ module Nanoid::Sync
 
   def sync_as
     attrs = self.changes.dup
-    attrs.reject!{ |k,v| k.to_s =~ /^_/ }
+    attrs = attrs.deep_delete_if { |k,v| k.to_s =~ /^_/ }
     attrs
   end
 

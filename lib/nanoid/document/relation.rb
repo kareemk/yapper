@@ -35,9 +35,11 @@ module Nanoid::Document
                     changes["#{relation.singularize}_ids"] << doc.id
                   else
                     doc.assign_attributes("#{self._type.underscore}" => self)
-                    doc.save
+
                     changes[relation] ||= []
                     changes[relation] << doc.attributes
+
+                    doc.save
                   end
                 elsif doc.is_a?(Hash)
                   doc = doc.with_indifferent_access
@@ -47,10 +49,11 @@ module Nanoid::Document
                   instance ||= klass.new
                   instance.assign_attributes("#{self._type.underscore}" => self)
                   instance.assign_attributes(doc)
-                  instance.save
 
                   changes[relation] ||= []
-                  changes[relation] << doc.merge("#{self._type.underscore}" => self)
+                  changes[relation] << instance.attributes
+
+                  instance.save
                 else
                   raise "Must pass either attributes or an object"
                 end
