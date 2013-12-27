@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.version       = Nanoid::VERSION
 
   gem.add_dependency 'motion-support', '~> 0.2.4'
-  gem.add_dependency 'motion-cocoapods', '>= 1.3.0rc1'
+  gem.add_dependency 'motion-cocoapods', '~> 1.4.0'
   gem.add_dependency 'motion-logger'
   gem.add_development_dependency 'motion-redgreen'
   gem.add_development_dependency 'webstub'
