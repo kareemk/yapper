@@ -130,6 +130,7 @@ module Nanoid::Sync
       end
 
       if instance
+        # XXX Return array of updates vs. overwriting entire object
         Nanoid::Sync.disabled { instance.update_attributes(event['delta']) }
       else
         Nanoid::Log.error  "Model instance not found!. This is not good!"

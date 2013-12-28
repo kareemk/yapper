@@ -55,7 +55,19 @@ class Hash
   end
 end
 
+class NSDictionary
+  def as_json
+    to_hash.as_json
+  end
+end
+
 class Array
+  def as_json
+    self.map { |v| v.as_json }
+  end
+end
+
+class NSArray
   def as_json
     self.map { |v| v.as_json }
   end

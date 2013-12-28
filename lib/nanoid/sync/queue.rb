@@ -35,12 +35,14 @@ module Nanoid::Sync
 
 
     def self.start
-      Dispatch.once do
+      operation = NSBlockOperation.blockOperationWithBlock lambda {
         jobs = self.asc(:created_at)
         Nanoid::Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
         jobs.each { |job| handle(job) }
         @@queue.setSuspended(!@@reachability.isReachable)
-      end
+      }
+      self.toggle_queue
+      @@queue.addOperation(operation)
     end
 
     def self.onBackground
@@ -74,7 +76,7 @@ module Nanoid::Sync
       job = self.create(:sync_class    => instance.class.to_s,
                         :sync_id       => instance.id,
                         :sync_changes  => changes,
-                        :sync_type     => type,
+                        :sync_type     => type.to_s,
                         :created_at    => Time.now.utc,
                         :failure_count => 0)
       handle(job)

@@ -61,7 +61,7 @@ module Nanoid::Sync
   end
 
   def sync_as
-    attrs = self.changes.dup
+    attrs = self.changes.deep_dup
     attrs = attrs.deep_delete_if { |k,v| k.to_s =~ /^_/ }
     attrs
   end
