@@ -9,10 +9,10 @@ module Nanoid::Sync
       }
       # XXX This is terrible. But a needed workaround for the iPhone 4.
       # Obviously temporary as this only works for ALAsset attachments
-      asset = attachment.data
-      image = UIImage.imageWithCGImage(asset.defaultRepresentation.fullResolutionImage,
+      @asset = attachment.data
+      image = UIImage.imageWithCGImage(@asset.defaultRepresentation.fullResolutionImage,
                                        scale: 1.0,
-                                       orientation: asset.defaultRepresentation.orientation)
+                                       orientation: @asset.defaultRepresentation.orientation)
       request = http_client.multipartFormRequestWithMethod(
         'POST',
         path: Nanoid::Sync.attachment_path,
@@ -20,7 +20,7 @@ module Nanoid::Sync
         constructingBodyWithBlock: lambda { |form_data|
             form_data.appendPartWithFileData(UIImageJPEGRepresentation(image, 0.8),
                                              name: "attachment[data]",
-                                             fileName: asset.defaultRepresentation.filename,
+                                             fileName: @asset.defaultRepresentation.filename,
                                              mimeType: 'image/jpg')
         })
 
@@ -94,6 +94,7 @@ module Nanoid::Sync
               instances << handle(event)
             end
           end
+          # XXX Doesn't seem to be updated on initial load
           update_last_event_id(events)
         end
       rescue Exception => e
