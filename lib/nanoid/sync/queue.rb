@@ -36,10 +36,12 @@ module Nanoid::Sync
 
     def self.start
       operation = NSBlockOperation.blockOperationWithBlock lambda {
+        job_started
         jobs = self.asc(:created_at)
         Nanoid::Log.info "[Nanoid::Sync][START] Processing #{jobs.count} jobs"
         jobs.each { |job| handle(job) }
         @@queue.setSuspended(!@@reachability.isReachable)
+        job_ended
       }
       self.toggle_queue
       @@queue.addOperation(operation)
@@ -62,7 +64,9 @@ module Nanoid::Sync
       return false if self.paused?
 
       operation = NSBlockOperation.blockOperationWithBlock lambda {
+        job_started
         Nanoid::Sync::Event.get.each { |instance| self.notification(instance, 'success') }
+        job_ended
       }
       @@queue.addOperation(operation)
 
@@ -84,11 +88,14 @@ module Nanoid::Sync
 
     def self.handle(job)
       operation = NSBlockOperation.blockOperationWithBlock lambda {
+        job_started
         instance = Object.qualified_const_get(job.sync_class).find(job.sync_id)
         instance.changes = job.sync_changes
         job.attempt(instance, job.sync_type)
+        job_ended
       }
       self.toggle_queue
+
       @@queue.addOperation(operation)
       nil
     end
@@ -137,6 +144,19 @@ module Nanoid::Sync
 
     def self.notification(instance, type)
       NSNotificationCenter.defaultCenter.postNotificationName("nanoid:#{instance.model_name}:sync:#{type}", object: instance , userInfo: nil)
+    end
+
+    def self.job_started
+      if @@queue.operationCount == 1
+        @@job_started_at = Time.now
+        NSNotificationCenter.defaultCenter.postNotificationName("nanoid:sync:start", object: true , userInfo: nil)
+      end
+    end
+
+    def self.job_ended
+      if @@queue.operationCount == 1
+        NSNotificationCenter.defaultCenter.postNotificationName("nanoid:sync:end", object: Time.now - @@job_started_at , userInfo: nil)
+      end
     end
   end
 end
