@@ -138,7 +138,7 @@ module Nanoid::Sync
       was_paused = self.paused?
       @@queue.setSuspended(!@@reachability.isReachable)
       if was_paused != self.paused?
-        NSNotificationCenter.defaultCenter.postNotificationName("nanoid:sync:paused", object: true, userInfo: nil)
+        NSNotificationCenter.defaultCenter.postNotificationName("nanoid:sync:paused", object: true, userInfo: nil) if self.paused?
       end
     end
 
