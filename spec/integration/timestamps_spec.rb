@@ -1,13 +1,13 @@
-describe 'Nanoid timestamps' do
+describe 'Yapper timestamps' do
   before do
     class Document
-      include Nanoid::Document
-      include Nanoid::Timestamps
+      include Yapper::Document
+      include Yapper::Timestamps
 
       field :field_1
     end
   end
-  after { Nanoid::DB.purge }
+  before { Yapper::DB.default.purge }
   after { Object.send(:remove_const, 'Document') }
 
   describe 'when a document is created' do

@@ -9,8 +9,8 @@
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
-#define COCOAPODS_VERSION_MINOR_AFNetworking 2
-#define COCOAPODS_VERSION_PATCH_AFNetworking 1
+#define COCOAPODS_VERSION_MINOR_AFNetworking 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking 3
 
 // CocoaLumberjack
 #define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
@@ -24,15 +24,15 @@
 #define COCOAPODS_VERSION_MINOR_NSData_MD5Digest 0
 #define COCOAPODS_VERSION_PATCH_NSData_MD5Digest 0
 
-// NanoStore
-#define COCOAPODS_POD_AVAILABLE_NanoStore
-#define COCOAPODS_VERSION_MAJOR_NanoStore 2
-#define COCOAPODS_VERSION_MINOR_NanoStore 6
-#define COCOAPODS_VERSION_PATCH_NanoStore 4
-
 // Reachability
 #define COCOAPODS_POD_AVAILABLE_Reachability
 #define COCOAPODS_VERSION_MAJOR_Reachability 3
 #define COCOAPODS_VERSION_MINOR_Reachability 1
-#define COCOAPODS_VERSION_PATCH_Reachability 0
+#define COCOAPODS_VERSION_PATCH_Reachability 1
+
+// YapDatabase
+#define COCOAPODS_POD_AVAILABLE_YapDatabase
+#define COCOAPODS_VERSION_MAJOR_YapDatabase 2
+#define COCOAPODS_VERSION_MINOR_YapDatabase 3
+#define COCOAPODS_VERSION_PATCH_YapDatabase 0
 

@@ -1,1 +1,0 @@
-../../NanoStore/Classes/Private/NSFNanoResult_Private.h

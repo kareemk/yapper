@@ -1,1 +1,0 @@
-../../NanoStore/Classes/Private/NSFNanoBag_Private.h

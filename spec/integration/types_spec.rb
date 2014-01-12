@@ -1,13 +1,13 @@
-describe 'Nanoid persisting documents with typed fields' do
+describe 'Yapper persisting documents with typed fields' do
   describe 'Time' do
     before do
       class Document
-        include Nanoid::Document
+        include Yapper::Document
 
         field :time_field, :type => Time
       end
     end
-    before { Nanoid::DB.purge }
+    before { Yapper::DB.default.purge }
     after  { Object.send(:remove_const, 'Document') }
 
     it 'typecasts correctly' do

@@ -1,16 +1,16 @@
-describe 'Nanoid syncing documents' do
+describe 'Yapper syncing documents' do
   extend WebStub::SpecHelpers
 
   before do
     class Document
-      include Nanoid::Document
-      include Nanoid::Sync
+      include Yapper::Document
+      include Yapper::Sync
 
       field :field_1
       sync :to => '/api/documents', :auto => [:get, :save]
 
       def sync_as
-        image = Nanoid::Sync::Data.new(:data => UIImagePNGRepresentation(UIImage.alloc.init),
+        image = Yapper::Sync::Data.new(:data => UIImagePNGRepresentation(UIImage.alloc.init),
                                        :fileName => 'file.png',
                                        :mimeType => 'image/png')
         {
@@ -20,10 +20,10 @@ describe 'Nanoid syncing documents' do
       end
     end
   end
-  before { Nanoid::Sync.base_url = 'http://example.com' }
+  before { Yapper::Sync.base_url = 'http://example.com' }
   before { disable_network_access! }
   after  { enable_network_access! }
-  after  { Nanoid::DB.purge }
+  after  { Yapper::DB.purge }
   after  { Object.send(:remove_const, 'Document') }
 
   # TODO Webstub is not straighforward as body is not known at stub time

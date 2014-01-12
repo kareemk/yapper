@@ -1,1 +1,0 @@
-../../NanoStore/Classes/Advanced/NSFNanoResult.h

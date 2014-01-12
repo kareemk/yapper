@@ -5,18 +5,11 @@ require 'motion-cocoapods'
 require 'motion-logger'
 require 'motion-redgreen'
 require 'webstub'
-require 'nanoid'
+require 'yapper'
 
 Motion::Project::App.setup do |app|
-  app.name = 'NanoidDemo'
+  app.name = 'Yapper'
   app.redgreen_style = :full
-  app.pods do
-    pod 'NanoStore', '~> 2.6.0'
-    pod 'AFNetworking'
-    pod 'Reachability'
-    pod 'CocoaLumberjack'
-    pod 'NSData+MD5Digest'
-  end
 end
 
 desc "Build the gem"

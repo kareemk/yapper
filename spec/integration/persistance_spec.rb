@@ -1,14 +1,14 @@
-describe 'Nanoid persisting documents' do
+describe 'Yapper persisting documents' do
   before do
     class Document
-      include Nanoid::Document
+      include Yapper::Document
 
       field :field_1
       field :field_2
     end
   end
-  after { Nanoid::DB.purge }
-  after { Object.send(:remove_const, 'Document') }
+  before { Yapper::DB.default.purge }
+  after  { Object.send(:remove_const, 'Document') }
 
   describe 'creating documents' do
     it 'supports storing hashes by stringifying keys (to avoid NanoStore bug)' do

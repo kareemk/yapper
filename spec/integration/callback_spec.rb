@@ -1,7 +1,7 @@
-describe 'Nanoid callbacks' do
+describe 'callbacks' do
   before do
     class CallbackDocument
-      include Nanoid::Document
+      include Yapper::Document
 
       field :field_1
       field :field_2
@@ -30,7 +30,7 @@ describe 'Nanoid callbacks' do
       end
     end
   end
-  after { Nanoid::DB.purge }
+  before { Yapper::DB.default.purge }
   after { Object.send(:remove_const, 'CallbackDocument') }
 
   describe 'creating documents' do

@@ -1,1 +1,0 @@
-../../NanoStore/Classes/Public/NSFNanoPredicate.h

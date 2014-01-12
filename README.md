@@ -1,7 +1,7 @@
-Nanoid [![Build Status](https://travis-ci.org/kareemk/nanoid.png?branch=master)](https://travis-ci.org/kareemk/nanoid)
+yapper [![Build Status](https://travis-ci.org/kareemk/yapper.png?branch=master)](https://travis-ci.org/kareemk/nanoid)
 ======
 
-RubyMotion ORM for NanoStore
+RubyMotion ORM for YapDatabase
 
 **WARNING: Under heavy development. Use with extreme caution. Stable version will be out soon.**
 

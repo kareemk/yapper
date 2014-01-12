@@ -1,14 +1,14 @@
-describe 'Nanoid document 1:N relationship' do
+describe 'Yapper document 1:N relationship' do
   before do
     class ParentDocument
-      include Nanoid::Document
+      include Yapper::Document
 
       field :field_1
 
       has_many :child_documents
     end
     class ChildDocument
-      include Nanoid::Document
+      include Yapper::Document
 
       field :field_1
       field :field_2
@@ -16,8 +16,8 @@ describe 'Nanoid document 1:N relationship' do
       belongs_to :parent_document
     end
   end
-  after { Nanoid::DB.purge }
-  after { ['ParentDocument', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
+  before { Yapper::DB.default.purge }
+  after  { ['ParentDocument', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
 
   it 'can accept nested attributes' do
     @parent = ParentDocument.create(:field_1 => 'parent',
@@ -27,15 +27,11 @@ describe 'Nanoid document 1:N relationship' do
                                     ])
 
     @parent.field_1.should == 'parent'
-    @parent.child_documents.collect(&:field_1).tap do |field_1|
-      field_1.include?('child0').should == true
-      field_1.include?('child1').should == true
-    end
+    @parent.child_documents.collect(&:field_1).should == ['child0', 'child1']
   end
 
   it 'can accept an nested attributes with ids' do
-    children = []
-    2.times { |i| children << { :id => BSON::ObjectId.generate, :field_1 => "child#{i}" } }
+    children = 2.times.map { |i| { :id => BSON::ObjectId.generate, :field_1 => "child#{i}" } }
     @parent = ParentDocument.create(:field_1 => 'parent',
                                     :child_documents => children)
 
@@ -45,36 +41,27 @@ describe 'Nanoid document 1:N relationship' do
   end
 
   it 'can accept array of initialized children' do
-    children = []
-    2.times { |i| children << ChildDocument.new(:field_1 => "child#{i}") }
+    children = 2.times.map { |i| ChildDocument.new(:field_1 => "child#{i}") }
     @parent = ParentDocument.create(:field_1 => 'parent',
                                     :child_documents => children)
 
     @parent.field_1.should == 'parent'
-    @parent.child_documents.collect(&:field_1).tap do |field_1|
-      field_1.include?('child0').should == true
-      field_1.include?('child1').should == true
-    end
+    @parent.child_documents.collect(&:field_1).should == ['child0', 'child1']
   end
 
   it 'can accept array of created children' do
-    children = []
-    2.times { |i| children << ChildDocument.create(:field_1 => "child#{i}") }
+    children = 2.times.map { |i| ChildDocument.create(:field_1 => "child#{i}") }
     @parent = ParentDocument.create(:field_1 => 'parent',
                                     :child_documents => children)
 
     @parent.field_1.should == 'parent'
-    @parent.child_documents.collect(&:field_1).tap do |field_1|
-      field_1.include?('child0').should == true
-      field_1.include?('child1').should == true
-   end
+    @parent.child_documents.collect(&:field_1).should == ['child0', 'child1']
   end
 
   it 'can update a child document via nested attributes' do
-    children = []
-    2.times { |i| children << { :id => BSON::ObjectId.generate,
-                                :field_1 => "child#{i}",
-                                :field_2 => 'value' } }
+    children = 2.times.map { |i| { :id => BSON::ObjectId.generate,
+                                    :field_1 => "child#{i}",
+                                    :field_2 => 'value' } }
     @parent = ParentDocument.create(:field_1 => 'parent',
                                     :child_documents => children)
     @parent.update_attributes(:child_documents => [{ :id      => children[0][:id],
@@ -144,39 +131,27 @@ describe 'Nanoid document 1:N relationship' do
 
       @parent.child_documents.first.field_2.should == @parent.id
     end
-
-    describe 'when batching updates' do
-      it 'includes parent relation in the callback' do
-        Nanoid::DB.default.batch do
-          @parent = ParentDocument.create(:field_1 => 'parent',
-                                          :child_documents => [{ :field_1 => "value" }])
-
-        end
-        @parent.child_documents.first.field_2.should == @parent.id
-        @parent.child_documents.first.field_2.should == @parent.id
-      end
-    end
   end
 end
 
-describe 'Nanoid document 1:N:1 relationship' do
+describe 'Yapper document 1:N:1 relationship' do
   before do
     class Parent1
-      include Nanoid::Document
+      include Yapper::Document
 
       field :field_1
 
       has_many :child_documents
     end
     class Parent2
-      include Nanoid::Document
+      include Yapper::Document
 
       field :field_1
 
       has_many :child_documents
     end
     class ChildDocument
-      include Nanoid::Document
+      include Yapper::Document
 
       field :field_1
 
@@ -184,7 +159,7 @@ describe 'Nanoid document 1:N:1 relationship' do
       belongs_to :parent2
     end
   end
-  after { Nanoid::DB.purge }
+  after { Yapper::DB.purge }
   after { ['Parent1', 'Parent2', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
 
   it 'can create child with many parents' do

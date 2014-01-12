@@ -1,1 +1,0 @@
-../../NanoStore/Classes/Private/NSFNanoObject_Private.h
