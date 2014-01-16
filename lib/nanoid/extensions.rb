@@ -25,8 +25,8 @@ class Time
     return nil if string.nil?
 
     unless time = NSDate.dateWithString(string)
-      # XXX Assume iso8601 date
-      time = NSDate.dateWithString(string.gsub('T',' ').gsub('Z', ' +0000'))
+      # XXX Try iso8601 date
+      time = NSDate.dateWithString(string.gsub('T',' ').gsub('Z', ' +0000').gsub(/([-+]\d{2}:\d{2})/,' \1'))
     end
     time
   end
