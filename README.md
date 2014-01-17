@@ -3,6 +3,8 @@ Nanoid [![Build Status](https://travis-ci.org/kareemk/nanoid.png?branch=master)]
 
 RubyMotion ORM for NanoStore
 
+**WARNING: Under heavy development. Use with extreme caution. Stable version will be out soon.**
+
 License
 -------
 Copyright (C) 2013 Kareem Kouddous
