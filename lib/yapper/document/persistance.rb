@@ -11,7 +11,7 @@ module Yapper::Document
         attr_accessor :fields
       end
 
-      self.fields = {}
+      self.fields = {}.with_indifferent_access
       field :id
     end
 
@@ -39,7 +39,7 @@ module Yapper::Document
 
       def index(*index_fields)
         index_fields.each do |field|
-          options = self.fields[field.to_sym]; raise "#{self._type}:#{field} not defined" unless options
+          options = self.fields[field]; raise "#{self._type}:#{field} not defined" unless options
           type    = options[:type];    raise "#{self._type}:#{field} must define type as its indexed" if type.nil?
 
           db.index(self._type, field, type)
