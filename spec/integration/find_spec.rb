@@ -13,7 +13,7 @@ describe '#find' do
       field :field2
     end
   end
-  before { Yapper::DB.default.purge }
+  before { Yapper::DB.instance.purge }
   after { Object.send(:remove_const, 'SelectionDocument') }
   after { Object.send(:remove_const, 'AnotherSelectionDocument') }
 

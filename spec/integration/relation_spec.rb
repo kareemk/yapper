@@ -16,7 +16,7 @@ describe 'Yapper document 1:N relationship' do
       belongs_to :parent_document
     end
   end
-  before { Yapper::DB.default.purge }
+  before { Yapper::DB.instance.purge }
   after  { ['ParentDocument', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
 
   it 'can accept nested attributes' do
@@ -159,7 +159,7 @@ describe 'Yapper document 1:N:1 relationship' do
       belongs_to :parent2
     end
   end
-  after { Yapper::DB.purge }
+  after { Yapper::DB.instance.purge }
   after { ['Parent1', 'Parent2', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
 
   it 'can create child with many parents' do

@@ -76,7 +76,7 @@ module Yapper::Sync
       request = http_client.requestWithMethod(
         'GET',
         path: Yapper::Sync.data_path,
-        parameters: { :since => last_event_id }
+        parameters: { :since => Yapper::Config.get(:last_event_id) }
       )
 
       instances = []
@@ -90,9 +90,9 @@ module Yapper::Sync
           end
 
           events.each do |event|
-            Yapper::DB.default.execute do |txn|
+            Yapper::DB.instance.execute do |txn|
               instances << handle(event)
-              update_last_event_id(event)
+              Yapper::Config.set(:last_event_id, event['created_at'])
             end
           end
         end
@@ -101,20 +101,6 @@ module Yapper::Sync
       end
 
       instances.compact
-    end
-
-    def last_event_id
-      id = nil
-      Yapper::DB.default.execute do |txn|
-        id = txn.objectForKey('last_event_id', inCollection: '_config') 
-      end
-      id
-    end
-
-    def update_last_event_id(event)
-      Yapper::DB.default.execute do |txn|
-        txn.setObject(event['created_at'], forKey: 'last_event_id', inCollection: '_config')
-      end
     end
 
     private
@@ -162,26 +148,6 @@ module Yapper::Sync
       compact_events
     end
 
-    def user_defaults
-      NSUserDefaults.standardUserDefaults
-    end
-
-    def last_event_id_key
-      'yapper:sync:last_event_id'
-    end
-
-    def uuid
-      user_defaults.objectForKey(uuid_key) || begin
-        uuid = UIDevice.currentDevice.identifierForVendor.UUIDString
-        user_defaults.setObject(uuid, forKey: uuid_key)
-        uuid
-      end
-    end
-
-    def uuid_key
-      'yapper:sync:uuid'
-    end
-
     def http_client
       @http_client ||= begin
                          client = AFHTTPClient.alloc.initWithBaseURL(NSURL.URLWithString(Yapper::Sync.base_url))
@@ -189,7 +155,7 @@ module Yapper::Sync
                          client
                        end
       @http_client.setAuthorizationHeaderWithToken(Yapper::Sync.access_token.call)
-      @http_client.setDefaultHeader('DEVICEID', value: uuid)
+      @http_client.setDefaultHeader('DEVICEID', value: UIDevice.currentDevice.identifierForVendor.UUIDString)
     end
 
     def process(request)

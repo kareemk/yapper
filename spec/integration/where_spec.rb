@@ -18,7 +18,7 @@ describe '#where' do
       index :field1
     end
   end
-  before { Yapper::DB.default.purge }
+  before { Yapper::DB.instance.purge }
   after { Object.send(:remove_const, 'WhereDocument') }
   after { Object.send(:remove_const, 'AnotherWhereDocument') }
 

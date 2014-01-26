@@ -30,7 +30,7 @@ describe 'callbacks' do
       end
     end
   end
-  before { Yapper::DB.default.purge }
+  before { Yapper::DB.instance.purge }
   after { Object.send(:remove_const, 'CallbackDocument') }
 
   describe 'creating documents' do

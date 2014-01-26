@@ -1,30 +1,28 @@
+motion_require 'yapper'
+
 class Yapper::DB
   @@dbs   = {}
   @@queue = Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.yapper.db#{@name}")
 
-  def self.get(name)
-    @@dbs[name] || begin
-                     @@queue.sync do
-                       @@dbs[name] ||= self.new(:name => name)
-                     end
-                     @@dbs[name]
-                   end
-  end
+  class_attribute :version
 
   def self.purge
-    @@dbs.values.each(&:purge)
-    true
+    default.purge
   end
 
-  def self.default
-    get(:default)
+  def self.instance
+    @@db = begin
+             @@queue.sync do
+               @@dbs[name] ||= self.new(:name => name)
+             end
+             @@dbs[name]
+           end
   end
 
   attr_reader :indexes
 
   def initialize(options)
     @options = options
-    @db = YapDatabase.alloc.initWithPath(document_path)
     @name = options[:name]
     @indexes = {}; @indexes_created = false
 
@@ -32,7 +30,7 @@ class Yapper::DB
   end
 
   def configure(&block)
-    block.call(@db)
+    block.call(db)
   end
 
   def execute(&block)
@@ -134,10 +132,20 @@ class Yapper::DB
   end
 
   def connection
-    @connection ||= @db.newConnection
+    Dispatch.once { @connection ||= db.newConnection }
+    @connection
+  end
+
+  def db
+    Dispatch.once { @db ||= YapDatabase.alloc.initWithPath(document_path) }
+    @db
+  end
+
+  def version
+    Yapper::Config.db_version || 0
   end
 
   def document_path
-    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] + "/#{@name}.db"
+    NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] + "/yapper.#{version}.db"
   end
 end

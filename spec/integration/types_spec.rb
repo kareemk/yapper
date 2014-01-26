@@ -7,7 +7,7 @@ describe 'Yapper persisting documents with typed fields' do
         field :time_field, :type => Time
       end
     end
-    before { Yapper::DB.default.purge }
+    before { Yapper::DB.instance.purge }
     after  { Object.send(:remove_const, 'Document') }
 
     it 'typecasts correctly' do

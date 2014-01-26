@@ -7,7 +7,7 @@ describe 'Yapper persisting documents' do
       field :field_2
     end
   end
-  before { Yapper::DB.default.purge }
+  before { Yapper::DB.instance.purge }
   after  { Object.send(:remove_const, 'Document') }
 
   describe 'creating documents' do

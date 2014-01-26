@@ -7,7 +7,7 @@ describe 'Yapper timestamps' do
       field :field_1
     end
   end
-  before { Yapper::DB.default.purge }
+  before { Yapper::DB.instance.purge }
   after { Object.send(:remove_const, 'Document') }
 
   describe 'when a document is created' do

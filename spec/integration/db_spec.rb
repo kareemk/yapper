@@ -14,7 +14,7 @@ describe 'db' do
       field :field_2
     end
   end
-  before { Yapper::DB.default.purge }
+  before { Yapper::DB.instance.purge }
   after { Object.send(:remove_const, 'Document') }
   after { Object.send(:remove_const, 'AnotherDocument') }
 
@@ -31,7 +31,7 @@ describe 'db' do
   end
   
   it 'can nest transactions' do
-    Yapper::DB.default.execute do |txn|
+    Yapper::DB.instance.execute do |txn|
       Document.create(:field_1 => '1')
       Document.create(:field_1 => '2')
     end

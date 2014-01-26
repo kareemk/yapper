@@ -2,16 +2,17 @@ unless defined?(Motion::Project::Config)
   raise "This file must be required within a RubyMotion project Rakefile."
 end
 
+require 'motion-require'
 require 'motion-support/concern'
 require 'motion-support/inflector'
 require 'motion-support/core_ext'
 
-require 'motion-require'
-
-
-Motion::Require.all(Dir.glob(File.expand_path('../yapper/**/*.rb', __FILE__)))
+files = Dir.glob(File.expand_path('../../lib/yapper/**/*.rb', __FILE__))
+Motion::Require.all(files)
 
 Motion::Project::App.setup do |app|
+  app.detect_dependencies = false
+
   app.pods do
     pod 'YapDatabase'      ,'~> 2.3'
     pod 'AFNetworking'     ,'~> 1.3.3'

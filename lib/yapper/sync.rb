@@ -1,4 +1,5 @@
 motion_require 'extensions'
+motion_require 'timestamps'
 
 module Yapper::Sync
   motion_require 'sync/data'

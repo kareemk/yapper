@@ -18,7 +18,7 @@ module Yapper::Document
 
   module ClassMethods
     def db
-      Yapper::DB.default
+      Yapper::DB.instance
     end
 
     def _type
