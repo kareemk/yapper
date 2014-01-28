@@ -4,23 +4,16 @@ module Yapper::Sync
 
     def attach(attachment)
       params = {
-        :attachment => attachment.additional_fields.merge(:id => attachment.id,
-                                                          :name => attachment.name)
+        :attachment => attachment.metadata
       }
-      # XXX This is terrible. But a needed workaround for the iPhone 4.
-      # Obviously temporary as this only works for ALAsset attachments
-      @asset = attachment.data
-      image = UIImage.imageWithCGImage(@asset.defaultRepresentation.fullResolutionImage,
-                                       scale: 1.0,
-                                       orientation: @asset.defaultRepresentation.orientation)
       request = http_client.multipartFormRequestWithMethod(
         'POST',
         path: Yapper::Sync.attachment_path,
         parameters: params.as_json,
         constructingBodyWithBlock: lambda { |form_data|
-            form_data.appendPartWithFileData(UIImageJPEGRepresentation(image, 0.8),
+            form_data.appendPartWithFileData(UIImageJPEGRepresentation(attachment.data, 0.8),
                                              name: "attachment[data]",
-                                             fileName: @asset.defaultRepresentation.filename,
+                                             fileName: attachment.name,
                                              mimeType: 'image/jpg')
         })
 

@@ -16,7 +16,7 @@ module Yapper::Document
     module ClassMethods
       def attach(name, options={}, &block)
 
-        options[:class] = self
+        options[:block] = block
 
         field(name)
         Yapper::Attachment.attachments[name] = options

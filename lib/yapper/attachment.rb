@@ -39,6 +39,10 @@ class Yapper::Attachment
   end
 
   def data
-    attachments[name][:class].attachment(self.additional_fields.with_indifferent_access)
+    self.attachments[name][:block].call(self)
+  end
+
+  def metadata
+    self.additional_fields.merge(:id => self.id, :name => self.name).with_indifferent_access
   end
 end
