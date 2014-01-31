@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nanoid (0.0.1)
+    yapper (0.0.1)
       motion-cocoapods (~> 1.4.0)
       motion-logger
       motion-support (~> 0.2.4)
@@ -43,7 +43,7 @@ GEM
       motion-cocoapods (>= 1.1.0)
     motion-redgreen (0.1.0)
     motion-require (0.0.7)
-    motion-support (0.2.5)
+    motion-support (0.2.6)
       motion-require (>= 0.0.6)
     multi_json (1.8.4)
     nap (0.6.0)
@@ -60,6 +60,6 @@ PLATFORMS
 
 DEPENDENCIES
   motion-redgreen
-  nanoid!
   rake
   webstub
+  yapper!
