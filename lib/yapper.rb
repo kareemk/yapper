@@ -17,7 +17,7 @@ Motion::Project::App.setup do |app|
     pod 'YapDatabase'      ,'~> 2.3'
     pod 'AFNetworking'     ,'~> 1.3.3'
     pod 'Reachability'     ,'~> 3.1.1'
-    pod 'CocoaLumberjack'  ,'~> 1.7.0'
+    pod 'CocoaLumberjack'  ,'~> 1.6.5'
     pod 'NSData+MD5Digest' ,'~> 1.0.0'
   end
 
