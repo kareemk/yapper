@@ -16,3 +16,5 @@ resources/*.storyboardc
 tags
 vendor/*/.build
 vendor/*/build-*
+.ruby-version
+.ruby-gemset
