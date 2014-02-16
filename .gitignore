@@ -18,3 +18,4 @@ vendor/*/.build
 vendor/*/build-*
 .ruby-version
 .ruby-gemset
+Gemfile.lock
