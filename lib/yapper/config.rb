@@ -1,3 +1,5 @@
+motion_require 'yapper'
+
 module Yapper::Config
   COLLECTION = '_config'
   extend self

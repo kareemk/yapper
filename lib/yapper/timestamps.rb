@@ -1,3 +1,5 @@
+motion_require 'document.rb'
+
 module Yapper::Timestamps
   extend MotionSupport::Concern
 

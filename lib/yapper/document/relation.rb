@@ -25,42 +25,40 @@ module Yapper::Document
           raise "All elements in the array must be of the same type" unless docs.all? { |doc| doc.is_a?(docs.first.class) }
 
           changes = {}
-          Yapper::Sync.disabled do
-            db.execute do |txn|
-              docs.each do |doc|
-                if doc.is_a?(Yapper::Document)
-                  if doc.persisted?
-                    doc.update_attributes("#{self._type.underscore}" => self)
-                    changes["#{relation.singularize}_ids"] ||= []
-                    changes["#{relation.singularize}_ids"] << doc.id
-                  else
-                    doc.assign_attributes("#{self._type.underscore}" => self)
-
-                    changes[relation] ||= []
-                    changes[relation] << doc.attributes
-
-                    doc.save
-                  end
-                elsif doc.is_a?(Hash)
-                  doc = doc.with_indifferent_access
-
-                  klass = Object.qualified_const_get(relation.singularize.to_s.camelize)
-                  instance = klass.find(doc[:id]) if doc[:id]
-                  instance ||= klass.new
-                  instance.assign_attributes("#{self._type.underscore}" => self)
-                  instance.assign_attributes(doc)
+          db.execute do |txn|
+            docs.each do |doc|
+              if doc.is_a?(Yapper::Document)
+                if doc.persisted?
+                  doc.update_attributes("#{self._type.underscore}" => self)
+                  changes["#{relation.singularize}_ids"] ||= []
+                  changes["#{relation.singularize}_ids"] << doc.id
+                else
+                  doc.assign_attributes("#{self._type.underscore}" => self)
 
                   changes[relation] ||= []
-                  changes[relation] << instance.attributes
+                  changes[relation] << doc.attributes
 
-                  instance.save
-                else
-                  raise "Must pass either attributes or an object"
+                  doc.save
                 end
+              elsif doc.is_a?(Hash)
+                doc = doc.with_indifferent_access
+
+                klass = Object.qualified_const_get(relation.singularize.to_s.camelize)
+                instance = klass.find(doc[:id]) if doc[:id]
+                instance ||= klass.new
+                instance.assign_attributes("#{self._type.underscore}" => self)
+                instance.assign_attributes(doc)
+
+                changes[relation] ||= []
+                changes[relation] << instance.attributes
+
+                instance.save
+              else
+                raise "Must pass either attributes or an object"
               end
             end
-            @changes.merge!(changes)
           end
+          @changes.merge!(changes)
         end
       end
 

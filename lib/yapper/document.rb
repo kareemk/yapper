@@ -2,7 +2,6 @@ motion_require 'extensions'
 motion_require 'db'
 
 module Yapper::Document
-  motion_require 'document/attachment'
   motion_require 'document/callbacks'
   motion_require 'document/persistance'
   motion_require 'document/relation'
@@ -14,7 +13,6 @@ module Yapper::Document
   include Selection
   include Callbacks
   include Relation
-  include Attachment
 
   module ClassMethods
     def db
