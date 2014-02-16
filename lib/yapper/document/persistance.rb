@@ -133,7 +133,9 @@ module Yapper::Document
           self.changes = {}
         end
 
-        sync_changes if defined? sync_changes # XXX Use middleware pattern instead of this ugliness
+        # XXX Use middleware pattern instead of this ugliness
+        sync_changes if defined? sync_changes
+
         true
       end
     end

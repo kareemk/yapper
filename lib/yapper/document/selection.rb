@@ -21,6 +21,27 @@ module Yapper::Document
         results
       end
 
+      def when(id, &block)
+        observer = nil
+        observer_block = proc do |data|
+          observer = nil
+          NSNotificationCenter.defaultCenter.removeObserver(observer)
+          block.call(data.object)
+        end
+        observer = NSNotificationCenter.
+                     defaultCenter.
+                     addObserverForName("yapper:#{self.model_name}:save",
+                                        object: nil,
+                                        queue: NSOperationQueue.mainQueue,
+                                        usingBlock: observer_block) 
+        if result = self.find(id)
+          unless observer.nil?
+            NSNotificationCenter.defaultCenter.removeObserver(observer)
+            block.call(result) 
+          end
+        end
+      end
+
       def where(criteria, options={})
         values = []; query_str = ''
 
