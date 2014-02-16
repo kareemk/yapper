@@ -1,24 +1,18 @@
 PODS:
-  - AFNetworking (1.3.3)
   - CocoaLumberjack (1.6.2)
   - NSData+MD5Digest (1.0.0)
-  - Reachability (3.1.1)
   - YapDatabase (2.3):
     - CocoaLumberjack (~> 1.6.3)
 
 DEPENDENCIES:
-  - AFNetworking (~> 1.3.3)
   - CocoaLumberjack
   - CocoaLumberjack (~> 1.6.5)
   - NSData+MD5Digest (~> 1.0.0)
-  - Reachability (~> 3.1.1)
   - YapDatabase (~> 2.3)
 
 SPEC CHECKSUMS:
-  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
   CocoaLumberjack: 19dceba2d0360ed383cba983bc3ef0dd089c42a1
   NSData+MD5Digest: 8275479b2a935e6caa8a92a9a814fb5abecba367
-  Reachability: be4883bb93f31e38266ae3365e5600a317aae735
   YapDatabase: b9b58b24092557adc59e3b86a167601c7733b8e7
 
 COCOAPODS: 0.29.0
