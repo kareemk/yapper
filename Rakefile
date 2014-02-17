@@ -4,7 +4,6 @@ require 'motion/project/template/ios'
 require 'motion-cocoapods'
 require 'motion-logger'
 require 'motion-redgreen'
-require 'webstub'
 require 'yapper'
 
 Motion::Project::App.setup do |app|

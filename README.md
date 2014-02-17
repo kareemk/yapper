@@ -1,4 +1,4 @@
-yapper [![Build Status](https://travis-ci.org/kareemk/yapper.png?branch=master)](https://travis-ci.org/kareemk/nanoid)
+yapper [![Build Status](https://travis-ci.org/kareemk/yapper.png?branch=master)](https://travis-ci.org/kareemk/yapper)
 ======
 
 RubyMotion ORM for YapDatabase
