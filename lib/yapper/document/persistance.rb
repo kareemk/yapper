@@ -56,6 +56,7 @@ module Yapper::Document
 
       @new_record = options[:new].nil? ? true : options[:new]
       @changes = {}
+      @queued_saves = []
 
       assign_attributes({:id => generate_id}, options) if @new_record
       assign_attributes(attrs, options)
@@ -123,18 +124,23 @@ module Yapper::Document
 
     def save(options={})
       db.execute do |txn|
+        @queued_saves.each { |queued, queued_options| queued.save(queued_options) }
+
         run_callbacks 'save' do
           txn.setObject(stringify_keys(attributes), forKey: self.id, inCollection: _type)
 
           @was_new = @new_record
           @new_record = false
+          @queued_saves = []
 
           self.previous_changes = self.changes
           self.changes = {}
         end
 
-        # XXX Use middleware pattern instead of this ugliness
-        sync_changes if defined? sync_changes
+        unless options[:embedded]
+          # XXX Use middleware pattern instead of this ugliness
+          sync_changes if defined? sync_changes
+        end
 
         true
       end

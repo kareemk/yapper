@@ -29,16 +29,23 @@ module Yapper::Document
             docs.each do |doc|
               if doc.is_a?(Yapper::Document)
                 if doc.persisted?
-                  doc.update_attributes("#{self._type.underscore}" => self)
-                  changes["#{relation.singularize}_ids"] ||= []
-                  changes["#{relation.singularize}_ids"] << doc.id
+                  doc.assign_attributes("#{self._type.underscore}" => self)
+
+                  if options[:embedded]
+                    changes["#{relation.singularize}_ids"] ||= []
+                    changes["#{relation.singularize}_ids"] << doc.id
+                  end
+
+                  @queued_saves << [doc, options]
                 else
                   doc.assign_attributes("#{self._type.underscore}" => self)
 
-                  changes[relation] ||= []
-                  changes[relation] << doc.attributes
+                  if options[:embedded]
+                    changes[relation] ||= []
+                    changes[relation] << doc.attributes
+                  end
 
-                  doc.save
+                  @queued_saves << [doc, options]
                 end
               elsif doc.is_a?(Hash)
                 doc = doc.with_indifferent_access
@@ -49,10 +56,12 @@ module Yapper::Document
                 instance.assign_attributes("#{self._type.underscore}" => self)
                 instance.assign_attributes(doc)
 
-                changes[relation] ||= []
-                changes[relation] << instance.attributes
+                if options[:embedded]
+                  changes[relation] ||= []
+                  changes[relation] << instance.attributes
+                end
 
-                instance.save
+                @queued_saves << [instance, options]
               else
                 raise "Must pass either attributes or an object"
               end
