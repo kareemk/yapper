@@ -67,7 +67,6 @@ module Yapper::Document
 
       callback_proc = Proc.new do
         run_callback('after', operation)
-        notify_callback(operation)
       end
 
       if Yapper::Document::Callbacks.postponed_callbacks
@@ -75,12 +74,6 @@ module Yapper::Document
       else
         callback_proc.call
       end
-    end
-
-    private
-
-    def notify_callback(operation)
-      NSNotificationCenter.defaultCenter.postNotificationName("yapper:#{self.model_name}:#{operation}", object: self , userInfo: nil)
     end
   end
 end

@@ -142,8 +142,10 @@ module Yapper::Document
           sync_changes if defined? sync_changes
         end
 
-        true
+        db.on_commit { self.notify('save') }
       end
+
+      true
     end
 
     def destroy(options={})
@@ -156,6 +158,10 @@ module Yapper::Document
     def generate_id
       BSON::ObjectId.generate
     end
+  end
+
+  def notify(operation)
+    NSNotificationCenter.defaultCenter.postNotificationName("yapper:#{self.model_name}:#{operation}", object: self , userInfo: nil)
   end
 
   private
