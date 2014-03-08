@@ -123,7 +123,7 @@ module Yapper::Document
     end
 
     def save(options={})
-      db.execute do |txn|
+      db.execute("#{self.model_name}:save" => self) do |txn|
         @queued_saves.each { |queued, queued_options| queued.save(queued_options) }
 
         run_callbacks 'save' do
@@ -141,8 +141,6 @@ module Yapper::Document
           # XXX Use middleware pattern instead of this ugliness
           sync_changes if defined? sync_changes
         end
-
-        db.on_commit { self.notify('save') }
       end
 
       true
@@ -158,10 +156,6 @@ module Yapper::Document
     def generate_id
       BSON::ObjectId.generate
     end
-  end
-
-  def notify(operation)
-    NSNotificationCenter.defaultCenter.postNotificationName("yapper:#{self.model_name}:#{operation}", object: self , userInfo: nil)
   end
 
   private

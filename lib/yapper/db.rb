@@ -33,8 +33,14 @@ class Yapper::DB
     block.call(db)
   end
 
-  def execute(&block)
+  def execute(notifications={}, &block)
     create_indexes!
+
+    Thread.current[:yapper_notifications] ||= {}.with_indifferent_access
+    notifications.each do |namespace, instance|
+      Thread.current[:yapper_notifications][namespace] ||= []
+      Thread.current[:yapper_notifications][namespace] << instance
+    end
 
     exception = nil; result = nil
     unless self.txn
@@ -51,24 +57,15 @@ class Yapper::DB
       end
       connection.readWriteWithBlock(txn_proc)
 
-      on_commits = Thread.current[:yapper_on_commit]
-      Thread.current[:yapper_on_commit] = nil
-      on_commits.to_a.each { |commit_block| commit_block.call }
+      notifications = Thread.current[:yapper_notifications]
+      Thread.current[:yapper_notifications] = nil
+      notifications.each { |namespace, instances| notify(namespace, instances) }
     else
       result = block.call(self.txn)
     end
 
     raise exception if exception
     result
-  end
-
-  def on_commit(&block)
-    if self.txn
-      Thread.current[:yapper_on_commit] ||= []
-      Thread.current[:yapper_on_commit] << block
-    else
-      raise "must be called from within a txn"
-    end
   end
 
   def purge
@@ -160,4 +157,9 @@ class Yapper::DB
   def document_path
     NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] + "/yapper.#{version}.db"
   end
+
+  def notify(namespace, instances)
+    NSNotificationCenter.defaultCenter.postNotificationName("yapper:#{namespace}", object: instances , userInfo: nil)
+  end
+
 end
