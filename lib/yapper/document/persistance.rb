@@ -6,6 +6,7 @@ module Yapper::Document
       attr_accessor :attributes
       attr_accessor :changes
       attr_accessor :previous_changes
+      attr_reader   :destroyed
 
       class << self
         attr_accessor :fields
