@@ -22,7 +22,7 @@ Motion::Project::App.setup do |app|
   yap_patch = File.expand_path(File.join(File.dirname(__FILE__), '../vendor/YapDatabaseRubyMotion'))
   app.vendor_project(yap_patch,
                      :static,
-                     :bridgesupport_cflags => '-I../Pods/Headers -fobjc-arc',
-                     :cflags => '-I../Pods/Headers -fobjc-arc')
+                     :bridgesupport_cflags => "-I#{Dir.pwd}/vendor/Pods/Headers -fobjc-arc",
+                     :cflags => "-I#{Dir.pwd}/vendor/Pods/Headers -fobjc-arc")
 
 end
