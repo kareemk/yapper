@@ -4,4 +4,5 @@ before_install:
     - sudo motion update
 install:
   - bundle
+  - rake pod:install
 script: bundle exec rake spec
