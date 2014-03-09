@@ -18,3 +18,4 @@ tags
 .ruby-gemset
 Gemfile.lock
 vendor/Pods
+vendor/YapDatabaseRubyMotion/build*
