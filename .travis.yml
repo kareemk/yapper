@@ -1,6 +1,7 @@
 language: objective-c
 before_install:
     - (ruby --version)
+    - sudo motion update
 install:
   - bundle
 script: bundle exec rake spec
