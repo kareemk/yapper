@@ -17,5 +17,4 @@ tags
 .ruby-version
 .ruby-gemset
 Gemfile.lock
-vendor/Pods
 vendor/YapDatabaseRubyMotion/build*
