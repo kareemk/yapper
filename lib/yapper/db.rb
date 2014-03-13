@@ -140,7 +140,9 @@ class Yapper::DB
 
         unless Yapper::Config.get("#{collection}_idx_defn") == @indexes[collection].to_canonical
           Yapper::Config.set("#{collection}_idx_defn", @indexes[collection].to_canonical)
-          configure { |yap| yap.unregisterExtension("#{collection}_IDX") }
+          configure do|yap|
+            yap.unregisterExtension("#{collection}_IDX") if yap.registeredExtension("#{collection}_IDX")
+          end
         end
 
         index_block = YapDatabaseSecondaryIndex.alloc.initWithSetup(setup, objectBlock: block, version: 1)
