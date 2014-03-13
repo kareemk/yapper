@@ -6,6 +6,7 @@ describe '#where' do
       field :field1, :type => String
       field :field2, :type => Integer
       field :field3, :type => Time
+      field :field4, :type => String
 
       index :field1, :field2, :field3
     end
@@ -21,6 +22,22 @@ describe '#where' do
   before { Yapper::DB.instance.purge }
   after { Object.send(:remove_const, 'WhereDocument') }
   after { Object.send(:remove_const, 'AnotherWhereDocument') }
+
+  describe 'when changing the index definition' do
+    it "reindexes the fields" do
+      WhereDocument.create(:field1 => 'field1', :field4 => 'field4')
+
+      lambda {
+        WhereDocument.where(:field4 => 'field4')
+      }.should.raise
+
+      WhereDocument.class_eval do
+        index :field4
+      end
+
+      WhereDocument.where(:field4 => 'field4').count.should == 1
+    end
+  end
 
   describe 'with no documents created' do
     it 'returns []' do

@@ -32,19 +32,10 @@ module Yapper::Document
         define_method("#{name}=".to_sym) do |*args, &block|
           self.set_attribute(name, args[0])
         end
-
-        if options[:index]
-          index(name, options[:type])
-        end
       end
 
-      def index(*index_fields)
-        index_fields.each do |field|
-          options = self.fields[field]; raise "#{self._type}:#{field} not defined" unless options
-          type    = options[:type];    raise "#{self._type}:#{field} must define type as its indexed" if type.nil?
-
-          db.index(self._type, field, type)
-        end
+      def index(*args)
+        db.index(self, args)
       end
 
       def indexes

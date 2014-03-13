@@ -40,3 +40,27 @@ class Time
     dateFormatter.stringFromDate(self)
   end
 end
+
+class Hash
+  def to_canonical
+    self.keys.to_canonical + self.values.to_canonical
+  end
+end
+
+class Array
+  def to_canonical
+    self.map { |v| v.class.to_s == 'Class' ? v.to_s : v}.map(&:to_canonical).sort.join
+  end
+end
+
+class String
+  def to_canonical
+    self
+  end
+end
+
+class Symbol
+  def to_canonical
+    to_s
+  end
+end

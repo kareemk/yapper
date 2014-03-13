@@ -8,6 +8,7 @@
 // This will give the RubyMotion compiler enough information to ‘do
 // the right thing’.
 - (id)initWithSetup:(YapDatabaseSecondaryIndexSetup *)setup
-        objectBlock:(YapDatabaseSecondaryIndexWithObjectBlock)block;
+        objectBlock:(YapDatabaseSecondaryIndexWithObjectBlock)block
+            version:(int)version;
  
 @end

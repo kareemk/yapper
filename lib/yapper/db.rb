@@ -34,65 +34,73 @@ class Yapper::DB
   end
 
   def execute(notifications={}, &block)
+    Notifications.track(notifications)
+
     create_indexes!
 
-    Thread.current[:yapper_notifications] ||= {}.with_indifferent_access
-    notifications.each do |namespace, instance|
-      Thread.current[:yapper_notifications][namespace] ||= []
-      Thread.current[:yapper_notifications][namespace] << instance
-    end
-
-    exception = nil; result = nil
-    unless self.txn
-      txn_proc = proc do |_txn|
-        self.txn = _txn
-        begin
-          result = block.call(txn)
-        rescue Exception => e
-          self.txn.rollback
-          exception = e
-        ensure
-          self.txn = nil
-        end
+    result = nil
+    unless self.transaction
+      self.transaction = Transaction.new(self)
+      begin
+        result = transaction.run(&block)
+      ensure
+        self.transaction = nil
       end
-      connection.readWriteWithBlock(txn_proc)
-
-      notifications = Thread.current[:yapper_notifications]
-      Thread.current[:yapper_notifications] = nil
-      notifications.each { |namespace, instances| notify(namespace, instances) }
+      Notifications.trigger
     else
-      result = block.call(self.txn)
+      result = block.call(self.transaction.txn)
     end
 
-    raise exception if exception
     result
   end
 
   def purge
-    create_indexes!(true)
+    Yapper::Config.purge
+    @index_creation_required = true
+    create_indexes!
     execute { |txn| txn.removeAllObjectsInAllCollections }
   end
 
-  def txn=(txn)
-    Thread.current[:yapper_txn] = txn
+  def transaction=(transaction)
+    Thread.current[:yapper_transaction] = transaction
   end
 
-  def txn
-    Thread.current[:yapper_txn]
+  def transaction
+    Thread.current[:yapper_transaction]
   end
 
-  def index(collection, field, type)
-    @indexes[collection] ||= {}
-    @indexes[collection][field] = { :type => type }
+  def index(model, args)
+    options = args.extract_options!
+
+    @index_creation_required = true
+    @indexes[model._type] ||= {}
+
+    args.each do |field|
+      options = model.fields[field]; raise "#{self._type}:#{field} not defined" unless options
+      type    = options[:type];      raise "#{self._type}:#{field} must define type as its indexed" if type.nil?
+
+      @indexes[model._type][field] = { :type => type }
+    end
   end
+
+  def connection
+    Dispatch.once { @connection ||= db.newConnection }
+    @connection
+  end
+
+  def db
+    Dispatch.once { @db ||= YapDatabase.alloc.initWithPath(document_path) }
+    @db
+  end
+
 
   private
 
-  def create_indexes!(force=false)
-    return if @indexes_created && !force
+  def create_indexes!
+    return unless @index_creation_required
 
     @@queue.sync do
-      return if @indexes_created && !force
+      return unless @index_creation_required
 
       @indexes.each do |collection, fields|
         setup = YapDatabaseSecondaryIndexSetup.alloc.init
@@ -130,24 +138,19 @@ class Yapper::DB
           end
         end
 
-        index_block = YapDatabaseSecondaryIndex.alloc.initWithSetup(setup, objectBlock: block)
+        unless Yapper::Config.get("#{collection}_idx_defn") == @indexes[collection].to_canonical
+          Yapper::Config.set("#{collection}_idx_defn", @indexes[collection].to_canonical)
+          configure { |yap| yap.unregisterExtension("#{collection}_IDX") }
+        end
+
+        index_block = YapDatabaseSecondaryIndex.alloc.initWithSetup(setup, objectBlock: block, version: 1)
         configure do |yap|
           yap.registerExtension(index_block, withName: "#{collection}_IDX")
         end
       end
 
-      @indexes_created = true
+      @index_creation_required = false
     end
-  end
-
-  def connection
-    Dispatch.once { @connection ||= db.newConnection }
-    @connection
-  end
-
-  def db
-    Dispatch.once { @db ||= YapDatabase.alloc.initWithPath(document_path) }
-    @db
   end
 
   def version
@@ -158,8 +161,50 @@ class Yapper::DB
     NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0] + "/yapper.#{version}.db"
   end
 
-  def notify(namespace, instances)
-    NSNotificationCenter.defaultCenter.postNotificationName("yapper:#{namespace}", object: instances , userInfo: nil)
+  class Transaction
+    attr_accessor :txn
+
+    def initialize(db)
+      @db = db
+    end
+
+    def run(&block)
+      result = nil
+      txn_proc = proc do |_txn|
+        @txn = _txn
+        begin
+          result = block.call(@txn)
+        rescue Exception => e
+          @txn.rollback
+          result = e
+        end
+      end
+      @db.connection.readWriteWithBlock(txn_proc)
+
+      raise result if result.is_a?(Exception)
+      result
+    end
   end
 
+  class Notifications
+    def self.track(notifications)
+      Thread.current[:yapper_notifications] ||= {}.with_indifferent_access
+      notifications.each do |namespace, instance|
+        Thread.current[:yapper_notifications][namespace] ||= []
+        Thread.current[:yapper_notifications][namespace] << instance
+      end
+    end
+
+    def self.trigger
+      notifications = Thread.current[:yapper_notifications]
+      Thread.current[:yapper_notifications] = nil
+      notifications.each { |namespace, instances| notify(namespace, instances) }
+    end
+
+    private
+
+    def self.notify(namespace, instances)
+      NSNotificationCenter.defaultCenter.postNotificationName("yapper:#{namespace}", object: instances , userInfo: nil)
+    end
+  end
 end

@@ -10,11 +10,13 @@
 // the method call to the normal library’s API. You could say we are
 // ‘aliasing’ the method (although we do change the interface).
 - (id)initWithSetup:(YapDatabaseSecondaryIndexSetup *)setup
-        objectBlock:(YapDatabaseSecondaryIndexWithObjectBlock)block;
+        objectBlock:(YapDatabaseSecondaryIndexWithObjectBlock)block
+            version:(int)version;
 {
   return [self initWithSetup:setup
                        block:block
-                   blockType:YapDatabaseSecondaryIndexBlockTypeWithObject];
+                   blockType:YapDatabaseSecondaryIndexBlockTypeWithObject
+                     version:version];
 }
  
 @end
