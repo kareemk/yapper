@@ -55,7 +55,7 @@ class Yapper::DB
   end
 
   def purge
-    Yapper::Config.purge
+    Yapper::Settings.purge
     @index_creation_required = true
     create_indexes!
     execute { |txn| txn.removeAllObjectsInAllCollections }
@@ -142,8 +142,8 @@ class Yapper::DB
           end
         end
 
-        unless Yapper::Config.get("#{collection}_idx_defn") == @indexes[collection].to_canonical
-          Yapper::Config.set("#{collection}_idx_defn", @indexes[collection].to_canonical)
+        unless Yapper::Settings.get("#{collection}_idx_defn") == @indexes[collection].to_canonical
+          Yapper::Settings.set("#{collection}_idx_defn", @indexes[collection].to_canonical)
           configure do|yap|
             yap.unregisterExtension("#{collection}_IDX") if yap.registeredExtension("#{collection}_IDX")
           end
@@ -160,7 +160,7 @@ class Yapper::DB
   end
 
   def version
-    Yapper::Config.db_version || 0
+    Yapper::Settings.db_version || 0
   end
 
   def document_path
