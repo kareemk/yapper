@@ -113,6 +113,8 @@ class Yapper::DB
                    YapDatabaseSecondaryIndexTypeInteger
                  when 'Time'
                    YapDatabaseSecondaryIndexTypeInteger
+                 when 'Boolean'
+                   YapDatabaseSecondaryIndexTypeInteger
                  else
                    raise "Invalid type #{type}"
                  end
@@ -128,6 +130,8 @@ class Yapper::DB
                 value = case options[:type].to_s
                         when 'Time'
                           _attrs[field].to_i
+                        when 'Boolean'
+                          _attrs[field] ? 1 : 0 unless _attrs[field].nil?
                         else
                           _attrs[field]
                         end

@@ -7,8 +7,9 @@ describe '#where' do
       field :field2, :type => Integer
       field :field3, :type => Time
       field :field4, :type => String
+      field :field5, :type => Boolean
 
-      index :field1, :field2, :field3
+      index :field1, :field2, :field3, :field5
     end
     class AnotherWhereDocument
       include Yapper::Document
@@ -60,6 +61,7 @@ describe '#where' do
       WhereDocument.create(:field1 => 'field1_value', :field2 => 3)
       WhereDocument.create(:field1 => 'field1_value', :field2 => 4)
       WhereDocument.create(:field1 => 'field1_other_value', :field2 => 2, :field3 => @now)
+      WhereDocument.create(:field5 => true)
       AnotherWhereDocument.create(:field1 => 'field1_value', :field2 => 2)
     end
 
@@ -73,6 +75,11 @@ describe '#where' do
 
     it 'can search by time' do
       WhereDocument.where(:field3 => @now).count.should == 1
+    end
+
+    it 'can search by boolean' do
+      WhereDocument.where(:field5 => true).count.should == 1
+      WhereDocument.where(:field5 => false).count.should == 0
     end
 
     it 'returns [] when looking up a non-existant doc' do

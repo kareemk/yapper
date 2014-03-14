@@ -64,3 +64,5 @@ class Symbol
     to_s
   end
 end
+
+class Boolean; end
