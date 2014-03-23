@@ -8,9 +8,7 @@ module Yapper::Document
       attr_accessor :previous_changes
       attr_reader   :destroyed
 
-      class << self
-        attr_accessor :fields
-      end
+      class_attribute :fields
 
       self.fields = {}.with_indifferent_access
       field :id
@@ -52,6 +50,8 @@ module Yapper::Document
 
       assign_attributes({:id => generate_id}, options) if @new_record
       assign_attributes(attrs, options)
+
+      set_defaults
 
       self
     end
@@ -147,6 +147,15 @@ module Yapper::Document
 
     def generate_id
       BSON::ObjectId.generate
+    end
+
+    def set_defaults
+      self.fields.each do |field, field_options|
+        if __send__(field).nil?
+          default = field_options[:default].respond_to?(:call) ? field_options[:default].call : field_options[:default]
+          set_attribute(field, default) 
+        end
+      end
     end
   end
 
