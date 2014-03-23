@@ -3,13 +3,13 @@ motion_require 'db'
 
 module Yapper::Document
   motion_require 'document/callbacks'
-  motion_require 'document/persistance'
+  motion_require 'document/persistence'
   motion_require 'document/relation'
   motion_require 'document/selection'
 
   extend MotionSupport::Concern
 
-  include Persistance
+  include Persistence
   include Selection
   include Callbacks
   include Relation

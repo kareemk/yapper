@@ -1,5 +1,5 @@
 module Yapper::Document
-  module Persistance
+  module Persistence
     extend MotionSupport::Concern
 
     included do
