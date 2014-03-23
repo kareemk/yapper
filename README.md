@@ -1,9 +1,116 @@
 yapper [![Build Status](https://travis-ci.org/kareemk/yapper.png?branch=master)](https://travis-ci.org/kareemk/yapper)
 ======
 
-RubyMotion ORM for YapDatabase
+RubyMotion ORM for the wonderful [YapDatabase](https://github.com/yaptv/YapDatabase). Key features:
+* Schemaless (define fields in your models)
+* Very fast (thanks to YapDatabase's architecture)
+* Chainable criteria
+* One-many relationships
+* On-the-fly reindexing
+* Thread safe
 
-**WARNING: Under heavy development. Use with extreme caution. Stable version will be out soon.**
+Show me
+-------
+
+```ruby
+  class User
+    include Yapper::Document
+
+    field :name,  :type => String
+    field :email, :type => String
+    field :bio,   :type => String
+
+    has_many :locations
+
+    index :name, :email
+  end
+
+  class Location
+    include Yapper::Document
+
+    belongs_to :user
+
+    field :address
+    field :city
+
+    index :city
+  end
+
+  # Create
+  user = User.create(:name => 'John Malkovich')
+  location = Location.create(:user => user, :address => 'One Main', :city => 'Brooklyn')
+
+  # Update
+  user.update_attributes(:email => 'john@malkovich.com')
+
+  # Wait for a document to exist
+  User.when(id) { |user| puts "Got #{user.name}" }
+
+  # Query (note you can only query on indexed fields)
+  User.where(:email => 'john@malkovich.com')
+
+  # Return all documents
+  User.all
+
+  # Chain queries
+  User.where(:email => 'john@malkovich.com').where(:name => "John")
+
+  # Count
+  User.count
+  User.where(:email => 'john@malkovich.com').where(:name => "John").count
+
+  # Limit
+  User.where(:email => 'john@malkovich.com').where(:name => "John").limit(1)
+
+  # First
+  User.where(:email => 'john@malkovich.com').where(:name => "John").first
+
+  # Last
+  User.where(:email => 'john@malkovich.com').where(:name => "John").last
+
+  # On relations
+  user.locations.where(:city => 'Brooklyn').first
+
+```
+
+See the [specs](https://github.com/kareemk/yapper/tree/master/spec/integration)
+for more detail.
+
+Status
+------
+
+*Beta*. There are a lot of features missing that you'll probably want.
+Open an [Issue](https://github.com/kareemk/yapper/issues) or better yet create a
+pull request and let's make this happen.
+
+Current roadmap:
+* Performance optimizations (using a read-only connection on the main thread)
+* Richer querying (not, or, custom sql)
+* [Views](https://github.com/yaptv/YapDatabase/wiki/Views)
+* [Full-text search](https://github.com/yaptv/YapDatabase/wiki/Full-Text-Search)
+* RESTful API support
+
+
+Prerequisites
+-------------
+
+Motion CocoaPods
+```ruby
+gem install motion-cocoapods
+pod setup
+```
+
+Install
+-------
+
+```ruby
+gem install motion-yapper
+```
+or add the following line to your Gemfile:
+```ruby
+gem 'motion-yapper'
+```
+and run `bundle install`
 
 License
 -------
