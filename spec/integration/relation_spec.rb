@@ -27,7 +27,7 @@ describe 'Yapper document 1:N relationship' do
                                     ])
 
     @parent.field_1.should == 'parent'
-    @parent.child_documents.collect(&:field_1).should == ['child0', 'child1']
+    @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
   end
 
   it 'can accept an nested attributes with ids' do
@@ -46,7 +46,7 @@ describe 'Yapper document 1:N relationship' do
                                     :child_documents => children)
 
     @parent.field_1.should == 'parent'
-    @parent.child_documents.collect(&:field_1).should == ['child0', 'child1']
+    @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
   end
 
   it 'can accept array of created children' do
@@ -55,7 +55,7 @@ describe 'Yapper document 1:N relationship' do
                                     :child_documents => children)
 
     @parent.field_1.should == 'parent'
-    @parent.child_documents.collect(&:field_1).should == ['child0', 'child1']
+    @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
   end
 
   it 'can update a child document via nested attributes' do
@@ -109,7 +109,7 @@ describe 'Yapper document 1:N relationship' do
         @parent.reload
 
         @parent.child_documents.count.should == 2
-        @parent.child_documents.collect(&:id).each { |id| id.should.not == @last_id }
+        @parent.child_documents.to_a.collect(&:id).each { |id| id.should.not == @last_id }
       end
     end
   end

@@ -14,6 +14,11 @@ module Yapper::Document
   include Callbacks
   include Relation
 
+  included do
+    field :id, :type => String
+    index(:id)
+  end
+
   module ClassMethods
     def db
       Yapper::DB.instance

@@ -69,7 +69,7 @@ class Yapper::DB
     Thread.current[:yapper_transaction]
   end
 
-  def index(model, args)
+  def index(model, args=[])
     options = args.extract_options!
 
     @index_creation_required = true

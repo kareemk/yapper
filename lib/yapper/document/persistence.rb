@@ -11,7 +11,6 @@ module Yapper::Document
       class_attribute :fields
 
       self.fields = {}.with_indifferent_access
-      field :id
     end
 
     module ClassMethods
