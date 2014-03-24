@@ -1,4 +1,4 @@
-yapper [![Build Status](https://travis-ci.org/kareemk/yapper.png?branch=master)](https://travis-ci.org/kareemk/yapper)
+yapper [![Build Status](https://travis-ci.org/kareemk/yapper.svg?branch=master)](https://travis-ci.org/kareemk/yapper)
 ======
 
 RubyMotion ORM for the wonderful [YapDatabase](https://github.com/yaptv/YapDatabase). Key features:
