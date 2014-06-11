@@ -71,6 +71,10 @@ describe 'Criteria' do
         WhereDocument.all.to_a.count.should == 6
       end
 
+      it 'returns documents that do not contain changes' do
+        WhereDocument.all.first.changes.should == {}
+      end
+
       describe 'with a document that has no indexes' do
         before do
           class NoIndexDocument

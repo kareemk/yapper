@@ -52,6 +52,10 @@ module Yapper::Document
 
       set_defaults
 
+      if options[:pristine]
+        self.changes = {}
+      end
+
       self
     end
 
@@ -73,10 +77,6 @@ module Yapper::Document
         else
           Log.warn "#{k} not defined on #{self.class}"
         end
-      end
-
-      if options[:pristine]
-        self.changes = {}
       end
     end
     alias_method :attributes=, :assign_attributes
