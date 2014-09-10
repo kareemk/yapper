@@ -149,7 +149,7 @@ class Yapper::DB
           end
         end
 
-        index_block = YapDatabaseSecondaryIndex.alloc.initWithSetup(setup, objectBlock: block, version: 1)
+        index_block = YapDatabaseSecondaryIndex.alloc.initWithSetup(setup, objectBlock: block, versionTag: '1')
         configure do |yap|
           yap.registerExtension(index_block, withName: "#{collection}_IDX")
         end

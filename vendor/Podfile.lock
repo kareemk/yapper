@@ -5,18 +5,26 @@ PODS:
   - CocoaLumberjack/Extensions (1.8.1):
     - CocoaLumberjack/Core
   - NSData+MD5Digest (1.0.0)
-  - YapDatabase (2.4):
-    - CocoaLumberjack (~> 1.6.3)
+  - YapDatabase (2.5.2):
+    - YapDatabase/standard
+  - YapDatabase/common (2.5.2):
+    - CocoaLumberjack (~> 1)
+  - YapDatabase/standard (2.5.2):
+    - YapDatabase/common
 
 DEPENDENCIES:
   - CocoaLumberjack
   - CocoaLumberjack (~> 1.6.5)
   - NSData+MD5Digest (~> 1.0.0)
-  - YapDatabase (~> 2.4)
+  - YapDatabase (from `https://github.com/yaptv/YapDatabase.git`)
+
+EXTERNAL SOURCES:
+  YapDatabase:
+    :git: https://github.com/yaptv/YapDatabase.git
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 020378ec400d658923bf5887178394f65f052c90
-  NSData+MD5Digest: 8275479b2a935e6caa8a92a9a814fb5abecba367
-  YapDatabase: 3e1159ee9540859342bf2869a86dd9e434548c45
+  CocoaLumberjack: 9d198d6e19909b3b113a38c5f06f7bb8eedd0427
+  NSData+MD5Digest: 3662c71c33c32cac0302dce76df6df7a6d81acca
+  YapDatabase: 1c6ae01a02a3c7cb9350a179723de746c346f8c8
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.33.1

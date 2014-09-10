@@ -11,12 +11,12 @@
 // ‘aliasing’ the method (although we do change the interface).
 - (id)initWithSetup:(YapDatabaseSecondaryIndexSetup *)setup
         objectBlock:(YapDatabaseSecondaryIndexWithObjectBlock)block
-            version:(int)version;
+         versionTag:(NSString *)versionTag;
 {
   return [self initWithSetup:setup
                        block:block
                    blockType:YapDatabaseSecondaryIndexBlockTypeWithObject
-                     version:version];
+                   versionTag:versionTag];
 }
  
 @end

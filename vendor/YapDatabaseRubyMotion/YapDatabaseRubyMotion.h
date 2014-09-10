@@ -9,6 +9,5 @@
 // the right thing’.
 - (id)initWithSetup:(YapDatabaseSecondaryIndexSetup *)setup
         objectBlock:(YapDatabaseSecondaryIndexWithObjectBlock)block
-            version:(int)version;
- 
+         versionTag:(NSString *)versionTag;
 @end
