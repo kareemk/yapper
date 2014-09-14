@@ -4,6 +4,7 @@ before_install:
     - sudo chown -R travis ~/Library/RubyMotion
     - sudo mkdir -p ~/Library/RubyMotion/build
     - sudo motion update
+    - rake pod:install
 install:
   - bundle
 script: bundle exec rake spec
