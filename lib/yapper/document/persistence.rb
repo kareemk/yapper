@@ -35,6 +35,10 @@ module Yapper::Document
         db.index(self, args)
       end
 
+      def search_index(*args)
+        db.search_index(self, args)
+      end
+
       def indexes
         db.indexes[self._type]
       end

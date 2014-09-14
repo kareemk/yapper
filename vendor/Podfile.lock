@@ -16,15 +16,11 @@ DEPENDENCIES:
   - CocoaLumberjack
   - CocoaLumberjack (~> 1.6.5)
   - NSData+MD5Digest (~> 1.0.0)
-  - YapDatabase (from `https://github.com/yaptv/YapDatabase.git`)
-
-EXTERNAL SOURCES:
-  YapDatabase:
-    :git: https://github.com/yaptv/YapDatabase.git
+  - YapDatabase (~> 2.5.2)
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 9d198d6e19909b3b113a38c5f06f7bb8eedd0427
   NSData+MD5Digest: 3662c71c33c32cac0302dce76df6df7a6d81acca
-  YapDatabase: 1c6ae01a02a3c7cb9350a179723de746c346f8c8
+  YapDatabase: 50f763e49374c38025e8255b4c468d26d81b1048
 
 COCOAPODS: 0.33.1

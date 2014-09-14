@@ -20,3 +20,21 @@
 }
  
 @end
+
+@implementation YapDatabaseFullTextSearch (RubyMotionBlockTypeWrapper)
+ 
+// Here we define the implementation that does nothing else than forward
+// the method call to the normal library’s API. You could say we are
+// ‘aliasing’ the method (although we do change the interface).
+  - (id)initWithColumnNames:(NSArray *)columnNames
+                objectBlock:(YapDatabaseFullTextSearchWithObjectBlock)block
+                 versionTag:(NSString *)versionTag;
+{
+
+  return [self initWithColumnNames:columnNames
+                             block:block
+                         blockType:YapDatabaseFullTextSearchBlockTypeWithObject
+                        versionTag:versionTag];
+}
+ 
+@end

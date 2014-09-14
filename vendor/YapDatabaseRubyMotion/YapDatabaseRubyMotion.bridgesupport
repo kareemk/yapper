@@ -1,5 +1,19 @@
 <?xml version='1.0'?>
 <signatures version='1.0'>
+<class name='YapDatabaseFullTextSearch'>
+<method selector='initWithColumnNames:objectBlock:versionTag:'>
+<arg declared_type='NSArray*' index='0' name='columnNames' type='@'/>
+<arg declared_type='YapDatabaseFullTextSearchWithObjectBlock' function_pointer='true' index='1' name='block' type='@?'>
+<arg declared_type='NSMutableDictionary*' type='@'/>
+<arg declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='NSString*' index='2' name='versionTag' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
 <class name='YapDatabaseSecondaryIndex'>
 <method selector='initWithSetup:objectBlock:versionTag:'>
 <arg declared_type='YapDatabaseSecondaryIndexSetup*' index='0' name='setup' type='@'/>

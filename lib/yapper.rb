@@ -14,7 +14,7 @@ Motion::Project::App.setup do |app|
   app.detect_dependencies = false
 
   app.pods do
-    pod 'YapDatabase'      , :git => 'https://github.com/yaptv/YapDatabase.git'
+    pod 'YapDatabase'      ,'~> 2.5.2'
     pod 'CocoaLumberjack'  ,'~> 1.6.5'
     pod 'NSData+MD5Digest' ,'~> 1.0.0'
   end

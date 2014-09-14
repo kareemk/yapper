@@ -24,7 +24,8 @@ class Yapper::DB
   def initialize(options)
     @options = options
     @name = options[:name]
-    @indexes = {}; @indexes_created = false
+    @indexes = {}
+    @search_indexes = {}
 
     self
   end
@@ -37,6 +38,7 @@ class Yapper::DB
     Notifications.track(notifications)
 
     create_indexes!
+    create_search_indexes!
 
     result = nil
     unless self.transaction
@@ -56,8 +58,13 @@ class Yapper::DB
 
   def purge
     Yapper::Settings.purge
+
     @index_creation_required = true
+    @search_index_creation_required = true
+
     create_indexes!
+    create_search_indexes!
+
     execute { |txn| txn.removeAllObjectsInAllCollections }
   end
 
@@ -76,10 +83,23 @@ class Yapper::DB
     @indexes[model._type] ||= {}
 
     args.each do |field|
-      options = model.fields[field]; raise "#{self._type}:#{field} not defined" unless options
-      type    = options[:type];      raise "#{self._type}:#{field} must define type as its indexed" if type.nil?
+      options = model.fields[field]; raise "#{model._type}:#{field} not defined" unless options
+      type    = options[:type];      raise "#{model._type}:#{field} must define type as its indexed" if type.nil?
 
       @indexes[model._type][field] = { :type => type }
+    end
+  end
+
+  def search_index(model, args=[])
+    options = args.extract_options!
+
+    @search_index_creation_required = true
+    @search_indexes[model._type] ||= []
+
+    args.each do |field|
+      options = model.fields[field]; raise "#{model._type}:#{field} not defined" unless options
+
+      @search_indexes[model._type] << field
     end
   end
 
@@ -123,6 +143,8 @@ class Yapper::DB
         end
 
         block = proc do |_dict, _collection, _key, _attrs|
+          next unless _collection == collection
+
           if indexes = @indexes[_collection]
             indexes.each do |field, options|
               field = field.to_s
@@ -156,6 +178,41 @@ class Yapper::DB
       end
 
       @index_creation_required = false
+    end
+  end
+
+  def create_search_indexes!
+    return unless @search_index_creation_required
+
+    @@queue.sync do
+      return unless @search_index_creation_required
+
+      @search_indexes.each do |collection, fields|
+        unless Yapper::Settings.get("#{collection}_sidx_defn") == @search_indexes[collection].to_canonical
+          Yapper::Settings.set("#{collection}_sidx_defn", @search_indexes[collection].to_canonical)
+          configure do|yap|
+            yap.unregisterExtension("#{collection}_SIDX") if yap.registeredExtension("#{collection}_SIDX")
+          end
+        end
+
+        block = proc do |_dict, _collection, _key, _attrs|
+          next unless _collection == collection
+
+          if fields = @search_indexes[_collection]
+            fields.each do |field|
+              field = field.to_s
+              _dict.setObject(_attrs[field].to_s, forKey: field)
+            end
+          end
+        end
+
+        index_block = YapDatabaseFullTextSearch.alloc.initWithColumnNames(fields.map(&:to_s), objectBlock: block, versionTag: '1')
+        configure do |yap|
+          yap.registerExtension(index_block, withName: "#{collection}_SIDX")
+        end
+      end
+
+      @search_index_creation_required = false
     end
   end
 

@@ -23,6 +23,19 @@ module Yapper::Document
         all.count
       end
 
+      def search(query)
+        return nil if query.nil?
+
+        results = []
+        each_result_proc = proc do |collection, id, attrs, stop|
+          results << object_for_attrs(attrs)
+        end
+
+        db.execute { |txn| txn.ext("#{self._type}_SIDX").enumerateKeysAndObjectsMatching(query, usingBlock: each_result_proc) }
+
+        results
+      end
+
       def find(id)
         return nil if id.nil?
 
