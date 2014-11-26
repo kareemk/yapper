@@ -1,12 +1,12 @@
 PODS:
   - CocoaLumberjack (1.8.1):
-    - CocoaLumberjack/Extensions
+    - CocoaLumberjack/Extensions (= 1.8.1)
   - CocoaLumberjack/Core (1.8.1)
   - CocoaLumberjack/Extensions (1.8.1):
     - CocoaLumberjack/Core
   - NSData+MD5Digest (1.0.0)
   - YapDatabase (2.5.2):
-    - YapDatabase/standard
+    - YapDatabase/standard (= 2.5.2)
   - YapDatabase/common (2.5.2):
     - CocoaLumberjack (~> 1)
   - YapDatabase/standard (2.5.2):
@@ -14,7 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaLumberjack
-  - CocoaLumberjack (~> 1.6.5)
+  - CocoaLumberjack (~> 1.8.1)
   - NSData+MD5Digest (~> 1.0.0)
   - YapDatabase (~> 2.5.2)
 
@@ -23,4 +23,4 @@ SPEC CHECKSUMS:
   NSData+MD5Digest: 3662c71c33c32cac0302dce76df6df7a6d81acca
   YapDatabase: 50f763e49374c38025e8255b4c468d26d81b1048
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0
