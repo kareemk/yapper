@@ -1,8 +1,7 @@
 motion_require 'yapper'
 
 class Yapper::DB
-  @@dbs   = {}
-  @@queue = Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.yapper.db#{@name}")
+  @@queue = Dispatch::Queue.new("#{NSBundle.mainBundle.bundleIdentifier}.yapper.db")
 
   class_attribute :version
 
@@ -11,12 +10,8 @@ class Yapper::DB
   end
 
   def self.instance
-    @@db = begin
-             @@queue.sync do
-               @@dbs[name] ||= self.new(:name => name)
-             end
-             @@dbs[name]
-           end
+    Dispatch.once { @@db = self.new(:name => name) }
+    @@db
   end
 
   attr_reader :indexes
@@ -39,7 +34,6 @@ class Yapper::DB
 
     create_indexes!
     create_search_indexes!
-
     result = nil
     unless self.transaction
       self.transaction = Transaction.new(self)
@@ -171,7 +165,8 @@ class Yapper::DB
           end
         end
 
-        index_block = YapDatabaseSecondaryIndex.alloc.initWithSetup(setup, objectBlock: block, versionTag: '1')
+        handler = YapDatabaseSecondaryIndexHandler.withObjectBlock(block)
+        index_block = YapDatabaseSecondaryIndex.alloc.initWithSetup(setup, handler: handler, versionTag: '1')
         configure do |yap|
           yap.registerExtension(index_block, withName: "#{collection}_IDX")
         end
@@ -206,7 +201,8 @@ class Yapper::DB
           end
         end
 
-        index_block = YapDatabaseFullTextSearch.alloc.initWithColumnNames(fields.map(&:to_s), objectBlock: block, versionTag: '1')
+        handler = YapDatabaseFullTextSearchHandler.withObjectBlock(block)
+        index_block = YapDatabaseFullTextSearch.alloc.initWithColumnNames(fields.map(&:to_s), handler: handler, versionTag: '1')
         configure do |yap|
           yap.registerExtension(index_block, withName: "#{collection}_SIDX")
         end

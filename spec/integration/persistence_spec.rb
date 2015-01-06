@@ -11,7 +11,7 @@ describe 'Yapper persisting documents' do
   after  { Object.send(:remove_const, 'Document') }
 
   describe 'creating documents' do
-    it 'supports storing hashes by stringifying keys (to avoid NanoStore bug)' do
+    it 'supports storing hashes by stringifying keys (to avoid symbol serialization bug)' do
       10.times { Document.create.tap { |doc| doc.update_attributes(:field_1 => { :a => [ { :a => 10 } ] }) } }
       Document.all.each { |doc| doc.field_1[:b] = 'b'; doc.save }
 

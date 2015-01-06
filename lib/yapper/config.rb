@@ -8,7 +8,7 @@ module Yapper::Config
 
   def self.get(key)
     Yapper::DB.instance.execute do |txn|
-      txn.objectForKey(key.to_s, inCollection: '_config') 
+      txn.objectForKey(key.to_s, inCollection: '_config')
     end
   end
 
