@@ -18,6 +18,10 @@ module Yapper::Document
         new(*args).tap { |doc| doc.save }
       end
 
+      def delete_all
+        db.execute { |txn| txn.removeAllObjectsInCollection(_type) }
+      end
+
       def field(name, options={})
         name = name.to_sym
         self.fields[name] = options

@@ -115,4 +115,16 @@ describe 'Yapper persisting documents' do
       Document.find(@doc.id).should == nil
     end
   end
+
+  describe '#delete_all' do
+    before do
+      3.times { Document.create(:field_1 => 'field1') }
+    end
+
+    it 'deletes all documents' do
+      Document.delete_all
+
+      Document.all.count.should == 0
+    end
+  end
 end
