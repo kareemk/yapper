@@ -31,6 +31,13 @@ module Yapper::Document
     def model_name
       self.to_s.downcase
     end
+
+    def watch(&block)
+      Yapper::Watch.add_watch do |notifications|
+        block.call if db.read_connection.hasChangeForCollection(self._type,
+                                                                inNotifications: notifications)
+      end
+    end
   end
 
   def _type
