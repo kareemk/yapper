@@ -19,8 +19,10 @@ class Yapper::DB
   def initialize(options)
     @options = options
     @name = options[:name]
+
     @indexes = {}
     @search_indexes = {}
+    @views = {}
 
     self
   end
@@ -32,8 +34,8 @@ class Yapper::DB
   def execute(notifications={}, &block)
     Notifications.track(notifications)
 
-    create_indexes!
-    create_search_indexes!
+    create_extensions!
+
     result = nil
     unless self.transaction
       self.transaction = Transaction.new(self)
@@ -50,14 +52,22 @@ class Yapper::DB
     result
   end
 
+
+  def read(&block)
+    raise "Must only read db off of main thread otherwise use a execute for a read/write transaction" unless NSThread.isMainThread
+    create_extensions!
+
+    ReadTransaction.new(self).run(&block)
+  end
+
   def purge
     Yapper::Settings.purge
 
     @index_creation_required = true
     @search_index_creation_required = true
+    @view_creation_required = true
 
-    create_indexes!
-    create_search_indexes!
+    create_extensions!
 
     execute { |txn| txn.removeAllObjectsInAllCollections }
   end
@@ -97,9 +107,19 @@ class Yapper::DB
     end
   end
 
+  def view(view)
+    @view_creation_required = true
+    @views[view.name] = view
+  end
+
   def connection
     Dispatch.once { @connection ||= db.newConnection }
     @connection
+  end
+
+  def read_connection
+    Dispatch.once { @read_connection ||= db.newConnection }
+    @read_connection
   end
 
   def db
@@ -107,8 +127,13 @@ class Yapper::DB
     @db
   end
 
-
   private
+
+  def create_extensions!
+    create_indexes!
+    create_search_indexes!
+    create_views!
+  end
 
   def create_indexes!
     return unless @index_creation_required
@@ -212,6 +237,43 @@ class Yapper::DB
     end
   end
 
+  def create_views!
+    return unless @view_creation_required
+
+    @@queue.sync do
+      return unless @view_creation_required
+
+      @views.each do |view_name, view|
+        unless Yapper::Settings.get("#{view_name}_views_defn") == view.version.to_s
+          Yapper::Settings.set("#{view_name}_views_defn", view.version.to_s)
+          configure do|yap|
+            yap.unregisterExtension("#{view_name}_VIEW") if yap.registeredExtension("#{view_name}_VIEW")
+          end
+        end
+
+        _block = proc do |_collection, _key, _attrs|
+          view.group_for(_collection, _key, _attrs)
+        end
+        grouping_block = YapDatabaseViewGrouping.withObjectBlock(_block)
+
+        _block = proc do |group, collection1, key1, obj1, collection2, key2, obj2|
+          view.sort_for(group, collection1, key1, obj1, collection2, key2, obj2)
+        end
+        sorting_block = YapDatabaseViewSorting.withObjectBlock(_block)
+
+        yap_view = YapDatabaseView.alloc.
+          initWithGrouping(grouping_block,
+                           sorting: sorting_block)
+
+        configure do |yap|
+          yap.registerExtension(yap_view, withName: "#{view_name}_VIEW")
+        end
+      end
+
+      @view_creation_required = false
+    end
+  end
+
   def version
     Yapper::Settings.db_version || 0
   end
@@ -239,6 +301,27 @@ class Yapper::DB
         end
       end
       @db.connection.readWriteWithBlock(txn_proc)
+
+      raise result if result.is_a?(Exception)
+      result
+    end
+  end
+
+  class ReadTransaction
+    def initialize(db)
+      @db = db
+    end
+
+    def run(&block)
+      result = nil
+      txn_proc = proc do |_txn|
+        begin
+          result = block.call(_txn)
+        rescue Exception => e
+          result = e
+        end
+      end
+      @db.read_connection.readWithBlock(txn_proc)
 
       raise result if result.is_a?(Exception)
       result
