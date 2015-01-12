@@ -33,10 +33,18 @@ module Yapper::Document
     end
 
     def watch(&block)
-      Yapper::Watch.add_watch do |notifications|
+      Yapper::Watch.add do |notifications|
         block.call if db.read_connection.hasChangeForCollection(self._type,
                                                                 inNotifications: notifications)
       end
+    end
+  end
+
+  def watch(&block)
+    Yapper::Watch.add do |notifications|
+      block.call if db.read_connection.hasChangeForKey(self.id,
+                                                       inCollection: self._type,
+                                                       inNotifications: notifications)
     end
   end
 

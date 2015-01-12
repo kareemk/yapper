@@ -11,7 +11,7 @@ class Yapper::Watch
     self.watches.values.each { |watch| watch.block.call(notifications) }
   end
 
-  def self.add_watch(&block)
+  def self.add(&block)
     if watches.empty?
       Yapper::DB.instance.read_connection.beginLongLivedReadTransaction
 
@@ -22,7 +22,7 @@ class Yapper::Watch
     end
 
     id = BSON::ObjectId.generate
-    self.new(id, &block).tap { |watch| self.watches[id] = watch }
+    self.new(id, &block).tap { |watch|  self.watches[id] = watch }
   end
 
   def initialize(id, &block)
@@ -32,7 +32,7 @@ class Yapper::Watch
     self
   end
 
-  def destroy
+  def end
     watches.delete(@id)
 
     if watches.empty?

@@ -37,7 +37,7 @@ describe '#watch' do
           wait 0.1 do
             @watched_changes.should == 3
 
-            watch.destroy
+            watch.end
 
             WatchDocument.create(:field1 => 'field1', :field2 => 'field2')
 
@@ -48,5 +48,46 @@ describe '#watch' do
         end
       end
     end
+  end
+
+  describe "watching document" do
+    it 'for CUD only executes the block when the document exists' do
+      doc = WatchDocument.create(:field1 => 'field1', :field2 => 'field2')
+
+      @watched_changes = 0
+
+      watch = doc.watch do
+        @watched_changes += 1
+      end
+
+      doc.update_attributes(:field1 => 'field1_updated')
+
+      wait 0.1 do
+        @watched_changes.should == 1
+
+        watch.end
+
+        doc.update_attributes(:field1 => 'field1_updated1')
+
+        wait 0.1 do
+          @watched_changes.should == 1
+
+          watch = doc.watch do
+            @watched_changes += 1
+          end
+
+          doc.destroy
+
+          wait 0.1 do
+            @watched_changes.should == 2
+
+            watch.end
+          end
+        end
+      end
+    end
+  end
+
+  describe "watching view" do
   end
 end
