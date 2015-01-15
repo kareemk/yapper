@@ -6,23 +6,30 @@ class Yapper::Watch
 
   attr_reader :block
 
-  def self.on_change(notification)
-    notifications = Yapper::DB.instance.read_connection.beginLongLivedReadTransaction
-    self.watches.values.each { |watch| watch.block.call(notifications) }
-  end
-
-  def self.add(&block)
-    if watches.empty?
-      Yapper::DB.instance.read_connection.beginLongLivedReadTransaction
-
-      _observer = NSNotificationCenter.defaultCenter.addObserver(self,
-                                                                 selector: 'on_change:',
-                                                                 name: YapDatabaseModifiedNotification,
-                                                                 object: nil)
+  class << self
+    def on_change(notification)
+      notifications = db.read_connection.beginLongLivedReadTransaction
+      self.watches.values.each { |watch| watch.block.call(notifications) }
     end
 
-    id = BSON::ObjectId.generate
-    self.new(id, &block).tap { |watch|  self.watches[id] = watch }
+    def add(mapping=nil, &block)
+      if watches.empty?
+        Yapper::DB.instance.read_connection.beginLongLivedReadTransaction
+
+      db.read { |txn| mapping.updateWithTransaction(txn) } if mapping
+        _observer = NSNotificationCenter.defaultCenter.addObserver(self,
+                                                                   selector: 'on_change:',
+                                                                   name: YapDatabaseModifiedNotification,
+                                                                   object: nil)
+      end
+
+      id = BSON::ObjectId.generate
+      self.new(id, &block).tap { |watch|  self.watches[id] = watch }
+    end
+
+    def db
+      Yapper::DB.instance
+    end
   end
 
   def initialize(id, &block)
