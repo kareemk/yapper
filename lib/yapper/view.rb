@@ -37,7 +37,6 @@ module Yapper::View
 
     def watch(groups=[], &block)
       mapping = YapDatabaseViewMappings.alloc.initWithGroups(groups, view: extid)
-      db.read { |txn| mapping.updateWithTransaction(txn) }
 
       Yapper::Watch.add(mapping) do |notifications|
         section_changes = Pointer.new(:object)

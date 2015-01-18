@@ -15,14 +15,13 @@ class Yapper::Watch
 
     def add(mapping=nil, &block)
       if watches.empty?
-        Yapper::DB.instance.read_connection.beginLongLivedReadTransaction
-
-      db.read { |txn| mapping.updateWithTransaction(txn) } if mapping
+        db.read_connection.beginLongLivedReadTransaction
         _observer = NSNotificationCenter.defaultCenter.addObserver(self,
                                                                    selector: 'on_change:',
                                                                    name: YapDatabaseModifiedNotification,
                                                                    object: nil)
       end
+      db.read { |txn| mapping.updateWithTransaction(txn) } if mapping
 
       id = BSON::ObjectId.generate
       self.new(id, mapping, &block).tap { |watch|  self.watches[id] = watch }
