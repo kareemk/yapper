@@ -302,7 +302,7 @@ class Yapper::DB
       end
       @db.connection.readWriteWithBlock(txn_proc)
 
-      raise result if result.is_a?(Exception)
+      raise result if result.is_a?(Exception) || result.is_a?(NSException)
       result
     end
   end
@@ -323,7 +323,7 @@ class Yapper::DB
       end
       @db.read_connection.readWithBlock(txn_proc)
 
-      raise result if result.is_a?(Exception)
+      raise result if result.is_a?(Exception) || result.is_a?(NSException)
       result
     end
   end

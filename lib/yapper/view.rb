@@ -12,17 +12,26 @@ module Yapper::View
       self.to_s.underscore
     end
 
-    def [](index, mapping)
+    def [](mapping_or_group, index)
       db.read do |txn|
         collection_ptr = Pointer.new(:object)
         key_ptr = Pointer.new(:object)
-        if txn.ext(extid).getKey(key_ptr,
-                                 collection: collection_ptr,
-                                 atIndexPath: index,
-                                 withMappings: mapping)
-          object_for_attrs(collection_ptr[0],
-                           txn.objectForKey(key_ptr[0], inCollection: collection_ptr[0]))
-        end
+
+        found = if mapping_or_group.is_a?(YapDatabaseViewMappings)
+                  txn.ext(extid).getKey(key_ptr,
+                                        collection: collection_ptr,
+                                        atIndexPath: index,
+                                        withMappings: mapping_or_group)
+                else
+                  txn.ext(extid).getKey(key_ptr,
+                                        collection: collection_ptr,
+                                        atIndex: index,
+                                        inGroup: mapping_or_group)
+                end
+
+        object_for_attrs(collection_ptr[0],
+                         txn.objectForKey(key_ptr[0],
+                                          inCollection: collection_ptr[0])) if found
       end
     end
 

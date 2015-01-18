@@ -61,16 +61,37 @@ describe 'Criteria' do
     end
   end
 
-  describe 'with modifications made to the dependent models' do
-    it 'the view reflects the changes' do
-      AnotherViewDocument.create(:field1 => 0)
-      ViewDocument.create(:field1 => 3)
-      ViewDocument.create(:field1 => 1)
-      ViewDocument.create(:field1 => 2)
+  context 'using group to access' do
+    describe 'with modifications made to the dependent models' do
+      it 'the view reflects the changes' do
+        AnotherViewDocument.create(:field1 => 0)
+        ViewDocument.create(:field1 => 3)
+        ViewDocument.create(:field1 => 1)
+        ViewDocument.create(:field1 => 2)
 
-      View['default', 0].field1.should == 1
-      View['default', 1].field1.should == 2
-      View['default', 2].field1.should == 3
+        View['default', 0].field1.should == 1
+        View['default', 1].field1.should == 2
+        View['default', 2].field1.should == 3
+      end
+    end
+  end
+
+  describe 'using mapping to access' do
+    describe 'with modifications made to the dependent models' do
+      it 'the view reflects the changes' do
+        AnotherViewDocument.create(:field1 => 0)
+        ViewDocument.create(:field1 => 3)
+        ViewDocument.create(:field1 => 1)
+        ViewDocument.create(:field1 => 2)
+
+        mapping = YapDatabaseViewMappings.alloc.initWithGroups(['default'], view: View.extid)
+        Yapper::DB.instance.read_connection.beginLongLivedReadTransaction
+        Yapper::DB.instance.read { |txn| mapping.updateWithTransaction(txn) }
+
+        View[mapping, NSIndexPath.indexPathForRow(0, inSection: 0)].field1.should == 1
+        View[mapping, NSIndexPath.indexPathForRow(1, inSection: 0)].field1.should == 2
+        View[mapping, NSIndexPath.indexPathForRow(2, inSection: 0)].field1.should == 3
+      end
     end
   end
 end
