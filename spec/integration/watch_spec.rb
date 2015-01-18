@@ -48,6 +48,22 @@ describe '#watch' do
         end
       end
     end
+
+    it 'if a doc is touched the block is executed' do
+      @watched_changes = 0
+
+      doc = WatchDocument.create(:field1 => 'field1', :field2 => 'field2')
+
+      WatchDocument.watch do
+        @watched_changes += 1
+      end
+
+      doc.touch
+
+      wait 0.1 do
+        @watched_changes.should == 1
+      end
+    end
   end
 
   describe "watching document" do

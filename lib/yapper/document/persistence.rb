@@ -150,6 +150,10 @@ module Yapper::Document
       @destroyed = true
     end
 
+    def touch
+      db.execute { |txn| txn.touchObjectForKey(self.id, inCollection: self._type) }
+    end
+
     private
 
     def generate_id
