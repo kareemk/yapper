@@ -12,14 +12,14 @@ module Yapper::View
       self.to_s.underscore
     end
 
-    def [](group, index)
+    def [](index, mapping)
       db.read do |txn|
         collection_ptr = Pointer.new(:object)
         key_ptr = Pointer.new(:object)
         if txn.ext(extid).getKey(key_ptr,
                                  collection: collection_ptr,
-                                 atIndex: index,
-                                 inGroup: group)
+                                 atIndexPath: index,
+                                 withMappings: mapping)
           object_for_attrs(collection_ptr[0],
                            txn.objectForKey(key_ptr[0], inCollection: collection_ptr[0]))
         end
@@ -28,6 +28,7 @@ module Yapper::View
 
     def watch(groups=[], &block)
       mapping = YapDatabaseViewMappings.alloc.initWithGroups(groups, view: extid)
+      db.read { |txn| mapping.updateWithTransaction(txn) }
 
       Yapper::Watch.add(mapping) do |notifications|
         section_changes = Pointer.new(:object)
@@ -71,8 +72,19 @@ module Yapper::View
     end
 
     class RowChange
+      attr_reader :from
+      attr_reader :to
+
       def initialize(change)
         @change = change
+      end
+
+      def from
+        NSIndexPath.indexPathForRow(@change.originalIndex, inSection: @change.originalSection)
+      end
+
+      def to
+        NSIndexPath.indexPathForRow(@change.finalIndex, inSection: @change.finalSection)
       end
 
       def type
@@ -81,16 +93,8 @@ module Yapper::View
           when YapDatabaseViewChangeDelete then :delete
           when YapDatabaseViewChangeMove   then :move
           when YapDatabaseViewChangeUpdate then :update
-          else raise "Unknown change type: #{change.type}"
+          else raise "Unknown change type: #{@change.type}"
         end
-      end
-
-      def from
-        @from ||= @change.indexPath
-      end
-
-      def to
-        @to ||= @change.newIndexPath
       end
     end
 

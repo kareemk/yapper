@@ -4,6 +4,7 @@ class Yapper::Watch
     {}
   end
 
+  attr_reader :mapping
   attr_reader :block
 
   class << self
@@ -24,7 +25,7 @@ class Yapper::Watch
       end
 
       id = BSON::ObjectId.generate
-      self.new(id, &block).tap { |watch|  self.watches[id] = watch }
+      self.new(id, mapping, &block).tap { |watch|  self.watches[id] = watch }
     end
 
     def db
@@ -32,10 +33,11 @@ class Yapper::Watch
     end
   end
 
-  def initialize(id, &block)
+  def initialize(id, mapping, &block)
     @id = id
     # XXX Weak Ref?
     @block = block
+    @mapping = mapping
     self
   end
 
