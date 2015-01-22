@@ -122,7 +122,7 @@ module Yapper::Document
     end
 
     def save(options={})
-      db.execute("#{self.model_name}:save" => self) do |txn|
+      db.execute do |txn|
         @queued_saves.each { |queued, queued_options| queued.save(queued_options) }
 
         run_callbacks 'save' do

@@ -31,9 +31,7 @@ class Yapper::DB
     block.call(db)
   end
 
-  def execute(notifications={}, &block)
-    Notifications.track(notifications)
-
+  def execute(&block)
     create_extensions!
 
     result = nil
@@ -44,7 +42,6 @@ class Yapper::DB
       ensure
         self.transaction = nil
       end
-      Notifications.trigger
     else
       result = block.call(self.transaction.txn)
     end
@@ -325,28 +322,6 @@ class Yapper::DB
 
       raise result if result.is_a?(Exception) || result.is_a?(NSException)
       result
-    end
-  end
-
-  class Notifications
-    def self.track(notifications)
-      Thread.current[:yapper_notifications] ||= {}.with_indifferent_access
-      notifications.each do |namespace, instance|
-        Thread.current[:yapper_notifications][namespace] ||= []
-        Thread.current[:yapper_notifications][namespace] << instance
-      end
-    end
-
-    def self.trigger
-      notifications = Thread.current[:yapper_notifications]
-      Thread.current[:yapper_notifications] = nil
-      notifications.each { |namespace, instances| notify(namespace, instances) }
-    end
-
-    private
-
-    def self.notify(namespace, instances)
-      NSNotificationCenter.defaultCenter.postNotificationName("yapper:#{namespace}", object: instances , userInfo: nil)
     end
   end
 end
