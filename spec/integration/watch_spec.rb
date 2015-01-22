@@ -1,4 +1,4 @@
-describe '#watch' do
+describe 'Watches' do
   before do
     class WatchDocument
       include Yapper::Document
@@ -9,6 +9,7 @@ describe '#watch' do
   end
   before { Yapper::DB.instance.purge }
   after { Object.send(:remove_const, 'WatchDocument') }
+  after { @watch.end }
 
   describe 'watching collection' do
     it 'for CUD only executes the block when the document exists' do
@@ -18,7 +19,7 @@ describe '#watch' do
 
       @watched_changes.should == 0
 
-      watch = WatchDocument.watch do
+      @watch = WatchDocument.watch do
         @watched_changes += 1
       end
 
@@ -37,7 +38,7 @@ describe '#watch' do
           wait 0.1 do
             @watched_changes.should == 3
 
-            watch.end
+            @watch.end
 
             WatchDocument.create(:field1 => 'field1', :field2 => 'field2')
 
@@ -54,7 +55,7 @@ describe '#watch' do
 
       doc = WatchDocument.create(:field1 => 'field1', :field2 => 'field2')
 
-      WatchDocument.watch do
+      @watch = WatchDocument.watch do
         @watched_changes += 1
       end
 
@@ -72,7 +73,7 @@ describe '#watch' do
 
       @watched_changes = 0
 
-      watch = doc.watch do
+      @watch = doc.watch do
         @watched_changes += 1
       end
 
@@ -81,14 +82,14 @@ describe '#watch' do
       wait 0.1 do
         @watched_changes.should == 1
 
-        watch.end
+        @watch.end
 
         doc.update_attributes(:field1 => 'field1_updated1')
 
         wait 0.1 do
           @watched_changes.should == 1
 
-          watch = doc.watch do
+          @watch = doc.watch do
             @watched_changes += 1
           end
 
@@ -96,8 +97,6 @@ describe '#watch' do
 
           wait 0.1 do
             @watched_changes.should == 2
-
-            watch.end
           end
         end
       end
@@ -136,7 +135,7 @@ describe '#watch' do
         wait 0.1 do
           @watched_changes.should == []
 
-          watch = WatchView.watch(['group1', 'group2']) do |changes|
+          @watch = WatchView.watch(['group1', 'group2']) do |changes|
             @watched_changes << changes
           end
 
@@ -152,7 +151,7 @@ describe '#watch' do
             changes.rows.first.from.should == NSIndexPath.indexPathForRow(0, inSection: 0)
             changes.rows.first.to.should == NSIndexPath.indexPathForRow(0, inSection: 1)
 
-            watch.end
+            @watch.end
 
             doc.update_attributes(:field1 => 'field1_updated1')
 
@@ -162,6 +161,73 @@ describe '#watch' do
           end
         end
       end
+    end
+  end
+end
+
+describe "Relation with child touching parent" do
+  before do
+    class ParentDocument
+      include Yapper::Document
+
+      field :field_1
+
+      has_many :child_documents
+    end
+    class ChildDocument
+      include Yapper::Document
+
+      field :field_1
+
+      belongs_to :parent_document, touch: true
+    end
+  end
+  before { Yapper::DB.instance.purge }
+  after { Object.send(:remove_const, 'ParentDocument') }
+  after { Object.send(:remove_const, 'ChildDocument') }
+  after { @watch.end }
+
+  it "creating a child document executes parents watch block" do
+    parent = ParentDocument.create(:field_1 => 'field_1')
+
+    @watched_changes = 0
+
+    @watch = parent.watch { @watched_changes += 1 }
+
+    ChildDocument.create(:parent_document => parent)
+
+    wait 0.1 do
+      @watched_changes.should == 1
+    end
+  end
+
+  it "updating a child document executes parents watch block" do
+    parent = ParentDocument.create(:field_1 => 'field_1')
+    child = ChildDocument.create(:parent_document => parent)
+
+    @watched_changes = 0
+
+    @watch = parent.watch { @watched_changes += 1 }
+
+    child.update_attributes(:field_1 => 'field_1')
+
+    wait 0.1 do
+      @watched_changes.should == 1
+    end
+  end
+
+  it "deleting a child document executes parents watch block" do
+    parent = ParentDocument.create(:field_1 => 'field_1')
+    child = ChildDocument.create(:parent_document => parent)
+
+    @watched_changes = 0
+
+    @watch = parent.watch { @watched_changes += 1 }
+
+    child.destroy
+
+    wait 0.1 do
+      @watched_changes.should == 1
     end
   end
 end

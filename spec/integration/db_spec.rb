@@ -29,7 +29,7 @@ describe 'db' do
     Document.all.count.should == 10
     AnotherDocument.all.count.should == 10
   end
-  
+
   it 'can nest transactions' do
     Yapper::DB.instance.execute do |txn|
       Document.create(:field_1 => '1')

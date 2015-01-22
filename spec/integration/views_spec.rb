@@ -1,4 +1,4 @@
-describe 'Criteria' do
+describe 'Views' do
   before do
     class ViewDocument
       include Yapper::Document

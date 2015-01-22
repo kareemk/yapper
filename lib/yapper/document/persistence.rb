@@ -139,6 +139,8 @@ module Yapper::Document
           self.changes = {}
         end
 
+        self.touches.each { |touch| self.send(touch).touch }
+
         unless options[:embedded]
           # XXX Use middleware pattern instead of this ugliness
           sync_changes if defined? sync_changes
@@ -153,6 +155,8 @@ module Yapper::Document
         txn.removeObjectForKey(self.id, inCollection: _type)
         dependent_destroys.each { |dependent_destroy| self.send(dependent_destroy).each(&:destroy) }
       end
+
+      self.touches.each { |touch| self.send(touch).touch }
 
       @destroyed = true
     end
