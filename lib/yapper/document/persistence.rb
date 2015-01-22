@@ -19,7 +19,10 @@ module Yapper::Document
       end
 
       def delete_all
-        db.execute { |txn| txn.removeAllObjectsInCollection(_type) }
+        db.execute do |txn|
+          txn.removeAllObjectsInCollection(_type)
+          self.dependent_destroys.each { |dependent_destroy| dependent_destroy.classify.constantize.delete_all }
+        end
       end
 
       def field(name, options={})
@@ -146,7 +149,11 @@ module Yapper::Document
     end
 
     def destroy(options={})
-      db.execute { |txn| txn.removeObjectForKey(self.id, inCollection: _type) }
+      db.execute do |txn|
+        txn.removeObjectForKey(self.id, inCollection: _type)
+        dependent_destroys.each { |dependent_destroy| self.send(dependent_destroy).each(&:destroy) }
+      end
+
       @destroyed = true
     end
 

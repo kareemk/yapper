@@ -86,6 +86,26 @@ module Yapper::Document
           self.send("#{relation}_id=", parent.id)
         end
       end
+
+      def dependent_destroys
+        self.relations[:has_many].
+          select { |relation| relation.values.first[:dependent] == :destroy }.
+          map    { |relation| relation.keys.first }
+      end
+
+      def touches
+        self.relations[:belongs_to].
+          select { |relation| relation.values.first[:touch] }.
+          map    { |relation| relation.keys.first }
+      end
     end
+  end
+
+  def dependent_destroys
+    self.class.dependent_destroys
+  end
+
+  def touches
+    self.class.touches
   end
 end

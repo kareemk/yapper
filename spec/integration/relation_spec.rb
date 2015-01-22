@@ -172,3 +172,60 @@ describe 'Yapper document 1:N:1 relationship' do
     child.parent2.field_1.should == 'parent2'
   end
 end
+
+describe 'Yapper dependent destroy' do
+  before do
+    class ParentDocument
+      include Yapper::Document
+
+      field :field_1
+
+      has_many :child_documents
+      has_many :child_dependent_documents, dependent: :destroy
+    end
+    class ChildDocument
+      include Yapper::Document
+
+      field :field_1
+
+      belongs_to :parent_document
+    end
+    class ChildDependentDocument
+      include Yapper::Document
+
+      field :field_1
+
+      belongs_to :parent_document
+    end
+  end
+  after { Yapper::DB.instance.purge }
+  after { ['ParentDocument', 'ChildDocument', 'ChildDependentDocument'].each { |klass| Object.send(:remove_const, klass) } }
+
+  it 'destroys child documents when the parent is destroyed' do
+    parent = ParentDocument.create(:field_1 => 'field_1')
+    ChildDocument.create(:parent_document => parent)
+    ChildDependentDocument.create(:parent_document => parent)
+
+    ChildDocument.count.should == 1
+    ChildDependentDocument.count.should == 1
+
+    parent.destroy
+
+    ChildDocument.count.should == 1
+    ChildDependentDocument.count.should == 0
+  end
+
+  it 'destroys all child documents if all parentes are destroyed with #delete_all' do
+    parent = ParentDocument.create(:field_1 => 'field_1')
+    ChildDocument.create(:parent_document => parent)
+    ChildDependentDocument.create(:parent_document => parent)
+
+    ChildDocument.count.should == 1
+    ChildDependentDocument.count.should == 1
+
+    ParentDocument.delete_all
+
+    ChildDocument.count.should == 1
+    ChildDependentDocument.count.should == 0
+  end
+end
