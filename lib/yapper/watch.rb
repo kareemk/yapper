@@ -43,6 +43,8 @@ class Yapper::Watch
   def end
     watches.delete(@id)
 
+    # TODO clear instance vars to ensure that they are GCd
+
     if watches.empty?
       Yapper::DB.instance.read_connection.endLongLivedReadTransaction
       NSNotificationCenter.defaultCenter.removeObserver(_observer)

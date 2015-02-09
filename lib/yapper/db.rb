@@ -32,8 +32,6 @@ class Yapper::DB
   end
 
   def execute(&block)
-    create_extensions!
-
     result = nil
     unless self.transaction
       self.transaction = Transaction.new(self)
@@ -52,7 +50,6 @@ class Yapper::DB
 
   def read(&block)
     raise "Must only read db off of main thread otherwise use a execute for a read/write transaction" unless NSThread.isMainThread
-    create_extensions!
 
     ReadTransaction.new(self).run(&block)
   end
@@ -110,11 +107,15 @@ class Yapper::DB
   end
 
   def connection
+    create_extensions!
+
     Dispatch.once { @connection ||= db.newConnection }
     @connection
   end
 
   def read_connection
+    create_extensions!
+
     Dispatch.once { @read_connection ||= db.newConnection }
     @read_connection
   end

@@ -124,7 +124,14 @@ describe 'Watches' do
     after { Object.send(:remove_const, 'WatchView') }
 
     context 'watching all groups' do
-      it 'for CUD watches changes to ' do
+      it 'immediately has up-to-date mapping information' do
+        WatchDocument.create(:field1 => 'group1', :field2 => '1')
+        @watch = WatchView.watch(['group1', 'group2'])
+
+        @watch.mapping.numberOfItemsInSection(0).should == 1
+      end
+
+      it 'for CUD passes all changes to the block' do
         @watched_changes = []
 
         doc = WatchDocument.create(:field1 => 'group1', :field2 => '1')

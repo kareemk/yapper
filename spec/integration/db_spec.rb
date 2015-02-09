@@ -47,4 +47,17 @@ describe 'db' do
     end
     Document.all.count.should == 2
   end
+
+  context 'with an extension' do
+    before do
+      class Document
+        field :indexed_field, type: String
+        search_index :indexed_field
+      end
+    end
+
+    it 'creates extensions before any access to a connection' do
+      Yapper::DB.instance.connection.ext('Document_SIDX').should.not == nil
+    end
+  end
 end
