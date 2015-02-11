@@ -10,7 +10,9 @@ class Yapper::Watch
   class << self
     def on_change(notification)
       notifications = db.read_connection.beginLongLivedReadTransaction
-      self.watches.values.each { |watch| watch.block.call(notifications) }
+      self.watches.values.each do |watch|
+        watch.block.call(notifications) if watch.block rescue WeakRef::RefError
+      end
     end
 
     def add(mapping=nil, &block)
@@ -43,7 +45,8 @@ class Yapper::Watch
   def end
     watches.delete(@id)
 
-    # TODO clear instance vars to ensure that they are GCd
+    @block = nil
+    @mapping = nil
 
     if watches.empty?
       Yapper::DB.instance.read_connection.endLongLivedReadTransaction
