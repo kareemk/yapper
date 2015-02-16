@@ -61,7 +61,7 @@ describe 'Views' do
     end
   end
 
-  context 'using group to access' do
+  describe 'using group to access' do
     describe 'with modifications made to the dependent models' do
       it 'the view reflects the changes' do
         AnotherViewDocument.create(:field1 => 0)
@@ -92,6 +92,18 @@ describe 'Views' do
         View[mapping, NSIndexPath.indexPathForRow(1, inSection: 0)].field1.should == 2
         View[mapping, NSIndexPath.indexPathForRow(2, inSection: 0)].field1.should == 3
       end
+    end
+  end
+
+  describe 'counting' do
+    it 'counts the documents in the group' do
+      puts View.count('default')
+      AnotherViewDocument.create(:field1 => 0)
+      ViewDocument.create(:field1 => 3)
+      ViewDocument.create(:field1 => 1)
+
+      View.count('default').should == 2
+      View.count('xxx').should == 0
     end
   end
 end

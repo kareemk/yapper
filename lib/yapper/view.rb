@@ -35,6 +35,10 @@ module Yapper::View
       end
     end
 
+    def count(group)
+      db.read { |txn| txn.ext(extid).numberOfKeysInGroup(group) }
+    end
+
     def watch(groups=[], &block)
       mapping = YapDatabaseViewMappings.alloc.initWithGroups(groups, view: extid)
 

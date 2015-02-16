@@ -57,6 +57,8 @@ class Yapper::DB
   def purge
     Yapper::Settings.purge
 
+    read_connection.endLongLivedReadTransaction
+
     @index_creation_required = true
     @search_index_creation_required = true
     @view_creation_required = true
@@ -184,7 +186,7 @@ class Yapper::DB
         unless Yapper::Settings.get("#{collection}_idx_defn") == @indexes[collection].to_canonical
           Yapper::Settings.set("#{collection}_idx_defn", @indexes[collection].to_canonical)
           configure do|yap|
-            yap.unregisterExtension("#{collection}_IDX") if yap.registeredExtension("#{collection}_IDX")
+            yap.unregisterExtension("#{collection}_IDX")
           end
         end
 
@@ -209,7 +211,7 @@ class Yapper::DB
         unless Yapper::Settings.get("#{collection}_sidx_defn") == @search_indexes[collection].to_canonical
           Yapper::Settings.set("#{collection}_sidx_defn", @search_indexes[collection].to_canonical)
           configure do|yap|
-            yap.unregisterExtension("#{collection}_SIDX") if yap.registeredExtension("#{collection}_SIDX")
+            yap.unregisterExtension("#{collection}_SIDX")
           end
         end
 
@@ -244,8 +246,8 @@ class Yapper::DB
       @views.each do |view_name, view|
         unless Yapper::Settings.get("#{view_name}_views_defn") == view.version.to_s
           Yapper::Settings.set("#{view_name}_views_defn", view.version.to_s)
-          configure do|yap|
-            yap.unregisterExtension("#{view_name}_VIEW") if yap.registeredExtension("#{view_name}_VIEW")
+          configure do |yap|
+            yap.unregisterExtension("#{view_name}_VIEW")
           end
         end
 
