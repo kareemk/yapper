@@ -67,6 +67,42 @@ describe 'Watches' do
     end
   end
 
+  describe "watching collection for a specifc document that doesn't exist yet" do
+    it 'executes the block when the document is created' do
+      @watched_changes = 0
+
+      doc = WatchDocument.new
+
+      @watch = WatchDocument.watch(doc.id) do
+        @watched_changes += 1
+      end
+
+      WatchDocument.create(:field1 => 'field1', :field2 => 'field2')
+
+      @watched_changes.should == 0
+
+      doc.save
+
+      wait 0.1 do
+        @watched_changes.should == 1
+
+        doc.update_attributes(:field1 => 'field1_updated')
+
+        wait 0.1 do
+          @watched_changes.should == 2
+
+          @watch.end
+
+          doc.update_attributes(:field1 => 'field1_updated_again')
+
+          wait 0.1 do
+            @watched_changes.should == 2
+          end
+        end
+      end
+    end
+  end
+
   describe "watching document" do
     it 'for CUD only executes the block when the document exists' do
       doc = WatchDocument.create(:field1 => 'field1', :field2 => 'field2')
