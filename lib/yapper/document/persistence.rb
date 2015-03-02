@@ -156,7 +156,8 @@ module Yapper::Document
         dependent_destroys.each { |dependent_destroy| self.send(dependent_destroy).each(&:destroy) }
       end
 
-      self.touches.each { |touch| self.send(touch).touch }
+      # TODO Add spec to cover case when a relation is destroyed and touched
+      self.touches.each { |touch| self.send(touch).touch if self.send(touch) }
 
       @destroyed = true
     end
