@@ -35,6 +35,21 @@ module Yapper::View
       end
     end
 
+    # TODO Add spec
+    def index(key, collection)
+      db.read do |txn|
+        group_ptr = Pointer.new(:object)
+        index_ptr = Pointer.new(:ulong_long)
+
+        txn.ext(extid).getGroup(group_ptr,
+                                index: index_ptr,
+                                forKey: key,
+                                inCollection: collection)
+
+        index_ptr[0]
+      end
+    end
+
     def count(group)
       db.read { |txn| txn.ext(extid).numberOfKeysInGroup(group) }
     end
