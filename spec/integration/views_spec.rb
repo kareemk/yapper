@@ -97,7 +97,6 @@ describe 'Views' do
 
   describe 'counting' do
     it 'counts the documents in the group' do
-      puts View.count('default')
       AnotherViewDocument.create(:field1 => 0)
       ViewDocument.create(:field1 => 3)
       ViewDocument.create(:field1 => 1)

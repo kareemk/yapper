@@ -159,49 +159,74 @@ describe 'Watches' do
     end
     after { Object.send(:remove_const, 'WatchView') }
 
-    context 'watching all groups' do
-      it 'immediately has up-to-date mapping information' do
-        WatchDocument.create(:field1 => 'group1', :field2 => '1')
-        @watch = WatchView.watch(['group1', 'group2'])
+    it 'for CUD passes all changes to the block' do
+      @watched_changes = []
 
-        @watch.mapping.numberOfItemsInSection(0).should == 1
-      end
+      doc = WatchDocument.create(:field1 => 'group1', :field2 => '1')
+      WatchDocument.create(:field1 => 'group1', :field2 => '2')
+      WatchDocument.create(:field1 => 'group2', :field2 => '3')
+      WatchDocument.create(:field1 => 'group2', :field2 => '4')
 
-      it 'for CUD passes all changes to the block' do
-        @watched_changes = []
+      wait 0.1 do
+        @watched_changes.should == []
 
-        doc = WatchDocument.create(:field1 => 'group1', :field2 => '1')
-        WatchDocument.create(:field1 => 'group1', :field2 => '2')
-        WatchDocument.create(:field1 => 'group2', :field2 => '3')
-        WatchDocument.create(:field1 => 'group2', :field2 => '4')
+        @watch = WatchView.watch(['group1', 'group2']) do |changes|
+          @watched_changes << changes
+        end
+
+        doc.update_attributes(:field1 => 'group2')
 
         wait 0.1 do
-          @watched_changes.should == []
+          @watched_changes.count.should == 1
 
-          @watch = WatchView.watch(['group1', 'group2']) do |changes|
-            @watched_changes << changes
-          end
+          changes = @watched_changes.first
+          changes.sections.count.should == 0
+          changes.rows.count.should == 1
+          changes.rows.first.type.should == :move
+          changes.rows.first.from.should == NSIndexPath.indexPathForRow(0, inSection: 0)
+          changes.rows.first.to.should == NSIndexPath.indexPathForRow(0, inSection: 1)
 
-          doc.update_attributes(:field1 => 'group2')
+          @watch.end
+
+          doc.update_attributes(:field1 => 'field1_updated1')
 
           wait 0.1 do
             @watched_changes.count.should == 1
-
-            changes = @watched_changes.first
-            changes.sections.count.should == 0
-            changes.rows.count.should == 1
-            changes.rows.first.type.should == :move
-            changes.rows.first.from.should == NSIndexPath.indexPathForRow(0, inSection: 0)
-            changes.rows.first.to.should == NSIndexPath.indexPathForRow(0, inSection: 1)
-
-            @watch.end
-
-            doc.update_attributes(:field1 => 'field1_updated1')
-
-            wait 0.1 do
-              @watched_changes.count.should == 1
-            end
           end
+        end
+      end
+    end
+
+    describe 'watching all groups' do
+      it 'includes all groups' do
+        WatchDocument.create(:field1 => 'group1', :field2 => '1')
+        WatchDocument.create(:field1 => 'group2', :field2 => '1')
+        @watch = WatchView.watch
+
+        @watch.mapping.numberOfSections.should == 2
+      end
+    end
+
+    describe 'watching specific groups' do
+      describe 'using an array' do
+        it 'excludes other groups' do
+          WatchDocument.create(:field1 => 'group1', :field2 => '1')
+          WatchDocument.create(:field1 => 'group2', :field2 => '1')
+          @watch = WatchView.watch(['group2'])
+
+          @watch.mapping.numberOfSections.should == 1
+        end
+      end
+
+      describe 'using regex' do
+        it 'excludes other groups and sorts by group key' do
+          WatchDocument.create(:field1 => 'group2', :field2 => '1')
+          WatchDocument.create(:field1 => 'group1', :field2 => '1')
+          WatchDocument.create(:field1 => 'other', :field2 => '1')
+          @watch = WatchView.watch(/^group/)
+
+          @watch.mapping.numberOfSections.should == 2
+          WatchView[@watch.mapping, NSIndexPath.indexPathForRow(0, inSection: 1)].field1.should == 'group2'
         end
       end
     end

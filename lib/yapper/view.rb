@@ -60,8 +60,20 @@ module Yapper::View
       db.read { |txn| txn.ext(extid).numberOfKeysInGroup(group) }
     end
 
-    def watch(groups=[], &block)
-      mapping = YapDatabaseViewMappings.alloc.initWithGroups(groups, view: extid)
+    def watch(groups=nil,  &block)
+      groups ||= db.read { |txn| txn.ext(extid).allGroups }
+
+      mapping = if groups.is_a? Array
+        YapDatabaseViewMappings.alloc.initWithGroups(groups, view: extid)
+      elsif groups.is_a? Regexp
+        filter_proc = -> group, txn { group.match(groups) }
+        sort_proc   = -> group1, group2, txn { group1 <=> group2 }
+        YapDatabaseViewMappings.alloc.initWithGroupFilterBlock(filter_proc,
+                                                               sortBlock: sort_proc,
+                                                               view: extid)
+      else
+        raise "Groups must be an array or regex"
+      end
 
       Yapper::Watch.add(mapping) do |notifications|
         section_changes = Pointer.new(:object)
