@@ -19,59 +19,83 @@ describe 'Yapper document 1:N relationship' do
   before { Yapper::DB.instance.purge }
   after  { ['ParentDocument', 'ChildDocument'].each { |klass| Object.send(:remove_const, klass) } }
 
-  it 'can accept nested attributes' do
-    @parent = ParentDocument.create(:field_1 => 'parent',
-                                    :child_documents => [
-                                      { :field_1 => 'child0' },
-                                      { :field_1 => 'child1' }
-                                    ])
+  describe 'nested child attributes' do
+    it 'can accept nested attributes' do
+      @parent = ParentDocument.create(:field_1 => 'parent',
+                                      :child_documents => [
+                                        { :field_1 => 'child0' },
+                                        { :field_1 => 'child1' }
+                                      ])
 
-    @parent.field_1.should == 'parent'
-    @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
-  end
-
-  it 'can accept an nested attributes with ids' do
-    children = 2.times.map { |i| { :id => BSON::ObjectId.generate, :field_1 => "child#{i}" } }
-    @parent = ParentDocument.create(:field_1 => 'parent',
-                                    :child_documents => children)
-
-    children.each do |child|
-      ChildDocument.find(child[:id]).should.not == nil
+      @parent.field_1.should == 'parent'
+      @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
     end
-  end
 
-  it 'can accept array of initialized children' do
-    children = 2.times.map { |i| ChildDocument.new(:field_1 => "child#{i}") }
-    @parent = ParentDocument.create(:field_1 => 'parent',
-                                    :child_documents => children)
+    it 'can accept an nested attributes with ids' do
+      children = 2.times.map { |i| { :id => BSON::ObjectId.generate, :field_1 => "child#{i}" } }
+      @parent = ParentDocument.create(:field_1 => 'parent',
+                                      :child_documents => children)
 
-    @parent.field_1.should == 'parent'
-    @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
-  end
+      children.each do |child|
+        ChildDocument.find(child[:id]).should.not == nil
+      end
+    end
 
-  it 'can accept array of created children' do
-    children = 2.times.map { |i| ChildDocument.create(:field_1 => "child#{i}") }
-    @parent = ParentDocument.create(:field_1 => 'parent',
-                                    :child_documents => children)
+    it 'can accept array of initialized children' do
+      children = 2.times.map { |i| ChildDocument.new(:field_1 => "child#{i}") }
+      @parent = ParentDocument.create(:field_1 => 'parent',
+                                      :child_documents => children)
 
-    @parent.field_1.should == 'parent'
-    @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
-  end
+      @parent.field_1.should == 'parent'
+      @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
+    end
 
-  it 'can update a child document via nested attributes' do
-    children = 2.times.map { |i| { :id => BSON::ObjectId.generate,
-                                    :field_1 => "child#{i}",
-                                    :field_2 => 'value' } }
-    @parent = ParentDocument.create(:field_1 => 'parent',
-                                    :child_documents => children)
-    @parent.update_attributes(:child_documents => [{ :id      => children[0][:id],
-                                                     :field_1 => 'updated0' },
-                                                   { :id      => children[1][:id],
-                                                     :field_1 => 'updated1' }])
+    it 'can accept array of created children' do
+      children = 2.times.map { |i| ChildDocument.create(:field_1 => "child#{i}") }
+      @parent = ParentDocument.create(:field_1 => 'parent',
+                                      :child_documents => children)
 
-    children.each_with_index do |child, i|
-      ChildDocument.find(child[:id]).field_1.should == "updated#{i}"
-      ChildDocument.find(child[:id]).field_2.should == "value"
+      @parent.field_1.should == 'parent'
+      @parent.child_documents.to_a.collect(&:field_1).should == ['child0', 'child1']
+    end
+
+    it 'can update a child document via nested attributes' do
+      children = 2.times.map { |i| { :id => BSON::ObjectId.generate,
+                                      :field_1 => "child#{i}",
+                                      :field_2 => 'value' } }
+      @parent = ParentDocument.create(:field_1 => 'parent',
+                                      :child_documents => children)
+      @parent.update_attributes(:child_documents => [{ :id      => children[0][:id],
+                                                       :field_1 => 'updated0' },
+                                                     { :id      => children[1][:id],
+                                                       :field_1 => 'updated1' }])
+
+      children.each_with_index do |child, i|
+        ChildDocument.find(child[:id]).field_1.should == "updated#{i}"
+        ChildDocument.find(child[:id]).field_2.should == "value"
+      end
+    end
+
+    describe 'nested parent attributes' do
+      it 'can accept an nested attributes with ids' do
+        parent = { :id => BSON::ObjectId.generate, :field_1 => "parent" }
+
+        ChildDocument.create(:field_1 => 'child',
+                             :parent_document => parent)
+
+        ParentDocument.find(parent[:id]).should.not == nil
+        ParentDocument.find(parent[:id]).field_1.should == 'parent'
+      end
+
+      it 'can update a child document via nested attributes' do
+        @parent = ParentDocument.create(:field_1 => 'created')
+        parent = { :id => @parent.id, :field_1 => 'updated' }
+
+        ChildDocument.create(:field_1 => 'child',
+                             :parent_document => parent)
+
+        @parent.reload.field_1.should == 'updated'
+      end
     end
   end
 

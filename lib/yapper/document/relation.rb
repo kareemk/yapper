@@ -82,8 +82,27 @@ module Yapper::Document
         end
 
         define_method("#{relation}=") do |parent|
-          self.instance_variable_set("@#{relation}", parent)
-          self.send("#{relation}_id=", parent.id)
+          db.execute do |txn|
+            parent = if parent.is_a?(Yapper::Document)
+                       parent
+                     elsif parent.is_a?(Hash)
+                       parent = parent.with_indifferent_access
+
+                       klass = Object.qualified_const_get(relation.to_s.camelize)
+                       instance = klass.find(parent[:id]) if parent[:id]
+                       instance ||= klass.new
+                       instance.assign_attributes(parent)
+
+                       @queued_saves << [instance, options]
+
+                       instance
+                     else
+                       raise "Must pass either attributes or an object"
+                     end
+
+            self.send("#{relation}_id=", parent.id)
+            self.instance_variable_set("@#{relation}", parent)
+          end
         end
       end
 
