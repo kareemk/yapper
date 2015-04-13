@@ -269,6 +269,16 @@ describe "Relation with child touching parent" do
     end
   end
 
+  it "creating a child document with a non-existant parent" do
+    @watched_changes = 0
+
+    ChildDocument.create(:parent_document_id => 'xxx')
+
+    wait 0.1 do
+      @watched_changes.should == 0
+    end
+  end
+
   it "updating a child document executes parents watch block" do
     parent = ParentDocument.create(:field_1 => 'field_1')
     child = ChildDocument.create(:parent_document => parent)

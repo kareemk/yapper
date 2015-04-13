@@ -139,7 +139,7 @@ module Yapper::Document
           self.changes = {}
         end
 
-        self.touches.each { |touch| self.send(touch).touch }
+        self.touches.each { |touch| self.send(touch).try(:touch) }
 
         unless options[:embedded]
           # XXX Use middleware pattern instead of this ugliness
