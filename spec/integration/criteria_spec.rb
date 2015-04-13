@@ -137,6 +137,11 @@ describe 'Criteria' do
       WhereDocument.where(:field1 => 'field1_value', :field2 => 2).to_a.count.should == 1
     end
 
+    it 'can search using different operands' do
+      WhereDocument.where(:field2 => { ">" => 1 }).count.should == 4
+      WhereDocument.where(:field2 => { ">=" => 1 }).count.should == 5
+    end
+
     describe 'when documents are updated' do
       before do
         WhereDocument.where(:field1 => 'field1_value').each { |doc| doc.update_attributes(:field1 => 'field1_value_updated', :field2 => 10) }

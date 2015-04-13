@@ -120,8 +120,14 @@ module Yapper::Document
       @criteria.sort.each do |field, value|
         raise "#{field} is not indexed" if @klass.indexes[field].nil?
 
+        operand = '='
+        if value.is_a? Hash
+          operand = value.keys.first
+          value   = value.values.first
+        end
+
         query_str.blank? ? query_str = "WHERE " : query_str += " AND "
-        query_str += "#{field} = ?"
+        query_str += "#{field} #{operand} ?"
 
         # XXX Casting should only happen if the type of the field allows for it
         value = case value.class.to_s
