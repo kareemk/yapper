@@ -59,9 +59,8 @@ module Yapper::Document
       @options  = options
     end
 
-    PointerType = (CGSize.type[/(f|d)/] == 'f') ? :uint : :ulong_long
     def count
-      count_ptr = Pointer.new(PointerType)
+      count_ptr = Pointer.new(PointerIntType)
       @klass.db.execute { |txn| txn.ext("#{@klass._type}_IDX").getNumberOfRows(count_ptr, matchingQuery: query) }
       count_ptr.value
     end

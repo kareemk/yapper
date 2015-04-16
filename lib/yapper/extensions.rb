@@ -66,3 +66,5 @@ class Symbol
 end
 
 class Boolean; end
+
+PointerIntType = (CGSize.type[/(f|d)/] == 'f') ? :uint : :ulong_long

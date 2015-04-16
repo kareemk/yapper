@@ -35,13 +35,10 @@ module Yapper::View
       end
     end
 
-    # TODO Add spec
     def index(key, collection)
-      @indexType ||= :ulong_long
-
       db.read do |txn|
         group_ptr = Pointer.new(:object)
-        index_ptr = Pointer.new(@indexType)
+        index_ptr = Pointer.new(PointerIntType)
 
         txn.ext(extid).getGroup(group_ptr,
                                 index: index_ptr,
@@ -50,10 +47,6 @@ module Yapper::View
 
         index_ptr[0]
       end
-    rescue TypeError
-      # XXX 64 bit uses a different pointer type
-      @indexType = :uint
-      retry
     end
 
     def count(group)
