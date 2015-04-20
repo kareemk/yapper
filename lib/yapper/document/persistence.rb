@@ -86,7 +86,7 @@ module Yapper::Document
         if respond_to?("#{k}=")
           __send__("#{k}=", v) unless v.nil?
         else
-          Log.warn "#{k} not defined on #{self.class}"
+          Log.debug "#{k} not defined on #{self.class}"
         end
       end
     end
