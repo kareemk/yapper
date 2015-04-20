@@ -246,7 +246,7 @@ class Yapper::DB
       @views.each do |view_name, view|
         unless Yapper::Settings.get("#{view_name}_views_defn") == view.version.to_s
           Yapper::Settings.set("#{view_name}_views_defn", view.version.to_s)
-          configure do|yap|
+          configure do |yap|
             yap.unregisterExtension("#{view_name}_VIEW") if yap.registeredExtension("#{view_name}_VIEW")
           end
         end

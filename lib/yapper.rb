@@ -18,4 +18,10 @@ Motion::Project::App.setup do |app|
     pod 'CocoaLumberjack'  ,'~> 1.8.1'
     pod 'NSData+MD5Digest' ,'~> 1.0.0'
   end
+
+  yap_patch = File.expand_path(File.join(File.dirname(__FILE__), '../vendor/YapDatabaseRubyMotion'))
+  app.vendor_project(yap_patch,
+                     :static,
+                     :bridgesupport_cflags => "-I#{Dir.pwd}/vendor/Pods/Headers/Public -fobjc-arc",
+                     :cflags => "-I#{Dir.pwd}/vendor/Pods/Headers/Public -fobjc-arc")
 end
