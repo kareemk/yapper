@@ -45,7 +45,7 @@ module Yapper::View
                                 forKey: key,
                                 inCollection: collection)
 
-        index_ptr[0]
+        [group_ptr[0], index_ptr[0]]
       end
     end
 
