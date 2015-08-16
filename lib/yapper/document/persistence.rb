@@ -82,7 +82,13 @@ module Yapper::Document
         self.attributes = {}
       end
 
+      if id = attrs[:id] || attrs['id']
+        self.id = id
+      end
+
       attrs.each do |k,v|
+        next if k == :id
+
         if respond_to?("#{k}=")
           __send__("#{k}=", v) unless v.nil?
         else
@@ -99,7 +105,7 @@ module Yapper::Document
       # XXX This should not be set if the object was created from a
       # selection
       @changes[name.to_s] = value
-      self.attributes[name] = value
+      self.attributes[name.to_sym] = value
     end
 
     def reload
