@@ -20,7 +20,7 @@ class Yapper::Watch
         db.read_connection.beginLongLivedReadTransaction
         _observer = NSNotificationCenter.defaultCenter.addObserver(self,
                                                                    selector: 'on_change:',
-                                                                   name: YapDatabaseModifiedNotification,
+                                                                   name: 'YapDatabaseModifiedNotification',
                                                                    object: nil)
       end
       db.read { |txn| mapping.updateWithTransaction(txn) } if mapping

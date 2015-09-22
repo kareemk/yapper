@@ -50,7 +50,7 @@ module Yapper::View
     end
 
     def count(group)
-      db.read { |txn| txn.ext(extid).numberOfKeysInGroup(group) }
+      db.read { |txn| txn.ext(extid).numberOfItemsInGroup(group) }
     end
 
     def watch(groups=nil,  &block)

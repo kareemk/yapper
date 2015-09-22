@@ -186,7 +186,7 @@ class Yapper::DB
         unless Yapper::Settings.get("#{collection}_idx_defn") == @indexes[collection].to_canonical
           Yapper::Settings.set("#{collection}_idx_defn", @indexes[collection].to_canonical)
           configure do|yap|
-            yap.unregisterExtension("#{collection}_IDX") if yap.registeredExtension("#{collection}_IDX")
+            yap.unregisterExtensionWithName("#{collection}_IDX") if yap.registeredExtension("#{collection}_IDX")
           end
         end
 
@@ -211,7 +211,7 @@ class Yapper::DB
         unless Yapper::Settings.get("#{collection}_sidx_defn") == @search_indexes[collection].to_canonical
           Yapper::Settings.set("#{collection}_sidx_defn", @search_indexes[collection].to_canonical)
           configure do|yap|
-            yap.unregisterExtension("#{collection}_SIDX") if yap.registeredExtension("#{collection}_SIDX")
+            yap.unregisterExtensionWithName("#{collection}_SIDX") if yap.registeredExtension("#{collection}_SIDX")
           end
         end
 
@@ -247,17 +247,17 @@ class Yapper::DB
         unless Yapper::Settings.get("#{view_name}_views_defn") == view.version.to_s
           Yapper::Settings.set("#{view_name}_views_defn", view.version.to_s)
           configure do |yap|
-            yap.unregisterExtension("#{view_name}_VIEW") if yap.registeredExtension("#{view_name}_VIEW")
+            yap.unregisterExtensionWithName("#{view_name}_VIEW") if yap.registeredExtension("#{view_name}_VIEW")
           end
         end
 
-        _block = proc do |_collection, _key, _attrs|
+        _block = proc do |_txn, _collection, _key, _attrs|
           view.group_for(_collection, _key, _attrs)
         end
         grouping_block = YapDatabaseViewGrouping.withObjectBlock(_block)
 
-        _block = proc do |group, collection1, key1, obj1, collection2, key2, obj2|
-          view.sort_for(group, collection1, key1, obj1, collection2, key2, obj2)
+        _block = proc do |_txn, _group, _collection1, _key1, _obj1, _collection2, _key2, _obj2|
+          view.sort_for(_group, _collection1, _key1, _obj1, _collection2, _key2, _obj2)
         end
         sorting_block = YapDatabaseViewSorting.withObjectBlock(_block)
 

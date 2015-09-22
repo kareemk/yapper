@@ -156,7 +156,7 @@ module Yapper::Document
         end
       end
 
-      YapDatabaseQuery.alloc.initWithQueryString(query_str, queryParameters: values)
+      YapDatabaseQuery.queryWithString(query_str, parameters: values)
     end
 
     def object_for_attrs(attrs)
